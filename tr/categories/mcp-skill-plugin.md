@@ -3,7 +3,7 @@
 
 # MCP, skill ve eklentiler
 
-Bu kategoride 43 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 47 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -11,6 +11,7 @@ Bu kategoride 43 repo; önce sınıf, sonra puan sırasıyla.
 |---|---|---|---|---|---|
 | [ShivamPansuriya/jev-skill-gate](https://github.com/ShivamPansuriya/jev-skill-gate) | A | 14 | yes | Claude Code skill açıklamalarını projeye göre Jev ile puanlar, skillOverrides yazar; 20 etiketli vakada AUC ile ücretsiz TF-IDF'ye karşı ölçülmüş, %75 token tasarrufu | [kanıt](https://github.com/ShivamPansuriya/jev-skill-gate#readme) |
 | [simota/tenbin](https://github.com/simota/tenbin) | A | 13 | yes | Tasarım-zamanı MCP+skill: soru lint, evaluate/evaluate_many ile confidence-band bazlı eşik kalibrasyonu, rerank, taksonomi yürüyüşü, maliyet/bütçe koruması; üretimde SDK doğrudan çağrılır | [kanıt](https://github.com/simota/tenbin#readme) |
+| [zhangxaochen/dsh-jev](https://github.com/zhangxaochen/dsh-jev) | A | 12 | yes | Dinamik arac budama, olu-dongu engelleme ve calisma-oncesi guvenlik korumasini bir araya getiren, olculmus tur-basina gecikme sayilari olan bir DeepSeek Harness Cordis eklenti takimi. | [kanıt](https://github.com/zhangxaochen/dsh-jev#readme) |
 | [clankagent/pi-jev](https://github.com/clankagent/pi-jev) | A | 10 | yes | Pi eklentisi: jev_watch/jev_wait ile process çıktısında anlamsal koşul bekler, ayrıca Jev ile skill önerisi sıralar. | [kanıt](https://github.com/clankagent/pi-jev) |
 | [FrancoisChastel/jev-code](https://github.com/FrancoisChastel/jev-code) | A | 10 | yes | Jev'i Claude Code/Codex/Pi/OpenCode'a aynı beş araçla \(classify/check/score/rank/ask\) taşıyan, tek komutla kuran skill+MCP paketi. | [kanıt](https://github.com/FrancoisChastel/jev-code) |
 | [harrymunro/decision-first](https://github.com/harrymunro/decision-first) | A | 10 | yes | Claude Code becerisi; sınırlı-yargı adımlarını tespit edip önce Jev'i dener, her denemeyi kaydeder | [kanıt](https://github.com/harrymunro/decision-first#readme) |
@@ -28,7 +29,9 @@ Bu kategoride 43 repo; önce sınıf, sonra puan sırasıyla.
 | [fabricioctelles/skills](https://github.com/fabricioctelles/skills) | B | 9 | unclear | 26 Claude Code/Cursor/Kiro skill'i; 4 tanesi jev_available\(\) kontrolüyle opsiyonel Jev, yoksa heuristik'e düşüyor | [kanıt](https://github.com/fabricioctelles/skills) |
 | [MrDiamondBallz/jev-agent-integration](https://github.com/MrDiamondBallz/jev-agent-integration) | B | 9 | yes | Sağlayıcıdan bağımsız Jev entegrasyonu: taşınabilir Agent Skill, CLI ve Hermes eklentisi; yalnız danışma amaçlı, hiçbir aracı/eylemi onaylamaz. | [kanıt](https://github.com/MrDiamondBallz/jev-agent-integration) |
 | [yuyang2230/jev-agent-skill](https://github.com/yuyang2230/jev-agent-skill) | B | 9 | yes | Claude Code/ZCode için Jev tabanlı skill: sınıflandırma/skorlama/kontrol işlerini ana modelden ücretsiz Jev'e devreder, üretimde test edilmiş. | [kanıt](https://github.com/yuyang2230/jev-agent-skill) |
+| [Devin-AXIS/jev-dsh-decision](https://github.com/Devin-AXIS/jev-dsh-decision) | B | 8 | yes | Ajan harness'leri icin yapilandirilmis karar eklentisi \(DeepSeek Harness'ta yerli, digerlerinde iPolloWork uzerinden\); Jev'in arac, skill ve sorumlu onerilerini olasiliklarla dondurur. | [kanıt](https://github.com/Devin-AXIS/jev-dsh-decision#readme) |
 | [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp) | B | 8 | yes | Claude Code/Desktop/Codex/pi için tek komutla kurulan Jev MCP sunucusu: noul/choice/score, batch soru, 429/529 retry+backoff, agent'a soru yazma rehberliği gönderiyor | [kanıt](https://github.com/itsmostafa/typesafe-mcp) |
+| [lldois/dsh-jev](https://github.com/lldois/dsh-jev) | B | 8 | yes | Pi-Jev desenini yerli olarak tasiyan, tipli yargilar, skill/arac kesfi, slash komutlari ve bir CI kabul-kapisi CLI'si ekleyen bir DeepSeek Harness eklentisi. | [kanıt](https://github.com/lldois/dsh-jev#readme) |
 | [reiswaffel78/jev-agent-toolkit](https://github.com/reiswaffel78/jev-agent-toolkit) | B | 8 | yes | Claude Code/Codex/Cursor için taşınabilir Jev-öncelikli Agent Skill + isteğe bağlı MCP köprüsü | [kanıt](https://github.com/reiswaffel78/jev-agent-toolkit#readme) |
 | [Sahil-SS9/agent-personas](https://github.com/Sahil-SS9/agent-personas) | B | 8 | no | 23 persona, 24 uzman beceri paketi, 117 beceri kataloğu; çoklu harness'e taşınabilir; Jev ile ilgisi yok | [kanıt](https://github.com/Sahil-SS9/agent-personas#readme) |
 | [3clyp50/a0-typesafe-ai](https://github.com/3clyp50/a0-typesafe-ai) | B | 7 | yes | Agent Zero için Jev eklentisi; tek typesafe_query çağrısında choice/score/noul sorularını birleştirir | [kanıt](https://github.com/3clyp50/a0-typesafe-ai#readme) |
@@ -42,6 +45,7 @@ Bu kategoride 43 repo; önce sınıf, sonra puan sırasıyla.
 | [vibe-with-me-tools/n8n-nodes-jev](https://github.com/vibe-with-me-tools/n8n-nodes-jev) | B | 7 | yes | n8n topluluk düğümü; Jev ile metni sınıflandırıp yönlendirir, düşük güvende insan incelemesi çıkışına ayırır | [kanıt](https://github.com/vibe-with-me-tools/n8n-nodes-jev#readme) |
 | [codaaiteam/jev-mcp](https://github.com/codaaiteam/jev-mcp) | C | 6 | yes | Herhangi bir ajana jev_classify/score/check/gate/decide araçlarını sunan genel amaçlı MCP sunucusu. | [kanıt](https://github.com/codaaiteam/jev-mcp) |
 | [gamesonrblx/JevML](https://github.com/gamesonrblx/JevML) | C | 6 | yes | PCA/MCMC/text-diffusion/NCA gibi ML araçlarını whenToUse/whenNotToUse etiketleriyle kataloglayıp Jev'in \(matchLocal ile\) doğru aracı seçmesini sağlayan kütüphane | [kanıt](https://github.com/gamesonrblx/JevML#readme) |
+| [karanb192/jev-architect](https://github.com/karanb192/jev-architect) | C | 6 | no | Bir sistemde Jev karar dongusunun nereye ait oldugunu belirlemeye yardimci olan, aday kullanim alanlarini siralayan ve kod yazmadan once olculebilir bir yayilma tasarlayan bir agent skill'i. | [kanıt](https://github.com/karanb192/jev-architect#readme) |
 | [angribot/pi-jev](https://github.com/angribot/pi-jev) | C | 5 | yes | Pi ajanına toplu Choice/Score/Noul sorgusu yapan tek dosyalık jev_evaluate aracını ekleyen eklenti | [kanıt](https://github.com/angribot/pi-jev#readme) |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | C | 5 | no | AI ajanları için tasarım dili/skill: 24 komut, 61 deterministik dedektör kuralı; Jev ile ilgisi yok | [kanıt](https://github.com/pbakaus/impeccable#readme) |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | C | 5 | yes | TypeSafe'in resmi Claude Code / skills.sh agent skill'i: jev iş akışlarını tasarlamak ve dokümantasyona erişmek için | [kanıt](https://github.com/typesafe-ai/skills#readme) |

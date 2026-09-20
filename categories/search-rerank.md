@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/search-rerank.md)
 
 # Search and rerank
 
-14 repositories in this category, sorted by class then score.
+18 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -13,13 +13,17 @@ English | [Türkçe](../tr/categories/search-rerank.md)
 | [WiktorB2004/llama-index-jev](https://github.com/WiktorB2004/llama-index-jev) | A | 13 | yes | A Jev-based reranker \(fail-open\) and router selector \(fail-closed\) for LlamaIndex; nDCG@5 improvement measured on BEIR nfcorpus/scifact | [evidence](https://github.com/WiktorB2004/llama-index-jev#readme) |
 | [sufianetaouil/every](https://github.com/sufianetaouil/every) | A | 12 | yes | A "grep whose query is a question" tool that asks the same yes/no question of every function in a codebase and ranks them by probability | [evidence](https://github.com/sufianetaouil/every#readme) |
 | [404priyanshu/zsh-jev-suggest](https://github.com/404priyanshu/zsh-jev-suggest) | A | 11 | yes | Ranks Zsh history suggestions with Jev; uses a pre-warmed local cache for instant suggestions and a live Jev query on Ctrl-Space | [evidence](https://github.com/404priyanshu/zsh-jev-suggest) |
+| [tpellet/grevi](https://github.com/tpellet/grevi) | A | 10 | yes | Rust CLI that greps by meaning across six Unix-style verbs \(why, pick, is, run, add, sort\), selecting only from existing input and never generating text. | [evidence](https://github.com/tpellet/grevi#readme) |
 | [Peu77/JevFind](https://github.com/Peu77/JevFind) | A | 9 | yes | Two-stage thresholded semantic code search: file-path relevance score first, then window scoring | [evidence](https://github.com/Peu77/JevFind#readme) |
+| [sijiaoh/jevgrep](https://github.com/sijiaoh/jevgrep) | A | 9 | yes | Command-line tool that scores each line of a file by meaning instead of pattern-matching, working across languages and piping into any existing grep-based workflow. | [evidence](https://github.com/sijiaoh/jevgrep#readme) |
 | [AkashPriyadarshii/jev-scout](https://github.com/AkashPriyadarshii/jev-scout) | A | 8 | yes | A Rust CLI+MCP finding real, actively maintained repos/crates from a natural-language request; a single speculative fan-out scoring with Jev | [evidence](https://github.com/AkashPriyadarshii/jev-scout#readme) |
 | [pax-k/p-ax](https://github.com/pax-k/p-ax) | A | 7 | no | A read-only codebase intelligence layer for agents; deterministic search/aggregate, AI is only optional for synthesis after firm evidence | [evidence](https://github.com/pax-k/p-ax#readme) |
 | [ellipsis-dev/blink](https://github.com/ellipsis-dev/blink) | B | 10 | yes | A codebase search tool that scores file/folder names with Jev and distributes 'walker' voting by probability | [evidence](https://github.com/ellipsis-dev/blink#readme) |
 | [thevibeworks/pagepilot](https://github.com/thevibeworks/pagepilot) | B | 10 | yes | A browser extension where Jev evaluates page blocks in parallel with noul and writes a small deterministic "reading spec", which is then replayed with 0 tokens on subsequent same-site pages | [evidence](https://github.com/thevibeworks/pagepilot#readme) |
 | [choxos/jev-reviewer](https://github.com/choxos/jev-reviewer) | B | 9 | yes | An in-browser systematic-review data-extraction tool; Jev flags candidate lines \(Choice\) then verifies \(Noul\), quotes are never generated, only copied | [evidence](https://github.com/choxos/jev-reviewer) |
 | [jexp/neo4jev](https://github.com/jexp/neo4jev) | B | 9 | yes | A demo that hops through a Neo4j graph using Choice+Noul in a single system_one call, finding the best path with beam search | [evidence](https://github.com/jexp/neo4jev#readme) |
+| [MayberryDT/chartroom](https://github.com/MayberryDT/chartroom) | B | 9 | yes | Local second-brain built on GBrain where Jev reranks retrieved passages and proposes page connections, measured on a small synthetic 30-note comparison. | [evidence](https://github.com/MayberryDT/chartroom#readme) |
+| [rmwahid/jev-cordhub](https://github.com/rmwahid/jev-cordhub) | B | 8 | yes | Search over a private Discord bookmark channel where Jev judges each of 371 unlabelled repositories and ranks the catalogue per query with relevance and confidence. | [evidence](https://github.com/rmwahid/jev-cordhub#readme) |
 | [ant4g0nist/joxide](https://github.com/ant4g0nist/joxide) | B | 7 | yes | A tool combining zoxide + Jev to jump to project directories by description; bulk noul scoring, threshold+margin-based auto/candidate-list decision | [evidence](https://github.com/ant4g0nist/joxide#readme) |
 | [AlbionaHoti/refgarden](https://github.com/AlbionaHoti/refgarden) | C | 6 | yes | A 3D gallery tool that picks a search phrase in museum/NASA image archives and selects the top result from metadata without seeing the image | [evidence](https://github.com/AlbionaHoti/refgarden) |
 | [DeepBlueDynamics/typesafe-arena](https://github.com/DeepBlueDynamics/typesafe-arena) | C | 5 | no | A local markdown mirror of docs.typesafe.ai + a BM25+knowledge-graph-based 'Lume' search tool; does not call Jev directly, a documentation archive/search layer | [evidence](https://github.com/DeepBlueDynamics/typesafe-arena) |

@@ -3,7 +3,7 @@
 
 # Compaction ve hafıza
 
-Bu kategoride 42 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 43 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -41,6 +41,7 @@ Bu kategoride 42 repo; önce sınıf, sonra puan sırasıyla.
 | [blakestone-x/engram](https://github.com/blakestone-x/engram) | A | 7 | no | Ajanlar için markdown tabanlı, yerel-öncelikli, önem/retention/pekiştirmeye göre sıralanan kalıcı hafıza sistemi; deterministik konsolidasyon epizotları semantik notlara gruplar | [kanıt](https://github.com/blakestone-x/engram#readme) |
 | [hoshinodis/opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner) | B | 10 | yes | OpenCode'da giden isteği Jev'in iki noul sorusuyla judge edip eski tool-call/sonuçlarını kırpan bağlam budama eklentisi | [kanıt](https://github.com/hoshinodis/opencode-context-pruner#readme) |
 | [dev-willbird1936/pi-jev-compact](https://github.com/dev-willbird1936/pi-jev-compact) | B | 9 | yes | Pi ajanının bağlam sıkıştırmasında LLM özeti yerine her tool-call için Jev'den tek noul \(sakla/at\) kararı alıp orijinal metni birebir koruyan eklenti | [kanıt](https://github.com/dev-willbird1936/pi-jev-compact#readme) |
+| [JLegends/opencode-jev-compaction](https://github.com/JLegends/opencode-jev-compaction) | B | 9 | yes | Kayipli ozetlemeyi Jev'in alaka puanlamasiyla degistiren, yalnizca modelin artik gerekli olmadigini soyledigi arac cagrilarini dusuren veya kisaltan bir opencode eklenti cifti. | [kanıt](https://github.com/JLegends/opencode-jev-compaction#readme) |
 | [leonaaardob/fast-dev-compaction](https://github.com/leonaaardob/fast-dev-compaction) | B | 9 | yes | Codex oturum sıkıştırmasını Jev ile sarar; her araç çağrısı/sonucu için 2 noul sorusu \(kalsın mı\), tutulan geçmiş özetten sonra verbatim geri enjekte edilir | [kanıt](https://github.com/leonaaardob/fast-dev-compaction#readme) |
 | [nourhelmi/pi-jev-compaction](https://github.com/nourhelmi/pi-jev-compaction) | B | 9 | yes | Pi eklentisi: eski araç çıktılarını Jev ile skorlar, gereksiz olanları geri getirilebilir bir işaretle değiştirir, orijinali sakli tutar. | [kanıt](https://github.com/nourhelmi/pi-jev-compaction) |
 | [orneryd/NornicDB](https://github.com/orneryd/NornicDB) | B | 9 | no | Neo4j-uyumlu graf+vektör+temporal MVCC veritabanı; ajan hafızası/Graph-RAG için tasarlanmış, Jev ile ilgisi yok | [kanıt](https://github.com/orneryd/NornicDB#readme) |

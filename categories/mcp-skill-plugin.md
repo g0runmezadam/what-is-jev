@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 
 # MCP servers, skills, plugins
 
-43 repositories in this category, sorted by class then score.
+47 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -11,6 +11,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 |---|---|---|---|---|---|
 | [ShivamPansuriya/jev-skill-gate](https://github.com/ShivamPansuriya/jev-skill-gate) | A | 14 | yes | Scores Claude Code skill descriptions against the project using Jev and writes skillOverrides; measured by AUC against a free TF-IDF baseline on 20 labeled cases, 75% token savings | [evidence](https://github.com/ShivamPansuriya/jev-skill-gate#readme) |
 | [simota/tenbin](https://github.com/simota/tenbin) | A | 13 | yes | A design-time MCP+skill: question linting, confidence-band-based threshold calibration via evaluate/evaluate_many, reranking, taxonomy walking, cost/budget guarding; in production the SDK is called directly | [evidence](https://github.com/simota/tenbin#readme) |
+| [zhangxaochen/dsh-jev](https://github.com/zhangxaochen/dsh-jev) | A | 12 | yes | Cordis plugin suite for DeepSeek Harness bundling dynamic tool pruning, dead-loop blocking and a pre-execute safety guard, with measured per-turn latency numbers. | [evidence](https://github.com/zhangxaochen/dsh-jev#readme) |
 | [clankagent/pi-jev](https://github.com/clankagent/pi-jev) | A | 10 | yes | A Pi plugin: jev_watch/jev_wait waits for semantic conditions in process output, and also ranks skill suggestions with Jev | [evidence](https://github.com/clankagent/pi-jev) |
 | [FrancoisChastel/jev-code](https://github.com/FrancoisChastel/jev-code) | A | 10 | yes | A skill+MCP package carrying Jev to Claude Code/Codex/Pi/OpenCode with the same five tools \(classify/check/score/rank/ask\), installed with a single command | [evidence](https://github.com/FrancoisChastel/jev-code) |
 | [harrymunro/decision-first](https://github.com/harrymunro/decision-first) | A | 10 | yes | A Claude Code skill detecting bounded-judgment steps and trying Jev first, logging every attempt | [evidence](https://github.com/harrymunro/decision-first#readme) |
@@ -28,7 +29,9 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 | [fabricioctelles/skills](https://github.com/fabricioctelles/skills) | B | 9 | unclear | 26 Claude Code/Cursor/Kiro skills; 4 of them use Jev optionally via a jev_available\(\) check, falling back to a heuristic if not | [evidence](https://github.com/fabricioctelles/skills) |
 | [MrDiamondBallz/jev-agent-integration](https://github.com/MrDiamondBallz/jev-agent-integration) | B | 9 | yes | A provider-independent Jev integration: a portable Agent Skill, a CLI and a Hermes plugin; advisory only, never approves any tool/action | [evidence](https://github.com/MrDiamondBallz/jev-agent-integration) |
 | [yuyang2230/jev-agent-skill](https://github.com/yuyang2230/jev-agent-skill) | B | 9 | yes | A Jev-based skill for Claude Code/ZCode: offloads classification/scoring/checking tasks from the main model to free Jev, tested in production. | [evidence](https://github.com/yuyang2230/jev-agent-skill) |
+| [Devin-AXIS/jev-dsh-decision](https://github.com/Devin-AXIS/jev-dsh-decision) | B | 8 | yes | Structured decision plugin for agent harnesses \(DeepSeek Harness natively, others via iPolloWork\) that has Jev recommend tools, skills and owners with probabilities. | [evidence](https://github.com/Devin-AXIS/jev-dsh-decision#readme) |
 | [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp) | B | 8 | yes | A one-command-install Jev MCP server for Claude Code/Desktop/Codex/pi: noul/choice/score, batch questions, 429/529 retry+backoff, sends the agent guidance on writing questions | [evidence](https://github.com/itsmostafa/typesafe-mcp) |
+| [lldois/dsh-jev](https://github.com/lldois/dsh-jev) | B | 8 | yes | DeepSeek Harness plugin porting the Pi-Jev pattern natively, adding typed judgments, skill/tool discovery, slash commands and a CI acceptance-gate CLI. | [evidence](https://github.com/lldois/dsh-jev#readme) |
 | [reiswaffel78/jev-agent-toolkit](https://github.com/reiswaffel78/jev-agent-toolkit) | B | 8 | yes | A portable Jev-first Agent Skill plus optional MCP bridge for Claude Code/Codex/Cursor | [evidence](https://github.com/reiswaffel78/jev-agent-toolkit#readme) |
 | [Sahil-SS9/agent-personas](https://github.com/Sahil-SS9/agent-personas) | B | 8 | no | 23 personas, 24 expert skill packages, a catalog of 117 skills; portable across multiple harnesses; unrelated to Jev | [evidence](https://github.com/Sahil-SS9/agent-personas#readme) |
 | [3clyp50/a0-typesafe-ai](https://github.com/3clyp50/a0-typesafe-ai) | B | 7 | yes | A Jev plugin for Agent Zero; combines choice/score/noul questions in a single typesafe_query call | [evidence](https://github.com/3clyp50/a0-typesafe-ai#readme) |
@@ -42,6 +45,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 | [vibe-with-me-tools/n8n-nodes-jev](https://github.com/vibe-with-me-tools/n8n-nodes-jev) | B | 7 | yes | An n8n community node; classifies and routes text with Jev, splitting low-confidence cases to a human-review output | [evidence](https://github.com/vibe-with-me-tools/n8n-nodes-jev#readme) |
 | [codaaiteam/jev-mcp](https://github.com/codaaiteam/jev-mcp) | C | 6 | yes | A general-purpose MCP server exposing jev_classify/score/check/gate/decide tools to any agent | [evidence](https://github.com/codaaiteam/jev-mcp) |
 | [gamesonrblx/JevML](https://github.com/gamesonrblx/JevML) | C | 6 | yes | A library cataloging ML tools like PCA/MCMC/text-diffusion/NCA with whenToUse/whenNotToUse labels so Jev \(via matchLocal\) picks the right tool | [evidence](https://github.com/gamesonrblx/JevML#readme) |
+| [karanb192/jev-architect](https://github.com/karanb192/jev-architect) | C | 6 | no | Agent skill that helps decide where a Jev decision loop belongs in a system, ranking candidate use cases and designing a measured rollout before writing code. | [evidence](https://github.com/karanb192/jev-architect#readme) |
 | [angribot/pi-jev](https://github.com/angribot/pi-jev) | C | 5 | yes | A plugin adding a single-file jev_evaluate tool to the Pi agent that does batched Choice/Score/Noul queries | [evidence](https://github.com/angribot/pi-jev#readme) |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | C | 5 | no | A design-language skill for AI agents: 24 commands, 61 deterministic detector rules; unrelated to Jev | [evidence](https://github.com/pbakaus/impeccable#readme) |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | C | 5 | yes | TypeSafe's official Claude Code / skills.sh agent skill: for designing jev workflows and accessing documentation | [evidence](https://github.com/typesafe-ai/skills#readme) |

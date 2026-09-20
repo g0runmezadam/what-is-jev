@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/compaction-memory.md)
 
 # Compaction and memory
 
-42 repositories in this category, sorted by class then score.
+43 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -41,6 +41,7 @@ English | [Türkçe](../tr/categories/compaction-memory.md)
 | [blakestone-x/engram](https://github.com/blakestone-x/engram) | A | 7 | no | A markdown-based, local-first persistent memory system for agents ranked by importance/retention/reinforcement; deterministic consolidation groups episodes into semantic notes | [evidence](https://github.com/blakestone-x/engram#readme) |
 | [hoshinodis/opencode-context-pruner](https://github.com/hoshinodis/opencode-context-pruner) | B | 10 | yes | A context-pruning plugin in OpenCode judging the outgoing request with Jev's two noul questions and trimming old tool-calls/results | [evidence](https://github.com/hoshinodis/opencode-context-pruner#readme) |
 | [dev-willbird1936/pi-jev-compact](https://github.com/dev-willbird1936/pi-jev-compact) | B | 9 | yes | A plugin that, instead of an LLM summary, gets a single noul \(keep/drop\) decision from Jev per tool-call during the Pi agent's context compaction, preserving the original text verbatim | [evidence](https://github.com/dev-willbird1936/pi-jev-compact#readme) |
+| [JLegends/opencode-jev-compaction](https://github.com/JLegends/opencode-jev-compaction) | B | 9 | yes | Opencode plugin pair replacing lossy summarization with Jev relevance scoring, dropping or truncating only the tool calls a model says are no longer needed. | [evidence](https://github.com/JLegends/opencode-jev-compaction#readme) |
 | [leonaaardob/fast-dev-compaction](https://github.com/leonaaardob/fast-dev-compaction) | B | 9 | yes | Wraps Codex session compaction with Jev; 2 noul questions per tool call/result \(keep or not\), retained history is reinjected verbatim after summarization | [evidence](https://github.com/leonaaardob/fast-dev-compaction#readme) |
 | [nourhelmi/pi-jev-compaction](https://github.com/nourhelmi/pi-jev-compaction) | B | 9 | yes | A Pi plugin: scores old tool outputs with Jev and replaces unnecessary ones with a reversible marker, keeping the original hidden but retrievable | [evidence](https://github.com/nourhelmi/pi-jev-compaction) |
 | [orneryd/NornicDB](https://github.com/orneryd/NornicDB) | B | 9 | no | A Neo4j-compatible graph+vector+temporal MVCC database designed for agent memory/Graph-RAG; unrelated to Jev | [evidence](https://github.com/orneryd/NornicDB#readme) |
