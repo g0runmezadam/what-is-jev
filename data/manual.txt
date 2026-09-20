@@ -41,3 +41,6 @@ manjunathshiva/jev-frontier-bench
 loomspan/loomspan-framework
 amazingjoe/pi-saver
 Mawfyy/jev-router.nvim
+0xShin0221/openpoke-meets-jev
+chenmingtang830/jevarena
+NavisWORLD/The-beast-box-

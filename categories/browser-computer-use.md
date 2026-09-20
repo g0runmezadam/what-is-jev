@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 
 # Browser and computer use
 
-41 repositories in this category, sorted by class then score.
+42 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -18,6 +18,7 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 | [pumpkinredbean/bside](https://github.com/pumpkinredbean/bside) | A | 12 | yes | A pilot driving the Aside browser with Jev decisions instead of a chat LLM; a repeatable benchmark against frontier/lightweight LLMs | [evidence](https://github.com/pumpkinredbean/bside#readme) | yes |
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | A | 11 | yes | An ultra-fast browser agent \(7.1-second flight search\) where Jev chooses the action+target at each step, and a small LLM only writes text when TYPE_TEXT is needed | [evidence](https://github.com/browser-use/jev-ultrafast#readme) | yes |
 | [chy4pro/jev-for-chrome](https://github.com/chy4pro/jev-for-chrome) | A | 11 | yes | A Chrome extension navigating the open tab with Jev \(click/type/scroll\); repeated measurement over a 17-task e2e set, cross-checks the DONE/BLOCKED claim independently of the action taken | [evidence](https://github.com/chy4pro/jev-for-chrome#readme) | yes |
+| [ljy8072/jev-agent-router](https://github.com/ljy8072/jev-agent-router) | A | 11 | yes | Routing layer for computer-use agents sending exact matches to code, bounded choices to Jev, and uncertain cases back to the agent, with measured timings. | [evidence](https://github.com/ljy8072/jev-agent-router#readme) | no |
 | [Ying-Kai-Liao/jev-browser](https://github.com/Ying-Kai-Liao/jev-browser) | A | 11 | yes | Browser automation \(MCP\) where the LLM sets the high-level goal and Jev answers, in a single call at each step, which element/action/value and whether it's done/stuck/irreversible | [evidence](https://github.com/Ying-Kai-Liao/jev-browser#readme) | yes |
 | [gokulnair2001/Convoy](https://github.com/gokulnair2001/Convoy) | A | 10 | yes | Semantic end-to-end test runner for iOS, Android and web where Jev matches a plain-language step to a normalized on-screen control and a pass/ambiguous/not-found gate. | [evidence](https://github.com/gokulnair2001/Convoy#readme) | yes |
 | [Yzywil/jev-windows](https://github.com/Yzywil/jev-windows) | A | 10 | yes | Supervised Windows UI automation where Jev chooses one bounded action from candidates and local code owns execution, verification and freshness of the UI snapshot. | [evidence](https://github.com/Yzywil/jev-windows#readme) | yes |

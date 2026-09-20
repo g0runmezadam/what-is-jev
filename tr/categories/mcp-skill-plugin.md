@@ -3,7 +3,7 @@
 
 # MCP, skill ve eklentiler
 
-Bu kategoride 50 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -29,6 +29,7 @@ Bu kategoride 50 repo; önce sınıf, sonra puan sırasıyla.
 | [fabricioctelles/skills](https://github.com/fabricioctelles/skills) | B | 9 | unclear | 26 Claude Code/Cursor/Kiro skill'i; 4 tanesi jev_available\(\) kontrolüyle opsiyonel Jev, yoksa heuristik'e düşüyor | [kanıt](https://github.com/fabricioctelles/skills) | no |
 | [MrDiamondBallz/jev-agent-integration](https://github.com/MrDiamondBallz/jev-agent-integration) | B | 9 | yes | Sağlayıcıdan bağımsız Jev entegrasyonu: taşınabilir Agent Skill, CLI ve Hermes eklentisi; yalnız danışma amaçlı, hiçbir aracı/eylemi onaylamaz. | [kanıt](https://github.com/MrDiamondBallz/jev-agent-integration) | no |
 | [yuyang2230/jev-agent-skill](https://github.com/yuyang2230/jev-agent-skill) | B | 9 | yes | Claude Code/ZCode için Jev tabanlı skill: sınıflandırma/skorlama/kontrol işlerini ana modelden ücretsiz Jev'e devreder, üretimde test edilmiş. | [kanıt](https://github.com/yuyang2230/jev-agent-skill) | no |
+| [CodeCampusCo/jev-mcp](https://github.com/CodeCampusCo/jev-mcp) | B | 8 | yes | Tiplendirilmis sorulari degistirmeden Jev'e ileten tek bir arac sunan, yeniden deneme, sabitlenmis model surumu ve istege bagli ucuncu taraf istek kaydi iceren MCP sunucusu. | [kanıt](https://github.com/CodeCampusCo/jev-mcp#readme) | no |
 | [Devin-AXIS/jev-dsh-decision](https://github.com/Devin-AXIS/jev-dsh-decision) | B | 8 | yes | Ajan harness'leri icin yapilandirilmis karar eklentisi \(DeepSeek Harness'ta yerli, digerlerinde iPolloWork uzerinden\); Jev'in arac, skill ve sorumlu onerilerini olasiliklarla dondurur. | [kanıt](https://github.com/Devin-AXIS/jev-dsh-decision#readme) | no |
 | [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp) | B | 8 | yes | Claude Code/Desktop/Codex/pi için tek komutla kurulan Jev MCP sunucusu: noul/choice/score, batch soru, 429/529 retry+backoff, agent'a soru yazma rehberliği gönderiyor | [kanıt](https://github.com/itsmostafa/typesafe-mcp) | no |
 | [lldois/dsh-jev](https://github.com/lldois/dsh-jev) | B | 8 | yes | Pi-Jev desenini yerli olarak tasiyan, tipli yargilar, skill/arac kesfi, slash komutlari ve bir CI kabul-kapisi CLI'si ekleyen bir DeepSeek Harness eklentisi. | [kanıt](https://github.com/lldois/dsh-jev#readme) | no |

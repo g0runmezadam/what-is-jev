@@ -3,7 +3,7 @@
 
 # SDK'lar ve istemciler
 
-Bu kategoride 82 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 83 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -31,6 +31,7 @@ Bu kategoride 82 repo; önce sınıf, sonra puan sırasıyla.
 | [Hawxy/TypeSafeAI.Net](https://github.com/Hawxy/TypeSafeAI.Net) | B | 9 | yes | .NET SDK: Microsoft.Extensions.AI entegrasyonu ile guardrail \(threshold+severity block/review\) ve routing chat-client middleware, IntentRouter \(kod/model/insan güven+karmaşıklık kapısı\), IEvaluator köprüsü | [kanıt](https://github.com/Hawxy/TypeSafeAI.Net) | yes |
 | [komorra/Eugeniusz](https://github.com/komorra/Eugeniusz) | B | 9 | no | Sunucu/API key gerektirmeyen, C ABI ile gömülü \(C/C++/C#/Python/Unity/Unreal\) yerel Qwen tabanlı tipli karar kütüphanesi; 300 vakalık dürüst kalite raporu ve ECE/Brier/split-conformal kalibrasyon içeriyor | [kanıt](https://github.com/komorra/Eugeniusz) | yes |
 | [BoundaryML/feelings](https://github.com/BoundaryML/feelings) | B | 8 | yes | BAML dilinde '.feels\(\)/.matches\(\)/.fill\(\)' gibi tip güvenli, derleme zamanında exhaustive Jev sorgu metodları tanımlayan mini dil eklentisi | [kanıt](https://github.com/BoundaryML/feelings#readme) | no |
+| [chy4pro/jev-dev-kit](https://github.com/chy4pro/jev-dev-kit) | B | 8 | yes | Jev'in her zaman yalnizca sunulan adaylar arasindan sectigini zorunlu kilan, kontrol dongusu, MCP arac donusumu ve dahili kontrol istemcileri iceren TypeScript ajan cercevesi. | [kanıt](https://github.com/chy4pro/jev-dev-kit#readme) | no |
 | [fgn/jevgo](https://github.com/fgn/jevgo) | B | 8 | yes | TypeSafe/Jev için bağımlılıksız Go istemcisi; yanıtı şemaya karşı sıkı doğrulayıp uyumsuzlukta sessiz sıfır yerine açık hata fırlatıyor | [kanıt](https://github.com/fgn/jevgo#readme) | no |
 | [mgaitan/sqlite-jev](https://github.com/mgaitan/sqlite-jev) | B | 8 | yes | SQLite icin yuklenebilir uzanti: dogal dil yuklem/siniflandirma/skorlamayi toplu \(40 satir/istek\) Jev cagrisiyla SQL'e getiriyor. | [kanıt](https://github.com/mgaitan/sqlite-jev#readme) | yes |
 | [Nibir1/typesafe-go](https://github.com/Nibir1/typesafe-go) | B | 8 | yes | TypeSafe System One API'si için sıfır bağımlılıklı, üretime hazır \(v1.0\) Go SDK'sı | [kanıt](https://github.com/Nibir1/typesafe-go#readme) | no |

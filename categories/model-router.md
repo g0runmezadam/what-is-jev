@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/model-router.md)
 
 # Model routers
 
-41 repositories in this category, sorted by class then score.
+43 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -38,11 +38,13 @@ English | [Türkçe](../tr/categories/model-router.md)
 | [Z761293629/pi-jev-helm](https://github.com/Z761293629/pi-jev-helm) | B | 10 | yes | A Jev-based automatic model routing for Pi; explicitly explains the distinction that "ZDR is a retention control, not an air gap", with immutable version tags, fail-open, and documented checkpoint-recovery limits | [evidence](https://github.com/Z761293629/pi-jev-helm#readme) | no |
 | [imMamdouhaboammar/fable-jev](https://github.com/imMamdouhaboammar/fable-jev) | B | 9 | yes | A 'dual-brain' reflex layer for the get-fable agent framework: hard invariants always win, Jev guides under uncertainty, falls back to deterministic mode on low confidence/circuit-breaker; also claims lossless context compression | [evidence](https://github.com/imMamdouhaboammar/fable-jev) | yes |
 | [tacticocc/Jevbridge](https://github.com/tacticocc/Jevbridge) | B | 9 | yes | A bridge that adds Jev \(or, absent that, any LLM as System-One\) alongside Codex/Claude/Grok/OpenCode via ACP/MCP, producing an execute/confirm/escalate/abort decision based on a confidence threshold | [evidence](https://github.com/tacticocc/Jevbridge#readme) | yes |
+| [AIGNLAI/ReflexRoute](https://github.com/AIGNLAI/ReflexRoute) | B | 8 | yes | Training-free LLM router asking Jev one structured choice question, combining versioned model priors with the caller's routing history and hard cost budgets. | [evidence](https://github.com/AIGNLAI/ReflexRoute#readme) | no |
 | [emirbartu/opencode-system-one](https://github.com/emirbartu/opencode-system-one) | B | 8 | yes | An OpenCode plugin picking skills/tools with Jev; adds a clear 'data exposure' section for the data sent \(including tool-result bodies\) and honestly states there is no opt-out | [evidence](https://github.com/emirbartu/opencode-system-one#readme) | no |
 | [grayslawson/ha-switchboard](https://github.com/grayslawson/ha-switchboard) | B | 8 | yes | A Jev-first routing layer for Home Assistant: fast decision \(read/check/explain/delegate/reject\), limited escalation to a large model under uncertainty | [evidence](https://github.com/grayslawson/ha-switchboard) | yes |
 | [wundercorp/loki](https://github.com/wundercorp/loki) | B | 8 | yes | A large multi-platform personal agent; an optional "Autorouter" feature classifies the first turn with Jev and picks a cheap model sticky for the rest of the session | [evidence](https://github.com/wundercorp/loki) | no |
 | [ansidium/jev-codex-bridge](https://github.com/ansidium/jev-codex-bridge) | B | 7 | yes | A router for Codex Desktop/CLI picking model and reasoning-effort with Jev, distributed as a Windows service | [evidence](https://github.com/ansidium/jev-codex-bridge#readme) | no |
 | [GiesN/typesafe-jev-workflow](https://github.com/GiesN/typesafe-jev-workflow) | B | 7 | yes | A small LangGraph demo classifying and routing email as invoice/general with Jev Choice; halts execution rather than assigning a fabricated result on an API error | [evidence](https://github.com/GiesN/typesafe-jev-workflow#readme) | no |
+| [Mawfyy/jev-router.nvim](https://github.com/Mawfyy/jev-router.nvim) | B | 7 | yes | Neovim intent router asking Jev one choice question per command, falling back to a picker when confidence is below a configurable threshold. | [evidence](https://github.com/Mawfyy/jev-router.nvim#readme) | no |
 | [casungo/noflow-runtime](https://github.com/casungo/noflow-runtime) | C | 6 | yes | A runtime making React button/affordance selection with an optional Jev policy; has confidence+confirmation threshold, fallback and error-fallback | [evidence](https://github.com/casungo/noflow-runtime) | yes |
 | [hugo-alves/jev-router-playground](https://github.com/hugo-alves/jev-router-playground) | C | 6 | yes | An interactive playground letting Jev pick the best-fit model from an OpenRouter model pool with a noul probability for the task | [evidence](https://github.com/hugo-alves/jev-router-playground#readme) | no |
 | [ngallodev-software/agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) | C | 6 | yes | An optional Jev plugin for Agent-Workflow: only produces advisory 'no_action' evidence, never changes routing/policy authority | [evidence](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) | no |

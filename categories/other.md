@@ -3,13 +3,14 @@ English | [Türkçe](../tr/categories/other.md)
 
 # Other
 
-183 repositories in this category, sorted by class then score.
+187 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
 | Repository | Class | Total | Calls Jev | What it does | Evidence | Audited |
 |---|---|---|---|---|---|---|
 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | A | 12 | no | A local LoRA+pointer-head reimplementation of Jev's architecture \(based on the 'Jev's Architecture Unmasked' post\): all questions are packed into a single forward pass with a block-causal mask, measured against the real Jev on a frozen checksummed test set \(kev-8b 0.77 vs Jev 0.86 OOD\) | [evidence](https://github.com/jaredpalmer/kev) | yes |
+| [rupeshpoojary9/poorjev](https://github.com/rupeshpoojary9/poorjev) | A | 12 | no | Open, local reimplementation of Jev's typed-decision interface on a small NLI model, cutting measured calibration error from 0.170 to 0.071 with cross-validation. | [evidence](https://github.com/rupeshpoojary9/poorjev#readme) | no |
 | [Adityakhalkar/JevNQL](https://github.com/Adityakhalkar/JevNQL) | A | 11 | yes | A query optimizer routing natural-language query arithmetic to DataFusion and semantic judgment only to Jev on narrowed-down rows | [evidence](https://github.com/Adityakhalkar/JevNQL#readme) | yes |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | A | 11 | yes | An open-source small model \(Qwen3.5-9B LoRA\) training recipe inspired by Jev's System One approach, making a single-step typed decision | [evidence](https://github.com/bespokelabsai/nimble#readme) | yes |
 | [daseinlabs/open-jev](https://github.com/daseinlabs/open-jev) | A | 10 | no | A single-pass option scoring with a local Gemma 3 4B \(MLX\); serves the TypeSafe System One contract \(/v1/systemone\) in its own implementation, measures calibration against real Jev | [evidence](https://github.com/daseinlabs/open-jev) | yes |
@@ -37,6 +38,7 @@ English | [Türkçe](../tr/categories/other.md)
 | [Maelic/RelateAnything](https://github.com/Maelic/RelateAnything) | C | 6 | no | A real-time vision model that predicts open-vocabulary relationships between object pairs in images | [evidence](https://github.com/Maelic/RelateAnything#readme) | no |
 | [pax-k/markov-pax](https://github.com/pax-k/markov-pax) | C | 6 | no | A TypeScript SDK for finite-state Markov models/HMM/MDP/POMDP; unrelated to Jev | [evidence](https://github.com/pax-k/markov-pax#readme) | no |
 | [aowang-ai/jev-trade](https://github.com/aowang-ai/jev-trade) | C | 5 | yes | A 5-coin trading bot on Hyperliquid that asks Jev long/short/hold on every tick and places orders | [evidence](https://github.com/aowang-ai/jev-trade#readme) | no |
+| [Hari31416/typesafe-demo-finance-tracking-app](https://github.com/Hari31416/typesafe-demo-finance-tracking-app) | C | 5 | yes | Personal finance tracker demo using Jev to categorize transactions and flag subscriptions, duplicates, and anomalies, with budget math kept in deterministic code. | [evidence](https://github.com/Hari31416/typesafe-demo-finance-tracking-app#readme) | no |
 | [mojomast/velvetrp](https://github.com/mojomast/velvetrp) | C | 5 | no | A local-first AI roleplay/campaign RPG: the model suggests the next event, the server is the sole owner of all state and receipts | [evidence](https://github.com/mojomast/velvetrp#readme) | yes |
 | [mryo0826/aidd-practice-guide](https://github.com/mryo0826/aidd-practice-guide) | C | 5 | no | A Japanese methodology guide applying agile/scrum discipline to AI-driven development with Claude Code/Agent Skills \(SDD+TDD, confidence labels, WHAT/HOW separation\) | [evidence](https://github.com/mryo0826/aidd-practice-guide#readme) | no |
 | [1jehuang/jcode](https://github.com/1jehuang/jcode) | C | 4 | no | A general-purpose coding-agent CLI written in Rust; no evidence of Jev/TypeSafe in the content | [evidence](https://github.com/1jehuang/jcode#readme) | no |
@@ -61,6 +63,7 @@ English | [Türkçe](../tr/categories/other.md)
 | [PrismarineJS/mineflayer](https://github.com/prismarinejs/mineflayer) | C | 3 | no | A JavaScript API for Minecraft bots; unrelated to Jev | [evidence](https://github.com/prismarinejs/mineflayer#readme) | no |
 | [ptitSeb/box64](https://github.com/ptitseb/box64) | C | 3 | no | An x86_64 Linux userspace emulator \(targeting ARM64/RV64\); unrelated to Jev | [evidence](https://github.com/ptitseb/box64#readme) | no |
 | [rayelzz/jevregist](https://github.com/rayelzz/jevregist) | C | 3 | yes | A local registration bot that automatically opens Jev/TypeSafe accounts and pools free quotas into a single key pool | [evidence](https://github.com/rayelzz/jevregist#readme) | no |
+| [wjdjdakf17/jev-study](https://github.com/wjdjdakf17/jev-study) | C | 3 | no | Korean study notes modeling Jev's choice/score/noul interface as TypeScript types and a mock client, with a confidence-gated routing example and no real API calls. | [evidence](https://github.com/wjdjdakf17/jev-study#readme) | no |
 | [zadescoxp/kadeconsole](https://github.com/zadescoxp/kadeconsole) | C | 3 | yes | A free Bloomberg-terminal-style stock research console; Jev is used for optional VERDICT \(buy/sell/hold\) and RATE \(multi-axis score\) commands | [evidence](https://github.com/zadescoxp/kadeconsole#readme) | no |
 | [zerodegress/jevinf](https://github.com/zerodegress/jevinf) | C | 3 | no | Not TypeSafe's Jev; its own model inference engine similar to Jev, exposing a /v1/systemone-compatible API | [evidence](https://github.com/zerodegress/jevinf#readme) | no |
 | [acryldev/acryl](https://github.com/acryldev/acryl) | C | 2 | no | A multi-surface \(CLI/Web/Desktop\) live plugin marketplace and hot-reload environment for coding agents; unrelated to Jev | [evidence](https://github.com/acryldev/acryl#readme) | no |
@@ -138,6 +141,7 @@ English | [Türkçe](../tr/categories/other.md)
 | [killop/anything_about_game](https://github.com/killop/anything_about_game) | C | 0 | no | A massive list of game development resources; the 'jev' GitHub topic tag seems random/unrelated, README doesn't mention Jev | [evidence](https://github.com/killop/anything_about_game#readme) | no |
 | [KingeVishesh/First-Codex](https://github.com/KingeVishesh/First-Codex) | C | 0 | unclear | No README \(404\) | [evidence](https://github.com/KingeVishesh/First-Codex#readme) | no |
 | [koksalkapucuoglu/resume-enhance](https://github.com/koksalkapucuoglu/resume-enhance) | C | 0 | no | An OpenAI-based AI resume builder \(ResuStack\); no evidence of Jev/TypeSafe usage | [evidence](https://github.com/koksalkapucuoglu/resume-enhance) | no |
+| [loomspan/loomspan-framework](https://github.com/loomspan/loomspan-framework) | C | 0 | no | Java/Spring Boot agentic framework combining Hierarchical Task Network planning with LLM skill decomposition over Ollama, OpenAI, Anthropic or Gemini; no Jev or TypeSafe mention. | [evidence](https://github.com/loomspan/loomspan-framework#readme) | no |
 | [Mawfyy/blade-js-lsp.nvim](https://github.com/Mawfyy/blade-js-lsp.nvim) | C | 0 | no | Neovim plugin bridging JS/TS language-server features into Laravel Blade files' inline script blocks via shadow files; an editor tool with no Jev or TypeSafe relation. | [evidence](https://github.com/Mawfyy/blade-js-lsp.nvim#readme) | no |
 | [McFuzzySquirrel/mcfuzzy-agent-forge](https://github.com/McFuzzySquirrel/mcfuzzy-agent-forge) | C | 0 | no | PRD-first workflow tool \('MyForge'\) that turns an idea into a reviewed spec, a generated specialist agent team, and an orchestrated build; no Jev or TypeSafe integration shown. | [evidence](https://github.com/McFuzzySquirrel/mcfuzzy-agent-forge#readme) | no |
 | [mondello-research/mondello-research](https://github.com/mondello-research/mondello-research) | C | 0 | unclear | unreachable | [evidence](https://github.com/mondello-research/mondello-research#readme) | no |

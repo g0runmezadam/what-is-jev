@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 
 # Code review hooks
 
-53 repositories in this category, sorted by class then score.
+55 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -16,6 +16,7 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 | [zoidsh/tenetlint](https://github.com/zoidsh/tenetlint) | A | 14 | yes | duplicate of [zoidsh/tenet](https://github.com/zoidsh/tenet) — A repository with a README identical to zoidsh/tenet \(likely an old name/duplicate entry\); describes the same AGENTS.md-based review-gate tool | [evidence](https://github.com/zoidsh/tenetlint#readme) | yes |
 | [Eliran-Turgeman/reaper](https://github.com/Eliran-Turgeman/reaper) | A | 13 | yes | duplicate of [Eliran-Turgeman/repear](https://github.com/Eliran-Turgeman/repear) — A semantic linter for AI coding agents; detects code smells like silent failures, weakened tests, scope drift with typesafe/jev-1.13 | [evidence](https://github.com/Eliran-Turgeman/reaper#readme) | yes |
 | [Eliran-Turgeman/repear](https://github.com/Eliran-Turgeman/repear) | A | 13 | yes | A semantic linter auditing a git diff with TypeSafe jev-1.13; 11 rules, treats the weakest confidence as final on multi-signal rules | [evidence](https://github.com/Eliran-Turgeman/repear#readme) | yes |
+| [glud123/jev-assist](https://github.com/glud123/jev-assist) | A | 13 | yes | Codebase judgment CLI \(rerank, drift, gate\) using Jev, with a validate command that measures rerank accuracy against a repository's own commit history for free. | [evidence](https://github.com/glud123/jev-assist#readme) | no |
 | [phuthuycoding/jev-audit](https://github.com/phuthuycoding/jev-audit) | A | 13 | yes | Fail-closed pre-commit auditor sending a git diff to Jev as one call answering four atomic questions \(secret leak, vulnerability, quality, scope\), validated on a 79-case corpus at 100% strict accuracy with published F1 scores. | [evidence](https://github.com/phuthuycoding/jev-audit#readme) | yes |
 | [brickfrog/moongate](https://github.com/brickfrog/moongate) | A | 12 | yes | CI action checking a pull request diff against semantic rules with Jev, applying repository-defined probability thresholds to produce PR annotations. | [evidence](https://github.com/brickfrog/moongate#readme) | yes |
 | [noplan-inc/limpet](https://github.com/noplan-inc/limpet) | A | 12 | yes | A Stop hook for Claude Code/Codex; scores plain-language rules with Jev in 0.7 seconds and sends the agent back to work on violation | [evidence](https://github.com/noplan-inc/limpet#readme) | yes |
@@ -54,6 +55,7 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 | [danielscoffee/AssertLens](https://github.com/danielscoffee/AssertLens) | B | 9 | yes | Sandboxed CLI that runs local test commands and separately asks Jev to judge named, falsifiable assertions against before/after file contents, returning supported, contradicted or insufficient per claim. | [evidence](https://github.com/danielscoffee/AssertLens#readme) | no |
 | [frostney/clean-code-review](https://github.com/frostney/clean-code-review) | B | 8 | yes | A tool judging a PR/diff against Clean Code rules with typed Jev decisions, then having a separate LLM \(Luna\) write a short evidence-based review from the findings; also has an MCP server | [evidence](https://github.com/frostney/clean-code-review) | no |
 | [Tech-Byte-Frontier/jevgate](https://github.com/Tech-Byte-Frontier/jevgate) | B | 8 | yes | A file-based maintainability review: a Rust CLI doing three Jev classifications for organization/simplification/shared-logic | [evidence](https://github.com/Tech-Byte-Frontier/jevgate#readme) | yes |
+| [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit) | B | 8 | yes | ISO 27001 audit CLI where Jev decides only whether a control is violated per chunk, while remediation text comes from a fixed human-written knowledge base. | [evidence](https://github.com/vidux/iso-jevdit#readme) | no |
 | [ari-becker/commentlint](https://github.com/ari-becker/commentlint) | B | 7 | yes | A linter extracting AI-agent-added code comments via tree-sitter and auditing them by asking Jev yes/no questions | [evidence](https://github.com/ari-becker/commentlint#readme) | yes |
 | [Question86/Werkfaden](https://github.com/Question86/Werkfaden) | B | 7 | no | A source-linked project-context and controlled-change framework \(KAIROS engine\); the repo doesn't contain Jev, an external user uses it alongside Jev | [evidence](https://github.com/Question86/Werkfaden#readme) | no |
 | [Victor-Casado/if-ai](https://github.com/Victor-Casado/if-ai) | B | 7 | yes | A GitHub Action that asks Jev about a PR description/diff against a plain-English rule and passes a CI check with a boolean + confidence threshold | [evidence](https://github.com/Victor-Casado/if-ai#readme) | no |

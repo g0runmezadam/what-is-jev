@@ -3,13 +3,14 @@
 
 # Diğer
 
-Bu kategoride 183 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 187 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
 | Repo | Sınıf | Toplam | Jev çağırıyor | Ne yapıyor | Kanıt | Denetlendi |
 |---|---|---|---|---|---|---|
 | [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | A | 12 | no | Jev mimarisinin \(Jev's Architecture Unmasked yazısına dayanan\) yerel LoRA+pointer-head reimplementasyonu: tüm sorular tek forward pass'te block-causal mask ile paketleniyor, gerçek Jev'e karşı frozen checksummed test setinde ölçülmüş \(kev-8b 0.77 vs Jev 0.86 OOD\) | [kanıt](https://github.com/jaredpalmer/kev) | yes |
+| [rupeshpoojary9/poorjev](https://github.com/rupeshpoojary9/poorjev) | A | 12 | no | Jev'in tiplendirilmis karar arayuzunu kucuk bir NLI modeli uzerinde yerel ve acik olarak yeniden uygulayan, capraz dogrulamayla olculen kalibrasyon hatasini 0.170'ten 0.071'e dusuren proje. | [kanıt](https://github.com/rupeshpoojary9/poorjev#readme) | no |
 | [Adityakhalkar/JevNQL](https://github.com/Adityakhalkar/JevNQL) | A | 11 | yes | Doğal dil sorguları aritmetiği DataFusion'a, anlamsal yargıyı yalnızca daraltılmış satırlarda Jev'e yönlendiren sorgu optimizeri | [kanıt](https://github.com/Adityakhalkar/JevNQL#readme) | yes |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | A | 11 | yes | Jev'in System One yaklaşımından ilham alan, tek adımda tipli karar veren açık kaynak küçük model \(Qwen3.5-9B LoRA\) eğitim tarifi | [kanıt](https://github.com/bespokelabsai/nimble#readme) | yes |
 | [daseinlabs/open-jev](https://github.com/daseinlabs/open-jev) | A | 10 | no | Yerel Gemma 3 4B \(MLX\) ile tek-geçişli seçenek skorlama; TypeSafe System One kontratını \(/v1/systemone\) kendi implementasyonunda sunuyor, gerçek Jev'e karşı kalibrasyon ölçüyor | [kanıt](https://github.com/daseinlabs/open-jev) | yes |
@@ -37,6 +38,7 @@ Bu kategoride 183 repo; önce sınıf, sonra puan sırasıyla.
 | [Maelic/RelateAnything](https://github.com/Maelic/RelateAnything) | C | 6 | no | Gorsellerde nesne ciftleri arasi acik-sozlukceli iliski tahmini yapan gercek-zamanli goru modeli. | [kanıt](https://github.com/Maelic/RelateAnything#readme) | no |
 | [pax-k/markov-pax](https://github.com/pax-k/markov-pax) | C | 6 | no | Sonlu-durum Markov modelleri/HMM/MDP/POMDP TypeScript SDK'sı; Jev ile ilgisi yok | [kanıt](https://github.com/pax-k/markov-pax#readme) | no |
 | [aowang-ai/jev-trade](https://github.com/aowang-ai/jev-trade) | C | 5 | yes | Hyperliquid üzerinde her tick'te Jev'e long/short/hold sorup emir gönderen 5 coinlik trading botu | [kanıt](https://github.com/aowang-ai/jev-trade#readme) | no |
+| [Hari31416/typesafe-demo-finance-tracking-app](https://github.com/Hari31416/typesafe-demo-finance-tracking-app) | C | 5 | yes | Islemleri kategorilendirmek, abonelik, mukerrer ve anomalileri isaretlemek icin Jev kullanan, butce hesaplarini belirlenimci kodda tutan kisisel finans takip demosu. | [kanıt](https://github.com/Hari31416/typesafe-demo-finance-tracking-app#readme) | no |
 | [mojomast/velvetrp](https://github.com/mojomast/velvetrp) | C | 5 | no | Lokal-first AI roleplay/kampanya RPG'si: model sonraki olayi onerir, sunucu tum durumun ve receipts'lerin tek sahibidir. | [kanıt](https://github.com/mojomast/velvetrp#readme) | yes |
 | [mryo0826/aidd-practice-guide](https://github.com/mryo0826/aidd-practice-guide) | C | 5 | no | Claude Code/Agent Skills ile AI-guduemlu gelistirme icin ceviklik/scrum disiplinini uygulayan Japonca metodoloji rehberi \(SDD+TDD, guven etiketleri, WHAT/HOW ayrimi\). | [kanıt](https://github.com/mryo0826/aidd-practice-guide#readme) | no |
 | [1jehuang/jcode](https://github.com/1jehuang/jcode) | C | 4 | no | Rust yazılı genel amaçlı kodlama ajanı CLI'ı; içerikte Jev/TypeSafe'e dair kanıt yok | [kanıt](https://github.com/1jehuang/jcode#readme) | no |
@@ -61,6 +63,7 @@ Bu kategoride 183 repo; önce sınıf, sonra puan sırasıyla.
 | [PrismarineJS/mineflayer](https://github.com/prismarinejs/mineflayer) | C | 3 | no | Minecraft botları için JavaScript API; Jev ile ilgisi yok | [kanıt](https://github.com/prismarinejs/mineflayer#readme) | no |
 | [ptitSeb/box64](https://github.com/ptitseb/box64) | C | 3 | no | x86_64 Linux userspace emülatörü \(ARM64/RV64 hedefli\); Jev ile ilgisi yok | [kanıt](https://github.com/ptitseb/box64#readme) | no |
 | [rayelzz/jevregist](https://github.com/rayelzz/jevregist) | C | 3 | yes | Jev/TypeSafe hesaplarını otomatik açıp ücretsiz kotaları tek anahtar havuzunda birleştiren yerel kayıt botu | [kanıt](https://github.com/rayelzz/jevregist#readme) | no |
+| [wjdjdakf17/jev-study](https://github.com/wjdjdakf17/jev-study) | C | 3 | no | Jev'in secim/puan/noul arayuzunu TypeScript tipleri ve sahte bir istemci olarak modelleyen, guvene bagli yonlendirme ornegi iceren ve gercek API cagrisi yapmayan Korece calisma notlari. | [kanıt](https://github.com/wjdjdakf17/jev-study#readme) | no |
 | [zadescoxp/kadeconsole](https://github.com/zadescoxp/kadeconsole) | C | 3 | yes | Bloomberg-terminal tarzı ücretsiz hisse araştırma konsolu; Jev opsiyonel VERDICT \(al/sat/tut\) ve RATE \(çok eksenli puan\) komutları için kullanılıyor | [kanıt](https://github.com/zadescoxp/kadeconsole#readme) | no |
 | [zerodegress/jevinf](https://github.com/zerodegress/jevinf) | C | 3 | no | TypeSafe'in Jev'i değil; Jev'e benzer kendi model çıkarım motoru, /v1/systemone uyumlu API sunuyor | [kanıt](https://github.com/zerodegress/jevinf#readme) | no |
 | [acryldev/acryl](https://github.com/acryldev/acryl) | C | 2 | no | Kod ajanları için çok yüzeyli \(CLI/Web/Desktop\) canlı plugin market ve hot-reload ortamı; Jev'le ilgisi yok | [kanıt](https://github.com/acryldev/acryl#readme) | no |
@@ -138,6 +141,7 @@ Bu kategoride 183 repo; önce sınıf, sonra puan sırasıyla.
 | [killop/anything_about_game](https://github.com/killop/anything_about_game) | C | 0 | no | Oyun geliştirme kaynaklarının devasa bir listesi; 'jev' GitHub konu etiketi rastgele/ilgisiz görünüyor, README'de Jev'den bahsedilmiyor | [kanıt](https://github.com/killop/anything_about_game#readme) | no |
 | [KingeVishesh/First-Codex](https://github.com/KingeVishesh/First-Codex) | C | 0 | unclear | README yok \(404\) | [kanıt](https://github.com/KingeVishesh/First-Codex#readme) | no |
 | [koksalkapucuoglu/resume-enhance](https://github.com/koksalkapucuoglu/resume-enhance) | C | 0 | no | OpenAI tabanlı AI özgeçmiş oluşturucu \(ResuStack\); Jev/TypeSafe kullanımına dair kanıt yok | [kanıt](https://github.com/koksalkapucuoglu/resume-enhance) | no |
+| [loomspan/loomspan-framework](https://github.com/loomspan/loomspan-framework) | C | 0 | no | Ollama, OpenAI, Anthropic veya Gemini uzerinde LLM destekli beceri ayristirmasini Hiyerarsik Gorev Agi planlamasiyla birlestiren Java/Spring Boot ajan cercevesi; Jev veya TypeSafe'ten hic bahsetmiyor. | [kanıt](https://github.com/loomspan/loomspan-framework#readme) | no |
 | [Mawfyy/blade-js-lsp.nvim](https://github.com/Mawfyy/blade-js-lsp.nvim) | C | 0 | no | Laravel Blade dosyalarindaki satir ici script bloklarina golge dosyalar araciligiyla JS/TS dil sunucusu ozellikleri getiren bir Neovim eklentisi; Jev veya TypeSafe ile ilgisi yok. | [kanıt](https://github.com/Mawfyy/blade-js-lsp.nvim#readme) | no |
 | [McFuzzySquirrel/mcfuzzy-agent-forge](https://github.com/McFuzzySquirrel/mcfuzzy-agent-forge) | C | 0 | no | Bir fikri incelenmis bir spesifikasyona, uretilmis bir uzman ajan ekibine ve orkestre edilmis bir yapiya donusturen PRD-oncelikli bir is akisi araci \('MyForge'\); Jev veya TypeSafe entegrasyonu gosterilmiyor. | [kanıt](https://github.com/McFuzzySquirrel/mcfuzzy-agent-forge#readme) | no |
 | [mondello-research/mondello-research](https://github.com/mondello-research/mondello-research) | C | 0 | unclear | erişilemedi | [kanıt](https://github.com/mondello-research/mondello-research#readme) | no |

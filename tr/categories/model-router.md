@@ -3,7 +3,7 @@
 
 # Model yönlendiriciler
 
-Bu kategoride 41 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 43 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -38,11 +38,13 @@ Bu kategoride 41 repo; önce sınıf, sonra puan sırasıyla.
 | [Z761293629/pi-jev-helm](https://github.com/Z761293629/pi-jev-helm) | B | 10 | yes | Pi için Jev tabanlı otomatik model rotası; 'ZDR bir tutulma kontrolüdür, hava boşluğu değildir' ayrımını açıkça anlatıyor, değişmez sürüm etiketleri, fail-open, checkpoint kurtarma sınırları belgeli | [kanıt](https://github.com/Z761293629/pi-jev-helm#readme) | no |
 | [imMamdouhaboammar/fable-jev](https://github.com/imMamdouhaboammar/fable-jev) | B | 9 | yes | get-fable ajan çatısı için 'dual-brain' reflex katmanı: hard invariant'lar her zaman kazanır, belirsizlikte Jev yönlendirir, düşük güven/devre-kesicide deterministik moda düşülür; ayrıca kayıpsız context sıkıştırma iddiası var | [kanıt](https://github.com/imMamdouhaboammar/fable-jev) | yes |
 | [tacticocc/Jevbridge](https://github.com/tacticocc/Jevbridge) | B | 9 | yes | ACP/MCP üzerinden Jev'i \(veya yoksa herhangi bir LLM'i System-One olarak\) Codex/Claude/Grok/OpenCode'un yanına ekleyen, güven eşiğine göre execute/confirm/escalate/abort kararı veren köprü | [kanıt](https://github.com/tacticocc/Jevbridge#readme) | yes |
+| [AIGNLAI/ReflexRoute](https://github.com/AIGNLAI/ReflexRoute) | B | 8 | yes | Jev'e tek bir yapilandirilmis secim sorusu soran, surumlu model onceliklerini cagiranin kendi yonlendirme gecmisi ve sabit maliyet butcesiyle birlestiren egitimsiz LLM yonlendiricisi. | [kanıt](https://github.com/AIGNLAI/ReflexRoute#readme) | no |
 | [emirbartu/opencode-system-one](https://github.com/emirbartu/opencode-system-one) | B | 8 | yes | OpenCode eklentisi; Jev ile skill/araç seçimi yapar; gönderilen veriye \(araç sonucu gövdeleri dahil\) net bir 'veri çıkışı' bölümü ekleyip bunu hariç tutma seçeneğinin olmadığını dürüstçe belirtiyor | [kanıt](https://github.com/emirbartu/opencode-system-one#readme) | no |
 | [grayslawson/ha-switchboard](https://github.com/grayslawson/ha-switchboard) | B | 8 | yes | Home Assistant için Jev öncelikli yönlendirme katmanı: hızlı karar \(oku/kontrol/açıkla/devret/reddet\), belirsizlikte büyük modele sınırlı devir. | [kanıt](https://github.com/grayslawson/ha-switchboard) | yes |
 | [wundercorp/loki](https://github.com/wundercorp/loki) | B | 8 | yes | Büyük çok-platformlu kişisel ajan; opsiyonel 'Autorouter' özelliği ilk turu Jev ile sınıflandırıp oturum boyunca sabit \(sticky\) ucuz model seçiyor | [kanıt](https://github.com/wundercorp/loki) | no |
 | [ansidium/jev-codex-bridge](https://github.com/ansidium/jev-codex-bridge) | B | 7 | yes | Codex Desktop/CLI için Jev ile model ve reasoning-effort seçen, Windows servisi olarak dağıtılan yönlendirici | [kanıt](https://github.com/ansidium/jev-codex-bridge#readme) | no |
 | [GiesN/typesafe-jev-workflow](https://github.com/GiesN/typesafe-jev-workflow) | B | 7 | yes | E-postayı Jev Choice ile invoice/general olarak sınıflandırıp yönlendiren küçük LangGraph demo'su; API hatasında uydurma sonuç atamak yerine yürütmeyi durduruyor | [kanıt](https://github.com/GiesN/typesafe-jev-workflow#readme) | no |
+| [Mawfyy/jev-router.nvim](https://github.com/Mawfyy/jev-router.nvim) | B | 7 | yes | Her komut icin Jev'e tek bir secim sorusu soran, guven ayarlanabilir esigin altinda kaldiginda seciciye donen Neovim niyet yonlendiricisi. | [kanıt](https://github.com/Mawfyy/jev-router.nvim#readme) | no |
 | [casungo/noflow-runtime](https://github.com/casungo/noflow-runtime) | C | 6 | yes | React buton/affordance seçimini opsiyonel Jev politikasıyla yapan runtime; confidence+confirmation eşiği, fallback ve error-fallback var | [kanıt](https://github.com/casungo/noflow-runtime) | yes |
 | [hugo-alves/jev-router-playground](https://github.com/hugo-alves/jev-router-playground) | C | 6 | yes | OpenRouter model havuzundan Jev'e görevi en iyi karşılayan modeli noul olasılığıyla seçtiren interaktif playground | [kanıt](https://github.com/hugo-alves/jev-router-playground#readme) | no |
 | [ngallodev-software/agent-workflow-typesafe-ai](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) | C | 6 | yes | Agent-Workflow için isteğe bağlı Jev eklentisi: yalnız danışma niteliğinde 'no_action' kanıt üretir, yönlendirme/politika yetkisini asla değiştirmez. | [kanıt](https://github.com/ngallodev-software/agent-workflow-typesafe-ai) | no |

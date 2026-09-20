@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 
 # SDKs and clients
 
-82 repositories in this category, sorted by class then score.
+83 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -31,6 +31,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [Hawxy/TypeSafeAI.Net](https://github.com/Hawxy/TypeSafeAI.Net) | B | 9 | yes | A.NET SDK: guardrail \(threshold+severity block/review\) and routing chat-client middleware via Microsoft.Extensions.AI integration, an IntentRouter \(a code/model/human confidence+complexity gate\), an IEvaluator bridge | [evidence](https://github.com/Hawxy/TypeSafeAI.Net) | yes |
 | [komorra/Eugeniusz](https://github.com/komorra/Eugeniusz) | B | 9 | no | A local Qwen-based typed decision library embedded via C ABI \(C/C++/C#/Python/Unity/Unreal\) requiring no server/API key; includes a 300-case honest quality report and ECE/Brier/split-conformal calibration | [evidence](https://github.com/komorra/Eugeniusz) | yes |
 | [BoundaryML/feelings](https://github.com/BoundaryML/feelings) | B | 8 | yes | A mini language extension in the BAML language defining type-safe, compile-time-exhaustive Jev query methods like.feels\(\)/.matches\(\)/.fill\(\) | [evidence](https://github.com/BoundaryML/feelings#readme) | no |
+| [chy4pro/jev-dev-kit](https://github.com/chy4pro/jev-dev-kit) | B | 8 | yes | TypeScript agent framework enforcing that Jev only ever chooses among supplied candidates, with a control loop, MCP tool conversion, and built-in control clients. | [evidence](https://github.com/chy4pro/jev-dev-kit#readme) | no |
 | [fgn/jevgo](https://github.com/fgn/jevgo) | B | 8 | yes | A dependency-free Go client for TypeSafe/Jev; strictly validates the response against the schema and throws an explicit error on mismatch instead of silently returning zero | [evidence](https://github.com/fgn/jevgo#readme) | no |
 | [mgaitan/sqlite-jev](https://github.com/mgaitan/sqlite-jev) | B | 8 | yes | A loadable SQLite extension: brings natural-language predicate/classification/scoring into SQL via a batched \(40 rows/request\) Jev call | [evidence](https://github.com/mgaitan/sqlite-jev#readme) | yes |
 | [Nibir1/typesafe-go](https://github.com/Nibir1/typesafe-go) | B | 8 | yes | A zero-dependency, production-ready \(v1.0\) Go SDK for the TypeSafe System One API | [evidence](https://github.com/Nibir1/typesafe-go#readme) | no |

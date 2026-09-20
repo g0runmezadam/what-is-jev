@@ -3,7 +3,7 @@
 
 # Kod inceleme hook'ları
 
-Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 55 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -16,6 +16,7 @@ Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
 | [zoidsh/tenetlint](https://github.com/zoidsh/tenetlint) | A | 14 | yes | duplicate of [zoidsh/tenet](https://github.com/zoidsh/tenet) — zoidsh/tenet ile birebir aynı README'ye sahip depo \(muhtemelen eski isim/mükerrer kayıt\); aynı AGENTS.md-tabanlı review-gate aracını anlatıyor | [kanıt](https://github.com/zoidsh/tenetlint#readme) | yes |
 | [Eliran-Turgeman/reaper](https://github.com/Eliran-Turgeman/reaper) | A | 13 | yes | duplicate of [Eliran-Turgeman/repear](https://github.com/Eliran-Turgeman/repear) — AI kodlama ajanları için semantik linter; sessiz hata, zayıflatılmış test, kapsam kayması gibi kod kokularını typesafe/jev-1.13 ile tespit eder | [kanıt](https://github.com/Eliran-Turgeman/reaper#readme) | yes |
 | [Eliran-Turgeman/repear](https://github.com/Eliran-Turgeman/repear) | A | 13 | yes | Git diff'i TypeSafe jev-1.13 ile denetleyen semantik linter; 11 kural, çoklu sinyalli kurallarda en zayıf güveni final sayıyor | [kanıt](https://github.com/Eliran-Turgeman/repear#readme) | yes |
+| [glud123/jev-assist](https://github.com/glud123/jev-assist) | A | 13 | yes | Jev kullanan kod tabani degerlendirme CLI'i \(rerank, drift, gate\); validate komutu, siralamanin dogrulugunu bir deponun kendi commit gecmisine karsi ucretsiz olcer. | [kanıt](https://github.com/glud123/jev-assist#readme) | no |
 | [phuthuycoding/jev-audit](https://github.com/phuthuycoding/jev-audit) | A | 13 | yes | Git diff'ini tek bir cagriyla Jev'e gonderip dort atomik soruyu \(sir sizintisi, guvenlik acigi, kalite, kapsam\) yanitlayan, 79 vakalik bir kumede %100 kesin dogrulukla dogrulanmis, hata durumunda kilitlenen bir pre-commit denetleyicisi. | [kanıt](https://github.com/phuthuycoding/jev-audit#readme) | yes |
 | [brickfrog/moongate](https://github.com/brickfrog/moongate) | A | 12 | yes | Bir pull request diff'ini Jev ile anlamsal kurallara karsi denetleyen, depo tanimli olasilik esiklerini uygulayarak PR anotasyonlari ureten bir CI aksiyonu. | [kanıt](https://github.com/brickfrog/moongate#readme) | yes |
 | [noplan-inc/limpet](https://github.com/noplan-inc/limpet) | A | 12 | yes | Claude Code/Codex için Stop hook; düz dilde kuralları Jev'e 0.7 saniyede skorlatıp ihlalde ajanı işe geri gönderir | [kanıt](https://github.com/noplan-inc/limpet#readme) | yes |
@@ -54,6 +55,7 @@ Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
 | [danielscoffee/AssertLens](https://github.com/danielscoffee/AssertLens) | B | 9 | yes | Yerel test komutlarini kum havuzunda calistiran ve ayri olarak, once/sonra dosya icerigine karsi adlandirilmis, calanabilir iddialari Jev'e degerlendirten bir CLI; her iddia icin desteklendi, celiskili veya yetersiz doner. | [kanıt](https://github.com/danielscoffee/AssertLens#readme) | no |
 | [frostney/clean-code-review](https://github.com/frostney/clean-code-review) | B | 8 | yes | PR/diff'i Clean Code kurallarına göre Jev ile tipli yargılayıp bulgulardan ayrı bir LLM'e \(Luna\) kısa kanıta dayalı inceleme yazdıran araç; MCP sunucusu da var | [kanıt](https://github.com/frostney/clean-code-review) | no |
 | [Tech-Byte-Frontier/jevgate](https://github.com/Tech-Byte-Frontier/jevgate) | B | 8 | yes | Dosya bazlı sürdürülebilirlik incelemesi: organizasyon/basitleştirme/paylaşılan-mantık için üç Jev sınıflandırması yapan Rust CLI | [kanıt](https://github.com/Tech-Byte-Frontier/jevgate#readme) | yes |
+| [vidux/iso-jevdit](https://github.com/vidux/iso-jevdit) | B | 8 | yes | ISO 27001 denetim CLI'i; Jev yalnizca bir kontrolun kod parcasi basina ihlal edilip edilmedigine karar verir, duzeltme metni ise sabit, insan tarafindan yazilmis bir bilgi tabanindan gelir. | [kanıt](https://github.com/vidux/iso-jevdit#readme) | no |
 | [ari-becker/commentlint](https://github.com/ari-becker/commentlint) | B | 7 | yes | AI ajanlarının eklediği kod yorumlarını tree-sitter ile çıkarıp Jev'e yes/no sorular sorarak denetleyen linter | [kanıt](https://github.com/ari-becker/commentlint#readme) | yes |
 | [Question86/Werkfaden](https://github.com/Question86/Werkfaden) | B | 7 | no | Kaynak-bağlantılı proje bağlamı ve kontrollü değişiklik çerçevesi \(KAIROS motoru\); repo Jev içermiyor, dış kullanıcı Jev ile birlikte kullanıyor | [kanıt](https://github.com/Question86/Werkfaden#readme) | no |
 | [Victor-Casado/if-ai](https://github.com/Victor-Casado/if-ai) | B | 7 | yes | PR açıklaması/diff'i düz İngilizce kurala göre Jev'e sorup boolean+güven eşiğiyle CI kontrolü geçiren GitHub Action | [kanıt](https://github.com/Victor-Casado/if-ai#readme) | no |

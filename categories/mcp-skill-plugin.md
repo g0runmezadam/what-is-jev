@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 
 # MCP servers, skills, plugins
 
-50 repositories in this category, sorted by class then score.
+51 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -29,6 +29,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 | [fabricioctelles/skills](https://github.com/fabricioctelles/skills) | B | 9 | unclear | 26 Claude Code/Cursor/Kiro skills; 4 of them use Jev optionally via a jev_available\(\) check, falling back to a heuristic if not | [evidence](https://github.com/fabricioctelles/skills) | no |
 | [MrDiamondBallz/jev-agent-integration](https://github.com/MrDiamondBallz/jev-agent-integration) | B | 9 | yes | A provider-independent Jev integration: a portable Agent Skill, a CLI and a Hermes plugin; advisory only, never approves any tool/action | [evidence](https://github.com/MrDiamondBallz/jev-agent-integration) | no |
 | [yuyang2230/jev-agent-skill](https://github.com/yuyang2230/jev-agent-skill) | B | 9 | yes | A Jev-based skill for Claude Code/ZCode: offloads classification/scoring/checking tasks from the main model to free Jev, tested in production. | [evidence](https://github.com/yuyang2230/jev-agent-skill) | no |
+| [CodeCampusCo/jev-mcp](https://github.com/CodeCampusCo/jev-mcp) | B | 8 | yes | MCP server exposing one tool that forwards typed questions to Jev unchanged, with retries, a pinned model version, and optional third-party request logging. | [evidence](https://github.com/CodeCampusCo/jev-mcp#readme) | no |
 | [Devin-AXIS/jev-dsh-decision](https://github.com/Devin-AXIS/jev-dsh-decision) | B | 8 | yes | Structured decision plugin for agent harnesses \(DeepSeek Harness natively, others via iPolloWork\) that has Jev recommend tools, skills and owners with probabilities. | [evidence](https://github.com/Devin-AXIS/jev-dsh-decision#readme) | no |
 | [itsmostafa/typesafe-mcp](https://github.com/itsmostafa/typesafe-mcp) | B | 8 | yes | A one-command-install Jev MCP server for Claude Code/Desktop/Codex/pi: noul/choice/score, batch questions, 429/529 retry+backoff, sends the agent guidance on writing questions | [evidence](https://github.com/itsmostafa/typesafe-mcp) | no |
 | [lldois/dsh-jev](https://github.com/lldois/dsh-jev) | B | 8 | yes | DeepSeek Harness plugin porting the Pi-Jev pattern natively, adding typed judgments, skill/tool discovery, slash commands and a CI acceptance-gate CLI. | [evidence](https://github.com/lldois/dsh-jev#readme) | no |
