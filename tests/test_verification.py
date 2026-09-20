@@ -521,6 +521,93 @@ class JobFileTest(unittest.TestCase):
                 self.assertEqual(len(ref["sha256"]), 64)
 
 
+class ReportTest(BaseCase):
+    """The report and the site export are generated, so they cannot drift."""
+
+    def fake_root(self):
+        root = self.tmproot()
+        job = tiny_job(title="A tiny test", lang="en",
+                       kind="reproducibility-check",
+                       kind_note="The labels are the author's own.")
+        job["dataset"] = {"name": "someone/corpus"}
+        job["deviations_known_before_the_run"] = ["A different model version."]
+        job["source"].update(license="MIT", reported_run="2026-09-16")
+        write(os.path.join(root, "jobs", "tiny.json"),
+              json.dumps(job, ensure_ascii=False, indent=2))
+        summary = {
+            "id": "tiny", "title": "A tiny test", "source": job["source"],
+            "lang": "en", "seed": 1, "run_at": "2026-09-20",
+            "items_offered": 4, "calls": 4, "answered": 4, "failed": 0,
+            "max_calls": 100, "stopped": None, "model_versions": ["jev-1.13.0"],
+            "measured": {"accuracy": {"k": 2, "n": 4}},
+            "criteria": [{"metric": "accuracy", "kind": "proportion",
+                          "reported": 0.5, "observed": 0.5, "n": 4,
+                          "ci95": [0.15, 0.85], "verdict": "reproduced"}],
+            "verdict": "reproduced",
+        }
+        write(os.path.join(root, "results", "tiny", "summary.json"),
+              json.dumps(summary, ensure_ascii=False, indent=2))
+        os.makedirs(os.path.join(os.path.dirname(root), "tr"), exist_ok=True)
+        return root
+
+    def test_the_report_carries_the_verdict_the_commit_and_the_numbers(self):
+        import report
+        root = self.fake_root()
+        report.main(root)
+        with open(os.path.join(root, "results", "tiny", "REPORT.md"),
+                  encoding="utf-8") as fh:
+            text = fh.read()
+        self.assertIn("Verdict: reproduced", text)
+        self.assertIn("0" * 40, text)
+        self.assertIn("reproducibility-check", text)
+        self.assertIn("Nothing was translated", text)
+        self.assertIn("A different model version", text)
+
+    def test_both_index_pages_are_written_and_link_to_each_other(self):
+        import report
+        root = self.fake_root()
+        report.main(root)
+        with open(os.path.join(root, "RESULTS.md"), encoding="utf-8") as fh:
+            english = fh.read()
+        tr_path = os.path.join(os.path.dirname(root), "tr", "verification",
+                               "RESULTS.md")
+        with open(tr_path, encoding="utf-8") as fh:
+            turkish = fh.read()
+        self.assertIn("tr/verification/RESULTS.md", english)
+        self.assertIn("verification/RESULTS.md", turkish)
+        self.assertIn("yeniden üretildi", turkish)
+        self.assertIn("reproduced", english)
+
+    def test_regenerating_writes_the_same_bytes(self):
+        import report
+        root = self.fake_root()
+        report.main(root)
+        with open(os.path.join(root, "RESULTS.md"), "rb") as fh:
+            first = fh.read()
+        report.main(root)
+        with open(os.path.join(root, "RESULTS.md"), "rb") as fh:
+            self.assertEqual(fh.read(), first)
+        self.assertNotIn(b"\r\n", first)
+
+    def test_the_site_export_marks_the_record_as_ours_and_keeps_the_language(self):
+        import export_site
+        root = self.fake_root()
+        payload = export_site.build(root)
+        self.assertEqual(len(payload["records"]), 1)
+        got = payload["records"][0]
+        self.assertEqual(got["type"], "re-run")
+        self.assertEqual(got["lang"], "en")
+        self.assertEqual(got["status"], "reproduced")
+        self.assertEqual(got["metrics"][0]["reported"], 0.5)
+        self.assertIn("raw.jsonl", got["raw_url"])
+        self.assertIn("never translated", payload["note"])
+
+    def test_the_export_holds_no_third_party_text(self):
+        import export_site
+        blob = json.dumps(export_site.build(self.fake_root()))
+        self.assertNotIn("third party text", blob)
+
+
 class PrivacyTest(unittest.TestCase):
     """The published repository must not carry a local path or an address."""
 
