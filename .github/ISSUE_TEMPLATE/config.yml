@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contribution guide / Katkı rehberi
+    url: https://github.com/tunahansahin897/what-is-jev/blob/main/CONTRIBUTING.md
+    about: Read the acceptance criteria, generated-file rules, and test commands first.
+

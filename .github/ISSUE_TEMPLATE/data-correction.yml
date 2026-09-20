@@ -1,0 +1,46 @@
+name: Correct data or a finding
+description: Report a wrong score, stale field, missing source, or unsupported claim.
+title: "[Correction]: "
+labels:
+  - data correction
+  - research
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: What needs correcting?
+      options:
+        - Repository record or score
+        - Finding or verdict
+        - Source record
+        - Category or pattern
+        - Translation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Exact location
+      description: Link to the row, heading, file, or line in this repository.
+      placeholder: https://github.com/tunahansahin897/what-is-jev/blob/main/...
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: State what is wrong and what the record should say instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source or evidence
+      description: Link the primary or reproducible source that supports the correction.
+    validations:
+      required: true
+

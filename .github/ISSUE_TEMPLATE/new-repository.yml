@@ -1,0 +1,46 @@
+name: Suggest a Jev repository
+description: Add a public project that uses or seriously evaluates TypeSafe AI's Jev.
+title: "[Repository]: "
+labels:
+  - new repository
+  - data
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the map current. The project must be public, non-empty, and either call the Jev/System One API or seriously research or measure it.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What does it do with Jev?
+      description: One or two concrete sentences are enough.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link to the README section, source file, benchmark, or documentation showing the Jev usage.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Submission checks
+      options:
+        - label: The repository is public and is not an empty skeleton.
+          required: true
+        - label: This is about TypeSafe AI's Jev/System One, not an unrelated project using the word “jev”.
+          required: true
+
