@@ -8,4 +8,5 @@ Kendi anahtarımızla, testin orijinal dilinde ve orijinal girdileriyle yeniden 
 
 | test | kaynak | tür | n | çağrı | hüküm | rapor |
 | --- | --- | --- | --- | --- | --- | --- |
+| Vulnerable code detection on 200 matched pairs | [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) | tekrar üretilebilirlik testi | 400 | 400 | yeniden üretildi | [rapor](../../verification/results/sec-code-pairs/REPORT.md) |
 | Prompt injection detection on deepset/prompt-injections | [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) | tekrar üretilebilirlik testi | 662 | 662 | yeniden üretildi | [rapor](../../verification/results/sec-injection/REPORT.md) |

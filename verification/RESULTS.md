@@ -8,4 +8,5 @@ Every textual test we have re-run with our own key, in the test's original langu
 
 | test | source | kind | n | calls | verdict | report |
 | --- | --- | --- | --- | --- | --- | --- |
+| Vulnerable code detection on 200 matched pairs | [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) | reproducibility-check | 400 | 400 | reproduced | [REPORT.md](results/sec-code-pairs/REPORT.md) |
 | Prompt injection detection on deepset/prompt-injections | [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) | reproducibility-check | 662 | 662 | reproduced | [REPORT.md](results/sec-injection/REPORT.md) |

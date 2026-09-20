@@ -10,14 +10,17 @@
   `report.py` and `export_site.py` (generated pages and the site export).
 - Unit tests in `tests/test_verification.py`. They do not touch the network and
   pass on a machine with no key.
-- Job 1, prompt injection, defined and run. See `RESULTS.md`.
-- Job 2, matched code pairs, defined.
+- Job 1, prompt injection, run: reproduced on all five published numbers.
+- Job 2, matched code pairs, run: reproduced on all four. See `RESULTS.md`.
 
 ## Next concrete step
 
-Run job 2: `python -X utf8 verification/run.py --job sec-code-pairs`
-(400 calls). Then `python -X utf8 verification/report.py`, add the row to
-`BUDGET.md`, commit, push.
+Define job 3 from the inventory. 1,938 calls are left of the 3,000.
+
+The cheapest next one is the agent skill router (72 cases, about 287 calls): its
+catalogue and its 72 cases are in the source repository as data, so it needs no
+dataset reconstruction — the same shape as the two jobs already here. The
+frontier benchmark below is the more valuable one and the more expensive one.
 
 ## Job 3, and why it is not defined yet
 

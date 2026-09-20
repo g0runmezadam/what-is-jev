@@ -8,5 +8,6 @@ including the ones that failed and the ones a resumed run had already paid for.
 | date | job | calls | running total | note |
 | --- | --- | --- | --- | --- |
 | 2026-09-20 | sec-injection | 662 | 662 | the whole corpus, 3 of them a smoke test before the full run |
+| 2026-09-20 | sec-code-pairs | 400 | 1062 | 200 matched pairs, both halves |
 
-Remaining: **2,338**.
+Remaining: **1,938**.

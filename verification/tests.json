@@ -2,6 +2,87 @@
   "note": "Test content is never translated. `lang` is the language the test was written and run in.",
   "records": [
     {
+      "calls": 400,
+      "dataset": "CyberNative/Code_Vulnerability_Security_DPO",
+      "deviations": [
+        "The pairs are the source's selection, not one we drew ourselves; a different draw would give a different 200 pairs from the same corpus.",
+        "A tie between the two halves counts as not ranked, which is the source's own rule.",
+        "We send model \"jev-latest\"; the version the endpoint reports is recorded in summary.json."
+      ],
+      "failed_calls": 0,
+      "id": "sec-code-pairs",
+      "kind": "reproducibility-check",
+      "kind_note": "The 400 snippets and their pairing are read from the per-sample output the source committed, because its pair selection runs inside its own runtime and re-implementing that shuffle would be guessing. The labels underneath are the public corpus's, but they reach us through the source's file, so this is a reproducibility check and is not called anything stronger.",
+      "lang": "en",
+      "lang_note": "English questions over source code. Nothing is translated.",
+      "metrics": [
+        {
+          "ci95": [
+            0.8276574790170326,
+            0.9180200729362449
+          ],
+          "kind": "proportion",
+          "measured": 0.88,
+          "metric": "pair_accuracy",
+          "reported": 0.89,
+          "reported_at": "README, section \"Vulnerable code\": the vulnerable half scored above its own secure twin in 178 of 200 pairs",
+          "status": "reproduced"
+        },
+        {
+          "ci95": [
+            0.6662901779980862,
+            0.7546670969098378
+          ],
+          "kind": "proportion",
+          "measured": 0.7125,
+          "metric": "accuracy",
+          "reported": 0.715,
+          "reported_at": "README, section \"The absolute numbers, and why they understate\": accuracy at 0.50",
+          "status": "reproduced"
+        },
+        {
+          "ci95": null,
+          "kind": "absolute",
+          "measured": 0.7922,
+          "metric": "roc_auc",
+          "reported": 0.794,
+          "reported_at": "README, same section, ROC-AUC row",
+          "status": "reproduced"
+        },
+        {
+          "ci95": null,
+          "kind": "absolute",
+          "measured": 0.1867,
+          "metric": "ece",
+          "reported": 0.1868,
+          "reported_at": "README, same section, ECE row",
+          "status": "reproduced"
+        }
+      ],
+      "model_versions": [
+        "jev-1.13.0"
+      ],
+      "raw_url": "https://github.com/tunahansahin897/what-is-jev/blob/main/verification/results/sec-code-pairs/raw.jsonl",
+      "report_url": "https://github.com/tunahansahin897/what-is-jev/blob/main/verification/results/sec-code-pairs/REPORT.md",
+      "run_at": "2026-09-20",
+      "sample": {
+        "n": 400,
+        "offered": 400,
+        "rule": "every snippet in the pinned output, no sampling",
+        "seed": 20260920
+      },
+      "source": {
+        "commit": "fdb16b94d37535db9bad77f8ef0faa971bd7d69a",
+        "license": "MIT",
+        "repo": "Gaurav-Gosain/jev-sec-bench",
+        "reported_run": "2026-09-16 against jev-1.13.0",
+        "url": "https://github.com/Gaurav-Gosain/jev-sec-bench"
+      },
+      "status": "reproduced",
+      "title": "Vulnerable code detection on 200 matched pairs",
+      "type": "re-run"
+    },
+    {
       "calls": 662,
       "dataset": "deepset/prompt-injections",
       "deviations": [

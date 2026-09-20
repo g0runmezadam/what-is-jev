@@ -1,0 +1,103 @@
+{
+  "answered": 400,
+  "calls": 400,
+  "criteria": [
+    {
+      "ci95": [
+        0.8276574790170326,
+        0.9180200729362449
+      ],
+      "k": 176,
+      "kind": "proportion",
+      "metric": "pair_accuracy",
+      "n": 200,
+      "observed": 0.88,
+      "reported": 0.89,
+      "reported_at": "README, section \"Vulnerable code\": the vulnerable half scored above its own secure twin in 178 of 200 pairs",
+      "tolerance": 0.05,
+      "verdict": "reproduced",
+      "why": "The source calls this the number to trust, because both halves share topic, language and style. For 200 pairs the 95% Wilson interval is about 4.4 points either side; outside it but within 5 points is partial."
+    },
+    {
+      "ci95": [
+        0.6662901779980862,
+        0.7546670969098378
+      ],
+      "k": 285,
+      "kind": "proportion",
+      "metric": "accuracy",
+      "n": 400,
+      "observed": 0.7125,
+      "reported": 0.715,
+      "reported_at": "README, section \"The absolute numbers, and why they understate\": accuracy at 0.50",
+      "tolerance": 0.05,
+      "verdict": "reproduced",
+      "why": "The source itself treats this as a floor set by corpus label noise, not as a measure of the model. It is checked because it was published, and read the way the source reads it."
+    },
+    {
+      "distance": 0.0018000000000000238,
+      "kind": "absolute",
+      "metric": "roc_auc",
+      "observed": 0.7922,
+      "partial_tolerance": 0.1,
+      "reported": 0.794,
+      "reported_at": "README, same section, ROC-AUC row",
+      "tolerance": 0.03,
+      "verdict": "reproduced"
+    },
+    {
+      "distance": 9.999999999998899e-05,
+      "kind": "absolute",
+      "metric": "ece",
+      "observed": 0.1867,
+      "partial_tolerance": 0.1,
+      "reported": 0.1868,
+      "reported_at": "README, same section, ECE row",
+      "tolerance": 0.04,
+      "verdict": "reproduced"
+    }
+  ],
+  "failed": 0,
+  "id": "sec-code-pairs",
+  "items_offered": 400,
+  "lang": "en",
+  "max_calls": 400,
+  "measured": {
+    "accuracy": {
+      "k": 285,
+      "n": 400
+    },
+    "ece": 0.1867,
+    "pair_accuracy": {
+      "k": 176,
+      "n": 200
+    },
+    "pairs_complete": 200,
+    "pairs_tied": 10,
+    "precision": {
+      "k": 159,
+      "n": 233
+    },
+    "recall": {
+      "k": 159,
+      "n": 200
+    },
+    "roc_auc": 0.7922
+  },
+  "model_versions": [
+    "jev-1.13.0"
+  ],
+  "run_at": "2026-09-20",
+  "seed": 20260920,
+  "source": {
+    "commit": "fdb16b94d37535db9bad77f8ef0faa971bd7d69a",
+    "commit_date": "2026-09-16",
+    "license": "MIT",
+    "repo": "Gaurav-Gosain/jev-sec-bench",
+    "reported_run": "2026-09-16 against jev-1.13.0",
+    "url": "https://github.com/Gaurav-Gosain/jev-sec-bench"
+  },
+  "stopped": null,
+  "title": "Vulnerable code detection on 200 matched pairs",
+  "verdict": "reproduced"
+}
