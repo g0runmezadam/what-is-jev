@@ -946,12 +946,18 @@ def _meta_problems(where, meta):
     return out
 
 
-def validate(records, sources=None, strict=False):
+def validate(records, sources=None, strict=False, batch_ids=None):
     """Return (errors, warnings). Errors make the build fail.
 
     This is the one validation there is: ``data/repos.jsonl`` and an incoming
     batch line are held to the same rules, because a batch line becomes a
     ``data/repos.jsonl`` line the moment it is applied.
+
+    *batch_ids* is the set of score identities the ledger accounts for (see
+    :func:`known_batch_ids`). Given it, a row may not claim a ``score_batch``
+    that no applied batch ever produced - a well-formed twelve-digit id is
+    not evidence that the file behind it exists. Left out, only the shape of
+    the id is judged: the caller has no ledger to check it against.
     """
     errors, warnings = [], []
     seen = {}
@@ -1004,6 +1010,12 @@ def validate(records, sources=None, strict=False):
             errors.append("%s: score_batch %r değil ya da %d haneli küçük "
                           "harfli sha256 önü değil (%r)"
                           % (where, INITIAL_BATCH, BATCH_ID_LENGTH, batch))
+        elif batch_ids is not None and batch not in batch_ids:
+            errors.append("%s: score_batch %r defterde yok - "
+                          "data/applied-batches.jsonl uygulanmış bir incoming "
+                          "paketi olarak bilmiyor (%r ya da uygulanmış bir "
+                          "paketin sha256 önü olmalı)"
+                          % (where, batch, INITIAL_BATCH))
         errors.extend(_meta_problems(where, rec.get("meta")))
         if not isinstance(rec.get("audited"), bool):
             errors.append("%s: audited doğru/yanlış değil (%r)"
@@ -1693,6 +1705,25 @@ def ledger_kind(entry):
     return entry.get("kind") or DEFAULT_LEDGER_KIND
 
 
+def known_batch_ids(ledger):
+    """Every score identity the ledger accounts for.
+
+    A batch id is only meaningful if the file it names was really applied, so
+    the ledger - not the shape of the string - is what makes one valid:
+    ``initial`` for the first data set, plus the first twelve digits of the
+    sha256 of every incoming batch the ledger records. An audit line's sha256
+    is not in it: an audit carries scores back, it does not produce them.
+    With no ledger on disk, ``initial`` is the only identity there is.
+    """
+    ids = {INITIAL_BATCH}
+    for entry in ledger:
+        digest = entry.get("sha256")
+        if ledger_kind(entry) == DEFAULT_LEDGER_KIND \
+                and isinstance(digest, str) and SHA256_RE.match(digest):
+            ids.add(batch_id(digest))
+    return ids
+
+
 def read_ledger(root):
     """Return (entries, problems) from ``data/applied-batches.jsonl``.
 
@@ -1920,7 +1951,7 @@ def empty_merge_summary(ledger=()):
             "ledger": list(ledger), "skipped": [], "stale": []}
 
 
-def _audit_row_problems(label, row, index):
+def _audit_row_problems(label, row, index, batch_ids=None):
     """Everything wrong with one audit line, in the reader's own terms.
 
     The same discipline an incoming row is held to, plus the two things only
@@ -1952,6 +1983,11 @@ def _audit_row_problems(label, row, index):
     if not (is_str(batch) and BATCH_ID.match(batch)):
         problems.append("%s: score_batch denetlenen satırın score_batch "
                         "değeri olmalı (%r)" % (label, batch))
+    elif batch_ids is not None and batch not in batch_ids:
+        problems.append("%s: score_batch %r defterde yok - "
+                        "data/applied-batches.jsonl uygulanmış bir incoming "
+                        "paketi olarak bilmiyor; hiçbir satır uygulanmadı"
+                        % (label, batch))
 
     scores = row["scores"]
     if not isinstance(scores, dict) or sorted(scores) != sorted(SCORE_NAMES):
@@ -2010,6 +2046,12 @@ def merge_audits(root, records, ledger):
     batch id can. The run names what it skipped and carries on, the way a
     stale incoming row is handled.
 
+    The quoted ``score_batch`` has to be an identity the ledger accounts for:
+    ``initial`` or an incoming batch that was really applied. An audit for a
+    batch nobody has ever applied is not a stale audit, it is an invented
+    one, so it stops the run instead of being skipped - one bad line stops
+    every file, the way it does everywhere else here.
+
     Nothing is applied unless every line of every file is sound, and a file
     whose name and sha256 are already in the ledger under ``kind: "audit"``
     is not applied a second time. Returns (problems, summary).
@@ -2018,6 +2060,7 @@ def merge_audits(root, records, ledger):
     problems = []
     applied_before = {(entry.get("name"), entry.get("sha256"),
                        ledger_kind(entry)) for entry in ledger}
+    batch_ids = known_batch_ids(ledger)
     index = {str(rec.get("repo") or "").lower(): rec for rec in records}
 
     batches = []
@@ -2032,7 +2075,7 @@ def merge_audits(root, records, ledger):
         problems.extend("data/audits/" + line for line in fatal)
         for number, row in enumerate(rows, 1):
             problems.extend(_audit_row_problems(
-                "data/audits/%s:%d" % (name, number), row, index))
+                "data/audits/%s:%d" % (name, number), row, index, batch_ids))
         batches.append((path, name, digest, rows))
     if problems:
         return problems, summary
@@ -2211,7 +2254,8 @@ def main(argv=None, root=None):
                 print("data/audits: %d denetim satırı, %d dosya"
                       % (audits["rows"], len(audits["files"])))
 
-    errors, warnings = validate(records, sources, strict=args.strict)
+    errors, warnings = validate(records, sources, strict=args.strict,
+                                batch_ids=known_batch_ids(audits["ledger"]))
     problems.extend(errors)
     for line in warnings[:40]:
         print("UYARI: " + line)

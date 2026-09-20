@@ -86,6 +86,18 @@ decided:
   and the run names it. The `audited_at` comparison below stays as a second
   guard, but a date cannot separate two scores written on the same day and
   this can.
+* A `score_batch` is only valid if `applied-batches.jsonl` accounts for it:
+  `initial`, or the first twelve digits of the `sha256` of an incoming batch
+  the ledger records as applied (an `audit` line's digest does not count — an
+  audit carries scores back, it does not produce them). Twelve well-formed hex
+  digits are not evidence that the file behind them ever existed, and the
+  shape check alone let an invented id through as long as the row and the
+  audit quoted the same one. A row in `data/repos.jsonl` whose `score_batch`
+  the ledger does not know is an error that fails the build and names the
+  repository; an audit line quoting such an id is not a stale audit to skip
+  but an invented one, so it stops every file and nothing is applied. A batch
+  applied earlier in the same run is already in the ledger, so an audit of it
+  is valid; with no ledger on disk, `initial` is the only identity there is.
 * The repository **must** already be in the data. An audit of a row nobody
   scored is an error, not a new row: the auditor confirms a score, they do
   not write one.

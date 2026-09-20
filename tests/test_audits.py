@@ -41,11 +41,27 @@ def audit_row(repo="a/one", **kw):
     return row
 
 
+def ledger_entry(batch, name="batch-0.jsonl", applied_at="2026-09-19", kind=None):
+    """A ledger line for a file whose sha256 starts with the id *batch*.
+
+    The digest is padded out rather than computed: the file it describes was
+    applied and archived in some earlier run, and only its first twelve
+    digits are ever read back as a score identity.
+    """
+    entry = {"name": name, "sha256": batch + "0" * (64 - len(batch)),
+             "applied_at": applied_at}
+    if kind is not None:
+        entry["kind"] = kind
+    return entry
+
+
 class AuditBase(BaseCase):
-    def root_with(self, existing, audits=None, incoming=None):
+    def root_with(self, existing, audits=None, incoming=None, ledger=None):
         root = self.tmproot()
         write(os.path.join(root, "data", "repos.jsonl"), jsonl(existing))
         write(os.path.join(root, "data", "sources.jsonl"), jsonl(SOURCES))
+        if ledger is not None:
+            write(os.path.join(root, "data", "applied-batches.jsonl"), jsonl(ledger))
         for name, rows in (audits or {}).items():
             write(os.path.join(root, "data", "audits", name), jsonl(rows))
         for name, rows in (incoming or {}).items():
@@ -301,13 +317,15 @@ class AuditScoreBatchTest(AuditBase):
 
     def test_an_audit_of_the_score_the_row_carries_is_applied(self):
         root = self.root_with([base_record(score_batch="6aeebbf643f8")],
-                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]})
+                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]},
+                              ledger=[ledger_entry("6aeebbf643f8")])
         self.assertEqual(self.run_build(root)[0], 0)
         self.assertTrue(self.repos(root)["a/one"]["audited"])
 
     def test_an_audit_of_another_score_is_not_applied_and_is_reported(self):
         root = self.root_with([base_record(score_batch="6aeebbf643f8")],
-                              {"a.jsonl": [audit_row(score_batch="initial")]})
+                              {"a.jsonl": [audit_row(score_batch="initial")]},
+                              ledger=[ledger_entry("6aeebbf643f8")])
         code, out = self.run_build(root)
         self.assertEqual(code, 0)
         rec = self.repos(root)["a/one"]
@@ -351,7 +369,8 @@ class AuditScoreBatchTest(AuditBase):
 
     def test_an_audit_never_changes_the_batch_the_score_came_from(self):
         root = self.root_with([base_record(score_batch="6aeebbf643f8")],
-                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]})
+                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]},
+                              ledger=[ledger_entry("6aeebbf643f8")])
         self.assertEqual(self.run_build(root)[0], 0)
         self.assertEqual(self.repos(root)["a/one"]["score_batch"], "6aeebbf643f8")
 
@@ -362,6 +381,101 @@ class AuditScoreBatchTest(AuditBase):
         self.assertEqual(code, 0)
         self.assertFalse(self.repos(root)["a/one"]["audited"])
         self.assertIn("2026-09-10", out)
+
+
+class BatchIdLedgerTest(AuditBase):
+    """A score identity is the ledger's to hand out, not a line's to claim.
+
+    ``score_batch`` was checked for shape and for row-audit agreement only,
+    so twelve hex digits nobody had ever applied passed both: an audit
+    quoting an invented id landed on the row and marked it audited. The
+    valid set is what ``data/applied-batches.jsonl`` accounts for - the
+    first data set plus every incoming batch really applied.
+    """
+
+    BOGUS = "deadbeefdead"
+
+    def repos_text(self, root):
+        with open(os.path.join(root, "data", "repos.jsonl"), encoding="utf-8") as fh:
+            return fh.read()
+
+    def test_an_audit_quoting_a_batch_no_ledger_knows_is_refused(self):
+        """The trigger: row and audit agree on an id nothing ever applied."""
+        root = self.root_with([base_record(score_batch=self.BOGUS)],
+                              {"a.jsonl": [audit_row(score_batch=self.BOGUS)]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1)
+        self.assertIn(self.BOGUS, out)
+        self.assertFalse(self.repos(root)["a/one"]["audited"])
+        self.assertEqual(self.ledger(root), [])
+
+    def test_an_unknown_id_in_the_audit_alone_stops_every_file(self):
+        """Not a stale audit to skip: an invented one, so nothing is applied."""
+        root = self.root_with([base_record()],
+                              {"a.jsonl": [audit_row(score_batch=self.BOGUS)]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1)
+        self.assertIn("data/audits/a.jsonl:1", out)
+        self.assertIn(self.BOGUS, out)
+        self.assertFalse(self.repos(root)["a/one"]["audited"])
+
+    def test_a_row_whose_batch_no_ledger_knows_stops_the_build(self):
+        root = self.root_with([base_record(score_batch=self.BOGUS)])
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1)
+        self.assertIn("a/one", out)
+        self.assertIn("score_batch", out)
+
+    def test_the_ledger_entry_for_that_batch_makes_the_row_and_audit_valid(self):
+        root = self.root_with([base_record(score_batch="6aeebbf643f8")],
+                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]},
+                              ledger=[ledger_entry("6aeebbf643f8")])
+        code, out = self.run_build(root)
+        self.assertEqual(code, 0, out)
+        self.assertTrue(self.repos(root)["a/one"]["audited"])
+
+    def test_initial_is_the_only_identity_an_empty_ledger_hands_out(self):
+        root = self.root_with([base_record()], {"a.jsonl": [audit_row()]})
+        self.assertEqual(self.ledger(root), [])
+        code, out = self.run_build(root)
+        self.assertEqual(code, 0, out)
+        self.assertTrue(self.repos(root)["a/one"]["audited"])
+
+    def test_a_batch_applied_in_the_same_run_counts_for_the_audit_after_it(self):
+        """incoming lands first, so its id is already the ledger's when the
+        audit quoting it is read."""
+        root = self.root_with([base_record()],
+                              incoming={"batch-1.jsonl": [incoming_row()]})
+        digest = build.sha256_of(
+            os.path.join(root, "data", "incoming", "batch-1.jsonl"))
+        write(os.path.join(root, "data", "audits", "a.jsonl"),
+              jsonl([audit_row(repo="n/new", score_batch=digest[:12])]))
+        code, out = self.run_build(root)
+        self.assertEqual(code, 0, out)
+        self.assertTrue(self.repos(root)["n/new"]["audited"])
+        self.assertEqual(self.repos(root)["n/new"]["score_batch"], digest[:12])
+
+    def test_an_audit_files_own_sha256_is_not_a_score_identity(self):
+        """An audit carries scores back; it does not produce them."""
+        root = self.root_with(
+            [base_record(score_batch="6aeebbf643f8")],
+            ledger=[ledger_entry("6aeebbf643f8", name="2026-09-26.jsonl",
+                                 kind="audit")])
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1)
+        self.assertIn("6aeebbf643f8", out)
+
+    def test_check_refuses_the_unknown_batch_and_writes_nothing(self):
+        root = self.root_with([base_record(score_batch=self.BOGUS)],
+                              {"a.jsonl": [audit_row(score_batch=self.BOGUS)]})
+        before = self.repos_text(root)
+        code, _out = self.run_build(root, ["--check"])
+        self.assertEqual(code, 1)
+        self.assertEqual(self.repos_text(root), before)
+        self.assertFalse(os.path.exists(
+            os.path.join(root, "data", "applied-batches.jsonl")))
+        self.assertTrue(os.path.exists(
+            os.path.join(root, "data", "audits", "a.jsonl")))
 
 
 class AuditLedgerTest(AuditBase):
