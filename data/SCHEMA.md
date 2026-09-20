@@ -15,7 +15,9 @@ Everything under the repository root and under `tr/` that is marked
 | `pending.txt` | what `tools/update.py` found and nobody has scored yet | `tools/update.py` |
 | `incoming/*.jsonl` | freshly scored rows waiting to be merged | agents |
 | `incoming/applied/` | batches already merged (git-ignored) | `tools/build.py` |
-| `applied-batches.jsonl` | one line per batch already merged: `name`, `sha256`, `applied_at` | `tools/build.py` |
+| `audits/*.jsonl` | audit results waiting to be merged | the auditor |
+| `audits/applied/` | audit files already merged (git-ignored) | `tools/build.py` |
+| `applied-batches.jsonl` | one line per file already merged: `name`, `sha256`, `applied_at`, and `kind` for an audit | `tools/build.py` |
 
 ## data/incoming — new scores arrive here
 
@@ -33,7 +35,7 @@ data.
 * A repository the data does not know is added, with `first_seen` taken from
   the row's `scored_at`.
 * A repository it does know keeps `first_seen`, `audit_note_en`,
-  `audit_note_tr` and `duplicate_of`; the scores, texts, category and
+  `audit_note_tr`, `duplicate_of` and `audited_at`; the scores, texts, category and
   `calls_jev` are overwritten, `scored_at` moves forward, and `audited`
   becomes false — the new numbers have not been through a second pass.
 * A row **older** than the score already stored (an earlier `scored_at`) is
@@ -43,6 +45,47 @@ data.
   are replaced in one step, and only then does the batch move to
   `data/incoming/applied/`. `--check` merges in memory to tell you the pages
   are stale, but writes nothing and moves nothing.
+
+## data/audits — the second pass comes back
+
+A new score arrives `audited: false`, and an unaudited row never reaches
+`TOP.md` however high it scored. `data/audits/*.jsonl` is how one auditor's
+reading gets back into the data, and it is held to the same discipline an
+incoming batch is held to: one validation, one bad line stops every file,
+an atomic write, a ledger entry, and `--check` that writes and moves nothing.
+
+An audit line is not a repository row. It carries only what the auditor
+decided:
+
+```json
+{"repo": "owner/name",
+ "scores": {"depth": 0, "relevance": 0, "novelty": 0, "maturity": 0, "evidence": 0},
+ "audit_note_en": "…", "audit_note_tr": "…",
+ "duplicate_of": null,
+ "audited_at": "2026-09-20"}
+```
+
+* The repository **must** already be in the data. An audit of a row nobody
+  scored is an error, not a new row: the auditor confirms a score, they do
+  not write one.
+* `scores` overwrites the row's scores, and `total` and `class` are
+  **recomputed** from them by the rubric. The auditor does not write a class,
+  so an audit cannot contradict the scale it measured against.
+* `audited` becomes true, and `audited_at` records the day of the reading.
+* Both notes are required and neither may be empty — the public pages show
+  the note in their own language, so a missing one would leave a reader with
+  no reason. They go through the same text rules every stored text goes
+  through: no markup, no `javascript:`/`data:`, no private detail.
+* `duplicate_of` is either null or a repository that is **also** in the data,
+  and never the row itself.
+* An audit whose `audited_at` is **older** than the row's `scored_at` is not
+  applied, and the run names it: an auditor cannot have read a score that was
+  written after them.
+* When a batch and an audit arrive in the same run, the batch is applied
+  first and the audit second — the auditor read the newest score, so the
+  audit lands on top of it. A broken line anywhere stops both.
+* A later score clears `audited` again but keeps `audited_at`, the way it
+  keeps the note: it is the record of a reading that did happen.
 
 ### applied-batches.jsonl — what has already been applied
 
@@ -54,13 +97,18 @@ recorded, in a tracked file rather than in the git-ignored archive:
 
 ```json
 {"applied_at": "2026-09-25", "name": "batch-1.jsonl", "sha256": "…"}
+{"applied_at": "2026-09-26", "kind": "audit", "name": "2026-09-26.jsonl", "sha256": "…"}
 ```
 
-* A batch whose `name` **and** `sha256` are already recorded is never applied
-  a second time; only its move into `incoming/applied/` is retried.
+* A file whose `name`, `sha256` **and** kind are already recorded is never
+  applied a second time; only its move into `incoming/applied/` or
+  `audits/applied/` is retried.
+* `kind` is `audit` for an audit file. A line without a `kind` is an incoming
+  batch — that is what every line written before audits existed is.
 * The same file name with different content is a different batch.
-* `applied_at` is the newest `scored_at` in the batch, not the time of the
-  run: the same batch applied on two machines writes the same line.
+* `applied_at` is the newest `scored_at` in the batch — the newest
+  `audited_at` in an audit file — not the time of the run: the same file
+  applied on two machines writes the same line.
 * If a run is interrupted between the two replacements, the next one stops
   with an error naming the leftover `.tmp` file and what to do with it — it
   does not guess which of the two files is the truth.
@@ -98,6 +146,7 @@ same text on GitHub.
 | `risk_en` / `risk_tr` | string | key handling, closed binaries, telemetry, embedded instructions |
 | `evidence_url` | https | **required**; falls back to `url` |
 | `audited` | bool | a second pass over the rubric confirmed the scores |
+| `audited_at` | `YYYY-MM-DD` | **optional**; the day an auditor read the row. A row nobody has audited does not carry the field at all |
 | `audit_note_en` / `audit_note_tr` | string | why the auditor changed or kept them, in both languages; each page shows the note in its own language |
 | `duplicate_of` | `owner/name` or null | duplicates are listed but never counted |
 | `status` | `active` \| `gone` | a 404 marks the row, it is never deleted |

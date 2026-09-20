@@ -7,6 +7,8 @@ Class A repositories that a second pass over the rubric confirmed. Unaudited row
 
 There are two doors into class A: a total of 11 or more, or relevance 3 together with novelty 2 or more. The second door is a wide one — it lets in a repository whose idea transfers even when little else about it does — so the rows that also carry a high total are kept in a section of their own.
 
+54 class A rows are awaiting audit: they are listed in [REPOS.md](REPOS.md) and on their category pages with `audited: no`, and they stay out of this page until one auditor has read them.
+
 ## Measured core
 
 Audited class A with a total of 13 or more, highest first.

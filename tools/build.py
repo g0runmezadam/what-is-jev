@@ -743,6 +743,9 @@ TEXT_FORBIDDEN = [
 TEXT_FIELDS = ["summary_en", "summary_tr", "takeaway_en", "takeaway_tr",
                "risk_en", "risk_tr", "audit_note_en", "audit_note_tr"]
 
+#: The five axes, by name, in rubric order.
+SCORE_NAMES = [name for name, _legacy, _short in SCORE_KEYS]
+
 
 def _is_http(value):
     """A strict url: http(s), no whitespace, no bracket, no quote."""
@@ -930,6 +933,10 @@ def validate(records, sources=None, strict=False):
         if not isinstance(rec.get("audited"), bool):
             errors.append("%s: audited doğru/yanlış değil (%r)"
                           % (where, rec.get("audited")))
+        # optional: a row scored before audits were recorded does not have it
+        if "audited_at" in rec and not is_date(rec["audited_at"]):
+            errors.append("%s: audited_at YYYY-MM-DD bir takvim günü değil (%r)"
+                          % (where, rec["audited_at"]))
 
         if rec.get("category") not in CATEGORY_TITLES:
             errors.append("%s: category geçersiz (%r)" % (where, rec.get("category")))
@@ -1137,6 +1144,9 @@ def stats(records, sources):
         "sources": len(sources),
         "source_types": sorted(source_types.items()),
         "audited": sum(1 for r in rows if r.get("audited")),
+        # class A that nobody has re-read yet: the work the auditor still owes
+        "awaiting_audit": sum(1 for r in rows
+                              if r["class"] == "A" and not r.get("audited")),
         "missing_translation": sum(1 for r in rows if not r.get("summary_en")),
         "generated_at": scored[-1] if scored else IMPORT_DATE,
     }
@@ -1160,6 +1170,11 @@ def stats_block(st, lang):
         "Classes" if english else "Sınıflar",
         st["classes"]["A"], st["classes"]["B"], st["classes"]["C"]))
     lines.append("| %s | %d |" % ("Audited" if english else "Denetlenmiş", st["audited"]))
+    # only while there is a queue: "0 waiting" is not news either
+    if st["awaiting_audit"]:
+        lines.append("| %s | %d |" % (
+            "Class A awaiting audit" if english else "Denetim bekleyen A sınıfı",
+            st["awaiting_audit"]))
     lines.append("| %s | %d |" % ("Sources" if english else "Kaynak", st["sources"]))
     # a count of zero is not news: the row only appears when there is work left
     if st["missing_translation"]:
@@ -1255,6 +1270,9 @@ def _row(rec, lang):
         rec["calls_jev"],
         _esc(summary),
         _link(evidence, rec["evidence_url"]),
+        # the second pass is what admits a row to TOP.md, so every list says
+        # plainly which rows have had one
+        "yes" if rec.get("audited") else "no",
     ]
     if rec.get("duplicate_of"):
         marker = "duplicate of " + _link(
@@ -1265,9 +1283,11 @@ def _row(rec, lang):
 
 def _table_head(lang):
     if lang == "en":
-        head = ["Repository", "Class", "Total", "Calls Jev", "What it does", "Evidence"]
+        head = ["Repository", "Class", "Total", "Calls Jev", "What it does",
+                "Evidence", "Audited"]
     else:
-        head = ["Repo", "Sınıf", "Toplam", "Jev çağırıyor", "Ne yapıyor", "Kanıt"]
+        head = ["Repo", "Sınıf", "Toplam", "Jev çağırıyor", "Ne yapıyor",
+                "Kanıt", "Denetlendi"]
     return "| " + " | ".join(head) + " |\n|" + "---|" * len(head)
 
 
@@ -1381,6 +1401,21 @@ def render_top(records, st, lang):
         "başka yanı geçmeyen repo da oradan girer — bu yüzden yüksek toplamı "
         "da olan satırlar ayrı bir bölümde tutulur."))
     out.append("")
+
+    # The queue is part of the honest reading of this page: a row is missing
+    # here either because it is not class A or because nobody has read it yet.
+    if st["awaiting_audit"]:
+        out.append((
+            "%d class A rows are awaiting audit: they are listed in "
+            "[REPOS.md](REPOS.md) and on their category pages with "
+            "`audited: no`, and they stay out of this page until one "
+            "auditor has read them."
+            if english else
+            "Denetim bekleyen %d A sınıfı satır var: "
+            "[REPOS.md](REPOS.md) ve kategori sayfalarında `audited: no` "
+            "olarak listelenirler; bir denetçi okuyana kadar bu sayfaya "
+            "girmezler.") % st["awaiting_audit"])
+        out.append("")
 
     out.append("## %s" % ("Measured core" if english
                           else "Ölçümle desteklenen çekirdek"))
@@ -1513,6 +1548,11 @@ RECORD_FIELDS = frozenset([
     "audit_note_tr", "duplicate_of", "status",
 ])
 
+#: Fields a row may carry and may equally leave out. ``audited_at`` is the day
+#: an auditor read the row; a row nobody has audited simply does not have one,
+#: and that is not the same as an empty date.
+OPTIONAL_FIELDS = frozenset(["audited_at"])
+
 #: What an incoming row may not take away from a repository we already know:
 #: the day we first saw it, and the auditor's work. ``audited`` is not in the
 #: list because it is not kept either - a new score is an unaudited score.
@@ -1530,7 +1570,7 @@ UNEARNED_ON_MERGE = {"audited": False, "audit_note_en": "", "audit_note_tr": "",
 
 def _incoming_row_problems(label, row):
     missing = sorted(RECORD_FIELDS - set(row))
-    extra = sorted(set(row) - RECORD_FIELDS)
+    extra = sorted(set(row) - RECORD_FIELDS - OPTIONAL_FIELDS)
     problems = []
     if missing:
         problems.append("%s: eksik alan: %s" % (label, ", ".join(missing)))
@@ -1549,24 +1589,41 @@ DATA_PATH = ("data", "repos.jsonl")
 
 SHA256_RE = re.compile(r"\A[0-9a-f]{64}\Z")
 
+#: What a ledger line can be about. A line written before audits existed has
+#: no ``kind`` at all, and it means the same thing it always meant: a batch of
+#: scores out of ``data/incoming/``.
+LEDGER_KINDS = ("incoming", "audit")
+DEFAULT_LEDGER_KIND = "incoming"
+
+
+def ledger_kind(entry):
+    """The kind of a ledger line; a line without one is an incoming batch."""
+    return entry.get("kind") or DEFAULT_LEDGER_KIND
+
 
 def read_ledger(root):
     """Return (entries, problems) from ``data/applied-batches.jsonl``.
 
     One line per batch that has been folded into the data: its file name, the
-    sha256 of its content and ``applied_at``, the newest ``scored_at`` in the
-    batch. The date comes from the batch and not from the clock, so two
-    machines applying the same batch write the same line.
+    sha256 of its content and ``applied_at``, the newest date in the batch.
+    The date comes from the batch and not from the clock, so two machines
+    applying the same batch write the same line. An audit file carries
+    ``kind: "audit"`` as well; the older lines have no ``kind`` and are
+    incoming batches.
     """
     path = os.path.join(root, *LEDGER_PATH)
     entries, fatal = read_jsonl_strict(path)
     problems = ["data/" + line for line in fatal]
     for number, entry in enumerate(entries, 1):
         where = "data/applied-batches.jsonl:%d" % number
-        if sorted(entry) != ["applied_at", "name", "sha256"]:
-            problems.append("%s: alanlar name, sha256, applied_at değil (%r)"
-                            % (where, sorted(entry)))
+        if sorted(entry) not in (["applied_at", "name", "sha256"],
+                                 ["applied_at", "kind", "name", "sha256"]):
+            problems.append("%s: alanlar name, sha256, applied_at (ve isteğe "
+                            "bağlı kind) değil (%r)" % (where, sorted(entry)))
             continue
+        if "kind" in entry and entry["kind"] not in LEDGER_KINDS:
+            problems.append("%s: kind %s değil (%r)"
+                            % (where, " / ".join(LEDGER_KINDS), entry["kind"]))
         if not isinstance(entry["name"], str) or not entry["name"]:
             problems.append("%s: name metin değil (%r)" % (where, entry["name"]))
         if not (isinstance(entry["sha256"], str)
@@ -1646,14 +1703,14 @@ def merge_incoming(root, records):
     ledger, ledger_problems = read_ledger(root)
     problems.extend(ledger_problems)
     summary["ledger"] = list(ledger)
-    applied_before = {(entry.get("name"), entry.get("sha256"))
-                      for entry in ledger}
+    applied_before = {(entry.get("name"), entry.get("sha256"),
+                       ledger_kind(entry)) for entry in ledger}
     files = sorted(glob.glob(os.path.join(root, "data", "incoming", "*.jsonl")))
     batches = []
     for path in files:
         name = os.path.basename(path)
         digest = sha256_of(path)
-        if (name, digest) in applied_before:
+        if (name, digest, "incoming") in applied_before:
             # Already in the data. Re-reading it would be re-applying it, and
             # a batch that lost the race to a newer one would undo it.
             summary["skipped"].append(name)
@@ -1687,6 +1744,8 @@ def merge_incoming(root, records):
                 new = dict(row)
                 new["first_seen"] = row["scored_at"]
                 new.update(UNEARNED_ON_MERGE)
+                # a scorer cannot hand itself an audit date either
+                new.pop("audited_at", None)
                 records.append(new)
                 index[key] = new
                 summary["added"] += 1
@@ -1694,6 +1753,12 @@ def merge_incoming(root, records):
                 new = dict(row)
                 for field in PRESERVED_ON_MERGE:
                     new[field] = old[field]
+                # the day the row was last read by an auditor is the auditor's
+                # to set; a new score clears ``audited``, not the record of
+                # when that reading happened.
+                new.pop("audited_at", None)
+                if "audited_at" in old:
+                    new["audited_at"] = old["audited_at"]
                 new["audited"] = False
                 old.clear()
                 old.update(new)
@@ -1706,6 +1771,160 @@ def merge_incoming(root, records):
         summary["entries"].append(entry)
         summary["ledger"].append(entry)
     records.sort(key=lambda r: str(r.get("repo") or "").lower())
+    return problems, summary
+
+
+# --------------------------------------------------------------------------
+# data/audits - the second pass comes back
+
+#: Exactly what an audit line carries. No ``total`` and no ``class``: those
+#: are the rubric's answer to the scores, recomputed here, so an audit result
+#: can never contradict the scale it was measured against.
+AUDIT_FIELDS = frozenset(["repo", "scores", "audit_note_en", "audit_note_tr",
+                          "duplicate_of", "audited_at"])
+
+#: An empty summary, so a caller can behave the same whether audits ran or not.
+def empty_merge_summary(ledger=()):
+    return {"files": [], "applied": 0, "rows": 0, "entries": [],
+            "ledger": list(ledger), "skipped": [], "stale": []}
+
+
+def _audit_row_problems(label, row, index):
+    """Everything wrong with one audit line, in the reader's own terms.
+
+    The same discipline an incoming row is held to, plus the two things only
+    an audit can get wrong: naming a repository the data does not have, and
+    calling a row a duplicate of something that is not there (or of itself).
+    """
+    missing = sorted(AUDIT_FIELDS - set(row))
+    extra = sorted(set(row) - AUDIT_FIELDS)
+    problems = []
+    if missing:
+        problems.append("%s: eksik alan: %s" % (label, ", ".join(missing)))
+    if extra:
+        problems.append("%s: şemada olmayan alan: %s" % (label, ", ".join(extra)))
+    if problems:
+        return problems
+
+    repo = row["repo"]
+    if not (isinstance(repo, str) and REPO_NAME.match(repo)):
+        return ["%s: repo owner/name değil (%r)" % (label, repo)]
+    rec = index.get(repo.lower())
+    if rec is None:
+        problems.append("%s: %s veride yok - denetim uygulanamaz" % (label, repo))
+
+    if not is_date(row["audited_at"]):
+        problems.append("%s: audited_at YYYY-MM-DD bir takvim günü değil (%r)"
+                        % (label, row["audited_at"]))
+
+    scores = row["scores"]
+    if not isinstance(scores, dict) or sorted(scores) != sorted(SCORE_NAMES):
+        problems.append("%s: scores alanları eksik/fazla (%r)"
+                        % (label, sorted(scores) if isinstance(scores, dict)
+                           else scores))
+    else:
+        for name in SCORE_NAMES:
+            value = scores[name]
+            if not isinstance(value, int) or isinstance(value, bool) \
+                    or not 0 <= value <= 3:
+                problems.append("%s: scores.%s 0-3 aralığında değil (%r)"
+                                % (label, name, value))
+
+    for field in ("audit_note_en", "audit_note_tr"):
+        note = row[field]
+        if not isinstance(note, str):
+            problems.append("%s: %s metin değil (%r)" % (label, field, note))
+            continue
+        if not note.strip():
+            problems.append("%s: %s boş - denetçi neden böyle karar verdiğini "
+                            "iki dilde yazar" % (label, field))
+        problems.extend(_text_problems(label, field, note))
+        for privacy_label, found in privacy_hits(note):
+            problems.append("%s: %s içinde %s var (%r)"
+                            % (label, field, privacy_label, found))
+
+    duplicate = row["duplicate_of"]
+    if duplicate is not None:
+        if not (isinstance(duplicate, str) and REPO_NAME.match(duplicate)):
+            problems.append("%s: duplicate_of owner/name değil (%r)"
+                            % (label, duplicate))
+        elif duplicate.lower() == repo.lower():
+            problems.append("%s: %s kendisinin mükerreri olamaz" % (label, repo))
+        elif duplicate.lower() not in index:
+            problems.append("%s: duplicate_of hedefi %s veride yok"
+                            % (label, duplicate))
+    return problems
+
+
+def merge_audits(root, records, ledger):
+    """Fold ``data/audits/*.jsonl`` into *records*, in place.
+
+    An audit line is one auditor's reading of one row: the five scores, the
+    public note in both languages, whether the row turned out to be a
+    duplicate, and the day the reading happened. ``total`` and ``class`` are
+    recomputed from the scores, so an audit can never disagree with the
+    rubric, and ``audited`` becomes true - this is the pass ``TOP.md`` waits
+    for.
+
+    An audit older than the score it is about is not applied: the auditor
+    cannot have read a score written after them. The run names it and carries
+    on, the way a stale incoming row is handled.
+
+    Nothing is applied unless every line of every file is sound, and a file
+    whose name and sha256 are already in the ledger under ``kind: "audit"``
+    is not applied a second time. Returns (problems, summary).
+    """
+    summary = empty_merge_summary(ledger)
+    problems = []
+    applied_before = {(entry.get("name"), entry.get("sha256"),
+                       ledger_kind(entry)) for entry in ledger}
+    index = {str(rec.get("repo") or "").lower(): rec for rec in records}
+
+    batches = []
+    for path in sorted(glob.glob(os.path.join(root, "data", "audits", "*.jsonl"))):
+        name = os.path.basename(path)
+        digest = sha256_of(path)
+        if (name, digest, "audit") in applied_before:
+            summary["skipped"].append(name)
+            summary["files"].append(path)
+            continue
+        rows, fatal = read_jsonl_strict(path)
+        problems.extend("data/audits/" + line for line in fatal)
+        for number, row in enumerate(rows, 1):
+            problems.extend(_audit_row_problems(
+                "data/audits/%s:%d" % (name, number), row, index))
+        batches.append((path, name, digest, rows))
+    if problems:
+        return problems, summary
+
+    for path, name, digest, rows in batches:
+        for row in rows:
+            rec = index[row["repo"].lower()]
+            if is_date(rec.get("scored_at")) and row["audited_at"] < rec["scored_at"]:
+                # Dates are YYYY-MM-DD, so this comparison is the calendar's.
+                summary["stale"].append(
+                    "data/audits/%s: %s atlandı - denetim %s tarihli, satırın "
+                    "puanı %s tarihli; eski denetim yeni puanı onaylayamaz"
+                    % (name, rec["repo"], row["audited_at"], rec["scored_at"]))
+                continue
+            scores = dict(row["scores"])
+            rec["scores"] = scores
+            rec["total"] = sum(scores.values())
+            rec["class"] = expected_class(rec["total"], scores["relevance"],
+                                          scores["novelty"])
+            rec["audited"] = True
+            rec["audited_at"] = row["audited_at"]
+            rec["audit_note_en"] = row["audit_note_en"].strip()
+            rec["audit_note_tr"] = row["audit_note_tr"].strip()
+            rec["duplicate_of"] = row["duplicate_of"]
+            summary["applied"] += 1
+            summary["rows"] += 1
+        summary["files"].append(path)
+        entry = {"name": name, "sha256": digest, "kind": "audit",
+                 "applied_at": max(row["audited_at"] for row in rows) if rows
+                 else None}
+        summary["entries"].append(entry)
+        summary["ledger"].append(entry)
     return problems, summary
 
 
@@ -1729,15 +1948,15 @@ def applied_name(target, name):
         number += 1
 
 
-def file_applied(root, summary):
-    """Move every merged batch under ``data/incoming/applied/``.
+def file_applied(root, summary, area="incoming"):
+    """Move every merged file under ``data/<area>/applied/``.
 
-    Returns the batches that could not be moved. Such a batch is already in
-    the data and already in ``data/applied-batches.jsonl``, so the message
-    says exactly that: the next run will not apply its rows a second time -
-    it will only try to file it away again.
+    Returns the files that could not be moved. Such a file is already in the
+    data and already in ``data/applied-batches.jsonl``, so the message says
+    exactly that: the next run will not apply its rows a second time - it
+    will only try to file it away again.
     """
-    target = os.path.join(root, "data", "incoming", "applied")
+    target = os.path.join(root, "data", area, "applied")
     os.makedirs(target, exist_ok=True)
     stranded = []
     for path in summary["files"]:
@@ -1747,13 +1966,13 @@ def file_applied(root, summary):
             os.replace(path, destination)
         except OSError as error:
             stranded.append(
-                "data/incoming/%s: veriye uygulandı ama arşivlenemedi (%s) - "
+                "data/%s/%s: veriye uygulandı ama arşivlenemedi (%s) - "
                 "dosya yerinde duruyor; data/applied-batches.jsonl kaydı "
                 "sayesinde satırları yeniden uygulanmaz, sonraki çalıştırma "
-                "yalnız arşivlemeyi yeniden dener" % (name, error))
+                "yalnız arşivlemeyi yeniden dener" % (area, name, error))
             continue
-        print("UYGULANDI: data/incoming/%s -> data/incoming/applied/%s"
-              % (name, os.path.basename(destination)))
+        print("UYGULANDI: data/%s/%s -> data/%s/applied/%s"
+              % (area, name, area, os.path.basename(destination)))
     return stranded
 
 
@@ -1807,8 +2026,8 @@ def main(argv=None, root=None):
             problems.append("%d satırın İngilizce çevirisi yok (--strict)"
                             % report["missing_translation"])
         sources, _errors = read_jsonl(os.path.join(root, "data", "sources.jsonl"))
-        incoming = {"files": [], "added": 0, "updated": 0, "rows": 0,
-                    "entries": [], "ledger": [], "skipped": [], "stale": []}
+        incoming = dict(empty_merge_summary(), added=0, updated=0)
+        audits = empty_merge_summary()
     else:
         records, sources, read_errors = load_data(root)
         problems.extend(read_errors)
@@ -1823,6 +2042,24 @@ def main(argv=None, root=None):
             print("data/incoming: %d satır (%d yeni, %d güncellendi), %d dosya"
                   % (incoming["rows"], incoming["added"], incoming["updated"],
                      len(incoming["files"])))
+
+        # Audits come second on purpose: the auditor read the newest score, so
+        # the audit has to land on top of it. A broken incoming batch stops
+        # the audits too - nothing at all is applied in that run.
+        if incoming_problems:
+            audits = empty_merge_summary(incoming["ledger"])
+        else:
+            audit_problems, audits = merge_audits(root, records,
+                                                  incoming["ledger"])
+            problems.extend(audit_problems)
+            for line in audits["stale"]:
+                print("ATLANDI: " + line)
+            for name in audits["skipped"]:
+                print("ZATEN UYGULANMIŞ: data/audits/%s "
+                      "(data/applied-batches.jsonl) - yalnız arşivlenecek" % name)
+            if audits["rows"]:
+                print("data/audits: %d denetim satırı, %d dosya"
+                      % (audits["rows"], len(audits["files"])))
 
     errors, warnings = validate(records, sources, strict=args.strict)
     problems.extend(errors)
@@ -1851,14 +2088,16 @@ def main(argv=None, root=None):
     # leaves the data alone and only retries the move.
     stranded = []
     if not args.check:
-        if incoming["entries"]:
+        if incoming["entries"] or audits["entries"]:
             try:
-                write_data_and_ledger(root, records, incoming["ledger"])
+                write_data_and_ledger(root, records, audits["ledger"])
             except OSError as error:
                 print("HATA: veri ve batch kaydı yazılamadı (%s)" % error)
                 return 1
         if incoming["files"]:
-            stranded = file_applied(root, incoming)
+            stranded = file_applied(root, incoming, "incoming")
+        if audits["files"]:
+            stranded.extend(file_applied(root, audits, "audits"))
 
     st = stats(records, sources)
     stale = []

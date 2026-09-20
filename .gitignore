@@ -1,5 +1,6 @@
 ham/
 data/incoming/applied/
+data/audits/applied/
 .env
 .env.*
 __pycache__/

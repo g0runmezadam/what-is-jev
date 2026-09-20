@@ -164,7 +164,8 @@ class SchemaTest(BaseCase):
                   encoding="utf-8") as fh:
             schema = json.load(fh)
         props = schema["properties"]
-        self.assertEqual(set(props), set(build.RECORD_FIELDS))
+        self.assertEqual(set(props),
+                         set(build.RECORD_FIELDS) | set(build.OPTIONAL_FIELDS))
         self.assertEqual(set(schema["required"]), set(build.RECORD_FIELDS))
         self.assertEqual(set(props["category"]["enum"]), set(build.CATEGORY_TITLES))
         self.assertEqual(set(props["class"]["enum"]), set(build.CLASSES))

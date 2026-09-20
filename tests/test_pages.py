@@ -92,7 +92,7 @@ class PageTest(BaseCase):
         for name, text in pages.items():
             for line in text.splitlines():
                 cells = split_cells(line)
-                is_repo_row = (line.startswith("| [") and len(cells) == 6
+                is_repo_row = (line.startswith("| [") and len(cells) == 7
                                and cells[1] in ("A", "B", "C"))
                 if is_repo_row:
                     rows += 1
