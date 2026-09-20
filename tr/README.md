@@ -21,9 +21,8 @@ TypeSafe AI ile bir bağımız yoktur. Bu bağımsız bir araştırmadır.
 |---|---|
 | Repo | 947 |
 | Jev çağırıyor | yes 639 · no 275 · unclear 33 |
-| Sınıflar | A 275 · B 300 · C 372 |
-| Denetlenmiş | 347 |
-| Denetim bekleyen A sınıfı | 6 |
+| Sınıflar | A 273 · B 302 · C 372 |
+| Denetlenmiş | 353 |
 | Kaynak | 90 |
 | Veri tarihi | 2026-09-20 |
 

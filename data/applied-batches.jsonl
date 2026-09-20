@@ -4,3 +4,4 @@
 {"applied_at": "2026-09-20", "name": "2026-09-20-c.jsonl", "sha256": "bdf07d0cd858e9bc8fa9b728006da80eb8b9ae5dd72b63f875d3a83cec3755d4"}
 {"applied_at": "2026-09-20", "kind": "audit", "name": "2026-09-20-c.jsonl", "sha256": "4e7e3e183bd6b3c80d606fbf85cc5932d07f5fa8fb7ea75fc715afde755210e7"}
 {"applied_at": "2026-09-20", "name": "2026-09-20-d.jsonl", "sha256": "462473e86ce031232116cd51801c376f198cf7062c0bf85df102f644b51cc0fc"}
+{"applied_at": "2026-09-20", "kind": "audit", "name": "2026-09-20-d.jsonl", "sha256": "ac050aa078ea73612624faf47849a5acc825a22bef7958ec5a86ce00ee33eb09"}

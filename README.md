@@ -21,9 +21,8 @@ We are not affiliated with TypeSafe AI. This is independent research.
 |---|---|
 | Repositories | 947 |
 | Calls Jev | yes 639 · no 275 · unclear 33 |
-| Classes | A 275 · B 300 · C 372 |
-| Audited | 347 |
-| Class A awaiting audit | 6 |
+| Classes | A 273 · B 302 · C 372 |
+| Audited | 353 |
 | Sources | 90 |
 | Data as of | 2026-09-20 |
 
