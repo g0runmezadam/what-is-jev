@@ -16,7 +16,7 @@ What changed in each update of the data and the findings. Newest first. The numb
   - one claim was **rejected**: a statement about non-determinism had been attributed to a vendor employee, but the transcript shows the show's hosts said it after the guest had left.
 - **Patterns**: a caution about third-party sites that relay your API key through their own server ([`PATTERNS.md`](PATTERNS.md)).
 - **Pipeline**: third-party text (repository descriptions, topics) is now cleaned before it becomes data, after a description containing a Markdown link stopped the build; audit results can now be imported as dated batches.
-- **Audit**: class A rows first scored today are re-read by a single reviewer before they can appear in [`TOP.md`](TOP.md); until then they are listed as unaudited.
+- **Audit**: all 54 rows first scored as class A today were re-read by a single reviewer, README open, against the unchanged rubric. Scores changed in 31 of them; 11 fell out of class A (43 stayed, 7 became B, 4 became C). The most common inflation this time was **novelty** — ports and reproductions that repeat the baseline pattern — followed by maturity. Eight repositories were scored *up* on evidence because their own published measurements had been under-counted. Audited rows now total 337, and none are waiting.
 
 ## 2026-09-19
 
