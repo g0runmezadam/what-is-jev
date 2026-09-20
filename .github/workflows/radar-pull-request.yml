@@ -1,0 +1,27 @@
+name: Open Radar pull request
+
+on:
+  push:
+    branches:
+      - "radar/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open pull request when missing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_BRANCH: ${{ github.ref_name }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          existing="$(gh pr list --repo "$REPOSITORY" --base main --head "$HEAD_BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh pr create --repo "$REPOSITORY" --base main --head "$HEAD_BRANCH" \
+              --title "data: hourly Jev repository analysis" \
+              --body "Automated Jev-first repository analysis. DeepSeek generated prose only after Jev fixed the typed decisions. This PR does not update or deploy jev.com.tr."
+          fi
