@@ -121,6 +121,22 @@ CLASSES = ["A", "B", "C"]
 #: rather than quietly mixed in.
 RUBRIC_VERSIONS = (1,)
 
+#: Which incoming file a row's score came from. Two batches can carry the same
+#: date, so a date cannot order them and a file name is not evidence of
+#: anything; the content is. A batch id is the first twelve hex digits of the
+#: sha256 ``data/applied-batches.jsonl`` already records for that file, so the
+#: row and the ledger line point at each other. The first data set predates
+#: incoming batches altogether and says ``initial``.
+INITIAL_BATCH = "initial"
+BATCH_ID_LENGTH = 12
+BATCH_ID = re.compile(r"\A(?:%s|[0-9a-f]{%d})\Z" % (INITIAL_BATCH, BATCH_ID_LENGTH))
+
+
+def batch_id(digest):
+    """The batch id belonging to a file whose sha256 is *digest*."""
+    return digest[:BATCH_ID_LENGTH]
+
+
 #: The shape of ``meta``: exactly these fields, each of these types. ``None``
 #: means "we have not asked GitHub yet", which is not the same as zero.
 NONE = type(None)
@@ -538,6 +554,8 @@ def import_legacy(root):
             "first_seen": IMPORT_DATE,
             "scored_at": IMPORT_DATE,
             "rubric_version": RUBRIC_VERSION,
+            # the first data set; it came from no incoming batch at all
+            "score_batch": INITIAL_BATCH,
             "meta": _meta_from(raw_meta),
             "category": category,
             "calls_jev": calls,
@@ -861,13 +879,42 @@ def clean_third_party(value, limit=THIRD_PARTY_LIMIT):
     return text, notes
 
 
+def is_int(value):
+    """A whole number - and ``True`` is not one.
+
+    In Python ``True == 1`` and ``isinstance(True, int)``, so a score of
+    ``true`` counted as a score of one and walked through validation. Every
+    place that wants a number asks this instead of ``isinstance``, because
+    JSON Schema does not call a boolean an integer either.
+    """
+    return type(value) is int
+
+
+def is_str(value):
+    """Text, and nothing that merely behaves like it."""
+    return type(value) is str
+
+
+def is_bool(value):
+    return type(value) is bool
+
+
+#: How ``META_FIELD_TYPES`` is read: one strict check per type it may name.
+TYPE_CHECKS = {
+    int: is_int,
+    str: is_str,
+    bool: is_bool,
+    list: lambda value: type(value) is list,
+    NONE: lambda value: value is None,
+}
+
 #: A date, not a timestamp: the pages must not move when the clock does.
 DATE_RE = re.compile(r"\A\d{4}-\d{2}-\d{2}\Z")
 
 
 def is_date(value):
     """``YYYY-MM-DD`` and a day that exists. 2026-02-30 is neither."""
-    if not isinstance(value, str) or not DATE_RE.match(value):
+    if not is_str(value) or not DATE_RE.match(value):
         return False
     try:
         datetime.date.fromisoformat(value)
@@ -891,12 +938,9 @@ def _meta_problems(where, meta):
         if field not in meta:
             continue
         value = meta[field]
-        # bool is an int in Python; a star count of ``True`` is not a count.
-        ok = isinstance(value, types) and not (
-            bool not in types and isinstance(value, bool))
-        if not ok:
+        if not any(TYPE_CHECKS[wanted](value) for wanted in types):
             out.append("%s: meta.%s türü yanlış (%r)" % (where, field, value))
-        elif field == "topics" and not all(isinstance(t, str) for t in value):
+        elif field == "topics" and not all(is_str(t) for t in value):
             out.append("%s: meta.topics yalnız metin içerebilir (%r)"
                        % (where, value))
     return out
@@ -939,7 +983,7 @@ def validate(records, sources=None, strict=False):
             errors.append("%s: duplicate_of owner/name değil (%r)" % (where, duplicate))
 
         for field in TEXT_FIELDS:
-            if field in rec and not isinstance(rec[field], str):
+            if field in rec and not is_str(rec[field]):
                 errors.append("%s: %s metin değil (%r)" % (where, field, rec[field]))
             errors.extend(_text_problems(where, field, rec.get(field)))
         errors.extend(_text_problems(
@@ -949,11 +993,17 @@ def validate(records, sources=None, strict=False):
             if not is_date(rec.get(field)):
                 errors.append("%s: %s YYYY-MM-DD bir takvim günü değil (%r)"
                               % (where, field, rec.get(field)))
-        if rec.get("rubric_version") not in RUBRIC_VERSIONS:
+        if not is_int(rec.get("rubric_version")) \
+                or rec["rubric_version"] not in RUBRIC_VERSIONS:
             errors.append("%s: rubric_version bilinen sürümlerden biri değil "
                           "(%r, bilinen: %s)"
                           % (where, rec.get("rubric_version"),
                              ", ".join(str(v) for v in RUBRIC_VERSIONS)))
+        batch = rec.get("score_batch")
+        if not (is_str(batch) and BATCH_ID.match(batch)):
+            errors.append("%s: score_batch %r değil ya da %d haneli küçük "
+                          "harfli sha256 önü değil (%r)"
+                          % (where, INITIAL_BATCH, BATCH_ID_LENGTH, batch))
         errors.extend(_meta_problems(where, rec.get("meta")))
         if not isinstance(rec.get("audited"), bool):
             errors.append("%s: audited doğru/yanlış değil (%r)"
@@ -992,14 +1042,20 @@ def validate(records, sources=None, strict=False):
         else:
             for name in names:
                 value = scores[name]
-                if not isinstance(value, int) or not 0 <= value <= 3:
+                if not is_int(value) or not 0 <= value <= 3:
                     errors.append("%s: scores.%s 0-3 aralığında değil (%r)"
                                   % (where, name, value))
-            if isinstance(rec.get("total"), int) and rec["total"] != sum(scores.values()):
+            # The sum of something that is not a number is worth nothing, so
+            # the axes have to hold up before the total is compared to them.
+            countable = all(is_int(value) for value in scores.values())
+            if not is_int(rec.get("total")):
+                errors.append("%s: total sayı değil (%r)" % (where, rec.get("total")))
+            elif not countable:
+                errors.append("%s: total (%r) puanlar sayı olmadığı için "
+                              "doğrulanamadı" % (where, rec["total"]))
+            elif rec["total"] != sum(scores.values()):
                 errors.append("%s: total (%r) puan toplamı (%d) değil"
                               % (where, rec.get("total"), sum(scores.values())))
-            elif not isinstance(rec.get("total"), int):
-                errors.append("%s: total sayı değil (%r)" % (where, rec.get("total")))
             else:
                 wanted = expected_class(rec["total"], scores["relevance"], scores["novelty"])
                 # An audited row carries a human judgement and may differ. An
@@ -1023,7 +1079,7 @@ def _validate_sources(sources):
     seen = set()
     for src in sources:
         where = src.get("id") or src.get("title") or "<kaynak>"
-        if not src.get("id"):
+        if not (is_str(src.get("id")) and src["id"]):
             errors.append("kaynak: id yok (%r)" % (src.get("title"),))
         elif src["id"] in seen:
             errors.append("kaynak: id tekil değil (%s)" % src["id"])
@@ -1035,9 +1091,12 @@ def _validate_sources(sources):
         if src.get("status") not in SOURCE_STATUS:
             errors.append("%s: kaynak status geçersiz (%r)" % (where, src.get("status")))
         trust = src.get("trust")
-        if not isinstance(trust, int) or not 1 <= trust <= 5:
+        if not is_int(trust) or not 1 <= trust <= 5:
             errors.append("%s: kaynak trust 1-5 değil (%r)" % (where, trust))
         for field in ("title", "author", "note_en", "note_tr"):
+            if field in src and not is_str(src[field]):
+                errors.append("%s: kaynak %s metin değil (%r)"
+                              % (where, field, src[field]))
             errors.extend(_text_problems(where, "kaynak " + field, src.get(field)))
     return errors
 
@@ -1570,8 +1629,14 @@ RECORD_FIELDS = frozenset([
     "meta", "category", "calls_jev", "question_types", "scores", "total",
     "class", "summary_en", "summary_tr", "takeaway_en", "takeaway_tr",
     "risk_en", "risk_tr", "evidence_url", "audited", "audit_note_en",
-    "audit_note_tr", "duplicate_of", "status",
+    "audit_note_tr", "duplicate_of", "status", "score_batch",
 ])
+
+#: What an incoming row carries: every stored field except ``score_batch``.
+#: The batch id is the sha256 of the file the row arrived in, so only the
+#: merge can know it - a scorer that writes one is writing a claim about a
+#: file it cannot have hashed, and the row is refused.
+INCOMING_FIELDS = RECORD_FIELDS - frozenset(["score_batch"])
 
 #: Fields a row may carry and may equally leave out. ``audited_at`` is the day
 #: an auditor read the row; a row nobody has audited simply does not have one,
@@ -1594,8 +1659,8 @@ UNEARNED_ON_MERGE = {"audited": False, "audit_note_en": "", "audit_note_tr": "",
 
 
 def _incoming_row_problems(label, row):
-    missing = sorted(RECORD_FIELDS - set(row))
-    extra = sorted(set(row) - RECORD_FIELDS - OPTIONAL_FIELDS)
+    missing = sorted(INCOMING_FIELDS - set(row))
+    extra = sorted(set(row) - INCOMING_FIELDS - OPTIONAL_FIELDS)
     problems = []
     if missing:
         problems.append("%s: eksik alan: %s" % (label, ", ".join(missing)))
@@ -1603,7 +1668,9 @@ def _incoming_row_problems(label, row):
         problems.append("%s: şemada olmayan alan: %s" % (label, ", ".join(extra)))
     if problems:
         return problems
-    errors, _warnings = validate([row], [])
+    # The merge stamps the real batch id on; a stand-in goes in here so the
+    # rest of the row is judged by exactly the rules data/repos.jsonl lives by.
+    errors, _warnings = validate([dict(row, score_batch=INITIAL_BATCH)], [])
     return ["%s: %s" % (label, error) for error in errors]
 
 
@@ -1704,6 +1771,32 @@ def write_data_and_ledger(root, records, ledger):
     os.replace(ledger_tmp, ledger_path)
 
 
+def _conflicting_rows(batches):
+    """Repositories that more than one row of this run wants to rewrite.
+
+    Two batches can carry the same ``scored_at``, so the date cannot order
+    them, and the file names sort by accident - last time the alphabet handed
+    the run to the stale file and it overwrote a fresh score. Ordering is not
+    the build's to guess. The run stops, names the repository and every line
+    that claimed it, and the operator says which one counts by taking the
+    other file out of ``data/incoming/``.
+    """
+    where = {}
+    for _path, name, _digest, rows in batches:
+        for number, row in enumerate(rows, 1):
+            repo, lines = where.setdefault(row["repo"].lower(), (row["repo"], []))
+            lines.append("data/incoming/%s:%d" % (name, number))
+    problems = []
+    for key in sorted(where):
+        repo, lines = where[key]
+        if len(lines) > 1:
+            problems.append(
+                "%s aynı koşumda birden çok kez puanlanıyor (%s) - hangisinin "
+                "geçerli olduğuna operatör karar verir; hiçbir satır "
+                "uygulanmadı" % (repo, ", ".join(lines)))
+    return problems
+
+
 def merge_incoming(root, records):
     """Fold ``data/incoming/*.jsonl`` into *records*, in place.
 
@@ -1716,6 +1809,11 @@ def merge_incoming(root, records):
 
     Nothing is applied unless every line of every file is sound: a half-good
     batch would leave the data file in a state no file on disk describes.
+
+    Every applied row is stamped with ``score_batch``, the id of the file it
+    came from, so a later reader - an auditor above all - can say which score
+    it was looking at. Two rows of one run may not claim the same repository:
+    see :func:`_conflicting_rows`.
 
     A batch whose name and sha256 are already in ``data/applied-batches.jsonl``
     has been applied once and is not applied again - only its filing away is
@@ -1750,11 +1848,17 @@ def merge_incoming(root, records):
     if problems:
         return problems, summary
 
+    problems.extend(_conflicting_rows(batches))
+    if problems:
+        return problems, summary
+
     index = {}
     for rec in records:
         index[str(rec.get("repo") or "").lower()] = rec
     for path, name, digest, rows in batches:
+        batch = batch_id(digest)
         for row in rows:
+            row = dict(row, score_batch=batch)
             key = row["repo"].lower()
             old = index.get(key)
             if old is not None and is_date(old.get("scored_at")) \
@@ -1805,8 +1909,10 @@ def merge_incoming(root, records):
 #: Exactly what an audit line carries. No ``total`` and no ``class``: those
 #: are the rubric's answer to the scores, recomputed here, so an audit result
 #: can never contradict the scale it was measured against.
+#: ``score_batch`` is the one the auditor read off the row itself; if the row
+#: carries a different one now, the score the audit is about is gone.
 AUDIT_FIELDS = frozenset(["repo", "scores", "audit_note_en", "audit_note_tr",
-                          "duplicate_of", "audited_at"])
+                          "duplicate_of", "audited_at", "score_batch"])
 
 #: An empty summary, so a caller can behave the same whether audits ran or not.
 def empty_merge_summary(ledger=()):
@@ -1842,6 +1948,11 @@ def _audit_row_problems(label, row, index):
         problems.append("%s: audited_at YYYY-MM-DD bir takvim günü değil (%r)"
                         % (label, row["audited_at"]))
 
+    batch = row["score_batch"]
+    if not (is_str(batch) and BATCH_ID.match(batch)):
+        problems.append("%s: score_batch denetlenen satırın score_batch "
+                        "değeri olmalı (%r)" % (label, batch))
+
     scores = row["scores"]
     if not isinstance(scores, dict) or sorted(scores) != sorted(SCORE_NAMES):
         problems.append("%s: scores alanları eksik/fazla (%r)"
@@ -1850,8 +1961,7 @@ def _audit_row_problems(label, row, index):
     else:
         for name in SCORE_NAMES:
             value = scores[name]
-            if not isinstance(value, int) or isinstance(value, bool) \
-                    or not 0 <= value <= 3:
+            if not is_int(value) or not 0 <= value <= 3:
                 problems.append("%s: scores.%s 0-3 aralığında değil (%r)"
                                 % (label, name, value))
 
@@ -1891,9 +2001,14 @@ def merge_audits(root, records, ledger):
     rubric, and ``audited`` becomes true - this is the pass ``TOP.md`` waits
     for.
 
-    An audit older than the score it is about is not applied: the auditor
-    cannot have read a score written after them. The run names it and carries
-    on, the way a stale incoming row is handled.
+    An audit is about one version of one score, and says which: its
+    ``score_batch`` is the one the auditor read off the row. If the row
+    carries a different one now, the score the audit is about has been
+    replaced and the audit is not applied. The day comparison stays as a
+    second guard - an audit older than the score cannot have read it - but
+    dates cannot separate two batches that landed on the same day, and the
+    batch id can. The run names what it skipped and carries on, the way a
+    stale incoming row is handled.
 
     Nothing is applied unless every line of every file is sound, and a file
     whose name and sha256 are already in the ledger under ``kind: "audit"``
@@ -1925,6 +2040,16 @@ def merge_audits(root, records, ledger):
     for path, name, digest, rows in batches:
         for row in rows:
             rec = index[row["repo"].lower()]
+            if row["score_batch"] != rec.get("score_batch"):
+                # The auditor read a score that is no longer the row's. A day
+                # cannot tell these apart - two batches land on one date - so
+                # the identity of the score does it instead.
+                summary["stale"].append(
+                    "data/audits/%s: %s atlandı - denetim %s puan sürümü için "
+                    "yazılmış, veride %s var; eski puanın denetimi uygulanmaz"
+                    % (name, rec["repo"], row["score_batch"],
+                       rec.get("score_batch")))
+                continue
             if is_date(rec.get("scored_at")) and row["audited_at"] < rec["scored_at"]:
                 # Dates are YYYY-MM-DD, so this comparison is the calendar's.
                 summary["stale"].append(

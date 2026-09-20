@@ -41,6 +41,18 @@ data.
 * A row **older** than the score already stored (an earlier `scored_at`) is
   not applied. The run names it and carries on: an old score never overwrites
   a newer one.
+* Every applied row is stamped with `score_batch`, the id of the file it came
+  from: the first twelve hex digits of that file's `sha256`, the same digest
+  `applied-batches.jsonl` records. An incoming line **must not** carry the
+  field — the id is the hash of the file the line is sitting in, so only the
+  merge can know it, and a line that writes one is refused as an unknown
+  field.
+* **Two rows of one run may not claim the same repository.** Dates cannot
+  order two batches scored on the same day and file names sort by accident,
+  so the build refuses to guess: it names the repository and every line that
+  claimed it, applies nothing at all, and the operator decides which file is
+  the valid one by taking the other out of `data/incoming/`. This is the
+  same-day case the date comparison above cannot see.
 * After a successful merge `data/repos.jsonl` and `data/applied-batches.jsonl`
   are replaced in one step, and only then does the batch move to
   `data/incoming/applied/`. `--check` merges in memory to tell you the pages
@@ -62,9 +74,18 @@ decided:
  "scores": {"depth": 0, "relevance": 0, "novelty": 0, "maturity": 0, "evidence": 0},
  "audit_note_en": "…", "audit_note_tr": "…",
  "duplicate_of": null,
- "audited_at": "2026-09-20"}
+ "audited_at": "2026-09-20",
+ "score_batch": "6aeebbf643f8"}
 ```
 
+* `score_batch` is **required**, and the auditor takes it from the row they
+  are auditing — it is a field of that row in `data/repos.jsonl`, nowhere
+  else. It says *which version of the score* was read. If the row carries a
+  different `score_batch` by the time the audit is applied, the score the
+  audit is about has been replaced: the audit is **not** applied to that row
+  and the run names it. The `audited_at` comparison below stays as a second
+  guard, but a date cannot separate two scores written on the same day and
+  this can.
 * The repository **must** already be in the data. An audit of a row nobody
   scored is an error, not a new row: the auditor confirms a score, they do
   not write one.
@@ -134,6 +155,7 @@ same text on GitHub.
 | `source_set` | `discord` \| `topic` \| `manual` | where the repository came from |
 | `first_seen`, `scored_at` | `YYYY-MM-DD` | dates, not timestamps, so a rebuild is deterministic |
 | `rubric_version` | integer | which version of `rubric.md` produced the scores |
+| `score_batch` | `initial` or 12 hex digits | which incoming file this score came from — the first twelve digits of that file's `sha256`. `initial` is the first data set, which came from no batch. Stamped by the merge, never by a scorer; an audit must quote it |
 | `meta` | object | `description, stars, forks, language, license, created_at, pushed_at, archived, fork, topics` — GitHub metadata, refreshed by `tools/update.py` |
 | `category` | slug | one of the sixteen below |
 | `calls_jev` | `yes` \| `no` \| `unclear` | is there evidence of a real Jev/System-1 call |
@@ -183,6 +205,16 @@ like `lib/utils/helper.js` and a tilde with nothing but a folder after it out
 of the results. A tilde with no user name after it anonymises rather than
 leaks, and real third-party descriptions use it; this document itself, which
 the same scan reads, is the reason the examples above are in words.
+
+### A boolean is not a number
+
+In Python `True == 1`, so a `scores.depth` of `true`, a `total` of `true`, a
+`rubric_version` of `true` or a source `trust` of `true` once passed
+validation as a one. Every field that wants a whole number is checked with
+`type(x) is int` and every field that wants text with `type(x) is str`, which
+is what the JSON Schemas in `data/schema/` have always said. A test reads the
+integer fields out of those schemas and tries `true` in each, so the two
+cannot drift apart.
 
 Before `tools/update.py` replaces `data/repos.jsonl` it runs the same
 `validate` the build runs. If anything fails the file is left untouched and

@@ -33,6 +33,7 @@ def base_record(**kw):
         "evidence_url": "https://github.com/a/one#readme",
         "audited": False, "audit_note_en": "", "audit_note_tr": "",
         "duplicate_of": None, "status": "active",
+        "score_batch": build.INITIAL_BATCH,
     }
     rec.update(kw)
     return rec
@@ -184,6 +185,124 @@ class SchemaTest(BaseCase):
         for field in ("first_seen", "scored_at"):
             self.assertEqual(props[field]["pattern"], "^\\d{4}-\\d{2}-\\d{2}$")
 
+    def test_score_batch_is_required_and_must_name_a_batch(self):
+        """Which incoming file a row's score came from. Not optional."""
+        rec = base_record()
+        del rec["score_batch"]
+        errors, _ = build.validate([rec], SOURCES)
+        self.assertTrue(any("score_batch" in e for e in errors), errors)
+        for bad in ("", "INITIAL", "6aeebbf", "6aeebbf643f88", "6AEEBBF643F8",
+                    "not-hex-here", 12, True, None):
+            errors, _ = build.validate([base_record(score_batch=bad)], SOURCES)
+            self.assertTrue(any("score_batch" in e for e in errors),
+                            "%r kabul edildi" % (bad,))
+        for good in ("initial", "6aeebbf643f8", "a75ac5e1a7a6"):
+            errors, _ = build.validate([base_record(score_batch=good)], SOURCES)
+            self.assertEqual(errors, [], good)
+
+
+class BooleanIsNotANumberTest(BaseCase):
+    """``True == 1`` in Python; a score of ``true`` is not a score of one.
+
+    The auditor's own trigger: ``scores.depth: true``, ``total: true``,
+    ``rubric_version: true`` and a source ``trust: true`` all walked through
+    validation with an empty error list.
+    """
+
+    def test_a_boolean_score_is_not_a_score(self):
+        rec = base_record()
+        rec["scores"] = {"depth": True, "relevance": 0, "novelty": 0,
+                         "maturity": 0, "evidence": 0}
+        rec["total"] = 1
+        rec["class"] = "C"
+        errors, _ = build.validate([rec], SOURCES)
+        self.assertTrue(any("scores.depth" in e for e in errors), errors)
+
+    def test_a_boolean_total_is_not_a_total(self):
+        rec = base_record()
+        rec["scores"] = {"depth": 1, "relevance": 0, "novelty": 0,
+                         "maturity": 0, "evidence": 0}
+        rec["total"] = True
+        rec["class"] = "C"
+        errors, _ = build.validate([rec], SOURCES)
+        self.assertTrue(any("total" in e for e in errors), errors)
+
+    def test_a_boolean_rubric_version_is_not_a_version(self):
+        errors, _ = build.validate([base_record(rubric_version=True)], SOURCES)
+        self.assertTrue(any("rubric_version" in e for e in errors), errors)
+
+    def test_a_boolean_star_count_is_not_a_count(self):
+        rec = base_record()
+        rec["meta"] = dict(rec["meta"], stars=True, forks=False)
+        errors, _ = build.validate([rec], SOURCES)
+        self.assertTrue(any("meta.stars" in e for e in errors), errors)
+        self.assertTrue(any("meta.forks" in e for e in errors), errors)
+
+    def test_a_boolean_source_trust_is_not_a_trust_level(self):
+        bad = dict(SOURCES[0], trust=True)
+        errors, _ = build.validate([base_record()], [bad])
+        self.assertTrue(any("trust" in e for e in errors), errors)
+
+    def test_a_boolean_where_a_string_belongs_is_refused_too(self):
+        for field in ("class", "category", "status", "calls_jev", "source_set",
+                      "scored_at", "first_seen", "summary_tr", "score_batch"):
+            errors, _ = build.validate([base_record(**{field: True})], SOURCES)
+            self.assertTrue(any(field in e for e in errors), field)
+
+    def test_the_schema_integer_fields_all_refuse_a_boolean(self):
+        """Read the integer fields out of the JSON Schema and try True in each.
+
+        JSON Schema says a boolean is not an integer. This is the test that
+        keeps the code saying the same thing, field by field, rather than
+        only where somebody remembered to look.
+        """
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with open(os.path.join(root, "data", "schema", "repo.schema.json"),
+                  encoding="utf-8") as fh:
+            schema = json.load(fh)
+
+        def integer_fields(props):
+            for name, spec in props.items():
+                types = spec.get("type")
+                types = [types] if isinstance(types, str) else (types or [])
+                if "integer" in types:
+                    yield name
+
+        checked = []
+        for name in integer_fields(schema["properties"]):
+            errors, _ = build.validate([base_record(**{name: True})], SOURCES)
+            self.assertTrue(any(name in e for e in errors), name)
+            checked.append(name)
+        for name in integer_fields(schema["properties"]["meta"]["properties"]):
+            rec = base_record()
+            rec["meta"] = dict(rec["meta"], **{name: True})
+            errors, _ = build.validate([rec], SOURCES)
+            self.assertTrue(any("meta." + name in e for e in errors), name)
+            checked.append("meta." + name)
+        for name in integer_fields(schema["properties"]["scores"]["properties"]):
+            rec = base_record()
+            rec["scores"] = dict(rec["scores"], **{name: True})
+            rec["total"] = sum(1 if v is True else v for v in rec["scores"].values())
+            errors, _ = build.validate([rec], SOURCES)
+            self.assertTrue(any("scores." + name in e for e in errors), name)
+            checked.append("scores." + name)
+        self.assertGreaterEqual(len(checked), 8, checked)
+
+    def test_the_source_schema_integer_fields_refuse_a_boolean(self):
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with open(os.path.join(root, "data", "schema", "source.schema.json"),
+                  encoding="utf-8") as fh:
+            schema = json.load(fh)
+        names = [name for name, spec in schema["properties"].items()
+                 if spec.get("type") == "integer"]
+        self.assertTrue(names)
+        for name in names:
+            bad = dict(SOURCES[0], **{name: True})
+            errors, _ = build.validate([base_record()], [bad])
+            self.assertTrue(any(name in e for e in errors), name)
+
+
+class SchemaFilesTest(BaseCase):
     def test_schema_files_describe_the_real_fields(self):
         root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         with open(os.path.join(root, "data", "schema", "repo.schema.json"),

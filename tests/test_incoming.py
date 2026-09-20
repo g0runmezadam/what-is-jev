@@ -21,6 +21,8 @@ def incoming_row(repo="n/new", **kw):
                       summary_en="New summary", summary_tr="Yeni ozet",
                       takeaway_en="New takeaway", takeaway_tr="Yeni fikir")
     row.update(kw)
+    # which batch a score came from is the merge's answer, not the scorer's
+    row.pop("score_batch", None)
     return row
 
 
@@ -285,16 +287,20 @@ class ArchivingTest(BaseCase):
         self.assertEqual(entries[0]["applied_at"], "2026-09-25")
 
     def test_a_stranded_older_batch_cannot_undo_a_newer_one(self):
-        """a.jsonl (old) stays behind, b.jsonl (new) is filed: b must survive."""
-        rows = {
-            "a.jsonl": [incoming_row(repo="a/one", url="https://github.com/a/one",
-                                     evidence_url="https://github.com/a/one#readme",
-                                     scored_at="2026-09-20", summary_tr="eski ozet")],
-            "b.jsonl": [incoming_row(repo="a/one", url="https://github.com/a/one",
-                                     evidence_url="https://github.com/a/one#readme",
-                                     scored_at="2026-09-26", summary_tr="yeni ozet")],
-        }
-        root = self.root_with([base_record(scored_at="2026-09-19")], rows)
+        """a.jsonl lands but is not filed; b.jsonl then rescores the same row.
+
+        Two files of one run may not both claim a repository, so the old
+        batch and the new one arrive in two runs. What is being tested is the
+        ledger: a.jsonl is still sitting in ``data/incoming/`` because its
+        move failed, and the run after it must file it away without letting
+        its old score back into the data.
+        """
+        root = self.root_with(
+            [base_record(scored_at="2026-09-19")],
+            {"a.jsonl": [incoming_row(repo="a/one", url="https://github.com/a/one",
+                                      evidence_url="https://github.com/a/one#readme",
+                                      scored_at="2026-09-20",
+                                      summary_tr="eski ozet")]})
         real = os.replace
 
         def only_a_is_stranded(src, dst):
@@ -305,9 +311,14 @@ class ArchivingTest(BaseCase):
         with mock.patch.object(build.os, "replace", side_effect=only_a_is_stranded), \
                 contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(build.main([], root=root), 1)
-        self.assertEqual(self.repos(root)["a/one"]["summary_tr"], "yeni ozet")
+        self.assertEqual(self.repos(root)["a/one"]["summary_tr"], "eski ozet")
 
         # second run: a.jsonl is still in incoming/, and must not be re-applied
+        write(os.path.join(root, "data", "incoming", "b.jsonl"),
+              jsonl([incoming_row(repo="a/one", url="https://github.com/a/one",
+                                  evidence_url="https://github.com/a/one#readme",
+                                  scored_at="2026-09-26",
+                                  summary_tr="yeni ozet")]))
         with contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(build.main([], root=root), 0)
         rec = self.repos(root)["a/one"]
@@ -367,6 +378,163 @@ class ArchivingTest(BaseCase):
         self.assertEqual(len(seen), 1, seen)
         self.assertNotEqual(seen[0][0], seen[0][1])
         self.assertFalse(os.path.exists(seen[0][0]))
+
+
+class SameRunConflictTest(BaseCase):
+    """Two incoming files of the same run must not both rewrite one row.
+
+    The auditor's trigger: ``a-new.jsonl`` and ``z-old.jsonl``, both dated
+    ``2026-09-20``, both scoring ``a/one``. The date comparison cannot tell
+    them apart, so the file that happens to sort last wins - and last time it
+    was the stale one. Ordering is not the build's to guess: it refuses the
+    run and names what collided.
+    """
+
+    def root_with(self, existing, batches):
+        root = self.tmproot()
+        write(os.path.join(root, "data", "repos.jsonl"), jsonl(existing))
+        write(os.path.join(root, "data", "sources.jsonl"), jsonl(SOURCES))
+        for name, rows in batches.items():
+            write(os.path.join(root, "data", "incoming", name), jsonl(rows))
+        return root
+
+    def repos(self, root):
+        path = os.path.join(root, "data", "repos.jsonl")
+        with open(path, encoding="utf-8") as fh:
+            return {r["repo"]: r for r in (json.loads(l) for l in fh if l.strip())}
+
+    def run_build(self, root, argv=()):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            code = build.main(list(argv), root=root)
+        return code, out.getvalue()
+
+    SAME_DAY = {
+        "a-new.jsonl": [incoming_row(repo="a/one", url="https://github.com/a/one",
+                                     evidence_url="https://github.com/a/one#readme",
+                                     scored_at="2026-09-20",
+                                     summary_tr="yeni ozet")],
+        "z-old.jsonl": [incoming_row(repo="a/one", url="https://github.com/a/one",
+                                     evidence_url="https://github.com/a/one#readme",
+                                     scored_at="2026-09-20",
+                                     summary_tr="eski ozet")],
+    }
+
+    def test_two_files_of_the_same_day_scoring_one_repo_stop_the_run(self):
+        root = self.root_with([base_record(summary_tr="ilk ozet")], self.SAME_DAY)
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1, out)
+        # the stale file did not win, because nothing was applied at all
+        self.assertEqual(self.repos(root)["a/one"]["summary_tr"], "ilk ozet")
+        self.assertTrue(os.path.exists(
+            os.path.join(root, "data", "incoming", "a-new.jsonl")))
+        self.assertTrue(os.path.exists(
+            os.path.join(root, "data", "incoming", "z-old.jsonl")))
+
+    def test_the_conflict_names_the_repository_and_every_file(self):
+        root = self.root_with([base_record()], self.SAME_DAY)
+        _code, out = self.run_build(root)
+        self.assertIn("a/one", out)
+        self.assertIn("a-new.jsonl", out)
+        self.assertIn("z-old.jsonl", out)
+
+    def test_a_conflict_stops_the_rows_that_did_not_collide_too(self):
+        batches = dict(self.SAME_DAY)
+        batches["c-clean.jsonl"] = [incoming_row()]
+        root = self.root_with([base_record()], batches)
+        self.assertEqual(self.run_build(root)[0], 1)
+        self.assertNotIn("n/new", self.repos(root))
+
+    def test_one_repository_twice_in_one_file_is_the_same_conflict(self):
+        root = self.root_with([base_record()], {"a.jsonl": [
+            incoming_row(repo="a/one", url="https://github.com/a/one",
+                         evidence_url="https://github.com/a/one#readme",
+                         summary_tr="bir"),
+            incoming_row(repo="A/One", url="https://github.com/A/One",
+                         evidence_url="https://github.com/A/One#readme",
+                         summary_tr="iki")]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1)
+        self.assertIn("a.jsonl", out)
+
+    def test_two_files_touching_different_repositories_are_applied(self):
+        root = self.root_with([base_record()], {
+            "a-new.jsonl": [incoming_row(repo="n/new")],
+            "z-old.jsonl": [incoming_row(repo="o/other",
+                                         url="https://github.com/o/other",
+                                         evidence_url="https://github.com/o/other")],
+        })
+        self.assertEqual(self.run_build(root)[0], 0)
+        rows = self.repos(root)
+        self.assertIn("n/new", rows)
+        self.assertIn("o/other", rows)
+
+    def test_a_batch_already_in_the_ledger_does_not_collide_with_a_new_one(self):
+        """An applied batch is not re-read, so it cannot be half of a conflict."""
+        root = self.root_with([base_record()], {"a-new.jsonl": self.SAME_DAY[
+            "a-new.jsonl"]})
+        self.assertEqual(self.run_build(root)[0], 0)
+        write(os.path.join(root, "data", "incoming", "z-old.jsonl"),
+              jsonl(self.SAME_DAY["z-old.jsonl"]))
+        self.assertEqual(self.run_build(root)[0], 0)
+        self.assertEqual(self.repos(root)["a/one"]["summary_tr"], "eski ozet")
+
+
+class ScoreBatchTest(BaseCase):
+    """Every row says which incoming file its score came from."""
+
+    def root_with(self, existing, batches):
+        root = self.tmproot()
+        write(os.path.join(root, "data", "repos.jsonl"), jsonl(existing))
+        write(os.path.join(root, "data", "sources.jsonl"), jsonl(SOURCES))
+        for name, rows in batches.items():
+            write(os.path.join(root, "data", "incoming", name), jsonl(rows))
+        return root
+
+    def repos(self, root):
+        path = os.path.join(root, "data", "repos.jsonl")
+        with open(path, encoding="utf-8") as fh:
+            return {r["repo"]: r for r in (json.loads(l) for l in fh if l.strip())}
+
+    def test_a_new_row_carries_the_digest_of_the_file_it_came_from(self):
+        root = self.root_with([base_record()], {"batch-1.jsonl": [incoming_row()]})
+        digest = build.sha256_of(
+            os.path.join(root, "data", "incoming", "batch-1.jsonl"))
+        self.assertEqual(build.main([], root=root), 0)
+        self.assertEqual(self.repos(root)["n/new"]["score_batch"], digest[:12])
+
+    def test_the_batch_id_matches_the_ledger_entry_for_that_file(self):
+        root = self.root_with([base_record()], {"batch-1.jsonl": [incoming_row()]})
+        self.assertEqual(build.main([], root=root), 0)
+        path = os.path.join(root, "data", "applied-batches.jsonl")
+        with open(path, encoding="utf-8") as fh:
+            entry = [json.loads(l) for l in fh if l.strip()][0]
+        self.assertEqual(self.repos(root)["n/new"]["score_batch"],
+                         entry["sha256"][:12])
+
+    def test_a_rescored_row_takes_the_new_batch_id(self):
+        root = self.root_with([base_record()], {"batch-1.jsonl": [
+            incoming_row(repo="a/one", url="https://github.com/a/one",
+                         evidence_url="https://github.com/a/one#readme")]})
+        self.assertEqual(self.repos(root)["a/one"]["score_batch"], "initial")
+        digest = build.sha256_of(
+            os.path.join(root, "data", "incoming", "batch-1.jsonl"))
+        self.assertEqual(build.main([], root=root), 0)
+        self.assertEqual(self.repos(root)["a/one"]["score_batch"], digest[:12])
+
+    def test_a_row_no_batch_touched_keeps_the_batch_it_had(self):
+        root = self.root_with([base_record()], {"batch-1.jsonl": [incoming_row()]})
+        self.assertEqual(build.main([], root=root), 0)
+        self.assertEqual(self.repos(root)["a/one"]["score_batch"], "initial")
+
+    def test_a_scorer_cannot_hand_itself_a_batch_id(self):
+        row = dict(incoming_row(), score_batch="deadbeefcafe")
+        root = self.root_with([base_record()], {"batch-1.jsonl": [row]})
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            self.assertEqual(build.main([], root=root), 1)
+        self.assertIn("score_batch", out.getvalue())
+        self.assertNotIn("n/new", self.repos(root))
 
 
 class LegacyIsNoLongerTheDefaultTest(BaseCase):

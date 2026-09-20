@@ -35,6 +35,7 @@ def audit_row(repo="a/one", **kw):
         "audit_note_tr": "Olgunluk dusuruldu: repo birkac gunluk.",
         "duplicate_of": None,
         "audited_at": "2026-09-26",
+        "score_batch": build.INITIAL_BATCH,
     }
     row.update(kw)
     return row
@@ -228,9 +229,12 @@ class AuditOrderTest(AuditBase):
                            scores={"depth": 1, "relevance": 1, "novelty": 1,
                                    "maturity": 1, "evidence": 1})
         new["class"] = "C"
-        root = self.root_with([base_record()],
-                              audits={"a.jsonl": [audit_row(audited_at="2026-09-26")]},
-                              incoming={"batch-1.jsonl": [new]})
+        root = self.root_with([base_record()], incoming={"batch-1.jsonl": [new]})
+        # the auditor read the score this batch is bringing, and says so
+        batch = build.batch_id(build.sha256_of(
+            os.path.join(root, "data", "incoming", "batch-1.jsonl")))
+        write(os.path.join(root, "data", "audits", "a.jsonl"),
+              jsonl([audit_row(audited_at="2026-09-26", score_batch=batch)]))
         self.assertEqual(self.run_build(root)[0], 0)
         rec = self.repos(root)["a/one"]
         self.assertEqual(rec["summary_tr"], "yeni ozet")   # incoming landed
@@ -239,8 +243,11 @@ class AuditOrderTest(AuditBase):
 
     def test_an_audit_of_a_repository_added_by_incoming_in_the_same_run(self):
         root = self.root_with([base_record()],
-                              audits={"a.jsonl": [audit_row(repo="n/new")]},
                               incoming={"batch-1.jsonl": [incoming_row()]})
+        batch = build.batch_id(build.sha256_of(
+            os.path.join(root, "data", "incoming", "batch-1.jsonl")))
+        write(os.path.join(root, "data", "audits", "a.jsonl"),
+              jsonl([audit_row(repo="n/new", score_batch=batch)]))
         self.assertEqual(self.run_build(root)[0], 0)
         self.assertTrue(self.repos(root)["n/new"]["audited"])
 
@@ -263,6 +270,98 @@ class AuditOrderTest(AuditBase):
         root = self.root_with([base_record()], incoming={"batch-1.jsonl": [row]})
         self.assertEqual(self.run_build(root)[0], 0)
         self.assertNotIn("audited_at", self.repos(root)["n/new"])
+
+
+class AuditScoreBatchTest(AuditBase):
+    """An audit says which version of the score it read.
+
+    The auditor's trigger: a new incoming score and an older audit, both
+    dated ``2026-09-20``. The day comparison could not separate them, so the
+    stale audit reset the fresh scores and marked the row audited. The audit
+    now carries the row's ``score_batch``; a different one means the auditor
+    read a score that is no longer there.
+    """
+
+    def test_an_audit_without_a_score_batch_is_an_error(self):
+        row = audit_row()
+        del row["score_batch"]
+        root = self.root_with([base_record()], {"a.jsonl": [row]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 1)
+        self.assertIn("score_batch", out)
+        self.assertFalse(self.repos(root)["a/one"]["audited"])
+
+    def test_a_score_batch_that_is_not_a_batch_id_is_an_error(self):
+        for bad in ("", "INITIAL", "zzzzzzzzzzzz", 12, True, None):
+            root = self.root_with([base_record()],
+                                  {"a.jsonl": [audit_row(score_batch=bad)]})
+            code, out = self.run_build(root)
+            self.assertEqual(code, 1, bad)
+            self.assertIn("score_batch", out)
+
+    def test_an_audit_of_the_score_the_row_carries_is_applied(self):
+        root = self.root_with([base_record(score_batch="6aeebbf643f8")],
+                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]})
+        self.assertEqual(self.run_build(root)[0], 0)
+        self.assertTrue(self.repos(root)["a/one"]["audited"])
+
+    def test_an_audit_of_another_score_is_not_applied_and_is_reported(self):
+        root = self.root_with([base_record(score_batch="6aeebbf643f8")],
+                              {"a.jsonl": [audit_row(score_batch="initial")]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 0)
+        rec = self.repos(root)["a/one"]
+        self.assertFalse(rec["audited"])
+        self.assertEqual(rec["total"], 11)          # the new score stands
+        self.assertIn("a/one", out)
+        self.assertIn("initial", out)
+        self.assertIn("6aeebbf643f8", out)
+
+    def test_the_same_day_stale_audit_no_longer_confirms_a_fresh_score(self):
+        """Both dated 2026-09-20: only the batch id tells them apart."""
+        new = incoming_row(repo="a/one", url="https://github.com/a/one",
+                           evidence_url="https://github.com/a/one#readme",
+                           scored_at="2026-09-20", summary_tr="yeni ozet")
+        root = self.root_with(
+            [base_record(scored_at="2026-09-20", score_batch="initial")],
+            audits={"a.jsonl": [audit_row(audited_at="2026-09-20",
+                                          score_batch="initial",
+                                          scores={"depth": 0, "relevance": 0,
+                                                  "novelty": 0, "maturity": 0,
+                                                  "evidence": 0})]},
+            incoming={"batch-1.jsonl": [new]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 0, out)
+        rec = self.repos(root)["a/one"]
+        self.assertEqual(rec["summary_tr"], "yeni ozet")
+        self.assertFalse(rec["audited"])
+        self.assertEqual(rec["class"], "A")
+        self.assertEqual(rec["total"], 11)
+
+    def test_an_audit_of_a_score_applied_in_the_same_run_is_applied(self):
+        """The auditor read the batch that is landing right now."""
+        root = self.root_with([base_record()],
+                              incoming={"batch-1.jsonl": [incoming_row()]})
+        digest = build.sha256_of(
+            os.path.join(root, "data", "incoming", "batch-1.jsonl"))
+        write(os.path.join(root, "data", "audits", "a.jsonl"),
+              jsonl([audit_row(repo="n/new", score_batch=digest[:12])]))
+        self.assertEqual(self.run_build(root)[0], 0)
+        self.assertTrue(self.repos(root)["n/new"]["audited"])
+
+    def test_an_audit_never_changes_the_batch_the_score_came_from(self):
+        root = self.root_with([base_record(score_batch="6aeebbf643f8")],
+                              {"a.jsonl": [audit_row(score_batch="6aeebbf643f8")]})
+        self.assertEqual(self.run_build(root)[0], 0)
+        self.assertEqual(self.repos(root)["a/one"]["score_batch"], "6aeebbf643f8")
+
+    def test_the_date_check_still_catches_an_audit_older_than_the_score(self):
+        root = self.root_with([base_record(scored_at="2026-09-20")],
+                              {"a.jsonl": [audit_row(audited_at="2026-09-10")]})
+        code, out = self.run_build(root)
+        self.assertEqual(code, 0)
+        self.assertFalse(self.repos(root)["a/one"]["audited"])
+        self.assertIn("2026-09-10", out)
 
 
 class AuditLedgerTest(AuditBase):

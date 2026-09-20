@@ -10,7 +10,7 @@
     "meta", "category", "calls_jev", "question_types", "scores", "total",
     "class", "summary_en", "summary_tr", "takeaway_en", "takeaway_tr",
     "risk_en", "risk_tr", "evidence_url", "audited", "audit_note_en",
-    "audit_note_tr", "duplicate_of", "status"
+    "audit_note_tr", "duplicate_of", "status", "score_batch"
   ],
   "properties": {
     "repo": {
@@ -35,6 +35,11 @@
     "rubric_version": {
       "type": "integer", "enum": [1],
       "description": "A known version of data/rubric.md; anything else is refused."
+    },
+    "score_batch": {
+      "type": "string",
+      "pattern": "^(initial|[0-9a-f]{12})$",
+      "description": "Which incoming file this score came from: the first twelve hex digits of that file's sha256, as data/applied-batches.jsonl records it. The first data set says \"initial\". A scorer never writes it; the merge stamps it on. An audit must quote the value the row carried, or it is not applied."
     },
     "meta": {
       "type": "object",
