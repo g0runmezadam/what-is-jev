@@ -1,0 +1,116 @@
+{
+  "id": "sec-code-pairs",
+  "title": "Vulnerable code detection on 200 matched pairs",
+  "adapter": "vulnerable-code-pairs",
+  "lang": "en",
+  "lang_note": "English questions over source code. Nothing is translated.",
+  "kind": "reproducibility-check",
+  "kind_note": "The 400 snippets and their pairing are read from the per-sample output the source committed, because its pair selection runs inside its own runtime and re-implementing that shuffle would be guessing. The labels underneath are the public corpus's, but they reach us through the source's file, so this is a reproducibility check and is not called anything stronger.",
+  "source": {
+    "repo": "Gaurav-Gosain/jev-sec-bench",
+    "url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+    "commit": "fdb16b94d37535db9bad77f8ef0faa971bd7d69a",
+    "commit_date": "2026-09-16",
+    "license": "MIT",
+    "reported_run": "2026-09-16 against jev-1.13.0"
+  },
+  "files": [
+    {
+      "path": "internal/bench/battery.go",
+      "lines": "67-89",
+      "what": "the question wording copied verbatim below",
+      "url": "https://raw.githubusercontent.com/Gaurav-Gosain/jev-sec-bench/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/internal/bench/battery.go",
+      "sha256": "c1d02db4ce99f75d41a9317e2508426ee6f8c826202a840182c0a5a2ce42996f"
+    },
+    {
+      "path": "internal/bench/run.go",
+      "lines": "137-164, 205-276",
+      "what": "the state shape and the pairwise ranking rule",
+      "url": "https://raw.githubusercontent.com/Gaurav-Gosain/jev-sec-bench/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/internal/bench/run.go",
+      "sha256": "9f8750fe956006b08a4d81d87044ab04831acfefc0f49d7299ca252059238875"
+    },
+    {
+      "path": "results/code.json",
+      "lines": "the samples array",
+      "what": "the 400 snippets, their pairing and the corpus labels, exactly as measured",
+      "url": "https://raw.githubusercontent.com/Gaurav-Gosain/jev-sec-bench/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/results/code.json",
+      "sha256": "4201257e6a7fc26a179293a9f27450a49d008cbf06c327bb2f33b48069625b5b"
+    }
+  ],
+  "items_from": {
+    "path": "results/code.json",
+    "sha256": "4201257e6a7fc26a179293a9f27450a49d008cbf06c327bb2f33b48069625b5b"
+  },
+  "dataset": {
+    "name": "CyberNative/Code_Vulnerability_Security_DPO",
+    "license": "as published on the dataset page",
+    "access": "through the pinned per-sample output above, not fetched again",
+    "label_meaning": "1 means the corpus calls this half of the pair the vulnerable one"
+  },
+  "seed": 20260920,
+  "sample": {"n": 400, "rule": "every snippet in the pinned output, no sampling"},
+  "max_calls": 400,
+  "state": {
+    "shape": "{\"language\": <the pair's language>, \"code\": <the snippet, untouched>}"
+  },
+  "questions": {
+    "vulnerable": {
+      "type": "boolean",
+      "instructions": "Does the code in `code` contain a security vulnerability that an attacker could exploit by controlling the input it processes?",
+      "criteria": {
+        "true": "Untrusted input reaches a dangerous operation without adequate validation, escaping, or bounds checking: for example injection into a query, command, or page; an unbounded copy into a fixed buffer; evaluation of caller-supplied code; or deserialisation of untrusted data.",
+        "false": "The code defends the dangerous operations it performs, or performs none. Style problems, missing error handling, and inefficiency are not security vulnerabilities."
+      }
+    },
+    "severity": {
+      "type": "score",
+      "instructions": "If this code ran in production and an attacker controlled its input, how bad is the worst outcome they could cause?",
+      "criteria": [
+        "Nothing: no security-relevant weakness.",
+        "Minor: a weakness needing unusual conditions, or leaking little.",
+        "Serious: an attacker reads or corrupts data they should not reach.",
+        "Critical: an attacker runs their own code, or takes over the system."
+      ]
+    }
+  },
+  "questions_note": "Copied character for character from internal/bench/battery.go at the pinned commit. The questions never name a vulnerability class, which is what makes the run blind; that is preserved.",
+  "criteria": [
+    {
+      "metric": "pair_accuracy",
+      "kind": "proportion",
+      "reported": 0.89,
+      "reported_at": "README, section \"Vulnerable code\": the vulnerable half scored above its own secure twin in 178 of 200 pairs",
+      "tolerance": 0.05,
+      "why": "The source calls this the number to trust, because both halves share topic, language and style. For 200 pairs the 95% Wilson interval is about 4.4 points either side; outside it but within 5 points is partial."
+    },
+    {
+      "metric": "accuracy",
+      "kind": "proportion",
+      "reported": 0.715,
+      "reported_at": "README, section \"The absolute numbers, and why they understate\": accuracy at 0.50",
+      "tolerance": 0.05,
+      "why": "The source itself treats this as a floor set by corpus label noise, not as a measure of the model. It is checked because it was published, and read the way the source reads it."
+    },
+    {
+      "metric": "roc_auc",
+      "kind": "absolute",
+      "reported": 0.794,
+      "reported_at": "README, same section, ROC-AUC row",
+      "tolerance": 0.03,
+      "partial_tolerance": 0.1
+    },
+    {
+      "metric": "ece",
+      "kind": "absolute",
+      "reported": 0.1868,
+      "reported_at": "README, same section, ECE row",
+      "tolerance": 0.04,
+      "partial_tolerance": 0.1
+    }
+  ],
+  "deviations_known_before_the_run": [
+    "The pairs are the source's selection, not one we drew ourselves; a different draw would give a different 200 pairs from the same corpus.",
+    "A tie between the two halves counts as not ranked, which is the source's own rule.",
+    "We send model \"jev-latest\"; the version the endpoint reports is recorded in summary.json."
+  ]
+}

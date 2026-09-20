@@ -19,6 +19,7 @@ if VERIFICATION not in sys.path:
 
 import client
 import sampling
+import sources
 import stats
 import runner
 
@@ -411,6 +412,72 @@ class RunnerTest(BaseCase):
         self.assertEqual(runner.overall(["reproduced", "not reproduced"]),
                          "not reproduced")
         self.assertEqual(runner.overall([]), "not run")
+
+
+# --------------------------------------------------------------------------
+# adapters
+
+class InjectionScoringTest(unittest.TestCase):
+    def items(self):
+        return [{"id": "a", "label": 1}, {"id": "b", "label": 0},
+                {"id": "c", "label": 1}, {"id": "d", "label": 0}]
+
+    def records(self, probs):
+        return [{"item": name, "ok": True,
+                 "answers": {"injection": {"noul": p, "confidence": 0.8}}}
+                for name, p in zip("abcd", probs)]
+
+    def test_the_share_is_reported_as_a_count_so_an_interval_can_be_built(self):
+        got = sources.PromptInjection.score(self.records([0.9, 0.1, 0.8, 0.2]),
+                                            self.items())
+        self.assertEqual(got["accuracy"], {"k": 4, "n": 4})
+        self.assertEqual(got["recall"], {"k": 2, "n": 2})
+        self.assertEqual(got["roc_auc"], 1.0)
+
+    def test_an_answer_the_endpoint_never_gave_is_left_out_of_every_count(self):
+        records = self.records([0.9, 0.1, 0.8, 0.2])
+        records[3]["answers"] = {}
+        got = sources.PromptInjection.score(records, self.items())
+        self.assertEqual(got["accuracy"]["n"], 3)
+
+    def test_no_answers_at_all_means_no_measurement_rather_than_a_zero(self):
+        self.assertEqual(sources.PromptInjection.score([], self.items()), {})
+
+
+class PairScoringTest(unittest.TestCase):
+    def items(self, pairs=3):
+        out = []
+        for pair in range(pairs):
+            out.append({"id": "pair-%03d-v" % pair, "label": 1, "pair": pair})
+            out.append({"id": "pair-%03d-s" % pair, "label": 0, "pair": pair})
+        return out
+
+    def records(self, values):
+        return [{"item": name, "ok": True,
+                 "answers": {"vulnerable": {"noul": value}}}
+                for name, value in values.items()]
+
+    def test_a_pair_counts_only_when_the_vulnerable_half_scores_higher(self):
+        got = sources.VulnerableCodePairs.score(self.records({
+            "pair-000-v": 0.9, "pair-000-s": 0.2,
+            "pair-001-v": 0.3, "pair-001-s": 0.7,
+            "pair-002-v": 0.8, "pair-002-s": 0.1,
+        }), self.items())
+        self.assertEqual(got["pair_accuracy"], {"k": 2, "n": 3})
+
+    def test_a_tie_is_not_a_win(self):
+        got = sources.VulnerableCodePairs.score(self.records({
+            "pair-000-v": 0.5, "pair-000-s": 0.5,
+        }), self.items(1))
+        self.assertEqual(got["pair_accuracy"], {"k": 0, "n": 1})
+        self.assertEqual(got["pairs_tied"], 1)
+
+    def test_a_pair_with_one_half_missing_is_not_ranked_at_all(self):
+        got = sources.VulnerableCodePairs.score(self.records({
+            "pair-000-v": 0.9, "pair-000-s": 0.2, "pair-001-v": 0.9,
+        }), self.items(2))
+        self.assertEqual(got["pair_accuracy"], {"k": 1, "n": 1})
+        self.assertEqual(got["accuracy"]["n"], 3)
 
 
 # --------------------------------------------------------------------------

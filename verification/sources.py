@@ -86,3 +86,74 @@ class PromptInjection:
             "false_positives": matrix["fp"],
             "false_negatives": matrix["fn"],
         }
+
+
+# --------------------------------------------------------------------------
+
+@adapter("vulnerable-code-pairs")
+class VulnerableCodePairs:
+    """Matched secure/vulnerable solutions, each half judged on its own.
+
+    The source picks its 200 pairs with a seeded shuffle inside its own runtime.
+    Re-implementing that shuffle in another language would be guessing, so the
+    items are read instead from the per-sample output the source committed at the
+    pinned commit. That is the same 400 snippets it measured, in the same pairs,
+    with the corpus's own labels — and it is why this job calls itself a
+    reproducibility check rather than an independent one.
+    """
+
+    @staticmethod
+    def items(job, cache_dir):
+        import json
+        ref = job["items_from"]
+        blob, _ = corpora.pinned_file(cache_dir, job["source"]["repo"],
+                                      job["source"]["commit"], ref["path"],
+                                      ref.get("sha256"))
+        data = json.loads(blob.decode("utf-8"))
+        out = []
+        for sample in data["samples"]:
+            pair = sample.get("pair_id", 0)
+            half = "v" if sample.get("label") == 1 else "s"
+            code = sample.get("code") or ""
+            out.append({
+                "id": "pair-%03d-%s" % (pair, half),
+                "label": 1 if sample.get("label") == 1 else 0,
+                "group": sample.get("class"),
+                "pair": pair,
+                "language": sample.get("language"),
+                "text_sha256": corpora.sha256(code.encode("utf-8")),
+                "state": {"language": sample.get("language"), "code": code},
+            })
+        return out
+
+    @staticmethod
+    def score(records, items):
+        by_id = {item["id"]: item for item in items}
+        probs, labels = [], []
+        halves = {}
+        for record in records:
+            value = probability(record, "vulnerable")
+            if value is None:
+                continue
+            item = by_id.get(record["item"])
+            if item is None:
+                continue
+            probs.append(value)
+            labels.append(item["label"])
+            halves.setdefault(item["pair"], {})[item["label"]] = value
+        if not probs:
+            return {}
+        complete = [sides for sides in halves.values() if len(sides) == 2]
+        ranked = sum(1 for sides in complete if sides[1] > sides[0])
+        tied = sum(1 for sides in complete if sides[1] == sides[0])
+        matrix = stats.confusion(probs, labels, 0.5)
+        return {
+            "pair_accuracy": {"k": ranked, "n": len(complete)},
+            "accuracy": {"k": matrix["correct"], "n": matrix["n"]},
+            "precision": {"k": matrix["tp"], "n": matrix["tp"] + matrix["fp"]},
+            "recall": {"k": matrix["tp"], "n": matrix["tp"] + matrix["fn"]},
+            "roc_auc": stats.roc_auc(probs, labels),
+            "ece": stats.ece(probs, labels, 10),
+            "pairs_tied": tied,
+            "pairs_complete": len(complete),
+        }
