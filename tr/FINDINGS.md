@@ -2,7 +2,7 @@
 
 # Bulgular — Jev gerçekte nedir, hakkında söylenenlerin ne kadarı doğrulanıyor?
 
-Son gözden geçirme: 2026-09-19 · Gözlenen model sürümü: `jev-1.13.0` · Her satır kaynağına bağlanır. Güven sırası ve yöntem: [`METHODOLOGY.md`](METHODOLOGY.md). Tam kaynak listesi: [`SOURCES.md`](SOURCES.md).
+Son gözden geçirme: 2026-09-20 · Gözlenen model sürümü: `jev-1.13.0` · Her satır kaynağına bağlanır. Güven sırası ve yöntem: [`METHODOLOGY.md`](METHODOLOGY.md). Tam kaynak listesi: [`SOURCES.md`](SOURCES.md).
 
 Hüküm etiketleri: **DOĞRULANDI** (birincil kaynak ya da herkesin belgelenmiş API'ye karşı tekrarlayabileceği bir çağrı) · **ÜRETİCİ İDDİASI** (üreticinin söylediği doğru; bağımsız doğrulanmadı) · **TARTIŞMALI** (bağımsız kanıt çelişiyor ya da nitelik ekliyor) · **BULUNAMADI** (birincil kaynağını bulamadık). Bu dördünün uymadığı yerde iki işaret daha geçer: **ANEKDOT** (bağlantı veremediğimiz ya da tekrarlayamadığımız herkese açık bir rapor — asla kanıt olarak kullanılmaz) ve **BİZİM ÇIKARIMIMIZ** (üstündeki bağlantılı satırlardan kendi çıkarımımız; bir kaynaktan alınmış olgu değil).
 
@@ -31,6 +31,7 @@ Hüküm etiketleri: **DOĞRULANDI** (birincil kaynak ya da herkesin belgelenmiş
 | İddia | Hüküm | Kaynak gerçekte ne diyor |
 |---|---|---|
 | "193,6× daha hızlı, 444,6× daha ucuz" | ÜRETİCİ İDDİASI | Rakamlar [TypeSafe'in lansman yazısında](https://typesafe.ai/blog/introducing-system-one-models-and-jev) (Diogo Almeida, 2026-09-15). Aynı yazı bu rakamların üreticinin seçtiği iş akışı örneklerinden geldiğini ve gerçek dünya kazanımlarının **üst ucunda** olmasının beklendiğini söylüyor; kendi çekincelerini listeliyor (demo seçimi, hakem model seçimi, eğitim dağılımı). Üreticinin verdiği genel aralık 20–200× daha hızlı, 40–400× daha ucuz. |
+| Üreticinin wiki-race demosundaki karşılaştırma modelleri muhakemesiz çalıştırıldı | DOĞRULANDI | [Lansman yazısının](https://typesafe.ai/blog/introducing-system-one-models-and-jev) kendisi, karşılaştırma modellerinin muhakeme kapalı kipte, Astra'nın ise en düşük muhakeme ayarında çalıştırıldığını söylüyor ve gerekçe olarak izlenebilirliği gösteriyor. Doom demosundaki muhakeme ayarı hakkında bir şey söylemiyor. O demodan çıkan hız çarpanları, Jev'i düşünmeyen modellerle karşılaştırıyor. |
 | Üreticinin "isabet" rakamları | ÜRETİCİ İDDİASI | Lansman yazısındaki isabet, gerçek zeminle uyum değil, **hakem modellerle uyum** anlamına geliyor (GPT-6 Astra ve Fable 5.1 ortalaması). [OrcaRouter'ın yazısı](https://www.orcarouter.ai/blog/jev-typesafe-system-one-what-we-know) üretici rakamlarını bağımsız olanlardan ayırıyor. |
 | "%67,8 isabet, Sonnet 5 ile aynı seviyede" | BULUNAMADI | Birkaç videoda tekrarlanıyor; OrcaRouter %67,8 rakamını üreticinin iç benchmark'ına dayandırıyor, ama bu cümleyi üreticinin sayfasında bulamadık. İlgisiz bir %67,8 rakamı, [bağımsız bir kalibrasyon çalışmasında](https://github.com/Adilmp/does-jev-confidence-mean-anything) "her zaman hayır de" temel çizgisinin skoru olarak geçiyor. Bu ikisini karıştırmayın. |
 | Bağımsız hız/maliyet kontrolü | DOĞRULANDI | [Every'nin testi](https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds): Jev 7 yerleştirilmiş hatadan 6'sını yakaladı, Fable 5.1 7'sini de yakaladı; Jev geçiş başına yaklaşık 25× daha hızlı, maliyetin kabaca 1/580'i kadardı. İyi, kusursuz değil. |
@@ -46,13 +47,22 @@ Hüküm etiketleri: **DOĞRULANDI** (birincil kaynak ya da herkesin belgelenmiş
 | Bağımsız ölçüm 2: 662 prompt-injection mesajı — %96,5 isabet, ROC-AUC 0,9927, ECE 0,0588; model **düşük** güvenliydi (0,85 üstü her bant %100 doğruydu). | DOĞRULANDI (bağımsız, herkese açık külliyat) | [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) |
 | Bağımsız ölçüm 3: araç-çağrısı injection tespiti, 0,061 $'a 1.942 istek — AUC 0,976 (InjecAgent), 1,000 (BIPIA e-posta), 0,993 (elle etiketlenmiş çağrılar). Yazarlar, Jev için kalibre edilmiş bir eşiğin aynı gateway arkasındaki genel modellere aktarılamayacağı konusunda uyarıyor. | DOĞRULANDI | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) |
 | Çıkarım: kalibrasyonun **yönü göreve bağlı**. Olasılığı iyi sıralanmış bir skor olarak ele alın ve eşikleri kendi etiketli verinizle kalibre edin. | BİZİM ÇIKARIMIMIZ | [Adilmp'ın çalışmasından](https://github.com/Adilmp/does-jev-confidence-mean-anything) ("evet"e doğru aşırı güvenli), [jev-sec-bench'ten](https://github.com/Gaurav-Gosain/jev-sec-bench) (düşük güvenli) ve [agent-chaperone'dan](https://github.com/agent-chaperone/agent-chaperone) (eşikler aktarılamıyor) çıkarıldı |
+| Yaygın yanlış okuma: bazı tanıtım videoları kalibrasyon *hedefini* bir garanti gibi sunuyor — örneğin %90 güvende modelin on seferde dokuz kez doğru olduğu. Üretici bunu ölçülmüş bir sonuç olarak iddia etmiyor; yukarıdaki ilk bağımsız ölçüm kendi görevinde tersini buldu. Video iddianın söylendiği yerdir, kanıtı değil. | TARTIŞMALI | İddianın geçtiği [video](https://www.youtube.com/watch?v=NFKHLhAvj1g); [Adilmp/does-jev-confidence-mean-anything](https://github.com/Adilmp/does-jev-confidence-mean-anything) ile çelişiyor |
 | API'deki "confidence" (güven), kazanan seçeneğin olasılığı değil, dağılımın ne kadar yoğunlaştığıdır. Bir score sorusunda, mükemmel anlamlı 1,9 skorunun yanında confidence 0,00 gördük (kütle iki bitişik basamağa bölünmüştü). Sabit bir confidence eşiği, score soruları için yanlış araçtır. | DOĞRULANDI | [TypeSafe dokümanı](https://docs.typesafe.ai/llms.txt); bunu kendi çağrımızda gördük, aynı soru tipini belgelenmiş API'ye karşı çağırarak tekrarlanabilir |
 
-## 5. Üretici dışında kimsenin bilmediği
+## 5. Önyargı ve adalet
+
+| Bulgu | Hüküm | Kaynak |
+|---|---|---|
+| Bağımsız bir benchmark, yalnızca kişinin beyan edilen kimliği değiştiğinde Jev'in kararının değişip değişmediğini soruyor: 29 nitelik ve 140 düzey, karşı-olgusal çiftler halinde, 10 gerçekçi karar senaryosunda (yaklaşık 12.000 çağrı). Her değişim modelin kendi tekrar gürültüsüyle karşılaştırılıyor, sonuçlar çoklu karşılaştırma için düzeltiliyor (FDR) ve yalnız isim gösterilen durum negatif kontrol olarak kullanılıyor. | DOĞRULANDI (çalışmanın varlığı ve yöntemi) | [Rapor](https://fox-islam.github.io/jev-bias-bench/); [yöntem ve kod](https://github.com/Fox-Islam/jev-bias-bench) |
+| Yöntemi okuduk, sayıları değil: etki büyüklüklerini yeniden çıkarmadık ya da koşmadık, bu yüzden bu dosya hiçbirini alıntılamıyor. Bir rakam alıntılamadan önce bağlantılı raporu okuyun ve hangi model sürümüne karşı koşulduğuna bakın. | BİZİM ÇIKARIMIMIZ | Aynı rapor |
+| Üreticinin yayımladığı bir önyargı ya da adalet değerlendirmesi bulamadık. | BULUNAMADI | [Lansman yazısı](https://typesafe.ai/blog/introducing-system-one-models-and-jev); [doküman](https://docs.typesafe.ai/llms.txt) |
+
+## 6. Üretici dışında kimsenin bilmediği
 
 Model boyutu, mimarisi ve eğitim verisi açıklanmamıştır: ne [lansman yazısı](https://typesafe.ai/blog/introducing-system-one-models-and-jev) ne de [dokümantasyon](https://docs.typesafe.ai/llms.txt) bunları belirtiyor. "O(1)", "KV-cache darboğazını kaldırıyor" ya da belirli parametre sayıları gibi ifadeler yorum videolarında geçiyor ([`SOURCES.md`](SOURCES.md) içinde "video" altında listeli) ama bulabildiğimiz **hiçbir birincil kaynakta yok** — BULUNAMADI.
 
-## 6. Kamuoyu tepkisi, iki yönlü
+## 7. Kamuoyu tepkisi, iki yönlü
 
 - Coşku: birkaç gün içinde yüzlerce herkese açık repo ([`REPOS.md`](REPOS.md)) ve en az sekiz derlenmiş liste ([`SOURCES.md`](SOURCES.md)).
 - Şüphecilik: "Bir JSON sınıflandırıcı için 12 milyon görüntülenme mi? Evet, bir balonun içindeyiz" — [X'te Niels Rogge](https://x.com/NielsRogge/status/2100114968460820986) (gönderiyi doğrudan açamadık; alıntı arama sonuçları üzerinden doğrulandı).

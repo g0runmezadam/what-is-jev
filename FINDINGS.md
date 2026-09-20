@@ -2,7 +2,7 @@
 
 # Findings — what is Jev, and how much of what is said about it holds up?
 
-Last reviewed: 2026-09-19 · Model version observed: `jev-1.13.0` · Every row links to its source. Trust order and method: [`METHODOLOGY.md`](METHODOLOGY.md). Full source list: [`SOURCES.md`](SOURCES.md).
+Last reviewed: 2026-09-20 · Model version observed: `jev-1.13.0` · Every row links to its source. Trust order and method: [`METHODOLOGY.md`](METHODOLOGY.md). Full source list: [`SOURCES.md`](SOURCES.md).
 
 Verdict labels: **VERIFIED** (primary source or a call anyone can repeat against the documented API) · **VENDOR CLAIM** (true that the vendor says it; not independently confirmed) · **CONTESTED** (independent evidence disagrees or qualifies it) · **NOT FOUND** (we could not locate a primary source). Two more markers appear where none of the four fits: **ANECDOTE** (a public report we could not link to or reproduce — never used as evidence) and **OUR CONCLUSION** (our own inference from the linked rows above it, not a fact from a source).
 
@@ -31,6 +31,7 @@ Verdict labels: **VERIFIED** (primary source or a call anyone can repeat against
 | Claim | Verdict | What the source actually says |
 |---|---|---|
 | "193.6× faster, 444.6× cheaper" | VENDOR CLAIM | The figures are in [TypeSafe's launch post](https://typesafe.ai/blog/introducing-system-one-models-and-jev) (Diogo Almeida, 2026-09-15). The same post says they come from workflow examples the vendor chose and are expected to be at the **upper end** of real-world gains; it lists its own caveats (demo selection, judge-model choice, training distribution). The general range the vendor gives is 20–200× faster, 40–400× cheaper. |
+| Comparison models in the vendor's wiki-race demo ran without reasoning | VERIFIED | The [launch post](https://typesafe.ai/blog/introducing-system-one-models-and-jev) itself says the comparison models were run in their non-reasoning modes, with Astra at its lowest reasoning setting, and gives watchability as the reason. It says nothing about the reasoning setting in the Doom demo. Speed multipliers from that demo compare Jev with models that were not thinking. |
 | Vendor "accuracy" figures | VENDOR CLAIM | Accuracy in the launch post means **agreement with judge models** (GPT-6 Astra and Fable 5.1 averaged), not agreement with ground truth. [OrcaRouter's write-up](https://www.orcarouter.ai/blog/jev-typesafe-system-one-what-we-know) separates vendor numbers from independent ones. |
 | "67.8% accuracy, on par with Sonnet 5" | NOT FOUND | Repeated in several videos; OrcaRouter attributes a 67.8% figure to the vendor's internal benchmark, but we could not find that sentence on the vendor's page. An unrelated 67.8% appears in an [independent calibration study](https://github.com/Adilmp/does-jev-confidence-mean-anything) as the score of an "always answer no" baseline. Do not conflate them. |
 | Independent speed/cost check | VERIFIED | [Every's test](https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds): Jev caught 6 of 7 planted flaws, Fable 5.1 caught 7 of 7; Jev was about 25× faster per passage at roughly 1/580 of the cost. Good, not flawless. |
@@ -46,13 +47,22 @@ Verdict labels: **VERIFIED** (primary source or a call anyone can repeat against
 | Independent measurement 2: 662 prompt-injection messages — 96.5% accuracy, ROC-AUC 0.9927, ECE 0.0588; the model was **under**-confident (every band above 0.85 was 100% correct). | VERIFIED (independent, public corpora) | [Gaurav-Gosain/jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) |
 | Independent measurement 3: tool-call injection detection, 1,942 requests for $0.061 — AUC 0.976 (InjecAgent), 1.000 (BIPIA email), 0.993 (hand-labelled calls). The authors warn that a threshold calibrated for Jev does not transfer to general models behind the same gateway. | VERIFIED | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) |
 | Takeaway: calibration **direction depends on the task**. Treat the probability as a well-ordered score and calibrate thresholds on your own labelled data. | OUR CONCLUSION | Drawn from [Adilmp's study](https://github.com/Adilmp/does-jev-confidence-mean-anything) (over-confident toward "yes"), [jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench) (under-confident) and [agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) (thresholds do not transfer) |
+| Common misreading: some explainer videos present the calibration *goal* as a guarantee — for example that at 90% confidence the model is right nine times out of ten. The vendor does not claim this as a measured result, and the first independent measurement above found the opposite on its task. The video is where the claim is made, not evidence for it. | CONTESTED | Claim made in [this video](https://www.youtube.com/watch?v=NFKHLhAvj1g); contradicted by [Adilmp/does-jev-confidence-mean-anything](https://github.com/Adilmp/does-jev-confidence-mean-anything) |
 | "Confidence" in the API is how concentrated the distribution is, not the winner's probability. On a score question we saw confidence 0.00 next to a perfectly meaningful score of 1.9 (mass split between two adjacent rungs). A fixed confidence threshold is the wrong tool for score questions. | VERIFIED | [TypeSafe docs](https://docs.typesafe.ai/llms.txt); we saw this in our own call, and it is repeatable by calling the same question type against the documented API |
 
-## 5. What nobody outside the vendor knows
+## 5. Bias and fairness
+
+| Finding | Verdict | Source |
+|---|---|---|
+| One independent benchmark asks whether Jev's decision changes when only a person's stated identity changes: 29 attributes and 140 levels, in counterfactual pairs, across 10 realistic decision scenarios (about 12,000 calls). Each swap is compared with the model's own repeat-to-repeat noise, results are corrected for multiple comparisons (FDR), and a name-only exposure serves as a negative control. | VERIFIED (that the study exists and how it works) | [Report](https://fox-islam.github.io/jev-bias-bench/); [method and code](https://github.com/Fox-Islam/jev-bias-bench) |
+| We read the method, not the numbers: we did not re-extract or re-run the effect sizes, so this file quotes none. Read the linked report before citing a figure, and note the model version it was run against. | OUR CONCLUSION | Same report |
+| The vendor publishes no bias or fairness evaluation that we could find. | NOT FOUND | [Launch post](https://typesafe.ai/blog/introducing-system-one-models-and-jev); [documentation](https://docs.typesafe.ai/llms.txt) |
+
+## 6. What nobody outside the vendor knows
 
 Model size, architecture and training data are undisclosed: neither the [launch post](https://typesafe.ai/blog/introducing-system-one-models-and-jev) nor the [documentation](https://docs.typesafe.ai/llms.txt) states them. Statements such as "O(1)", "removes the KV-cache bottleneck" or specific parameter counts appear in commentary videos (listed under "video" in [`SOURCES.md`](SOURCES.md)) but in **no primary source we could find** — NOT FOUND.
 
-## 6. The public reaction, both ways
+## 7. The public reaction, both ways
 
 - Enthusiasm: within days, hundreds of public repositories ([`REPOS.md`](REPOS.md)) and at least eight curated lists ([`SOURCES.md`](SOURCES.md)).
 - Scepticism: "12 million views for a JSON classifier? Yeah, we're in a bubble" — [Niels Rogge on X](https://x.com/NielsRogge/status/2100114968460820986) (we could not open the post directly; the quote was confirmed through search results).

@@ -3,7 +3,7 @@
 
 # Listeler ve dizinler
 
-Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 52 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -60,3 +60,4 @@ Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | C | 2 | no | X/Twitter'da Jev hakkındaki uzun gönderi ve demo videolarının Çince kürasyonlu derlemesi \(714 kayıt\) | [kanıt](https://github.com/mizzlelover/jev-hub) |
 | [codaaiteam/jev-ai](https://github.com/codaaiteam/jev-ai) | C | 1 | no | Jev için kısa tanıtım/FAQ sayfası; kod veya gerçek entegrasyon içermiyor, yalnız kavramları özetliyor. | [kanıt](https://github.com/codaaiteam/jev-ai) |
 | [codaaiteam/jev-typesafe-ai](https://github.com/codaaiteam/jev-typesafe-ai) | C | 1 | yes | Jev için gayriresmi geliştirici notları ve ücretsiz denenebilir playground'a yönlendiren tanıtım sayfası | [kanıt](https://github.com/codaaiteam/jev-typesafe-ai#readme) |
+| [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | C | 0 | no | Cok sayida saglayici \(Claude, Gemini, GPT, DeepSeek\) icin 100'den fazla acik kaynak LLM ajan uygulamasi, ajan becerisi ve RAG uygulamasini toplayan buyuk bir liste; Jev ile baglantisi olmayan genel bir 'awesome list'. | [kanıt](https://github.com/Shubhamsaboo/awesome-llm-apps#readme) |

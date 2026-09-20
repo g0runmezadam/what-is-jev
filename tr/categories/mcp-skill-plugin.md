@@ -3,7 +3,7 @@
 
 # MCP, skill ve eklentiler
 
-Bu kategoride 47 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 50 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -47,9 +47,12 @@ Bu kategoride 47 repo; önce sınıf, sonra puan sırasıyla.
 | [gamesonrblx/JevML](https://github.com/gamesonrblx/JevML) | C | 6 | yes | PCA/MCMC/text-diffusion/NCA gibi ML araçlarını whenToUse/whenNotToUse etiketleriyle kataloglayıp Jev'in \(matchLocal ile\) doğru aracı seçmesini sağlayan kütüphane | [kanıt](https://github.com/gamesonrblx/JevML#readme) |
 | [karanb192/jev-architect](https://github.com/karanb192/jev-architect) | C | 6 | no | Bir sistemde Jev karar dongusunun nereye ait oldugunu belirlemeye yardimci olan, aday kullanim alanlarini siralayan ve kod yazmadan once olculebilir bir yayilma tasarlayan bir agent skill'i. | [kanıt](https://github.com/karanb192/jev-architect#readme) |
 | [angribot/pi-jev](https://github.com/angribot/pi-jev) | C | 5 | yes | Pi ajanına toplu Choice/Score/Noul sorgusu yapan tek dosyalık jev_evaluate aracını ekleyen eklenti | [kanıt](https://github.com/angribot/pi-jev#readme) |
+| [hoangngochuong24947-gif/jev-figure-router](https://github.com/hoangngochuong24947-gif/jev-figure-router) | C | 5 | unclear | Alti diyagram/sekil-olusturma dali \(matplotlib, mimari sema, sunum, yapay zeka gorseli, 3D, MCP grafik\) arasinda 300ms altinda Jev ile yonlendirme yaptigini iddia eden bir ajan becerisi; somut bir cagri izi gosterilmiyor. | [kanıt](https://github.com/hoangngochuong24947-gif/jev-figure-router#readme) |
+| [jon-devlapaz/burrito-frontier](https://github.com/jon-devlapaz/burrito-frontier) | C | 5 | yes | Maliyet ve makro degerlerini kodda hesaplayan, konumdan bagimsiz bir restoran menu-secim ajan becerisi; Jev yalnizca oznel lezzet puanini verir. | [kanıt](https://github.com/jon-devlapaz/burrito-frontier#readme) |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | C | 5 | no | AI ajanları için tasarım dili/skill: 24 komut, 61 deterministik dedektör kuralı; Jev ile ilgisi yok | [kanıt](https://github.com/pbakaus/impeccable#readme) |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | C | 5 | yes | TypeSafe'in resmi Claude Code / skills.sh agent skill'i: jev iş akışlarını tasarlamak ve dokümantasyona erişmek için | [kanıt](https://github.com/typesafe-ai/skills#readme) |
 | [elvisun/newsjack](https://github.com/elvisun/newsjack) | C | 3 | no | PR/pazarlama görevleri için ajan skill paketi \(Claude Code, Codex, Hermes, OpenClaw\); Jev ile ilgisi yok | [kanıt](https://github.com/elvisun/newsjack#readme) |
+| [hoangngochuong24947-gif/jev-patent-disclosure](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure) | C | 3 | unclear | Patent taslak hazirlama ve okuma beceri paketi \(ifsa, basvuru, dosya, okuyucu, harita, arama, itiraz yaniti\); 'Jev hizli dusunme' surumu olarak tanimlaniyor ama README'de somut bir Jev cagrisi gosterilmiyor. | [kanıt](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure#readme) |
 | [jon-devlapaz/jev-me](https://github.com/jon-devlapaz/jev-me) | C | 3 | yes | Planı tasarım-ağacı röportajı olarak sorgulayan çok küçük skill; Jev ad hoc tipli yargı için | [kanıt](https://github.com/jon-devlapaz/jev-me#readme) |
 | [MadaBurns/bv-mcp](https://github.com/MadaBurns/bv-mcp) | C | 3 | no | DNS/e-posta guvenlik taramasi yapan 80 araclik MCP sunucusu \(SPF/DMARC/DKIM vb.\). | [kanıt](https://github.com/MadaBurns/bv-mcp#readme) |
 | [rashedInt32/jev-lens.nvim](https://github.com/rashedInt32/jev-lens.nvim) | C | 3 | unclear | jev-lens'in ürettiği son karara bakan Neovim popup arayüzü; kendi Jev çağrısı yok | [kanıt](https://github.com/rashedInt32/jev-lens.nvim#readme) |

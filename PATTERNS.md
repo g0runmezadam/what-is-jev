@@ -76,6 +76,12 @@ The vendor's own weakness list — literal reading, math, dates, generation, adv
 
 Evidence: [pcarrier/skibidu](https://github.com/pcarrier/skibidu), [wei-b0/gram-render](https://github.com/wei-b0/gram-render), [rhighs/jev-code](https://github.com/rhighs/jev-code).
 
+## A caution: where your API key goes
+
+Some third-party Jev sites ask you to paste a TypeSafe key — sometimes a second provider's key as well — and relay your requests through their own server instead of calling the provider from your browser. At least one says so itself: [canyoubeatjev.fyi](https://canyoubeatjev.fyi) states that keys are held in page memory and sent through its server to the providers. That is a design choice, not an accusation, but "sent through this server" is not the same promise as "never stored". Before pasting a key anywhere, read the site's own statement about key handling; prefer tools whose source is open and that you can run on your own machine; and use a key you can revoke.
+
+Evidence: the site's own statement at [canyoubeatjev.fyi](https://canyoubeatjev.fyi); open-source, run-it-yourself alternatives are listed under [CLI](categories/cli.md) and [SDKs and clients](categories/sdk-client.md).
+
 ## Single-repo ideas worth watching
 
 Each of these appears once in the corpus, so it is an idea, not a pattern yet.

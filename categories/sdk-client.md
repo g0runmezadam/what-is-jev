@@ -3,12 +3,13 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 
 # SDKs and clients
 
-78 repositories in this category, sorted by class then score.
+82 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
 | Repository | Class | Total | Calls Jev | What it does | Evidence |
 |---|---|---|---|---|---|
+| [collapseindex/jev-ultralightspeed](https://github.com/collapseindex/jev-ultralightspeed) | A | 12 | yes | High-throughput Jev client that packs items into batched requests over a kept-open HTTP/2 connection, measured at 15.9x throughput and 41% lower cost over 30,000 human-labelled judgements. | [evidence](https://github.com/collapseindex/jev-ultralightspeed#readme) |
 | [bnsd55/jevmlx](https://github.com/bnsd55/jevmlx) | A | 11 | yes | A local model on Apple Silicon making schema-based typed decisions in a single forward pass; benchmarked against the official TypeSafe eval on a leaderboard | [evidence](https://github.com/bnsd55/jevmlx) |
 | [Heman10x-NGU/openJev-verdict-2.0](https://github.com/Heman10x-NGU/openJev-verdict-2.0) | A | 11 | yes | An open 150M-parameter decision model measured against competitors including the real TypeSafe Jev 1.13.0 \(77.1% vs Jev 72.7%\), solves the 'soft-label trap' with separate distribution+accuracy heads | [evidence](https://github.com/Heman10x-NGU/openJev-verdict-2.0) |
 | [ikermoel/open-alternative-jev](https://github.com/ikermoel/open-alternative-jev) | A | 11 | no | A Python library that produces typed, calibrated decisions in a single forward pass with any open-weight model \(no extra training\); rigorous, corrected measurement on RACE-H/MMLU | [evidence](https://github.com/ikermoel/open-alternative-jev) |
@@ -53,6 +54,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [shkumbinhasani/typedecide](https://github.com/shkumbinhasani/typedecide) | B | 7 | yes | A provider-agnostic TypeScript decision SDK; a single normalized IR \(choice/score\) with adapters for multiple models/providers | [evidence](https://github.com/shkumbinhasani/typedecide#readme) |
 | [sugarforever/tryjev](https://github.com/sugarforever/tryjev) | B | 7 | yes | A Jev playground; a tool for trying OpenRouter, Vercel AI Gateway, and the TypeSafe API under a single normalized noul/choice/score interface | [evidence](https://github.com/sugarforever/tryjev#readme) |
 | [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) | B | 7 | yes | An official "drop-in" adapter that keeps the same interface as TypeSafeClient while using OpenAI/Anthropic LLMs in the background \(for cost/speed comparison\) | [evidence](https://github.com/typesafe-ai/system-one-adapter-python#readme) |
+| [XUEHANGAI/jevhttp](https://github.com/XUEHANGAI/jevhttp) | B | 7 | no | Python toolkit combining synchronous HTTP fetching, page-metadata extraction and OpenAI-compatible structured decisions \(choice/boolean/score\) for local models; named after Jev's pattern but does not call TypeSafe's actual API. | [evidence](https://github.com/XUEHANGAI/jevhttp#readme) |
 | [innocentdiaz/s1_ruby](https://github.com/innocentdiaz/s1_ruby) | C | 6 | yes | A DSL that makes S1/Jev decisions a Ruby language primitive \(ψ measurable, judge/choose/score verbs, collapse\); philosophy of collapsing probability late | [evidence](https://github.com/innocentdiaz/s1_ruby#readme) |
 | [juanlentino/jev-connector](https://github.com/juanlentino/jev-connector) | C | 6 | yes | A Jev connector for WordPress; noul/choice/score typed questions with a graduated confidence threshold by outcome \(0.5/0.6/0.9\) | [evidence](https://github.com/juanlentino/jev-connector#readme) |
 | [Mentioum/judgement](https://github.com/Mentioum/judgement) | C | 6 | yes | An agent-friendly Go library and CLI for the Jev/System One API \(with describe/schema/batch commands\) | [evidence](https://github.com/Mentioum/judgement#readme) |
@@ -64,6 +66,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [cole-gillespie/typesafe-go](https://github.com/cole-gillespie/typesafe-go) | C | 5 | yes | An unofficial Go SDK: typed Choice/Score/Noul requests to the typesafe API, retry/backoff policy, tested | [evidence](https://github.com/cole-gillespie/typesafe-go) |
 | [qddegtya/qualm](https://github.com/qddegtya/qualm) | C | 5 | yes | A zero-dependency TypeScript library that gets typed decisions from a System One model; usage/cost reporting | [evidence](https://github.com/qddegtya/qualm#readme) |
 | [sio-funmatsu/fmjev](https://github.com/sio-funmatsu/fmjev) | C | 5 | no | An experimental local HTTP server that mimics Jev's API shape with Apple's "fm respond" text model, without using real Jev | [evidence](https://github.com/sio-funmatsu/fmjev#readme) |
+| [tapsin/jev-local](https://github.com/tapsin/jev-local) | C | 5 | no | Python library mimicking TypeSafe's Jev structured-decision contract \(choice/score/noul, calibrated confidence\) on local models via Ollama, vLLM or llama.cpp; does not call the real Jev API. | [evidence](https://github.com/tapsin/jev-local#readme) |
 | [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | C | 5 | yes | TypeSafe's official JavaScript/TypeScript SDK | [evidence](https://github.com/typesafe-ai/typesafe-sdk-js#readme) |
 | [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) | C | 5 | yes | TypeSafe's official Python SDK | [evidence](https://github.com/typesafe-ai/typesafe-sdk-python#readme) |
 | [AboveColin/jevclient](https://github.com/AboveColin/jevclient) | C | 4 | yes | An async Python client for TypeSafe Jev; sends Noul/Choice/Score typed questions and receives typed answers | [evidence](https://github.com/AboveColin/jevclient#readme) |
@@ -75,6 +78,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | C | 4 | no | A general framework for LLM applications; model/embedding/vector store abstractions | [evidence](https://github.com/langchain-ai/langchain#readme) |
 | [mheers/typesafeai-systemone-jev-go](https://github.com/mheers/typesafeai-systemone-jev-go) | C | 4 | yes | A Go client with CI for the TypeSafe System One API; sending Choice/Noul/Score typed questions | [evidence](https://github.com/mheers/typesafeai-systemone-jev-go#readme) |
 | [mhmdkzr/jev](https://github.com/mhmdkzr/jev) | C | 4 | yes | An unofficial, alpha-stage Go client for Jev; ensures compile-time typed question/answer matching | [evidence](https://github.com/mhmdkzr/jev) |
+| [Olti1947/jev-java](https://github.com/Olti1947/jev-java) | C | 4 | yes | Idiomatic Java 17+ client library for TypeSafe's Jev, mirroring the official SDK shapes \(Choice, Score, Noul\) with structured instructions support and Vercel AI Gateway compatibility; published to Maven Central. | [evidence](https://github.com/Olti1947/jev-java#readme) |
 | [pjdurden/jevkit-js](https://github.com/pjdurden/jevkit-js) | C | 4 | unclear | JavaScript tooling suite around Jev \(linter, test helpers, drift, calibration, bench\) sharing one record format; the linked specs are not shown in this excerpt. | [evidence](https://github.com/pjdurden/jevkit-js#readme) |
 | [pjdurden/jevkit-py](https://github.com/pjdurden/jevkit-py) | C | 4 | unclear | Python tooling suite around Jev \(linter, pytest helpers, drift, calibration, bench\) sharing one record format; the linked specs are not shown in this excerpt. | [evidence](https://github.com/pjdurden/jevkit-py#readme) |
 | [Twister915/typesafe-ai](https://github.com/Twister915/typesafe-ai) | C | 4 | yes | A Rust client library for the TypeSafe System-One API \(sync/async, typed Noul/Choice/Score results\) | [evidence](https://github.com/Twister915/typesafe-ai#readme) |

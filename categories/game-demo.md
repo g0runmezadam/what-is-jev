@@ -3,13 +3,14 @@ English | [Türkçe](../tr/categories/game-demo.md)
 
 # Games and demos
 
-49 repositories in this category, sorted by class then score.
+51 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
 | Repository | Class | Total | Calls Jev | What it does | Evidence |
 |---|---|---|---|---|---|
 | [BrendanH18/jev-lab](https://github.com/BrendanH18/jev-lab) | A | 11 | yes | A workbench demonstrating six different usage patterns of Jev \(guardrail, function calling, composition, search, game\) with live calls; also includes its own test/example set | [evidence](https://github.com/BrendanH18/jev-lab) |
+| [thelau/jev-tetris](https://github.com/thelau/jev-tetris) | A | 11 | yes | Tetris played by Jev: code enumerates every legal placement as a sentence and Jev ranks them by probability; an honest control experiment \(shuffled probabilities collapse to random play\) and comparison against a heuristic bot. | [evidence](https://github.com/thelau/jev-tetris#readme) |
 | [AbdelStark/heist-one](https://github.com/AbdelStark/heist-one) | B | 10 | yes | An observable stealth game; Jev suggests guards' tactical judgment, a deterministic server rejects invalid/stale/off-policy suggestions before applying them to the simulation, and there is a Decision Lens showing the full decision | [evidence](https://github.com/AbdelStark/heist-one) |
 | [meetr1912/jev-sonar](https://github.com/meetr1912/jev-sonar) | B | 10 | yes | Battleship: gets probability from Jev for ~100 cells per turn in a single call, used as both a heatmap and a move policy; calibration is measured | [evidence](https://github.com/meetr1912/jev-sonar) |
 | [milanboers/jev-plays-pokemon](https://github.com/milanboers/jev-plays-pokemon) | B | 10 | yes | A text-only \(no vision\) Pokémon Red agent; since Jev has no session memory, the harness reinjects short-term memory into state each turn, choosing the target Choice via temperature-flattened sampling | [evidence](https://github.com/milanboers/jev-plays-pokemon) |
@@ -32,6 +33,7 @@ English | [Türkçe](../tr/categories/game-demo.md)
 | [newuser7171/jev-gamepilot](https://github.com/newuser7171/jev-gamepilot) | C | 6 | yes | An autonomous game bot that visually watches any game and applies keyboard/mouse actions based on tactical decisions \(choice/score/noul\) from Jev | [evidence](https://github.com/newuser7171/jev-gamepilot#readme) |
 | [OmniJev/PlayJev](https://github.com/OmniJev/PlayJev) | C | 6 | no | A small 0.8B model trained with DAgger, compatible with the Jev contract \(System One API\); plays browser games from pixels | [evidence](https://github.com/OmniJev/PlayJev#readme) |
 | [VdustR/gomoku-arena](https://github.com/VdustR/gomoku-arena) | C | 6 | yes | A gomoku board anyone can sit at; moves can be chosen by search algorithms, an in-browser model, or a Jev-compatible endpoint. | [evidence](https://github.com/VdustR/gomoku-arena) |
+| [Ash20pk/beat-the-reviewer](https://github.com/Ash20pk/beat-the-reviewer) | C | 5 | yes | A pull-request based CTF game where a pinned Jev model judges each written request against a hashed, published threshold rule; ten levels of persuasion attempts. | [evidence](https://github.com/Ash20pk/beat-the-reviewer#readme) |
 | [CarlosCaoLopez/HACKSPAIN-2026](https://github.com/CarlosCaoLopez/HACKSPAIN-2026) | C | 5 | yes | Hackathon crisis-response agent simulating an emergency in Minecraft, where a deterministic solver assigns resources and Jev perceives phone calls. | [evidence](https://github.com/CarlosCaoLopez/HACKSPAIN-2026#readme) |
 | [cpaczek/things-vs-stuff](https://github.com/cpaczek/things-vs-stuff) | C | 5 | yes | A daily doodle tower-defense game; every tower-enemy match is judged live via ~17 fan-out questions in a single TypeSafe call | [evidence](https://github.com/cpaczek/things-vs-stuff) |
 | [hosseintoussi/jev-flappy-bird](https://github.com/hosseintoussi/jev-flappy-bird) | C | 5 | yes | A live demo asking Jev 'flap or wait' several times a second to control the bird in Flappy Bird | [evidence](https://github.com/hosseintoussi/jev-flappy-bird#readme) |

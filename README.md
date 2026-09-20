@@ -17,23 +17,23 @@ We are not affiliated with TypeSafe AI. This is independent research.
 <!-- STATS:START -->
 | Number | Value |
 |---|---|
-| Repositories | 870 |
-| Calls Jev | yes 584 · no 256 · unclear 30 |
-| Classes | A 260 · B 274 · C 336 |
+| Repositories | 909 |
+| Calls Jev | yes 606 · no 270 · unclear 33 |
+| Classes | A 271 · B 281 · C 357 |
 | Audited | 283 |
-| Sources | 60 |
+| Sources | 88 |
 | Data as of | 2026-09-20 |
 
 **Top categories**
 
-- [Other](categories/other.md) — 171
-- [Classification and triage](categories/classification-triage.md) — 97
-- [SDKs and clients](categories/sdk-client.md) — 78
-- [Evaluation and benchmarks](categories/eval-benchmark.md) — 77
+- [Other](categories/other.md) — 183
+- [Classification and triage](categories/classification-triage.md) — 101
+- [SDKs and clients](categories/sdk-client.md) — 82
+- [Evaluation and benchmarks](categories/eval-benchmark.md) — 78
 - [Agent gates](categories/agent-gate.md) — 58
-- [Lists and directories](categories/list-directory.md) — 51
-- [Code review hooks](categories/code-review-hook.md) — 50
-- [Games and demos](categories/game-demo.md) — 49
+- [Code review hooks](categories/code-review-hook.md) — 53
+- [Lists and directories](categories/list-directory.md) — 52
+- [Games and demos](categories/game-demo.md) — 51
 <!-- STATS:END -->
 
 ## How to read this repository

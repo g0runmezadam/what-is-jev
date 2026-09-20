@@ -3,12 +3,13 @@
 
 # SDK'lar ve istemciler
 
-Bu kategoride 78 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 82 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
 | Repo | Sınıf | Toplam | Jev çağırıyor | Ne yapıyor | Kanıt |
 |---|---|---|---|---|---|
+| [collapseindex/jev-ultralightspeed](https://github.com/collapseindex/jev-ultralightspeed) | A | 12 | yes | Ogeleri paketleyip acik tutulan bir HTTP/2 baglantisi uzerinden toplu isteklere donusturen yuksek verimli Jev istemcisi; 30.000 insan etiketli yargida 15,9 kat verim ve %41 dusuk maliyet olculmus. | [kanıt](https://github.com/collapseindex/jev-ultralightspeed#readme) |
 | [bnsd55/jevmlx](https://github.com/bnsd55/jevmlx) | A | 11 | yes | Apple Silicon'da tek forward pass'te şema bazlı tipli karar veren yerel model; TypeSafe resmi eval'ine karşı leaderboard'lu | [kanıt](https://github.com/bnsd55/jevmlx) |
 | [Heman10x-NGU/openJev-verdict-2.0](https://github.com/Heman10x-NGU/openJev-verdict-2.0) | A | 11 | yes | Açık 150M parametreli karar modeli; gerçek TypeSafe Jev 1.13.0 dahil rakiplere karşı ölçülmüş \(77.1% vs Jev 72.7%\), 'yumuşak-etiket tuzağını' ayrı dağılım+doğruluk kafalarıyla çözüyor | [kanıt](https://github.com/Heman10x-NGU/openJev-verdict-2.0) |
 | [ikermoel/open-alternative-jev](https://github.com/ikermoel/open-alternative-jev) | A | 11 | no | Herhangi bir açık ağırlıklı modelle \(ekstra eğitim yok\) tek forward pass'te tipli, kalibre kararlar üreten Python kütüphanesi; RACE-H/MMLU'da titiz, düzeltmeli ölçüm | [kanıt](https://github.com/ikermoel/open-alternative-jev) |
@@ -53,6 +54,7 @@ Bu kategoride 78 repo; önce sınıf, sonra puan sırasıyla.
 | [shkumbinhasani/typedecide](https://github.com/shkumbinhasani/typedecide) | B | 7 | yes | Sağlayıcıdan bağımsız TypeScript karar SDK'sı; tek normalize IR \(choice/score\) ile birden fazla model/sağlayıcı adaptörü | [kanıt](https://github.com/shkumbinhasani/typedecide#readme) |
 | [sugarforever/tryjev](https://github.com/sugarforever/tryjev) | B | 7 | yes | Jev playground; OpenRouter, Vercel AI Gateway ve TypeSafe API'sini tek normalize noul/choice/score arayüzünde deneme aracı | [kanıt](https://github.com/sugarforever/tryjev#readme) |
 | [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) | B | 7 | yes | TypeSafeClient ile aynı arayüzü koruyup arka planda OpenAI/Anthropic LLM'leri kullanan resmi 'drop-in' adaptör \(maliyet/hız karşılaştırması için\) | [kanıt](https://github.com/typesafe-ai/system-one-adapter-python#readme) |
+| [XUEHANGAI/jevhttp](https://github.com/XUEHANGAI/jevhttp) | B | 7 | no | Yerel modeller icin es zamanli HTTP alma, sayfa-meta veri cikarimi ve OpenAI uyumlu yapilandirilmis kararlari \(choice/boolean/score\) birlestiren bir Python araç kutusu; Jev deseninden adini alir ama TypeSafe'in gercek API'sini cagirmaz. | [kanıt](https://github.com/XUEHANGAI/jevhttp#readme) |
 | [innocentdiaz/s1_ruby](https://github.com/innocentdiaz/s1_ruby) | C | 6 | yes | S1/Jev kararlarını Ruby dil primitifi yapan DSL \(ψ measurable, judge/choose/score verb, collapse\); olasılığı geç çökertme felsefesi | [kanıt](https://github.com/innocentdiaz/s1_ruby#readme) |
 | [juanlentino/jev-connector](https://github.com/juanlentino/jev-connector) | C | 6 | yes | WordPress için Jev connector; noul/choice/score tipli sorular, sonuca göre kademeli güven eşiği \(0.5/0.6/0.9\) | [kanıt](https://github.com/juanlentino/jev-connector#readme) |
 | [Mentioum/judgement](https://github.com/Mentioum/judgement) | C | 6 | yes | Jev/System One API'si için agent-dostu Go kütüphanesi ve CLI'ı \(describe/schema/batch komutlarıyla\) | [kanıt](https://github.com/Mentioum/judgement#readme) |
@@ -64,6 +66,7 @@ Bu kategoride 78 repo; önce sınıf, sonra puan sırasıyla.
 | [cole-gillespie/typesafe-go](https://github.com/cole-gillespie/typesafe-go) | C | 5 | yes | Resmi olmayan Go SDK'sı: typesafe API'ye Choice/Score/Noul tipli istekler, retry/backoff politikası, testli | [kanıt](https://github.com/cole-gillespie/typesafe-go) |
 | [qddegtya/qualm](https://github.com/qddegtya/qualm) | C | 5 | yes | System One modelinden tipli kararlar alan zero-dependency TypeScript kütüphanesi; kullanım/maliyet raporlama | [kanıt](https://github.com/qddegtya/qualm#readme) |
 | [sio-funmatsu/fmjev](https://github.com/sio-funmatsu/fmjev) | C | 5 | no | Apple 'fm respond' metin modeliyle Jev'in API şeklini taklit eden, gerçek Jev'i kullanmayan deneysel yerel HTTP sunucu | [kanıt](https://github.com/sio-funmatsu/fmjev#readme) |
+| [tapsin/jev-local](https://github.com/tapsin/jev-local) | C | 5 | no | TypeSafe'in Jev yapilandirilmis-karar sozlesmesini \(choice/score/noul, kalibre guven\) Ollama, vLLM veya llama.cpp ile yerel modeller uzerinde taklit eden bir Python kutuphanesi; gercek Jev API'sini cagirmiyor. | [kanıt](https://github.com/tapsin/jev-local#readme) |
 | [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) | C | 5 | yes | TypeSafe'in resmi JavaScript/TypeScript SDK'sı | [kanıt](https://github.com/typesafe-ai/typesafe-sdk-js#readme) |
 | [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) | C | 5 | yes | TypeSafe'in resmi Python SDK'sı | [kanıt](https://github.com/typesafe-ai/typesafe-sdk-python#readme) |
 | [AboveColin/jevclient](https://github.com/AboveColin/jevclient) | C | 4 | yes | TypeSafe Jev için async Python istemcisi; Noul/Choice/Score tipli sorular gönderip tipli yanıt alır | [kanıt](https://github.com/AboveColin/jevclient#readme) |
@@ -75,6 +78,7 @@ Bu kategoride 78 repo; önce sınıf, sonra puan sırasıyla.
 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | C | 4 | no | LLM uygulamalari icin genel framework; model/embedding/vector store soyutlamalari. | [kanıt](https://github.com/langchain-ai/langchain#readme) |
 | [mheers/typesafeai-systemone-jev-go](https://github.com/mheers/typesafeai-systemone-jev-go) | C | 4 | yes | TypeSafe System One API için CI'lı Go istemcisi; Choice/Noul/Score tipli sorular gönderme | [kanıt](https://github.com/mheers/typesafeai-systemone-jev-go#readme) |
 | [mhmdkzr/jev](https://github.com/mhmdkzr/jev) | C | 4 | yes | Jev için resmi olmayan alfa aşamasında Go istemcisi; derleme zamanında tipli soru/cevap eşleşmesi sağlar. | [kanıt](https://github.com/mhmdkzr/jev) |
+| [Olti1947/jev-java](https://github.com/Olti1947/jev-java) | C | 4 | yes | TypeSafe'in Jev'i icin, resmi SDK bicimlerini \(Choice, Score, Noul\) yapilandirilmis talimat destegi ve Vercel AI Gateway uyumlulugu ile yansitan, Maven Central'a yayinlanmis, deyimsel bir Java 17+ istemci kutuphanesi. | [kanıt](https://github.com/Olti1947/jev-java#readme) |
 | [pjdurden/jevkit-js](https://github.com/pjdurden/jevkit-js) | C | 4 | unclear | Jev etrafinda bir JavaScript arac takimi \(linter, test yardimcilari, kayma, kalibrasyon, kiyaslama\) ortak bir kayit formati paylasiyor; baglantili spesifikasyonlar bu ozette gorunmuyor. | [kanıt](https://github.com/pjdurden/jevkit-js#readme) |
 | [pjdurden/jevkit-py](https://github.com/pjdurden/jevkit-py) | C | 4 | unclear | Jev etrafinda bir Python arac takimi \(linter, pytest yardimcilari, kayma, kalibrasyon, kiyaslama\) ortak bir kayit formati paylasiyor; baglantili spesifikasyonlar bu ozette gorunmuyor. | [kanıt](https://github.com/pjdurden/jevkit-py#readme) |
 | [Twister915/typesafe-ai](https://github.com/Twister915/typesafe-ai) | C | 4 | yes | TypeSafe System-One API'si için Rust istemci kütüphanesi \(sync/async, tipik Noul/Choice/Score sonuçları\) | [kanıt](https://github.com/Twister915/typesafe-ai#readme) |

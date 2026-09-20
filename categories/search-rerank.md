@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/search-rerank.md)
 
 # Search and rerank
 
-18 repositories in this category, sorted by class then score.
+20 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -11,7 +11,9 @@ English | [Türkçe](../tr/categories/search-rerank.md)
 |---|---|---|---|---|---|
 | [tonyzdev/PiJ](https://github.com/tonyzdev/PiJ) | A | 14 | yes | A Pi-based terminal coding agent; Jev does skill selection/code ranking/error triage, measured with SWE-bench plus controlled experiments \(a BM25 control arm\) | [evidence](https://github.com/tonyzdev/PiJ#readme) |
 | [WiktorB2004/llama-index-jev](https://github.com/WiktorB2004/llama-index-jev) | A | 13 | yes | A Jev-based reranker \(fail-open\) and router selector \(fail-closed\) for LlamaIndex; nDCG@5 improvement measured on BEIR nfcorpus/scifact | [evidence](https://github.com/WiktorB2004/llama-index-jev#readme) |
+| [bartlomein/oko](https://github.com/bartlomein/oko) | A | 12 | yes | Local MCP/CLI tool that ranks candidate source-code snippets for a coding agent's query using Jev, measured in a 108-session pilot across three coding tools. | [evidence](https://github.com/bartlomein/oko#readme) |
 | [sufianetaouil/every](https://github.com/sufianetaouil/every) | A | 12 | yes | A "grep whose query is a question" tool that asks the same yes/no question of every function in a codebase and ranks them by probability | [evidence](https://github.com/sufianetaouil/every#readme) |
+| [uehaj/jev-semgrep](https://github.com/uehaj/jev-semgrep) | A | 12 | yes | Zero-dependency grep that matches lines by meaning across languages: Jev scores each line against a stated meaning and results combine with AND/OR/NOT, batching 30 lines per request at 8 in flight. | [evidence](https://github.com/uehaj/jev-semgrep#readme) |
 | [404priyanshu/zsh-jev-suggest](https://github.com/404priyanshu/zsh-jev-suggest) | A | 11 | yes | Ranks Zsh history suggestions with Jev; uses a pre-warmed local cache for instant suggestions and a live Jev query on Ctrl-Space | [evidence](https://github.com/404priyanshu/zsh-jev-suggest) |
 | [tpellet/grevi](https://github.com/tpellet/grevi) | A | 10 | yes | Rust CLI that greps by meaning across six Unix-style verbs \(why, pick, is, run, add, sort\), selecting only from existing input and never generating text. | [evidence](https://github.com/tpellet/grevi#readme) |
 | [Peu77/JevFind](https://github.com/Peu77/JevFind) | A | 9 | yes | Two-stage thresholded semantic code search: file-path relevance score first, then window scoring | [evidence](https://github.com/Peu77/JevFind#readme) |

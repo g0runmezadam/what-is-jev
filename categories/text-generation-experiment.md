@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/text-generation-experiment.md)
 
 # Text generation experiments
 
-15 repositories in this category, sorted by class then score.
+16 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -11,6 +11,7 @@ English | [Türkçe](../tr/categories/text-generation-experiment.md)
 |---|---|---|---|---|---|
 | [rhighs/jev-code](https://github.com/rhighs/jev-code) | A | 10 | yes | The LLM suggests semantic sub-problems/code options, Jev approves/selects/reviews; the LLM can never approve a plan, choose a tool, or write a file | [evidence](https://github.com/rhighs/jev-code#readme) |
 | [BunsDev/typesafe-ai-playground](https://github.com/BunsDev/typesafe-ai-playground) | A | 9 | yes | A community Jev playground with many real Jev demos: extraction, ask-gate triage, tool-router, reranker, PR-review, AST governance | [evidence](https://github.com/BunsDev/typesafe-ai-playground) |
+| [kyle-pena-nlp/jevchat](https://github.com/kyle-pena-nlp/jevchat) | B | 10 | yes | Turns Jev into a character-by-character chatbot by repeatedly asking which symbol comes next from an alphabet, with multiple sampling strategies \(bisect, buckets, beam search\) and a self-described impractical cost. | [evidence](https://github.com/kyle-pena-nlp/jevchat#readme) |
 | [MM-sheng/jevspeak](https://github.com/MM-sheng/jevspeak) | B | 10 | yes | A speech engine that generates semantic IR with ~13 parallel Jev decisions \(no generative LLM\) and converts it to sentences with a deterministic grammar compiler | [evidence](https://github.com/MM-sheng/jevspeak#readme) |
 | [pcarrier/skibidu](https://github.com/pcarrier/skibidu) | B | 9 | yes | An experiment having Jev build an AST node by node, requesting approval for every subtree, in Scheme code generation; the author shared a finding of 'completely unsuitable' | [evidence](https://github.com/pcarrier/skibidu#readme) |
 | [rivianpratama/JevPixelArt](https://github.com/rivianpratama/JevPixelArt) | B | 9 | yes | Jev determines every pixel channel with a Score question; sharpens the flat distribution and compensates for lack of shared context by injecting one-time composition answers into every request | [evidence](https://github.com/rivianpratama/JevPixelArt#readme) |

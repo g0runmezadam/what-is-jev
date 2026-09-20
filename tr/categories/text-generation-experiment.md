@@ -3,7 +3,7 @@
 
 # Metin üretimi denemeleri
 
-Bu kategoride 15 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 16 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -11,6 +11,7 @@ Bu kategoride 15 repo; önce sınıf, sonra puan sırasıyla.
 |---|---|---|---|---|---|
 | [rhighs/jev-code](https://github.com/rhighs/jev-code) | A | 10 | yes | LLM anlamlı alt-problemleri/kod seçeneklerini öneriyor, Jev onaylıyor/seçiyor/inceliyor; LLM asla plan onaylayamaz, araç seçemez, dosya yazamaz | [kanıt](https://github.com/rhighs/jev-code#readme) |
 | [BunsDev/typesafe-ai-playground](https://github.com/BunsDev/typesafe-ai-playground) | A | 9 | yes | Topluluk Jev playground'u: extraction, ask-gate triage, tool-router, reranker, PR-review, AST governance gibi çok sayıda gerçek Jev demosu | [kanıt](https://github.com/BunsDev/typesafe-ai-playground) |
+| [kyle-pena-nlp/jevchat](https://github.com/kyle-pena-nlp/jevchat) | B | 10 | yes | Jev'i, alfabeden bir sonraki karakterin ne oldugunu tekrar tekrar sorarak karakter karakter bir sohbet botuna donusturur; birden fazla ornekleme stratejisi \(ikiye bolme, kova, isin arama\) icerir ve maliyetini kendisi 'pratik degil' diye tanimlar. | [kanıt](https://github.com/kyle-pena-nlp/jevchat#readme) |
 | [MM-sheng/jevspeak](https://github.com/MM-sheng/jevspeak) | B | 10 | yes | Uretici LLM kullanmadan, ~13 paralel Jev karariyla semantik IR uretip deterministik dilbilgisi derleyicisiyle cumleye ceviren konusma motoru. | [kanıt](https://github.com/MM-sheng/jevspeak#readme) |
 | [pcarrier/skibidu](https://github.com/pcarrier/skibidu) | B | 9 | yes | Jev'i düğüm düğüm AST kurdurup her alt-ağaca onay isteyen Scheme kod-üretim deneyi; paylaşan kişi 'tamamen elverişsiz' bulgusunu paylaştı | [kanıt](https://github.com/pcarrier/skibidu#readme) |
 | [rivianpratama/JevPixelArt](https://github.com/rivianpratama/JevPixelArt) | B | 9 | yes | Jev her piksel kanalını Score sorusuyla belirliyor; düz dağılımı 'sharpen' ile keskinleştirip, tek seferlik kompozisyon sorularını her isteğe enjekte ederek paylaşılan bağlam eksikliğini telafi ediyor | [kanıt](https://github.com/rivianpratama/JevPixelArt#readme) |

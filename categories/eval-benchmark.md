@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/eval-benchmark.md)
 
 # Evaluation and benchmarks
 
-77 repositories in this category, sorted by class then score.
+78 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -86,4 +86,5 @@ English | [Türkçe](../tr/categories/eval-benchmark.md)
 | [sueszli/qwen27b-jev](https://github.com/sueszli/qwen27b-jev) | B | 7 | no | Reproduces Jev's possible internal mechanism \(reading token logprobs vs grammar-constrained vs free-text+regex\) at small scale on a local Qwen3.8-27B. | [evidence](https://github.com/sueszli/qwen27b-jev) |
 | [zavocc/ground-zero](https://github.com/zavocc/ground-zero) | B | 7 | yes | Alpha-stage evaluation framework using Jev to score hallucination and instruction-following drift in a model's response against its source prompt or material. | [evidence](https://github.com/zavocc/ground-zero#readme) |
 | [MatrAIx-ai/MatrAIx-Persona-8B](https://github.com/MatrAIx-ai/MatrAIx-Persona-8B) | C | 6 | no | Population-scale product/AI testing infrastructure with 8.3 billion simulated-user personas | [evidence](https://github.com/MatrAIx-ai/MatrAIx-Persona-8B#readme) |
+| [this-Mike-guy/jev-compare](https://github.com/this-Mike-guy/jev-compare) | C | 5 | yes | Live dashboard for running side-by-side shootouts between Jev and open models \(Qwen, DeepSeek, Llama, Gemini Flash, Kimi\) via OpenRouter, ranking fidelity, latency, tokens and cost; a tool to produce results, not published results itself. | [evidence](https://github.com/this-Mike-guy/jev-compare#readme) |
 | [AliceRoselia/Typesafe_chess_eval](https://github.com/AliceRoselia/Typesafe_chess_eval) | C | 1 | yes | A very brief anecdotal evaluation of Typesafe AI's chess-playing performance | [evidence](https://github.com/AliceRoselia/Typesafe_chess_eval#readme) |

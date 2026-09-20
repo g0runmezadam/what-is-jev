@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 
 # MCP servers, skills, plugins
 
-47 repositories in this category, sorted by class then score.
+50 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -47,9 +47,12 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 | [gamesonrblx/JevML](https://github.com/gamesonrblx/JevML) | C | 6 | yes | A library cataloging ML tools like PCA/MCMC/text-diffusion/NCA with whenToUse/whenNotToUse labels so Jev \(via matchLocal\) picks the right tool | [evidence](https://github.com/gamesonrblx/JevML#readme) |
 | [karanb192/jev-architect](https://github.com/karanb192/jev-architect) | C | 6 | no | Agent skill that helps decide where a Jev decision loop belongs in a system, ranking candidate use cases and designing a measured rollout before writing code. | [evidence](https://github.com/karanb192/jev-architect#readme) |
 | [angribot/pi-jev](https://github.com/angribot/pi-jev) | C | 5 | yes | A plugin adding a single-file jev_evaluate tool to the Pi agent that does batched Choice/Score/Noul queries | [evidence](https://github.com/angribot/pi-jev#readme) |
+| [hoangngochuong24947-gif/jev-figure-router](https://github.com/hoangngochuong24947-gif/jev-figure-router) | C | 5 | unclear | Agent skill claiming a sub-300ms Jev routing step that picks among six diagram/figure-rendering branches \(matplotlib, architecture diagrams, slides, AI art, 3D, MCP charts\); no concrete call trace is shown. | [evidence](https://github.com/hoangngochuong24947-gif/jev-figure-router#readme) |
+| [jon-devlapaz/burrito-frontier](https://github.com/jon-devlapaz/burrito-frontier) | C | 5 | yes | Location-agnostic agent skill that finds Pareto-optimal restaurant menu picks on cost and macros computed in code, while Jev scores only subjective deliciousness. | [evidence](https://github.com/jon-devlapaz/burrito-frontier#readme) |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | C | 5 | no | A design-language skill for AI agents: 24 commands, 61 deterministic detector rules; unrelated to Jev | [evidence](https://github.com/pbakaus/impeccable#readme) |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | C | 5 | yes | TypeSafe's official Claude Code / skills.sh agent skill: for designing jev workflows and accessing documentation | [evidence](https://github.com/typesafe-ai/skills#readme) |
 | [elvisun/newsjack](https://github.com/elvisun/newsjack) | C | 3 | no | An agent skill package for PR/marketing tasks \(Claude Code, Codex, Hermes, OpenClaw\); unrelated to Jev | [evidence](https://github.com/elvisun/newsjack#readme) |
+| [hoangngochuong24947-gif/jev-patent-disclosure](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure) | C | 3 | unclear | Chinese-language patent drafting and reading skill suite \(disclosure, application, docket, reader, map, search, OA-response\) described as a 'Jev fast-thinking' version, but no concrete Jev call is shown in the README. | [evidence](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure#readme) |
 | [jon-devlapaz/jev-me](https://github.com/jon-devlapaz/jev-me) | C | 3 | yes | A very small skill that interrogates a plan as a design-tree interview; Jev for ad hoc typed judgment | [evidence](https://github.com/jon-devlapaz/jev-me#readme) |
 | [MadaBurns/bv-mcp](https://github.com/MadaBurns/bv-mcp) | C | 3 | no | An 80-tool MCP server that does DNS/email security scanning \(SPF/DMARC/DKIM etc.\) | [evidence](https://github.com/MadaBurns/bv-mcp#readme) |
 | [rashedInt32/jev-lens.nvim](https://github.com/rashedInt32/jev-lens.nvim) | C | 3 | unclear | A Neovim popup UI showing jev-lens's final decision; has no Jev call of its own | [evidence](https://github.com/rashedInt32/jev-lens.nvim#readme) |

@@ -3,7 +3,7 @@
 
 # Komut satırı araçları
 
-Bu kategoride 25 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 26 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -35,3 +35,4 @@ Bu kategoride 25 repo; önce sınıf, sonra puan sırasıyla.
 | [realdubb/jev-playground](https://github.com/realdubb/jev-playground) | C | 4 | yes | E-posta triyajı, PR doğrulayıcı ve GitHub temizleyici gibi küçük Jev tabanlı CLI araçları koleksiyonu | [kanıt](https://github.com/realdubb/jev-playground#readme) |
 | [samuelfaj/distill](https://github.com/samuelfaj/distill) | C | 4 | no | Birden fazla model saglayicisini ve katmanli model secimini destekleyen genel amacli terminal kodlama-ajani harness'i; Jev yalnizca bir konu etiketi olarak goruluyor, tarif edilmis bir rolu yok. | [kanıt](https://github.com/samuelfaj/distill#readme) |
 | [terryds/jevplayground](https://github.com/terryds/jevplayground) | C | 4 | yes | Vercel AI Gateway uzerinden Jev'in boolean, choice ve score sorularini test eden, otomatik-kabul guven esigi kaydiraci olan tek dosyalik bir tarayici oyun alani. | [kanıt](https://github.com/terryds/jevplayground#readme) |
+| [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi) | C | 0 | no | Pi kodlama ajaninin, IDE'ye bagli bir terminal arayuzu, LSP/DAP entegrasyonu ve kod calistirma ekleyen bir catallanmasi; Jev veya TypeSafe entegrasyonu olmayan genel bir kodlama ajani urunu. | [kanıt](https://github.com/can1357/oh-my-pi#readme) |

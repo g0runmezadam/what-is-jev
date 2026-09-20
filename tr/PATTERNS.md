@@ -76,6 +76,12 @@ Kanıt: [TheoLeeCJ/openjev](https://github.com/TheoLeeCJ/openjev), [DECRUX9812/o
 
 Kanıt: [pcarrier/skibidu](https://github.com/pcarrier/skibidu), [wei-b0/gram-render](https://github.com/wei-b0/gram-render), [rhighs/jev-code](https://github.com/rhighs/jev-code).
 
+## Bir uyarı: API anahtarınız nereye gidiyor
+
+Bazı üçüncü taraf Jev siteleri bir TypeSafe anahtarı — kimi zaman ikinci bir sağlayıcının anahtarını da — yapıştırmanızı istiyor ve isteklerinizi sağlayıcıyı tarayıcınızdan çağırmak yerine kendi sunucuları üzerinden aktarıyor. En az biri bunu kendisi söylüyor: [canyoubeatjev.fyi](https://canyoubeatjev.fyi), anahtarların sayfa belleğinde tutulduğunu ve kendi sunucusu üzerinden sağlayıcılara gönderildiğini belirtiyor. Bu bir tasarım tercihidir, suçlama değil; ama "bu sunucudan geçiyor" ile "asla saklanmıyor" aynı söz değildir. Bir anahtarı herhangi bir yere yapıştırmadan önce sitenin anahtar işleme beyanını okuyun; kaynağı açık olan ve kendi makinenizde çalıştırabildiğiniz araçları tercih edin; iptal edebileceğiniz bir anahtar kullanın.
+
+Kanıt: sitenin kendi beyanı, [canyoubeatjev.fyi](https://canyoubeatjev.fyi); açık kaynaklı, kendiniz çalıştırabileceğiniz seçenekler [Komut satırı araçları](categories/cli.md) ve [SDK ve istemciler](categories/sdk-client.md) sayfalarında.
+
 ## Tek repoda görülen, izlenmeye değer fikirler
 
 Bunların her biri korpusta yalnız bir kez görünüyor, dolayısıyla henüz bir desen değil, bir fikir.

@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/cli.md)
 
 # Command line tools
 
-25 repositories in this category, sorted by class then score.
+26 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -35,3 +35,4 @@ English | [Türkçe](../tr/categories/cli.md)
 | [realdubb/jev-playground](https://github.com/realdubb/jev-playground) | C | 4 | yes | A collection of small Jev-based CLI tools: email triage, a PR validator, a GitHub cleaner | [evidence](https://github.com/realdubb/jev-playground#readme) |
 | [samuelfaj/distill](https://github.com/samuelfaj/distill) | C | 4 | no | General-purpose terminal coding-agent harness supporting several model providers and tiered model selection; Jev appears only as a topic tag with no described role. | [evidence](https://github.com/samuelfaj/distill#readme) |
 | [terryds/jevplayground](https://github.com/terryds/jevplayground) | C | 4 | yes | Single-file browser playground for testing Jev boolean, choice and score questions through the Vercel AI Gateway with an auto-accept confidence threshold slider. | [evidence](https://github.com/terryds/jevplayground#readme) |
+| [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi) | C | 0 | no | Fork of the Pi coding agent adding an IDE-wired terminal UI, LSP/DAP integration and code execution; a general coding-agent product with no Jev or TypeSafe integration. | [evidence](https://github.com/can1357/oh-my-pi#readme) |

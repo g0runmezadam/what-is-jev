@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/list-directory.md)
 
 # Lists and directories
 
-51 repositories in this category, sorted by class then score.
+52 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -60,3 +60,4 @@ English | [Türkçe](../tr/categories/list-directory.md)
 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | C | 2 | no | A Chinese-curated compilation \(714 entries\) of long posts and demo videos about Jev on X/Twitter | [evidence](https://github.com/mizzlelover/jev-hub) |
 | [codaaiteam/jev-ai](https://github.com/codaaiteam/jev-ai) | C | 1 | no | A short introduction/FAQ page for Jev; contains no code or real integration, only summarizes concepts | [evidence](https://github.com/codaaiteam/jev-ai) |
 | [codaaiteam/jev-typesafe-ai](https://github.com/codaaiteam/jev-typesafe-ai) | C | 1 | yes | An intro page for Jev pointing to unofficial developer notes and a free-to-try playground | [evidence](https://github.com/codaaiteam/jev-typesafe-ai#readme) |
+| [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | C | 0 | no | Large curated collection of 100+ open-source LLM agent apps, agent skills and RAG apps across many providers \(Claude, Gemini, GPT, DeepSeek\); a general awesome-list with no Jev connection. | [evidence](https://github.com/Shubhamsaboo/awesome-llm-apps#readme) |

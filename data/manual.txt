@@ -5,3 +5,35 @@
 #
 # Example:
 # typesafe-ai/typesafe-sdk-python
+hungphamtan/masqo
+thelau/jev-tetris
+TickerDev/jevfanity-api
+kyle-pena-nlp/jevchat
+nateecho32-stack/mefi-studio
+McFuzzySquirrel/mcfuzzy-agent-forge
+PKU-YuanGroup/OpenAI4S
+TypeSafeAI/typesafe-playground
+ddesmond/explore-jev
+Mawfyy/blade-js-lsp.nvim
+mrmps/classifier-dev
+tamaratran/jev-pruner
+jon-devlapaz/burrito-frontier
+Evokoa/pgGraph
+CompleteTech-LLC-AI-Research/jev-prune-kit
+phuthuycoding/jev-audit
+xAndreiLi/pi-jev-wiki
+this-Mike-guy/jev-compare
+can1357/oh-my-pi
+aaif-goose/goose
+CompleteTech-LLC-AI-Research/jev-311-heatmap
+bartlomein/oko
+Olti1947/jev-java
+Alexandre-Borghi/jev-ncr-demo
+uehaj/jev-semgrep
+teamchong/pxpipe
+Shubhamsaboo/awesome-llm-apps
+opaielsheikh/talkr
+danielscoffee/AssertLens
+FLOCK4H/Dexter
+byenzyme/enzyme
+SK-ENT/rakitsu

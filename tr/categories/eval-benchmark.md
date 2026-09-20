@@ -3,7 +3,7 @@
 
 # Değerlendirme ve benchmark
 
-Bu kategoride 77 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 78 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -86,4 +86,5 @@ Bu kategoride 77 repo; önce sınıf, sonra puan sırasıyla.
 | [sueszli/qwen27b-jev](https://github.com/sueszli/qwen27b-jev) | B | 7 | no | Jev'in olası iç mekanizmasını \(token logprob okuma vs grammar-constrained vs serbest+regex\) yerel Qwen3.8-27B üzerinde küçük ölçekte tekrar üretir. | [kanıt](https://github.com/sueszli/qwen27b-jev) |
 | [zavocc/ground-zero](https://github.com/zavocc/ground-zero) | B | 7 | yes | Bir modelin yanitindaki halusinasyon ve talimat-takip kaymasini kaynak istemine veya materyaline karsi puanlamak icin Jev kullanan alfa asamasinda bir degerlendirme cercevesi. | [kanıt](https://github.com/zavocc/ground-zero#readme) |
 | [MatrAIx-ai/MatrAIx-Persona-8B](https://github.com/MatrAIx-ai/MatrAIx-Persona-8B) | C | 6 | no | 8.3 milyar persona ile populasyon-olcekli, simule kullanicilarla urun/AI test altyapisi. | [kanıt](https://github.com/MatrAIx-ai/MatrAIx-Persona-8B#readme) |
+| [this-Mike-guy/jev-compare](https://github.com/this-Mike-guy/jev-compare) | C | 5 | yes | Jev ile acik modeller \(Qwen, DeepSeek, Llama, Gemini Flash, Kimi\) arasinda OpenRouter uzerinden canli karsilastirma yapan, sadakat, gecikme, token ve maliyete gore siralayan bir kontrol paneli; sonuc ureten bir arac, yayinlanmis sonuc degil. | [kanıt](https://github.com/this-Mike-guy/jev-compare#readme) |
 | [AliceRoselia/Typesafe_chess_eval](https://github.com/AliceRoselia/Typesafe_chess_eval) | C | 1 | yes | Typesafe AI'nin satranç oynama performansının çok kısa anekdotsal değerlendirmesi | [kanıt](https://github.com/AliceRoselia/Typesafe_chess_eval#readme) |

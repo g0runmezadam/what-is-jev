@@ -3,13 +3,14 @@
 
 # Oyunlar ve demolar
 
-Bu kategoride 49 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
 | Repo | Sınıf | Toplam | Jev çağırıyor | Ne yapıyor | Kanıt |
 |---|---|---|---|---|---|
 | [BrendanH18/jev-lab](https://github.com/BrendanH18/jev-lab) | A | 11 | yes | Jev'in altı farklı kullanım desenini \(guardrail, fonksiyon çağrısı, kompozisyon, arama, oyun\) canlı çağrılarla gösteren workbench; kendi test/örnek setini de içerir. | [kanıt](https://github.com/BrendanH18/jev-lab) |
+| [thelau/jev-tetris](https://github.com/thelau/jev-tetris) | A | 11 | yes | Jev'in oynadigi Tetris: kod her yasal yerlesimi bir cumle olarak listeler, Jev bunlari olasiliga gore siralar; olasiliklar karistirildiginda oyunun rastgele seviyeye dustugunu gosteren durust bir kontrol deneyi ve bir sezgisel botla karsilastirma. | [kanıt](https://github.com/thelau/jev-tetris#readme) |
 | [AbdelStark/heist-one](https://github.com/AbdelStark/heist-one) | B | 10 | yes | Gözlemlenebilir gizlilik oyunu; Jev muhafızların taktik yargısını öneriyor, deterministik sunucu geçersiz/bayat/politika-dışı önerileri simülasyona uygulamadan reddediyor, tam kararı gösteren 'Decision Lens' var | [kanıt](https://github.com/AbdelStark/heist-one) |
 | [meetr1912/jev-sonar](https://github.com/meetr1912/jev-sonar) | B | 10 | yes | Battleship: her turda ~100 hücre için tek istekte Jev'den olasılık alıp hem ısı haritası hem hamle politikası olarak kullanır; kalibrasyon ölçülür. | [kanıt](https://github.com/meetr1912/jev-sonar) |
 | [milanboers/jev-plays-pokemon](https://github.com/milanboers/jev-plays-pokemon) | B | 10 | yes | Metin-tabanlı \(görüşsüz\) Pokémon Red ajanı; Jev'in oturum hafızası olmadığından harness her turda kısa süreli hafızayı state'e yeniden enjekte ediyor, hedef Choice'u sıcaklıkla düzleştirilmiş örneklemeyle seçiliyor | [kanıt](https://github.com/milanboers/jev-plays-pokemon) |
@@ -32,6 +33,7 @@ Bu kategoride 49 repo; önce sınıf, sonra puan sırasıyla.
 | [newuser7171/jev-gamepilot](https://github.com/newuser7171/jev-gamepilot) | C | 6 | yes | Herhangi bir oyunu gorsel olarak izleyip Jev'den taktik karar \(choice/score/noul\) alarak tus/mouse eylemleri uygulayan otonom oyun botu. | [kanıt](https://github.com/newuser7171/jev-gamepilot#readme) |
 | [OmniJev/PlayJev](https://github.com/OmniJev/PlayJev) | C | 6 | no | Jev sözleşmesine \(System One API\) uyumlu, DAgger ile eğitilmiş küçük 0.8B model; tarayıcı oyunlarını pikselden oynuyor | [kanıt](https://github.com/OmniJev/PlayJev#readme) |
 | [VdustR/gomoku-arena](https://github.com/VdustR/gomoku-arena) | C | 6 | yes | Herkesin oturabildiği gomoku tahtası; arama algoritmaları, tarayıcı içi model veya Jev-uyumlu uç nokta hamle seçebilir. | [kanıt](https://github.com/VdustR/gomoku-arena) |
+| [Ash20pk/beat-the-reviewer](https://github.com/Ash20pk/beat-the-reviewer) | C | 5 | yes | Pull request tabanli bir CTF oyunu: sabitlenmis bir Jev modeli, her yazili istegi hash'lenmis ve yayinlanmis bir esik kuralina gore degerlendirir; on seviyelik ikna denemesi. | [kanıt](https://github.com/Ash20pk/beat-the-reviewer#readme) |
 | [CarlosCaoLopez/HACKSPAIN-2026](https://github.com/CarlosCaoLopez/HACKSPAIN-2026) | C | 5 | yes | Minecraft'ta bir acil durumu simule eden, kaynak atamasini deterministik bir cozucunun yaptigi, telefon goruşmelerini Jev'in algiladigi bir hackathon kriz-mudahale ajani. | [kanıt](https://github.com/CarlosCaoLopez/HACKSPAIN-2026#readme) |
 | [cpaczek/things-vs-stuff](https://github.com/cpaczek/things-vs-stuff) | C | 5 | yes | Günlük doodle tower-defense oyunu; her kule-düşman eşleşmesi tek TypeSafe çağrısında ~17 soru fan-out edilerek canlı hakemleniyor | [kanıt](https://github.com/cpaczek/things-vs-stuff) |
 | [hosseintoussi/jev-flappy-bird](https://github.com/hosseintoussi/jev-flappy-bird) | C | 5 | yes | Flappy Bird'de saniyede birkaç kez Jev'e 'flap mi wait mi' sordurup kuşu yöneten canlı demo | [kanıt](https://github.com/hosseintoussi/jev-flappy-bird#readme) |
