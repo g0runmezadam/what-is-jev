@@ -160,11 +160,29 @@ and so does the `ham/meta/*.json` copy the scoring agent reads. A markdown
 link or image keeps its label and loses its target, HTML tags and the
 `javascript:`/`data:` schemes are dropped, line breaks and control characters
 collapse to one space, text longer than 400 characters is cut and ends in ` …`,
-and a private detail (e-mail address, private IP, local path) becomes
-`[redacted]` — the run names the repository it came from and carries on
-rather than stopping the daily refresh over somebody else's e-mail address.
-What the cleaner returns always passes `validate`; the build refuses markup
-in these fields, so the refresh must be unable to produce any.
+and a private detail becomes `[redacted]` — the run names the repository it
+came from and carries on rather than stopping the daily refresh over somebody
+else's e-mail address. What the cleaner returns always passes `validate`; the
+build refuses markup in these fields, so the refresh must be unable to
+produce any.
+
+A "private detail" is an e-mail address, a private IP address, a path into
+`ham/`, or a path on somebody's machine. The last of those covers a Windows
+drive path, a Windows network share, the two Linux roots the scan has always
+known, a macOS home directory, a tilde home that names its user, an absolute
+system directory (the administrator's home, the log, configuration, optional
+and service roots) and a local-file url scheme. `PRIVACY_PATTERNS` and
+`REDACT_PATTERNS` in `tools/build.py` are the list itself, and a test holds
+the two halves together — the cleaner replaces a match, the scan reports one
+and fails the build.
+
+The patterns are deliberately narrow: a root the list recognises plus at
+least one component, and never straight after a word character. That is what
+keeps a url path, an `owner/name`, an `and/or`, a `2026/09`, a source path
+like `lib/utils/helper.js` and a tilde with nothing but a folder after it out
+of the results. A tilde with no user name after it anonymises rather than
+leaks, and real third-party descriptions use it; this document itself, which
+the same scan reads, is the reason the examples above are in words.
 
 Before `tools/update.py` replaces `data/repos.jsonl` it runs the same
 `validate` the build runs. If anything fails the file is left untouched and

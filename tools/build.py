@@ -137,6 +137,25 @@ META_FIELD_TYPES = {
     "topics": (list,),
 }
 
+#: The pieces the local-path patterns are built from.
+#:
+#: A path on a machine that is not Windows still names somebody: a UNC share
+#: (``\\SERVER\share\alice``), a macOS home (``/Users/alice``), a named tilde
+#: home (``~alice/bin``), a system directory (``/root``, ``/var``, ``/etc``,
+#: ``/opt``, ``/srv``) or a ``file://`` url. They are kept deliberately narrow
+#: - a root we recognise plus at least one component, and never straight after
+#: a word character - because the same shapes turn up in text that leaks
+#: nothing: a url path (``https://example.org/Users/alice``), an
+#: ``owner/name``, ``and/or``, ``2026/09``, ``lib/utils/helper.js``. A bare
+#: ``~/Downloads`` is left alone on purpose: the tilde is what anonymises it,
+#: and the real data says so in a third party's own description.
+_UNIX_ROOTS = "Users|root|var|etc|opt|srv"
+_PATH_PART = r"[A-Za-z0-9._-]+"
+_UNIX_PATH = (r"(?<![\w:~./-])(?:/(?:%s)/|~%s/)%s"
+              % (_UNIX_ROOTS, _PATH_PART, _PATH_PART))
+_UNC_PATH = r"\\\\%s\\%s" % (_PATH_PART, _PATH_PART)
+_FILE_URL = r"(?<![A-Za-z0-9])file://"
+
 #: Everything that must never reach a public page, a public data file or a
 #: handwritten document: a path on somebody's machine, an address on somebody's
 #: private network, an e-mail address. The exception list starts empty on
@@ -148,6 +167,9 @@ PRIVACY_PATTERNS = [
     ("/home/ yolu", re.compile(r"/home/")),
     # ham/readme/x@y.md, ../ham/readme/... - a path INTO ham/, not the word
     ("ham/ yolu", re.compile(r"""(?:^|[\s("'])\.{0,2}[\\/]?ham[\\/][A-Za-z0-9._-]""")),
+    ("UNC ağ yolu", re.compile(_UNC_PATH)),
+    ("Unix mutlak yolu", re.compile(_UNIX_PATH)),
+    ("file:// adresi", re.compile(_FILE_URL, re.IGNORECASE)),
     ("özel IP", re.compile(
         r"\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}"
         r"|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3}"
@@ -169,6 +191,9 @@ REDACT_PATTERNS = [
     ("/home/ yolu", re.compile(r"/home/" + _PATH_TAIL)),
     ("ham/ yolu", re.compile(
         r"""(?:^|(?<=[\s("']))\.{0,2}[\\/]?ham[\\/]""" + _PATH_TAIL)),
+    ("UNC ağ yolu", re.compile(_UNC_PATH + _PATH_TAIL)),
+    ("Unix mutlak yolu", re.compile(_UNIX_PATH + _PATH_TAIL)),
+    ("file:// adresi", re.compile(_FILE_URL + _PATH_TAIL, re.IGNORECASE)),
     ("özel IP", re.compile(
         r"\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}"
         r"|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3}"

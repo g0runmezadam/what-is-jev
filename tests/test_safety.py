@@ -161,14 +161,21 @@ class PrivacyPatternTest(BaseCase):
         for leak in (r"C:\Projects\notes", "C:/Users/alice", "../ham/readme/a@b.md",
                      "ham/readme/a@b.md", "/home/alice/x", "/mnt/d/notes",
                      "10.0.0.5", "172.16.0.4", "192.168.0.10",
-                     "someone@example.com", "noreply@example.net"):
+                     "someone@example.com", "noreply@example.net",
+                     "\\\\PRIVATE-SERVER\\share\\alice", "/Users/alice/notes.md",
+                     "~alice/bin/deploy.sh", "/root/.ssh/id_rsa",
+                     "/var/log/app.log", "/etc/jev/conf",
+                     "file:///Users/alice/a.txt"):
             self.assertTrue(build.privacy_hits(leak), leak)
 
     def test_clean_text_is_left_alone(self):
         for clean in ("https://github.com/a/one#readme", "http://x.dev/ham",
                       "[Türkçe](tr/REPOS.md)", "chamber of things",
                       "8.8.8.8", "172.15.0.1", "ham/  (git-ignored)",
-                      "the @mention of a user"):
+                      "the @mention of a user", "owner/name", "and/or",
+                      "2026/09", "https://example.org/Users/alice",
+                      "~/Downloads", "~/.config/commentlint/key.txt",
+                      "lib/utils/helper.js"):
             self.assertEqual(build.privacy_hits(clean), [], clean)
 
 

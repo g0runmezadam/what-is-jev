@@ -40,6 +40,31 @@ HOSTILE = [
     "server at 192.168.0.10 and 10.0.0.4",
     "copy of ham/readme/a@one.md",
     "",
+    # the auditor's own two inputs, and the rest of the family
+    "\\\\PRIVATE-SERVER\\share\\alice\\secret.txt",
+    "/Users/alice/private/notes.md",
+    "run from ~alice/bin/deploy.sh",
+    "key in /root/.ssh/id_rsa",
+    "log at /var/log/private/app.log",
+    "config in /etc/jev/private.conf",
+    "open file:///Users/alice/private/notes.md",
+    "FILE://PRIVATE-SERVER/share/alice",
+]
+
+#: Text that merely looks like a path and is nobody's machine. A pattern that
+#: fires on any of these would stop the build on the real data.
+NOT_A_LOCAL_PATH = [
+    "https://example.org/Users/alice",
+    "https://github.com/a/one",
+    "see the /etc section of the manual",
+    "owner/name",
+    "read and/or write",
+    "released 2026/09",
+    "lib/utils/helper.js",
+    "a ~/Downloads folder that sorts itself",
+    "the key sits in ~/.config/commentlint/key.txt",
+    "profile: /var",
+    "a profile file, not a scheme",
 ]
 
 
@@ -96,6 +121,48 @@ class CleanThirdPartyTest(BaseCase):
         text, _notes = build.clean_third_party("notes in C:\\Users\\somebody\\secret.md")
         self.assertNotIn("somebody", text)
         self.assertNotIn("secret", text)
+
+    def test_a_unc_share_is_caught_and_redacted_whole(self):
+        raw = "notes on \\\\PRIVATE-SERVER\\share\\alice\\secret.txt"
+        self.assertTrue(build.privacy_hits(raw), raw)
+        text, notes = build.clean_third_party(raw)
+        self.assertNotIn("PRIVATE-SERVER", text)
+        self.assertNotIn("alice", text)
+        self.assertNotIn("secret", text)
+        self.assertIn("[redacted]", text)
+        self.assertTrue(notes)
+
+    def test_a_mac_home_directory_is_caught_and_redacted_whole(self):
+        raw = "see /Users/alice/private/notes.md"
+        self.assertTrue(build.privacy_hits(raw), raw)
+        text, _notes = build.clean_third_party(raw)
+        self.assertNotIn("alice", text)
+        self.assertNotIn("notes.md", text)
+
+    def test_a_named_tilde_home_is_caught(self):
+        self.assertTrue(build.privacy_hits("run ~alice/bin/deploy.sh"))
+        text, _notes = build.clean_third_party("run ~alice/bin/deploy.sh")
+        self.assertNotIn("alice", text)
+
+    def test_an_absolute_system_path_is_caught(self):
+        for raw in ("/root/.ssh/id_rsa", "/var/log/private/app.log",
+                    "/etc/jev/private.conf", "/opt/jev/secret",
+                    "/srv/jev/secret"):
+            self.assertTrue(build.privacy_hits(raw), raw)
+
+    def test_a_file_url_is_caught_in_either_casing(self):
+        for raw in ("open file:///Users/alice/notes.md",
+                    "FILE://PRIVATE-SERVER/share"):
+            self.assertTrue(build.privacy_hits(raw), raw)
+            text, _notes = build.clean_third_party(raw)
+            self.assertNotIn("file:", text.lower())
+
+    def test_text_that_only_looks_like_a_path_is_left_alone(self):
+        """The narrowness is the point: no false positive, no stopped build."""
+        for clean in NOT_A_LOCAL_PATH:
+            self.assertEqual(build.privacy_hits(clean), [], clean)
+            text, notes = build.clean_third_party(clean)
+            self.assertEqual(text, clean, notes)
 
     def test_every_privacy_pattern_has_a_redaction_pattern(self):
         self.assertEqual(sorted(l for l, _p in build.PRIVACY_PATTERNS),
