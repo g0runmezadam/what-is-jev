@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tunahansahin897/what-is-jev/data/schema/source.schema.json",
+  "title": "Source row (data/sources.jsonl)",
+  "description": "One line of data/sources.jsonl, maintained by hand. A source without an http(s) url is not a source.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "title", "url", "author", "date", "lang", "trust",
+               "note_en", "note_tr", "status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "type": {
+      "enum": ["official-docs", "own-measurement", "independent-test", "article",
+               "video", "community-list", "tool", "community-message"]
+    },
+    "title": {"type": "string", "minLength": 1},
+    "url": {"type": "string", "pattern": "^https?://"},
+    "author": {"type": "string"},
+    "date": {"type": "string", "description": "YYYY-MM-DD, or empty when unknown"},
+    "lang": {"type": "string", "description": "ISO 639-1, e.g. en, tr"},
+    "trust": {
+      "type": "integer", "minimum": 1, "maximum": 5,
+      "description": "5 official docs or our own measurement, 1 hearsay"
+    },
+    "note_en": {"type": "string"},
+    "note_tr": {"type": "string"},
+    "status": {"enum": ["read", "irrelevant", "unavailable"]}
+  }
+}

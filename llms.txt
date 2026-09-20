@@ -1,0 +1,32 @@
+# What is Jev?
+
+> A sourced, critical research repository on Jev (TypeSafe AI's "System One" decision model): what is verified vs. vendor-claimed vs. contested, plus 785 public GitHub repositories scored on a fixed rubric for what people actually build with it.
+
+Everything here comes from publicly available sources (official docs, public repositories, public videos/articles, and our own API calls, described so they can be repeated). Every claim and every repository entry links to its source; nothing rests on private or paywalled material. Scores are a language-model agent's judgment against a written rubric, not a benchmark of the code — read [`AGENTS.md`](AGENTS.md) before quoting a score or a verdict label as fact. A Turkish translation of the whole repository lives under [`tr/`](tr/README.md), generated from the same data.
+
+## Docs
+
+- [README.md](README.md): entry point, how to read the repository, source trust order, honest limits, current stats.
+- [FINDINGS.md](FINDINGS.md): the sourced answer to "what is Jev, really" — one row per claim, a verdict label (VERIFIED / VENDOR CLAIM / CONTESTED / NOT FOUND), and a source link.
+- [METHODOLOGY.md](METHODOLOGY.md): what was actually done — repository discovery, the scoring rubric, the class-A audit and its current status, video review, web verification, and the honest limits of all of it.
+- [PATTERNS.md](PATTERNS.md): recurring design patterns across repositories, each backed by at least two linked examples.
+- [AGENTS.md](AGENTS.md): rules for an AI assistant reading or citing this repository — verdict labels, data field meanings, what not to assert.
+- [CONTRIBUTING.md](CONTRIBUTING.md): how to add a repository, dispute a score, add a source, or dispute a finding.
+
+## Data
+
+- [data/repos.jsonl](data/repos.jsonl): one scored repository per line — the single source of truth behind REPOS.md, TOP.md and every category page.
+- [data/sources.jsonl](data/sources.jsonl): one source per line, with type and trust level — the single source of truth behind SOURCES.md.
+- [data/SCHEMA.md](data/SCHEMA.md): field-by-field shape of both `.jsonl` files, and the rules `tools/build.py` enforces on them.
+- [data/rubric.md](data/rubric.md): the fixed five-axis scoring rubric (`version: 1`) used for every repository.
+
+## Lists
+
+- [REPOS.md](REPOS.md): all 785 scored repositories, one row each, sorted by class then score.
+- [TOP.md](TOP.md): class-A repositories that passed the single-reviewer audit; unaudited rows are never listed here no matter how high they scored.
+- [categories/](categories/): one page per category (agent gates, code review hooks, model routers, compaction/memory, classification/triage, search/rerank, security/injection, browser/computer-use, game/demo, SDK/client, CLI, MCP/skill/plugin, eval/benchmark, list/directory, text-generation experiments, other).
+- [SOURCES.md](SOURCES.md): every source used anywhere in this repository, grouped by type, each with a trust level 1–5.
+
+## Optional
+
+- [tr/README.md](tr/README.md): Turkish entry point (full translation, same data).

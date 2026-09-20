@@ -1,0 +1,6 @@
+ham/
+data/incoming/applied/
+.env
+.env.*
+__pycache__/
+*.bak

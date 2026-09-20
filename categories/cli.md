@@ -1,0 +1,31 @@
+<!-- GENERATED — do not edit; run tools/build.py -->
+English | [Türkçe](../tr/categories/cli.md)
+
+# Command line tools
+
+19 repositories in this category, sorted by class then score.
+
+[All repositories](../REPOS.md)
+
+| Repository | Class | Total | Calls Jev | What it does | Evidence |
+|---|---|---|---|---|---|
+| [shiftynick/jev-axi](https://github.com/shiftynick/jev-axi) | A | 12 | yes | An agent-ergonomic CLI for Jev: pick/rate/check/ask/rank/filter/find/diff/files/triage/guard/progress/commit commands, a PreToolUse security hook, band policy \(act/confirm/escalate\) | [evidence](https://github.com/shiftynick/jev-axi#readme) |
+| [suraj-phanindra/wellposed](https://github.com/suraj-phanindra/wellposed) | A | 12 | yes | A linter that statically checks Jev requests before they're sent: catches design flaws like a missing "other" option or a broken state reference that silently lead to wrong-but-high-confidence answers | [evidence](https://github.com/suraj-phanindra/wellposed#readme) |
+| [ariel-frischer/jevkit](https://github.com/ariel-frischer/jevkit) | A | 10 | yes | A Rust CLI for Jev: terse YAML/JSON question sets, offline lint \(13 rules, catches billed-but-useless questions upfront\), keyring auth, a usage ledger | [evidence](https://github.com/ariel-frischer/jevkit#readme) |
+| [Nasrallah-AL/jev-cli](https://github.com/Nasrallah-AL/jev-cli) | A | 10 | yes | A comprehensive CLI wrapping Jev on the command line: verify/screen/classify/extract/find/rerank/match/route/ask/compact/batch, exit-code gates for CI, a Claude Code plugin | [evidence](https://github.com/Nasrallah-AL/jev-cli#readme) |
+| [okooo5km/jev](https://github.com/okooo5km/jev) | A | 10 | yes | A Python CLI: yes/pick/score/filter/run; never silently switches between two providers \(TypeSafe/OpenRouter\), has ready templates \(mail/feedback/route\), and a real documented false-positive example with its fix | [evidence](https://github.com/okooo5km/jev#readme) |
+| [sharziki/semdecide](https://github.com/sharziki/semdecide) | A | 10 | yes | A grep/jq-like semantic decision CLI for Unix pipelines \(is/choose/score/filter/guard\); a rich exit-code scheme separating ambiguity from error | [evidence](https://github.com/sharziki/semdecide) |
+| [CrimsonLuckyLabs/kev](https://github.com/CrimsonLuckyLabs/kev) | A | 7 | no | A local MIT reimplementation of the Jev idea: Noul/Choice/Score via option-token logit scoring instead of generate\(\), MLX/Qwen small model, distillation+temperature calibration | [evidence](https://github.com/CrimsonLuckyLabs/kev) |
+| [ibrahemid/git-jev-stage](https://github.com/ibrahemid/git-jev-stage) | B | 10 | yes | Selects and stages a change described in one sentence into git hunks using Jev choice \(include/exclude/mixed\); atomic apply, aborts if state changes | [evidence](https://github.com/ibrahemid/git-jev-stage#readme) |
+| [y0usaf/jev-cli](https://github.com/y0usaf/jev-cli) | B | 10 | yes | duplicate of [y0usaf/jev-lm](https://github.com/y0usaf/jev-lm) — A word-level language model with a Jev output layer \(its README is identical to y0usaf/jev-lm, likely a rename/duplicate entry\); repeat masking, dual stop signals, and chunk verification techniques are measuredly documented | [evidence](https://github.com/y0usaf/jev-cli#readme) |
+| [y0usaf/jev-lm](https://github.com/y0usaf/jev-lm) | B | 10 | yes | A word-level language model, not generating text itself, with Jev as its output layer; sped up with repeat masking, dual stop signals \(an end token + a "complete?" question\), and n-gram drafting + chunk verification techniques | [evidence](https://github.com/y0usaf/jev-lm#readme) |
+| [StefanoITA/ts-jev-cost-calculator](https://github.com/StefanoITA/ts-jev-cost-calculator) | B | 9 | yes | A CLI+Python library that estimates tokens and cost before a Jev API call, validated against actual API responses | [evidence](https://github.com/StefanoITA/ts-jev-cost-calculator#readme) |
+| [MANISH007700/tidy](https://github.com/MANISH007700/tidy) | B | 8 | yes | A macOS tool that auto-organizes the Downloads folder with Jev; leaves the file in place at low confidence, every move is reversible | [evidence](https://github.com/MANISH007700/tidy) |
+| [shaharia-lab/jev-cli](https://github.com/shaharia-lab/jev-cli) | B | 8 | yes | An agent-focused Rust CLI/MCP server; a cost-capped server rejects an unknown model alias by fixed price, batch operations are restricted to symlink-safe allowlisted directories | [evidence](https://github.com/shaharia-lab/jev-cli) |
+| [geilt/typesafe-cli](https://github.com/geilt/typesafe-cli) | B | 7 | yes | A dependency-free \(stdlib-only\) minimal Python CLI + Agent Skill; asks Choice/Score/Noul, deliberately leaves threshold/decision logic to the caller | [evidence](https://github.com/geilt/typesafe-cli#readme) |
+| [makefunstuff/clank](https://github.com/makefunstuff/clank) | B | 7 | yes | A Unix-style LLM CLI tool; a separate clank-jev binary asks typed questions and produces branching decisions for the shell | [evidence](https://github.com/makefunstuff/clank#readme) |
+| [tumf/jev-cli](https://github.com/tumf/jev-cli) | B | 7 | yes | A small CLI + stdio MCP server for Jev; supports official/Vercel/OpenRouter/proxy providers with isolated credentials | [evidence](https://github.com/tumf/jev-cli) |
+| [jtsang4/jev-cli](https://github.com/jtsang4/jev-cli) | C | 6 | yes | A CLI for TypeSafe Jev; sends state and typed questions and gets a structured JSON response | [evidence](https://github.com/jtsang4/jev-cli#readme) |
+| [y0usaf/typesafe-cli](https://github.com/y0usaf/typesafe-cli) | C | 5 | yes | A CLI \(noul/choice/score/ask\) for asking Jev typed questions from the shell, with multi-source API key resolution | [evidence](https://github.com/y0usaf/typesafe-cli#readme) |
+| [kachowtowmater/terminal-board](https://github.com/kachowtowmater/terminal-board) | C | 4 | no | A terminal kanban board \(TODO/DOING/REVIEW/DONE\) shared between human and AI agents; unrelated to Jev | [evidence](https://github.com/kachowtowmater/terminal-board#readme) |
+| [realdubb/jev-playground](https://github.com/realdubb/jev-playground) | C | 4 | yes | A collection of small Jev-based CLI tools: email triage, a PR validator, a GitHub cleaner | [evidence](https://github.com/realdubb/jev-playground#readme) |

@@ -1,0 +1,7 @@
+# Repositories to pick up that `topic:jev` does not return.
+# One `owner/name` per line. Blank lines and lines starting with # are ignored.
+# `python tools/update.py` adds anything here that data/repos.jsonl does not
+# know yet to data/pending.txt, together with the topic search results.
+#
+# Example:
+# typesafe-ai/typesafe-sdk-python
