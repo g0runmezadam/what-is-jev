@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/other.md)
 
 # Other
 
-187 repositories in this category, sorted by class then score.
+190 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -13,6 +13,7 @@ English | [Türkçe](../tr/categories/other.md)
 | [Adityakhalkar/JevNQL](https://github.com/Adityakhalkar/JevNQL) | A | 11 | yes | A query optimizer routing natural-language query arithmetic to DataFusion and semantic judgment only to Jev on narrowed-down rows | [evidence](https://github.com/Adityakhalkar/JevNQL#readme) | yes |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | A | 11 | yes | An open-source small model \(Qwen3.5-9B LoRA\) training recipe inspired by Jev's System One approach, making a single-step typed decision | [evidence](https://github.com/bespokelabsai/nimble#readme) | yes |
 | [rupeshpoojary9/poorjev](https://github.com/rupeshpoojary9/poorjev) | A | 11 | no | Open, local reimplementation of Jev's typed-decision interface on a small NLI model, cutting measured calibration error from 0.170 to 0.071 with cross-validation. | [evidence](https://github.com/rupeshpoojary9/poorjev#readme) | yes |
+| [yzfly/edgejev](https://github.com/yzfly/edgejev) | A | 11 | yes | Local, offline reimplementation of Jev's typed-decision interface as quantized ONNX models, benchmarked on real classification tasks against the hosted Jev API with published accuracy and latency numbers. | [evidence](https://github.com/yzfly/edgejev#readme) | no |
 | [daseinlabs/open-jev](https://github.com/daseinlabs/open-jev) | A | 10 | no | A single-pass option scoring with a local Gemma 3 4B \(MLX\); serves the TypeSafe System One contract \(/v1/systemone\) in its own implementation, measures calibration against real Jev | [evidence](https://github.com/daseinlabs/open-jev) | yes |
 | [TypeSafeAI/typesafe-playground](https://github.com/TypeSafeAI/typesafe-playground) | A | 10 | yes | Community playground with 18+ interactive workspaces demonstrating Jev across classification, PR review, AST governance, SMT-solver cross-checking, vector reranking, tool routing, and games; built on an earlier example library. | [evidence](https://github.com/TypeSafeAI/typesafe-playground#readme) | yes |
 | [pydantic/pydantic-ai-harness](https://github.com/pydantic/pydantic-ai-harness) | A | 8 | no | An official, comprehensive agent harness library for Pydantic AI \(50+ 'capabilities': filesystem, shell, planning, compaction, code mode\); unrelated to Jev | [evidence](https://github.com/pydantic/pydantic-ai-harness#readme) | yes |
@@ -148,6 +149,7 @@ English | [Türkçe](../tr/categories/other.md)
 | [mryo0826/aidd-practice-guideIt](https://github.com/mryo0826/aidd-practice-guideIt) | C | 0 | no | unreachable | [evidence](https://github.com/mryo0826/aidd-practice-guideIt#readme) | no |
 | [myc0576/SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) | C | 0 | no | A read-only, human-approved trading journal/review harness for A-share investors; no evidence of Jev/TypeSafe usage | [evidence](https://github.com/myc0576/SmartMoney-Cub) | no |
 | [nateecho32-stack/mefi-studio](https://github.com/nateecho32-stack/mefi-studio) | C | 0 | no | Electron desktop AI workspace with an always-on assistant loop, task board and 'Model Lab' latency/cost tracking across projects; no Jev or TypeSafe integration mentioned. | [evidence](https://github.com/nateecho32-stack/mefi-studio#readme) | no |
+| [NavisWORLD/The-beast-box-](https://github.com/NavisWORLD/The-beast-box-) | C | 0 | no | Local-first runtime for persistent memory, software state and provenance across replaceable model backends such as Ollama, with no mention of Jev or TypeSafe anywhere in the project. | [evidence](https://github.com/NavisWORLD/The-beast-box-#readme) | no |
 | [ornab74/naza-cancer-scanner](https://github.com/ornab74/naza-cancer-scanner) | C | 0 | no | A recovered crypto+GGUF model app for Android/Termux \('cancer scanner' name is misleading, real content is Keystore/cryptography\); unrelated to Jev | [evidence](https://github.com/ornab74/naza-cancer-scanner#readme) | no |
 | [pax-k/cloudflare-ide](https://github.com/pax-k/cloudflare-ide) | C | 0 | unclear | unreachable | [evidence](https://github.com/pax-k/cloudflare-ide#readme) | no |
 | [peiman/mindvault](https://github.com/peiman/mindvault) | C | 0 | unclear | unreachable | [evidence](https://github.com/peiman/mindvault#readme) | no |
@@ -168,6 +170,7 @@ English | [Türkçe](../tr/categories/other.md)
 | [tatolab/streamlib](https://github.com/tatolab/streamlib) | C | 0 | no | A runtime combining LLM/AI control policies with real-time code for physical AI \(robots/vehicles\); does not mention Jev | [evidence](https://github.com/tatolab/streamlib#readme) | no |
 | [teamchong/pxpipe](https://github.com/teamchong/pxpipe) | C | 0 | no | Local proxy that cuts Claude Code's token bill by rendering bulky request context \(system prompt, tool docs, history\) as PNG images instead of text; no Jev or TypeSafe involvement. | [evidence](https://github.com/teamchong/pxpipe#readme) | no |
 | [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | C | 0 | no | A CLI+extension enabling AI agents to seamlessly use the user's real, logged-in browser; does not mention Jev | [evidence](https://github.com/Tencent/BrowserSkill#readme) | no |
+| [tinystruct/tinystruct](https://github.com/tinystruct/tinystruct) | C | 0 | no | Long-established lightweight Java framework for web and CLI development with Netty/Tomcat integration and MCP server support; the README makes no mention of Jev, TypeSafe or System One. | [evidence](https://github.com/tinystruct/tinystruct#readme) | no |
 | [trkr-ai/trkr-agents](https://github.com/trkr-ai/trkr-agents) | C | 0 | no | An unidentifiable "trkr.ai agents" repository with near-empty content \(13 bytes\) | [evidence](https://github.com/trkr-ai/trkr-agents#readme) | no |
 | [trycua/cua](https://github.com/trycua/cua) | C | 0 | no | An open-source computer-use 2.0 scaling framework \(drivers, cross-OS fleets, benchmarks\); does not mention Jev | [evidence](https://github.com/trycua/cua#readme) | no |
 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | C | 0 | no | An agent skill that produces architecture/flow/sequence diagrams as self-contained HTML; does not mention Jev | [evidence](https://github.com/tt-a1i/archify#readme) | no |

@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/model-router.md)
 
 # Model routers
 
-43 repositories in this category, sorted by class then score.
+44 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -16,6 +16,7 @@ English | [Türkçe](../tr/categories/model-router.md)
 | [BillionsBobby/JevRouter](https://github.com/BillionsBobby/JevRouter) | A | 13 | yes | A router reducing models/subagents/skills/MCP tools to a single candidate set and asking Jev which capability should answer, adding a permission/risk/approval layer | [evidence](https://github.com/BillionsBobby/JevRouter#readme) | yes |
 | [zeeshan8281/slo-router](https://github.com/zeeshan8281/slo-router) | A | 13 | yes | An SLO-aware LLM router; a chained Jev/jev_cache/lexical_fallback decision, live queue metrics, and counterfactual evaluation | [evidence](https://github.com/zeeshan8281/slo-router#readme) | yes |
 | [DECRUX9812/typesafe-skill-router](https://github.com/DECRUX9812/typesafe-skill-router) | A | 12 | yes | A Hermes Agent plugin: picks the best-fit skill from hundreds via a two-stage \(broad-&gt;narrow\) TypeSafe pass BEFORE the model call, appending a one-line hint to the user message | [evidence](https://github.com/DECRUX9812/typesafe-skill-router) | yes |
+| [seahsky/kelpie](https://github.com/seahsky/kelpie) | A | 12 | yes | Claude Code plugin measuring whether subagent delegation pays off at all, plus an optional, off-by-default hook that asks Jev how mechanical a task is before picking a model tier for it. | [evidence](https://github.com/seahsky/kelpie#readme) | no |
 | [gargpratyush/jev-router](https://github.com/gargpratyush/jev-router) | A | 11 | yes | A per-turn model-level \(fast/balanced/strong/long\) router for Claude Code and Codex using Jev, preserving native CLI features; shows the routing rationale via /jev-explain | [evidence](https://github.com/gargpratyush/jev-router#readme) | yes |
 | [gregb100/gavel](https://github.com/gregb100/gavel) | A | 11 | yes | An OpenClaw plugin handing 'classification, not reasoning' decisions like bug triage/PR review gate/incident routing to Jev \(choice+score+noul\), freeing the main LLM for the real work; passes 32 live tests | [evidence](https://github.com/gregb100/gavel) | yes |
 | [leftspace89/jevsubrouter](https://github.com/leftspace89/jevsubrouter) | A | 11 | yes | A plugin that asks Jev in the PreToolUse hook to route Claude Code subagent dispatch to the cheapest sufficient model; never changes the main conversation model | [evidence](https://github.com/leftspace89/jevsubrouter#readme) | yes |

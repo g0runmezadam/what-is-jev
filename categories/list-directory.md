@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/list-directory.md)
 
 # Lists and directories
 
-52 repositories in this category, sorted by class then score.
+53 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -50,6 +50,7 @@ English | [Türkçe](../tr/categories/list-directory.md)
 | [valentynkit/awesome-jev-typesafe](https://github.com/valentynkit/awesome-jev-typesafe) | C | 4 | yes | A CC0-licensed Jev project directory \(323 entries\), ordered by "what would you build" and also describing limitations | [evidence](https://github.com/valentynkit/awesome-jev-typesafe#readme) | no |
 | [walidboulanouar/awesome-jev-use-cases](https://github.com/walidboulanouar/awesome-jev-use-cases) | C | 4 | yes | An awesome-list presenting real use cases built with Jev in card form, with quotes and engagement counts | [evidence](https://github.com/walidboulanouar/awesome-jev-use-cases#readme) | no |
 | [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | C | 4 | yes | A high-signal Jev project guide with explicit inclusion rules, carrying a "bulk same-day publishing = suspicious" warning | [evidence](https://github.com/yibie/awesome-jev#readme) | no |
+| [bobostudio/cabinet](https://github.com/bobostudio/cabinet) | C | 3 | yes | Local file sorter demo moving a folder's files into named drawers by asking Jev to classify each one, with an optional DeepSeek step to name the drawers in Chinese. | [evidence](https://github.com/bobostudio/cabinet#readme) | no |
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | C | 3 | yes | A general, evidence-backed Jev project directory categorized by SDK/agent-tooling/game/reproduction/evaluation | [evidence](https://github.com/cobanov/awesome-jev#readme) | no |
 | [fabricioctelles/modelsystem](https://github.com/fabricioctelles/modelsystem) | C | 3 | yes | The data repository for a curated catalog site for System One/decision models | [evidence](https://github.com/fabricioctelles/modelsystem#readme) | no |
 | [kong75/jev-directory](https://github.com/kong75/jev-directory) | C | 3 | yes | A static web directory presenting copyable Jev question/criteria/code examples by category | [evidence](https://github.com/kong75/jev-directory#readme) | no |

@@ -7,6 +7,8 @@
 
 A sınıfına iki kapıdan girilir: toplam 11 ve üzeri, ya da relevance 3 ile novelty 2 ve üzeri. İkinci kapı geniştir — fikri bize geçen ama başka yanı geçmeyen repo da oradan girer — bu yüzden yüksek toplamı da olan satırlar ayrı bir bölümde tutulur.
 
+Denetim bekleyen 6 A sınıfı satır var: [REPOS.md](REPOS.md) ve kategori sayfalarında `audited: no` olarak listelenirler; bir denetçi okuyana kadar bu sayfaya girmezler.
+
 ## Ölçümle desteklenen çekirdek
 
 Denetlenmiş, toplamı 13 ve üzeri A sınıfı; en yüksekten başlar.

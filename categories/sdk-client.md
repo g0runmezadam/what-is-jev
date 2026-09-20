@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 
 # SDKs and clients
 
-83 repositories in this category, sorted by class then score.
+85 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -52,6 +52,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [Ray-Hughes/jevalyn](https://github.com/Ray-Hughes/jevalyn) | B | 7 | yes | Rails gem wrapping Jev as a named Decision class with a confidence threshold, plus optional guardrails and an LLM router for when prose is actually needed. | [evidence](https://github.com/Ray-Hughes/jevalyn#readme) | no |
 | [shkumbinhasani/typedecide](https://github.com/shkumbinhasani/typedecide) | B | 7 | yes | A provider-agnostic TypeScript decision SDK; a single normalized IR \(choice/score\) with adapters for multiple models/providers | [evidence](https://github.com/shkumbinhasani/typedecide#readme) | yes |
 | [sugarforever/tryjev](https://github.com/sugarforever/tryjev) | B | 7 | yes | A Jev playground; a tool for trying OpenRouter, Vercel AI Gateway, and the TypeSafe API under a single normalized noul/choice/score interface | [evidence](https://github.com/sugarforever/tryjev#readme) | no |
+| [tcsenpai/jevoracle](https://github.com/tcsenpai/jevoracle) | B | 7 | yes | Web console exposing the raw JSON request sent to Jev, letting users toggle state sources to see how much each one shifts the verdict, plus a three-repeat consistency check. | [evidence](https://github.com/tcsenpai/jevoracle#readme) | no |
 | [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) | B | 7 | yes | An official "drop-in" adapter that keeps the same interface as TypeSafeClient while using OpenAI/Anthropic LLMs in the background \(for cost/speed comparison\) | [evidence](https://github.com/typesafe-ai/system-one-adapter-python#readme) | no |
 | [vagmi/jevlite](https://github.com/vagmi/jevlite) | B | 7 | no | Open reproduction of the System One interface on a Gemma-based model, reading answers straight from option-letter logits so it cannot answer outside the given options. | [evidence](https://github.com/vagmi/jevlite#readme) | yes |
 | [XUEHANGAI/jevhttp](https://github.com/XUEHANGAI/jevhttp) | B | 7 | no | Python toolkit combining synchronous HTTP fetching, page-metadata extraction and OpenAI-compatible structured decisions \(choice/boolean/score\) for local models; named after Jev's pattern but does not call TypeSafe's actual API. | [evidence](https://github.com/XUEHANGAI/jevhttp#readme) | no |
@@ -73,6 +74,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [AboveColin/jevclient](https://github.com/AboveColin/jevclient) | C | 4 | yes | An async Python client for TypeSafe Jev; sends Noul/Choice/Score typed questions and receives typed answers | [evidence](https://github.com/AboveColin/jevclient#readme) | no |
 | [anilsenay/jev](https://github.com/anilsenay/jev) | C | 4 | yes | An unofficial Go client for the TypeSafe System One API; binds Choice/Noul questions to enums using Go generic types | [evidence](https://github.com/anilsenay/jev#readme) | no |
 | [Biztactix-Ryan/TypeSafe.Sdk.C-](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-) | C | 4 | yes | A community C# SDK ported from the official Python/JS SDKs, not yet tested against the live API | [evidence](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-#readme) | no |
+| [brainstormity/Jev-For-Dummies](https://github.com/brainstormity/Jev-For-Dummies) | C | 4 | yes | Minimal FastAPI wrapper turning Jev's three typed question kinds into plain HTTP GET endpoints with an interactive docs playground, so no client SDK or Jev knowledge is required to try it. | [evidence](https://github.com/brainstormity/Jev-For-Dummies#readme) | no |
 | [gudcks0305/jev-java](https://github.com/gudcks0305/jev-java) | C | 4 | yes | An unofficial Java SDK for the TypeSafe API/Vercel AI Gateway, published on Maven Central | [evidence](https://github.com/gudcks0305/jev-java#readme) | no |
 | [jonesmelton/verdict](https://github.com/jonesmelton/verdict) | C | 4 | yes | A type-safe OCaml/Eio client library for the TypeSafe System One API | [evidence](https://github.com/jonesmelton/verdict#readme) | no |
 | [l3tchupkt/Claudex](https://github.com/l3tchupkt/Claudex) | C | 4 | no | A fork of the Claude Code source adding multi-provider \(OpenAI/NIM/Ollama\) support and a smart router CLI | [evidence](https://github.com/l3tchupkt/Claudex#readme) | no |

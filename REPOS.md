@@ -3,46 +3,47 @@ English | [Türkçe](tr/REPOS.md)
 
 # All repositories
 
-933 scored repositories, 5 marked as duplicates. Data as of 2026-09-20. Every row links to the repository and to the page the score rests on.
+947 scored repositories, 5 marked as duplicates. Data as of 2026-09-20. Every row links to the repository and to the page the score rests on.
 
 ## Summary
 
 | Number | Value |
 |---|---|
-| Repositories | 933 |
-| Calls Jev | yes 627 · no 273 · unclear 33 |
-| Classes | A 269 · B 297 · C 367 |
+| Repositories | 947 |
+| Calls Jev | yes 639 · no 275 · unclear 33 |
+| Classes | A 275 · B 300 · C 372 |
 | Audited | 347 |
+| Class A awaiting audit | 6 |
 | Sources | 90 |
 | Data as of | 2026-09-20 |
 
 **Top categories**
 
-- [Other](categories/other.md) — 187
-- [Classification and triage](categories/classification-triage.md) — 106
-- [SDKs and clients](categories/sdk-client.md) — 83
+- [Other](categories/other.md) — 190
+- [Classification and triage](categories/classification-triage.md) — 107
+- [SDKs and clients](categories/sdk-client.md) — 85
 - [Evaluation and benchmarks](categories/eval-benchmark.md) — 80
-- [Agent gates](categories/agent-gate.md) — 58
-- [Code review hooks](categories/code-review-hook.md) — 55
+- [Agent gates](categories/agent-gate.md) — 61
+- [Code review hooks](categories/code-review-hook.md) — 56
 - [Games and demos](categories/game-demo.md) — 55
-- [Lists and directories](categories/list-directory.md) — 52
+- [Lists and directories](categories/list-directory.md) — 53
 
 ## Categories
 
 | Category | Repositories | Class A |
 |---|---|---|
-| [Other](categories/other.md) | 187 | 8 |
-| [Classification and triage](categories/classification-triage.md) | 106 | 22 |
-| [SDKs and clients](categories/sdk-client.md) | 83 | 15 |
+| [Other](categories/other.md) | 190 | 9 |
+| [Classification and triage](categories/classification-triage.md) | 107 | 22 |
+| [SDKs and clients](categories/sdk-client.md) | 85 | 15 |
 | [Evaluation and benchmarks](categories/eval-benchmark.md) | 80 | 46 |
-| [Agent gates](categories/agent-gate.md) | 58 | 30 |
-| [Code review hooks](categories/code-review-hook.md) | 55 | 37 |
+| [Agent gates](categories/agent-gate.md) | 61 | 32 |
+| [Code review hooks](categories/code-review-hook.md) | 56 | 38 |
 | [Games and demos](categories/game-demo.md) | 55 | 4 |
-| [Lists and directories](categories/list-directory.md) | 52 | 1 |
+| [Lists and directories](categories/list-directory.md) | 53 | 1 |
 | [MCP servers, skills, plugins](categories/mcp-skill-plugin.md) | 51 | 14 |
 | [Compaction and memory](categories/compaction-memory.md) | 50 | 31 |
-| [Model routers](categories/model-router.md) | 43 | 25 |
-| [Browser and computer use](categories/browser-computer-use.md) | 42 | 13 |
+| [Browser and computer use](categories/browser-computer-use.md) | 44 | 14 |
+| [Model routers](categories/model-router.md) | 44 | 26 |
 | [Command line tools](categories/cli.md) | 26 | 9 |
 | [Search and rerank](categories/search-rerank.md) | 20 | 10 |
 | [Text generation experiments](categories/text-generation-experiment.md) | 16 | 2 |
@@ -56,6 +57,7 @@ English | [Türkçe](tr/REPOS.md)
 | [mrmps/classifier-dev](https://github.com/mrmps/classifier-dev) | A | 15 | yes | Production zero-shot classification API \(classifier.dev\) on a single Cloudflare Worker, using Jev with an LLM fallback chain, its own cost/analytics accounting, and a documented eval directory behind any quoted number. | [evidence](https://github.com/mrmps/classifier-dev#readme) | yes |
 | [Nyarlathoteppppp/pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) | A | 15 | yes | A runtime guard for the pi coding agent that keeps user-stated constraints as structured policy and checks every side-effecting tool call against Jev before execution; measured with a rigorous benchmark | [evidence](https://github.com/Nyarlathoteppppp/pi-heed#readme) | yes |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | A | 14 | yes | Turn-based model/depth routing for Codex using Jev; falls back to a mid-tier on low confidence, fail-open, kill switch, dry-tandem backup | [evidence](https://github.com/0xNatoshi/jev-codex-router) | yes |
+| [0xShin0221/openpoke-meets-jev](https://github.com/0xShin0221/openpoke-meets-jev) | A | 14 | yes | OpenPoke fork replacing chat-model yes/no decisions with Jev for email screening, tool-call guardrails and search relevance, backed by a 43,776-trial prompt-injection robustness experiment. | [evidence](https://github.com/0xShin0221/openpoke-meets-jev#readme) | no |
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | A | 14 | yes | An MCP proxy + hook firewall; scans before tool calls and before the result is read, uses one-time full-argument approval tokens, detects tool-list drift; measured with AUC 0.976-1.0 on public datasets like InjecAgent/BIPIA | [evidence](https://github.com/agent-chaperone/agent-chaperone#readme) | yes |
 | [alsoleg89/jev-bouncer](https://github.com/alsoleg89/jev-bouncer) | A | 14 | yes | Claude Code plugin adding an independent typed-probability gate before shell commands, edits, MCP calls and web fetches execute, with a local auditable log. | [evidence](https://github.com/alsoleg89/jev-bouncer#readme) | yes |
 | [Ascurse/typed-judge-kit](https://github.com/Ascurse/typed-judge-kit) | A | 14 | yes | Python framework for batched typed judge questions across Jev and Gemini engines, with calibrated auto/flag/human thresholds tuned on the caller's own labels. | [evidence](https://github.com/Ascurse/typed-judge-kit#readme) | yes |
@@ -111,6 +113,7 @@ English | [Türkçe](tr/REPOS.md)
 | [WiktorB2004/llama-index-jev](https://github.com/WiktorB2004/llama-index-jev) | A | 13 | yes | A Jev-based reranker \(fail-open\) and router selector \(fail-closed\) for LlamaIndex; nDCG@5 improvement measured on BEIR nfcorpus/scifact | [evidence](https://github.com/WiktorB2004/llama-index-jev#readme) | yes |
 | [Zaious/jev-capability-atlas](https://github.com/Zaious/jev-capability-atlas) | A | 13 | yes | An independent assessment project mapping the task classes where Jev is strong/weak, using real API receipts and third-party benchmark citations | [evidence](https://github.com/Zaious/jev-capability-atlas) | yes |
 | [zeeshan8281/slo-router](https://github.com/zeeshan8281/slo-router) | A | 13 | yes | An SLO-aware LLM router; a chained Jev/jev_cache/lexical_fallback decision, live queue metrics, and counterfactual evaluation | [evidence](https://github.com/zeeshan8281/slo-router#readme) | yes |
+| [7starsseeker/dsh-jev-guard](https://github.com/7starsseeker/dsh-jev-guard) | A | 12 | yes | Pre-execution safety gate for DeepSeek Harness bash and PowerShell calls: static rules, then one Jev yes/no question, splitting into allow, revise, block or escalate to a human. | [evidence](https://github.com/7starsseeker/dsh-jev-guard#readme) | no |
 | [aaravriyer193/OpenSmoke](https://github.com/aaravriyer193/OpenSmoke) | A | 12 | yes | Captures 'silently failed' states in agent traces with four states \(silent/disclosed/recovered/clean\); scans first with cheap questions and escalates only flagged ones to an LLM for root cause; openly acknowledges its own model's \(Jev\) published weak hit rate \(68%\) | [evidence](https://github.com/aaravriyer193/OpenSmoke#readme) | yes |
 | [Adilmp/does-jev-confidence-mean-anything](https://github.com/Adilmp/does-jev-confidence-mean-anything) | A | 12 | yes | A calibration study auditing whether Jev's confidence scores are meaningful, using 8,000 human-labeled judgments at $0.05 cost | [evidence](https://github.com/Adilmp/does-jev-confidence-mean-anything#readme) | yes |
 | [alsoleg89/decide](https://github.com/alsoleg89/decide) | A | 12 | yes | MCP tool sending bulk records to Jev for classification, returning accepted labels plus a review queue for exceptions, benchmarked against GPT-4.1 mini. | [evidence](https://github.com/alsoleg89/decide#readme) | yes |
@@ -123,6 +126,7 @@ English | [Türkçe](tr/REPOS.md)
 | [clduab11/jev-test](https://github.com/clduab11/jev-test) | A | 12 | yes | A pre-registered pilot experiment leaving all decisions \(search/evidence/sufficiency/verification\) to Jev so a small local model can answer web questions without hallucination | [evidence](https://github.com/clduab11/jev-test) | yes |
 | [Clueless-Creations/jev-ios-ultrafast](https://github.com/Clueless-Creations/jev-ios-ultrafast) | A | 12 | yes | Runs iOS Simulator UI test scenarios where Jev picks the next action from the accessibility tree, verified and scheduled across multiple simulators with cost budgets. | [evidence](https://github.com/Clueless-Creations/jev-ios-ultrafast#readme) | yes |
 | [coo-quack/jev-pii-checker](https://github.com/coo-quack/jev-pii-checker) | A | 12 | yes | A Jev-based CLI PII scanner mapping 12 PII-category nouls and a 3-level sensitivity score to exit codes with thresholds | [evidence](https://github.com/coo-quack/jev-pii-checker#readme) | yes |
+| [Cyvid7-Darus10/docfriction](https://github.com/Cyvid7-Darus10/docfriction) | A | 12 | yes | CI tool generating a documentation friction log by splitting a docs page into steps and asking Jev a fixed rubric of typed questions per step, gating pull requests on severity. | [evidence](https://github.com/Cyvid7-Darus10/docfriction#readme) | no |
 | [DECRUX9812/typesafe-skill-router](https://github.com/DECRUX9812/typesafe-skill-router) | A | 12 | yes | A Hermes Agent plugin: picks the best-fit skill from hundreds via a two-stage \(broad-&gt;narrow\) TypeSafe pass BEFORE the model call, appending a one-line hint to the user message | [evidence](https://github.com/DECRUX9812/typesafe-skill-router) | yes |
 | [Dharundp6/jev-sortwell](https://github.com/Dharundp6/jev-sortwell) | A | 12 | yes | An MCP inbox filing a pasted note by type/project/urgency with Jev; never deletes, never rewrites | [evidence](https://github.com/Dharundp6/jev-sortwell) | yes |
 | [dtduc-git/jev-packs](https://github.com/dtduc-git/jev-packs) | A | 12 | yes | A golden-data ledger of Jev question packs and a comparative benchmark across backends \(Jev/Sonnet/local Qwen\); only measured packs count as 'verified' | [evidence](https://github.com/dtduc-git/jev-packs) | yes |
@@ -145,6 +149,7 @@ English | [Türkçe](tr/REPOS.md)
 | [reachjalil/jev-tree](https://github.com/reachjalil/jev-tree) | A | 12 | yes | Walks a taxonomy level by level/auto-bucketing with Jev choice to exceed the 255-option limit; published evidence on HuggingFace \(truncation recovers 0% of the tail, the tree recovers 100%\) | [evidence](https://github.com/reachjalil/jev-tree#readme) | yes |
 | [riz007/yolo-shell](https://github.com/riz007/yolo-shell) | A | 12 | yes | A gatekeeper risk-scoring shell commands with Jev; a System1/System2 split, a fixed 200ms deadline, an offline 40-rule fallback engine | [evidence](https://github.com/riz007/yolo-shell) | yes |
 | [russfranky/jev-crawlers](https://github.com/russfranky/jev-crawlers) | A | 12 | yes | A crawler doing recursive bug-hunting in a codebase with Unix-style seed/expand/judge/verify/report commands, routed by Jev risk-score bands | [evidence](https://github.com/russfranky/jev-crawlers#readme) | yes |
+| [seahsky/kelpie](https://github.com/seahsky/kelpie) | A | 12 | yes | Claude Code plugin measuring whether subagent delegation pays off at all, plus an optional, off-by-default hook that asks Jev how mechanical a task is before picking a model tier for it. | [evidence](https://github.com/seahsky/kelpie#readme) | no |
 | [shiftynick/jev-axi](https://github.com/shiftynick/jev-axi) | A | 12 | yes | An agent-ergonomic CLI for Jev: pick/rate/check/ask/rank/filter/find/diff/files/triage/guard/progress/commit commands, a PreToolUse security hook, band policy \(act/confirm/escalate\) | [evidence](https://github.com/shiftynick/jev-axi#readme) | yes |
 | [shitianfang/jev-use](https://github.com/shitianfang/jev-use) | A | 12 | yes | Connects Claude Code/Codex/pi to Jev with a single install; a dispatch layer that 'pre-decides which steps will never go to Jev at all' plus a typed escalate contract; measured with live demo videos | [evidence](https://github.com/shitianfang/jev-use#readme) | yes |
 | [shitianfang/wakegate](https://github.com/shitianfang/wakegate) | A | 12 | yes | Asks Jev 'is this worth it' before waking a sleeping agent; perfect accuracy in a 21-scenario evaluation, with honest limitations stated | [evidence](https://github.com/shitianfang/wakegate) | yes |
@@ -188,6 +193,7 @@ English | [Türkçe](tr/REPOS.md)
 | [jimmyhealer/jevex](https://github.com/jimmyhealer/jevex) | A | 11 | yes | A single MCP tool that scores which file a code agent should read using Jev and narrows it to a shortlist | [evidence](https://github.com/jimmyhealer/jevex#readme) | yes |
 | [kavehmz/seems-lang](https://github.com/kavehmz/seems-lang) | A | 11 | yes | A language layering judgment on top of Python; conditions are written in plain English and answered by Jev with three-valued logic \(yes/no/unsure\) | [evidence](https://github.com/kavehmz/seems-lang#readme) | yes |
 | [kikoncuo/jevfire](https://github.com/kikoncuo/jevfire) | A | 11 | no | Training-free, vLLM-based single-token label scoring inspired by JEV/RLCD, producing multi-domain typed decisions; measured 3-15x speedup against constrained JSON generation | [evidence](https://github.com/kikoncuo/jevfire) | yes |
+| [kofanlabs/typesafe-computer-use-windows](https://github.com/kofanlabs/typesafe-computer-use-windows) | A | 11 | yes | Windows port of a Jev-driven computer-use loop reading the screen with local OCR and UI Automation, asking Jev which of three choices to take next, and stopping below a confidence threshold. | [evidence](https://github.com/kofanlabs/typesafe-computer-use-windows#readme) | no |
 | [leepokai/jev-guard](https://github.com/leepokai/jev-guard) | A | 11 | yes | A security hook running across 8 different coding-agent/hosts; makes a deny/ask/allow decision with four typed questions \(risk/approval/user_requested/from_untrusted\), scans instruction files \(skill/CLAUDE.md\) for leakage/hidden execution | [evidence](https://github.com/leepokai/jev-guard) | yes |
 | [leftspace89/jevsubrouter](https://github.com/leftspace89/jevsubrouter) | A | 11 | yes | A plugin that asks Jev in the PreToolUse hook to route Claude Code subagent dispatch to the cheapest sufficient model; never changes the main conversation model | [evidence](https://github.com/leftspace89/jevsubrouter#readme) | yes |
 | [ljy8072/jev-agent-router](https://github.com/ljy8072/jev-agent-router) | A | 11 | yes | Routing layer for computer-use agents sending exact matches to code, bounded choices to Jev, and uncertain cases back to the agent, with measured timings. | [evidence](https://github.com/ljy8072/jev-agent-router#readme) | yes |
@@ -218,6 +224,7 @@ English | [Türkçe](tr/REPOS.md)
 | [xergioalex/jev-lab](https://github.com/xergioalex/jev-lab) | A | 11 | yes | Sixteen-module learning lab implementing TypeSafe's four official patterns as runnable offline-tested code, culminating in a JSON-configured decision-tree engine. | [evidence](https://github.com/xergioalex/jev-lab#readme) | yes |
 | [Ying-Kai-Liao/jev-browser](https://github.com/Ying-Kai-Liao/jev-browser) | A | 11 | yes | Browser automation \(MCP\) where the LLM sets the high-level goal and Jev answers, in a single call at each step, which element/action/value and whether it's done/stuck/irreversible | [evidence](https://github.com/Ying-Kai-Liao/jev-browser#readme) | yes |
 | [yodablocks/jobbyjev](https://github.com/yodablocks/jobbyjev) | A | 11 | yes | Resume-to-company ranking tool using six Jev judgments per company, explicit about being a shortlist generator and unsuitable for screening candidates in reverse. | [evidence](https://github.com/yodablocks/jobbyjev#readme) | yes |
+| [yzfly/edgejev](https://github.com/yzfly/edgejev) | A | 11 | yes | Local, offline reimplementation of Jev's typed-decision interface as quantized ONNX models, benchmarked on real classification tasks against the hosted Jev API with published accuracy and latency numbers. | [evidence](https://github.com/yzfly/edgejev#readme) | no |
 | [24601/rh-guard](https://github.com/24601/rh-guard) | A | 10 | yes | A hook detecting reward-hacking in coding agents \(grader tampering, breaking hidden tests\); also includes a map cataloging dozens of similar ecosystem projects with clear distinctions like fail-open/fail-closed, hard envelope vs soft sidecar | [evidence](https://github.com/24601/rh-guard#readme) | yes |
 | [akanthed/jev-watch](https://github.com/akanthed/jev-watch) | A | 10 | yes | A regression/drift test tool catching answers silently changing when the Jev model updates; baseline + tolerance + CI exit code | [evidence](https://github.com/akanthed/jev-watch#readme) | yes |
 | [AlexBabescu/ActionJev](https://github.com/AlexBabescu/ActionJev) | A | 10 | yes | A code review tool written in Rust for GitHub/Gitea Actions; first scans all categories with Jev, then selects the evidence region above threshold | [evidence](https://github.com/AlexBabescu/ActionJev#readme) | yes |
@@ -426,6 +433,7 @@ English | [Türkçe](tr/REPOS.md)
 | [jiangkoumo/ego-jev](https://github.com/jiangkoumo/ego-jev) | B | 9 | yes | A single-process automation that drives the ego lite browser with Jev, producing a single operation+target from one indexed element table, ~2x faster | [evidence](https://github.com/jiangkoumo/ego-jev#readme) | no |
 | [JLegends/opencode-jev-compaction](https://github.com/JLegends/opencode-jev-compaction) | B | 9 | yes | Opencode plugin pair replacing lossy summarization with Jev relevance scoring, dropping or truncating only the tool calls a model says are no longer needed. | [evidence](https://github.com/JLegends/opencode-jev-compaction#readme) | no |
 | [jyatesdotdev/jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage) | B | 9 | yes | On-call log triage tool sending one Jev call per source with six typed questions, combining them into suppress/watch/review/notify/page gates by fixed code rules. | [evidence](https://github.com/jyatesdotdev/jev-logtriage#readme) | no |
+| [kofanlabs/jev-browser-chrome](https://github.com/kofanlabs/jev-browser-chrome) | B | 9 | yes | Windows fork of a Jev-driven browser agent adding a Chrome extension bridge and MCP server that controls already signed-in tabs without remote debugging or a separate browser profile. | [evidence](https://github.com/kofanlabs/jev-browser-chrome#readme) | no |
 | [komorra/Eugeniusz](https://github.com/komorra/Eugeniusz) | B | 9 | no | A local Qwen-based typed decision library embedded via C ABI \(C/C++/C#/Python/Unity/Unreal\) requiring no server/API key; includes a 300-case honest quality report and ECE/Brier/split-conformal calibration | [evidence](https://github.com/komorra/Eugeniusz) | yes |
 | [leonaaardob/fast-dev-compaction](https://github.com/leonaaardob/fast-dev-compaction) | B | 9 | yes | Wraps Codex session compaction with Jev; 2 noul questions per tool call/result \(keep or not\), retained history is reinjected verbatim after summarization | [evidence](https://github.com/leonaaardob/fast-dev-compaction#readme) | yes |
 | [matura-lol/Jev-categorise](https://github.com/matura-lol/Jev-categorise) | B | 9 | yes | Tags exam questions by topic/difficulty/method in a single 14-question call with Jev; categorizes ~47k questions in the matura.lol production system | [evidence](https://github.com/matura-lol/Jev-categorise) | no |
@@ -460,6 +468,7 @@ English | [Türkçe](tr/REPOS.md)
 | [zhuyansen/x-reply-filter](https://github.com/zhuyansen/x-reply-filter) | B | 9 | yes | A Chrome extension that collapses X.com replies using local rules and Jev's 4 noul questions \(ad/bait/off-topic/AI cliché\), learning from user feedback | [evidence](https://github.com/zhuyansen/x-reply-filter#readme) | no |
 | [zzsong1023/jev-market-reflex](https://github.com/zzsong1023/jev-market-reflex) | B | 9 | yes | A demo app converting live crypto market data into BUY/SELL/HOLD decisions with Jev and simulating it on paper \(no real money\). | [evidence](https://github.com/zzsong1023/jev-market-reflex) | no |
 | [AIGNLAI/ReflexRoute](https://github.com/AIGNLAI/ReflexRoute) | B | 8 | yes | Training-free LLM router asking Jev one structured choice question, combining versioned model priors with the caller's routing history and hard cost budgets. | [evidence](https://github.com/AIGNLAI/ReflexRoute#readme) | no |
+| [alexj11324/open-jev-approvals](https://github.com/alexj11324/open-jev-approvals) | B | 8 | yes | Approval gate for Codex and Claude Code hooks mapping OpenAI's own Guardian policy text to three Jev choice questions, producing a single allow or deny verdict that fails open on any error. | [evidence](https://github.com/alexj11324/open-jev-approvals#readme) | no |
 | [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) | B | 8 | no | An evidence-disciplined, usage-guided Jev use-case list; each entry comes with a 'who measured this, is it self-reported' note, and includes design-guide pages | [evidence](https://github.com/aliaihub/awesome-jev-usecases) | no |
 | [apoorvumang/knowledge-cutoff](https://github.com/apoorvumang/knowledge-cutoff) | B | 8 | no | A benchmark estimating LLMs' true knowledge-cutoff date; unpredictable events + three-way correct/incorrect/abstain scoring, unrelated to Jev | [evidence](https://github.com/apoorvumang/knowledge-cutoff#readme) | no |
 | [atarikcaliskan/jevball](https://github.com/atarikcaliskan/jevball) | B | 8 | yes | A 3D soccer simulation; each of the 22 players' decisions is asked as a choice question to Jev in a single batched request, falls back to local policy under latency | [evidence](https://github.com/atarikcaliskan/jevball#readme) | no |
@@ -611,6 +620,7 @@ English | [Türkçe](tr/REPOS.md)
 | [sueszli/qwen27b-jev](https://github.com/sueszli/qwen27b-jev) | B | 7 | no | Reproduces Jev's possible internal mechanism \(reading token logprobs vs grammar-constrained vs free-text+regex\) at small scale on a local Qwen3.8-27B. | [evidence](https://github.com/sueszli/qwen27b-jev) | no |
 | [sugarforever/tryjev](https://github.com/sugarforever/tryjev) | B | 7 | yes | A Jev playground; a tool for trying OpenRouter, Vercel AI Gateway, and the TypeSafe API under a single normalized noul/choice/score interface | [evidence](https://github.com/sugarforever/tryjev#readme) | no |
 | [swap-mitra/jev-techstack-classifier](https://github.com/swap-mitra/jev-techstack-classifier) | B | 7 | yes | A tool that breaks down a freely-described project into a probabilistic technology stack layer by layer \(frontend/backend/db/hosting/mobile\) using Jev | [evidence](https://github.com/swap-mitra/jev-techstack-classifier#readme) | no |
+| [tcsenpai/jevoracle](https://github.com/tcsenpai/jevoracle) | B | 7 | yes | Web console exposing the raw JSON request sent to Jev, letting users toggle state sources to see how much each one shifts the verdict, plus a three-repeat consistency check. | [evidence](https://github.com/tcsenpai/jevoracle#readme) | no |
 | [ThinkyMiner/Winnow](https://github.com/ThinkyMiner/Winnow) | B | 7 | yes | A Chrome extension that consults Jev with noul/choice/score questions for an article/video and decides read/skim/save/skip | [evidence](https://github.com/ThinkyMiner/Winnow#readme) | no |
 | [TKY-27/JevSlop](https://github.com/TKY-27/JevSlop) | B | 7 | yes | An "AI Slop" indicator that evaluates note.com article writing quality using Jev's 8 detail scores plus an overall choice | [evidence](https://github.com/TKY-27/JevSlop#readme) | no |
 | [tumf/jev-cli](https://github.com/tumf/jev-cli) | B | 7 | yes | A small CLI + stdio MCP server for Jev; supports official/Vercel/OpenRouter/proxy providers with isolated credentials | [evidence](https://github.com/tumf/jev-cli) | no |
@@ -628,6 +638,7 @@ English | [Türkçe](tr/REPOS.md)
 | [AkashPriyadarshii/jev-git](https://github.com/AkashPriyadarshii/jev-git) | C | 6 | yes | A sub-second Rust git pre-commit/pre-push gate; a static binary evaluating staged diffs for secrets/prompt-injection/destructive commands with noul | [evidence](https://github.com/AkashPriyadarshii/jev-git#readme) | no |
 | [AlbionaHoti/refgarden](https://github.com/AlbionaHoti/refgarden) | C | 6 | yes | A 3D gallery tool that picks a search phrase in museum/NASA image archives and selects the top result from metadata without seeing the image | [evidence](https://github.com/AlbionaHoti/refgarden) | no |
 | [Alurith/jeff](https://github.com/Alurith/jeff) | C | 6 | yes | A Go CLI semantically checking files against 20 fixed rules \(GEN001-020\) using Jev, with CI exit codes | [evidence](https://github.com/Alurith/jeff) | no |
+| [ankitkapooor/autocode](https://github.com/ankitkapooor/autocode) | C | 6 | yes | Evidence-first orthopedic medical-coding platform letting Jev make coding, modifier and NCCI decisions over a versioned codebook, with GREEN/YELLOW/RED calibration and human review required below the accept threshold. | [evidence](https://github.com/ankitkapooor/autocode#readme) | no |
 | [anxkhn/JevPlaysPokemon](https://github.com/anxkhn/JevPlaysPokemon) | C | 6 | yes | A demo where Jev plays real FireRed battles \(RAM reading + legal move list\) against the Elite Four | [evidence](https://github.com/anxkhn/JevPlaysPokemon#readme) | no |
 | [BeatAPI/awesome-jev](https://github.com/BeatAPI/awesome-jev) | C | 6 | no | Curated list of Jev projects organized by use case, pairing each entry with an original social-media post and a fixed-commit source link. | [evidence](https://github.com/BeatAPI/awesome-jev#readme) | no |
 | [benquemax/henxels](https://github.com/benquemax/henxels) | C | 6 | no | A deterministic structure enforcer binding repo-level agents to a contract via AGENTS.md and YAML rules \(henxel\); unrelated to Jev | [evidence](https://github.com/benquemax/henxels#readme) | no |
@@ -744,6 +755,7 @@ English | [Türkçe](tr/REPOS.md)
 | [ashishpatill/grok-kit](https://github.com/ashishpatill/grok-kit) | C | 4 | no | A personal harness automating cheap/expensive model selection and skill loading for Cursor/Grok Build; does not use Jev | [evidence](https://github.com/ashishpatill/grok-kit#readme) | no |
 | [bastani-inc/atomic](https://github.com/bastani-inc/atomic) | C | 4 | no | A verifiable coding-agent runtime; runs workflows as explicit graphs, unrelated to Jev | [evidence](https://github.com/bastani-inc/atomic#readme) | no |
 | [Biztactix-Ryan/TypeSafe.Sdk.C-](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-) | C | 4 | yes | A community C# SDK ported from the official Python/JS SDKs, not yet tested against the live API | [evidence](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-#readme) | no |
+| [brainstormity/Jev-For-Dummies](https://github.com/brainstormity/Jev-For-Dummies) | C | 4 | yes | Minimal FastAPI wrapper turning Jev's three typed question kinds into plain HTTP GET endpoints with an interactive docs playground, so no client SDK or Jev knowledge is required to try it. | [evidence](https://github.com/brainstormity/Jev-For-Dummies#readme) | no |
 | [bramtechs/Focus](https://github.com/bramtechs/Focus) | C | 4 | yes | A browser extension classifying the visited domain as productive/distracting with Jev and blocking it above threshold | [evidence](https://github.com/bramtechs/Focus#readme) | no |
 | [catorch/jev-domain-auctions](https://github.com/catorch/jev-domain-auctions) | C | 4 | yes | A tool finding cheap opportunities among GoDaddy expiring domains by evaluating deterministic market signals + Jev judgment | [evidence](https://github.com/catorch/jev-domain-auctions#readme) | no |
 | [ctaxnagomi/instruct-jev](https://github.com/ctaxnagomi/instruct-jev) | C | 4 | no | A 119-line Jev instruction corpus \(choice/noul/score\) compiled from TypeSafe documentation, published as a dataset on HuggingFace | [evidence](https://github.com/ctaxnagomi/instruct-jev) | no |
@@ -794,6 +806,7 @@ English | [Türkçe](tr/REPOS.md)
 | [abeldzan/jev-rs](https://github.com/abeldzan/jev-rs) | C | 3 | yes | An async Rust SDK for the TypeSafe API; choice/score/noul typed questions, retry, blocking client | [evidence](https://github.com/abeldzan/jev-rs#readme) | no |
 | [adamjralph/skill-broker](https://github.com/adamjralph/skill-broker) | C | 3 | unclear | A deterministic skill-routing layer at the project-definition stage for Hermes agents; Jev will only produce a fit/confidence score, no code yet | [evidence](https://github.com/adamjralph/skill-broker) | no |
 | [ajayk/jev-go-sdk](https://github.com/ajayk/jev-go-sdk) | C | 3 | yes | Dependency-free Go client mirroring the official Jev SDKs, wrapping the System One request and response shapes with no added logic. | [evidence](https://github.com/ajayk/jev-go-sdk#readme) | no |
+| [bobostudio/cabinet](https://github.com/bobostudio/cabinet) | C | 3 | yes | Local file sorter demo moving a folder's files into named drawers by asking Jev to classify each one, with an optional DeepSeek step to name the drawers in Chinese. | [evidence](https://github.com/bobostudio/cabinet#readme) | no |
 | [Ch1nZ/sts2-ai-coach](https://github.com/Ch1nZ/sts2-ai-coach) | C | 3 | yes | An in-game assistant mode offering live action suggestions in Slay the Spire 2, using Jev via OpenRouter | [evidence](https://github.com/Ch1nZ/sts2-ai-coach#readme) | no |
 | [choxos/JevVsLLM](https://github.com/choxos/JevVsLLM) | C | 3 | yes | A single-page web app where Jev plays chess against OpenRouter LLMs and Stockfish, showing move probabilities \(appears in the repo's meta.jsonl as choxos/jevchess, probably renamed\) | [evidence](https://github.com/choxos/JevVsLLM#readme) | no |
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | C | 3 | yes | A general, evidence-backed Jev project directory categorized by SDK/agent-tooling/game/reproduction/evaluation | [evidence](https://github.com/cobanov/awesome-jev#readme) | no |
@@ -941,6 +954,7 @@ English | [Türkçe](tr/REPOS.md)
 | [mryo0826/aidd-practice-guideIt](https://github.com/mryo0826/aidd-practice-guideIt) | C | 0 | no | unreachable | [evidence](https://github.com/mryo0826/aidd-practice-guideIt#readme) | no |
 | [myc0576/SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) | C | 0 | no | A read-only, human-approved trading journal/review harness for A-share investors; no evidence of Jev/TypeSafe usage | [evidence](https://github.com/myc0576/SmartMoney-Cub) | no |
 | [nateecho32-stack/mefi-studio](https://github.com/nateecho32-stack/mefi-studio) | C | 0 | no | Electron desktop AI workspace with an always-on assistant loop, task board and 'Model Lab' latency/cost tracking across projects; no Jev or TypeSafe integration mentioned. | [evidence](https://github.com/nateecho32-stack/mefi-studio#readme) | no |
+| [NavisWORLD/The-beast-box-](https://github.com/NavisWORLD/The-beast-box-) | C | 0 | no | Local-first runtime for persistent memory, software state and provenance across replaceable model backends such as Ollama, with no mention of Jev or TypeSafe anywhere in the project. | [evidence](https://github.com/NavisWORLD/The-beast-box-#readme) | no |
 | [ornab74/naza-cancer-scanner](https://github.com/ornab74/naza-cancer-scanner) | C | 0 | no | A recovered crypto+GGUF model app for Android/Termux \('cancer scanner' name is misleading, real content is Keystore/cryptography\); unrelated to Jev | [evidence](https://github.com/ornab74/naza-cancer-scanner#readme) | no |
 | [pax-k/cloudflare-ide](https://github.com/pax-k/cloudflare-ide) | C | 0 | unclear | unreachable | [evidence](https://github.com/pax-k/cloudflare-ide#readme) | no |
 | [peiman/mindvault](https://github.com/peiman/mindvault) | C | 0 | unclear | unreachable | [evidence](https://github.com/peiman/mindvault#readme) | no |
@@ -962,6 +976,7 @@ English | [Türkçe](tr/REPOS.md)
 | [tatolab/streamlib](https://github.com/tatolab/streamlib) | C | 0 | no | A runtime combining LLM/AI control policies with real-time code for physical AI \(robots/vehicles\); does not mention Jev | [evidence](https://github.com/tatolab/streamlib#readme) | no |
 | [teamchong/pxpipe](https://github.com/teamchong/pxpipe) | C | 0 | no | Local proxy that cuts Claude Code's token bill by rendering bulky request context \(system prompt, tool docs, history\) as PNG images instead of text; no Jev or TypeSafe involvement. | [evidence](https://github.com/teamchong/pxpipe#readme) | no |
 | [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | C | 0 | no | A CLI+extension enabling AI agents to seamlessly use the user's real, logged-in browser; does not mention Jev | [evidence](https://github.com/Tencent/BrowserSkill#readme) | no |
+| [tinystruct/tinystruct](https://github.com/tinystruct/tinystruct) | C | 0 | no | Long-established lightweight Java framework for web and CLI development with Netty/Tomcat integration and MCP server support; the README makes no mention of Jev, TypeSafe or System One. | [evidence](https://github.com/tinystruct/tinystruct#readme) | no |
 | [trkr-ai/trkr-agents](https://github.com/trkr-ai/trkr-agents) | C | 0 | no | An unidentifiable "trkr.ai agents" repository with near-empty content \(13 bytes\) | [evidence](https://github.com/trkr-ai/trkr-agents#readme) | no |
 | [trycua/cua](https://github.com/trycua/cua) | C | 0 | no | An open-source computer-use 2.0 scaling framework \(drivers, cross-OS fleets, benchmarks\); does not mention Jev | [evidence](https://github.com/trycua/cua#readme) | no |
 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | C | 0 | no | An agent skill that produces architecture/flow/sequence diagrams as self-contained HTML; does not mention Jev | [evidence](https://github.com/tt-a1i/archify#readme) | no |

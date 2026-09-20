@@ -3,7 +3,7 @@
 
 # Kod inceleme hook'ları
 
-Bu kategoride 55 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 56 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -18,6 +18,7 @@ Bu kategoride 55 repo; önce sınıf, sonra puan sırasıyla.
 | [Eliran-Turgeman/repear](https://github.com/Eliran-Turgeman/repear) | A | 13 | yes | Git diff'i TypeSafe jev-1.13 ile denetleyen semantik linter; 11 kural, çoklu sinyalli kurallarda en zayıf güveni final sayıyor | [kanıt](https://github.com/Eliran-Turgeman/repear#readme) | yes |
 | [phuthuycoding/jev-audit](https://github.com/phuthuycoding/jev-audit) | A | 13 | yes | Git diff'ini tek bir cagriyla Jev'e gonderip dort atomik soruyu \(sir sizintisi, guvenlik acigi, kalite, kapsam\) yanitlayan, 79 vakalik bir kumede %100 kesin dogrulukla dogrulanmis, hata durumunda kilitlenen bir pre-commit denetleyicisi. | [kanıt](https://github.com/phuthuycoding/jev-audit#readme) | yes |
 | [brickfrog/moongate](https://github.com/brickfrog/moongate) | A | 12 | yes | Bir pull request diff'ini Jev ile anlamsal kurallara karsi denetleyen, depo tanimli olasilik esiklerini uygulayarak PR anotasyonlari ureten bir CI aksiyonu. | [kanıt](https://github.com/brickfrog/moongate#readme) | yes |
+| [Cyvid7-Darus10/docfriction](https://github.com/Cyvid7-Darus10/docfriction) | A | 12 | yes | Bir belge sayfasini adimlara bolup her adim icin Jev'e sabit bir tiplendirilmis soru kumesi sorarak surtunme gunlugu ureten, cekme isteklerini ciddiyete gore kapatan bir CI araci. | [kanıt](https://github.com/Cyvid7-Darus10/docfriction#readme) | no |
 | [glud123/jev-assist](https://github.com/glud123/jev-assist) | A | 12 | yes | Jev kullanan kod tabani degerlendirme CLI'i \(rerank, drift, gate\); validate komutu, siralamanin dogrulugunu bir deponun kendi commit gecmisine karsi ucretsiz olcer. | [kanıt](https://github.com/glud123/jev-assist#readme) | yes |
 | [noplan-inc/limpet](https://github.com/noplan-inc/limpet) | A | 12 | yes | Claude Code/Codex için Stop hook; düz dilde kuralları Jev'e 0.7 saniyede skorlatıp ihlalde ajanı işe geri gönderir | [kanıt](https://github.com/noplan-inc/limpet#readme) | yes |
 | [russfranky/jev-crawlers](https://github.com/russfranky/jev-crawlers) | A | 12 | yes | Unix tarzı seed/expand/judge/verify/report komutlarıyla kod tabanında rekürsif hata avı yapan, Jev ile risk skoru bandına göre yönlendiren tarayıcı | [kanıt](https://github.com/russfranky/jev-crawlers#readme) | yes |

@@ -3,46 +3,47 @@
 
 # Bütün repolar
 
-933 puanlanmış repo, 5 mükerrer. Veri tarihi 2026-09-20. Her satır repoya ve puanın dayandığı sayfaya bağlanır.
+947 puanlanmış repo, 5 mükerrer. Veri tarihi 2026-09-20. Her satır repoya ve puanın dayandığı sayfaya bağlanır.
 
 ## Özet
 
 | Sayı | Değer |
 |---|---|
-| Repo | 933 |
-| Jev çağırıyor | yes 627 · no 273 · unclear 33 |
-| Sınıflar | A 269 · B 297 · C 367 |
+| Repo | 947 |
+| Jev çağırıyor | yes 639 · no 275 · unclear 33 |
+| Sınıflar | A 275 · B 300 · C 372 |
 | Denetlenmiş | 347 |
+| Denetim bekleyen A sınıfı | 6 |
 | Kaynak | 90 |
 | Veri tarihi | 2026-09-20 |
 
 **En çok kategori**
 
-- [Diğer](categories/other.md) — 187
-- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 106
-- [SDK'lar ve istemciler](categories/sdk-client.md) — 83
+- [Diğer](categories/other.md) — 190
+- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 107
+- [SDK'lar ve istemciler](categories/sdk-client.md) — 85
 - [Değerlendirme ve benchmark](categories/eval-benchmark.md) — 80
-- [Ajan kapıları](categories/agent-gate.md) — 58
-- [Kod inceleme hook'ları](categories/code-review-hook.md) — 55
+- [Ajan kapıları](categories/agent-gate.md) — 61
+- [Kod inceleme hook'ları](categories/code-review-hook.md) — 56
 - [Oyunlar ve demolar](categories/game-demo.md) — 55
-- [Listeler ve dizinler](categories/list-directory.md) — 52
+- [Listeler ve dizinler](categories/list-directory.md) — 53
 
 ## Kategoriler
 
 | Kategori | Repo | A sınıfı |
 |---|---|---|
-| [Diğer](categories/other.md) | 187 | 8 |
-| [Sınıflandırma ve triyaj](categories/classification-triage.md) | 106 | 22 |
-| [SDK'lar ve istemciler](categories/sdk-client.md) | 83 | 15 |
+| [Diğer](categories/other.md) | 190 | 9 |
+| [Sınıflandırma ve triyaj](categories/classification-triage.md) | 107 | 22 |
+| [SDK'lar ve istemciler](categories/sdk-client.md) | 85 | 15 |
 | [Değerlendirme ve benchmark](categories/eval-benchmark.md) | 80 | 46 |
-| [Ajan kapıları](categories/agent-gate.md) | 58 | 30 |
-| [Kod inceleme hook'ları](categories/code-review-hook.md) | 55 | 37 |
+| [Ajan kapıları](categories/agent-gate.md) | 61 | 32 |
+| [Kod inceleme hook'ları](categories/code-review-hook.md) | 56 | 38 |
 | [Oyunlar ve demolar](categories/game-demo.md) | 55 | 4 |
-| [Listeler ve dizinler](categories/list-directory.md) | 52 | 1 |
+| [Listeler ve dizinler](categories/list-directory.md) | 53 | 1 |
 | [MCP, skill ve eklentiler](categories/mcp-skill-plugin.md) | 51 | 14 |
 | [Compaction ve hafıza](categories/compaction-memory.md) | 50 | 31 |
-| [Model yönlendiriciler](categories/model-router.md) | 43 | 25 |
-| [Tarayıcı ve bilgisayar kullanımı](categories/browser-computer-use.md) | 42 | 13 |
+| [Tarayıcı ve bilgisayar kullanımı](categories/browser-computer-use.md) | 44 | 14 |
+| [Model yönlendiriciler](categories/model-router.md) | 44 | 26 |
 | [Komut satırı araçları](categories/cli.md) | 26 | 9 |
 | [Arama ve yeniden sıralama](categories/search-rerank.md) | 20 | 10 |
 | [Metin üretimi denemeleri](categories/text-generation-experiment.md) | 16 | 2 |
@@ -56,6 +57,7 @@
 | [mrmps/classifier-dev](https://github.com/mrmps/classifier-dev) | A | 15 | yes | Tek bir Cloudflare Worker uzerinde calisan, Jev'i LLM yedek zinciriyle kullanan, kendi maliyet/analitik takibine ve iddia edilen her sayinin arkasinda belgelenmis bir degerlendirme klasorune sahip uretim seviyesi sifir-atis siniflandirma API'si \(classifier.dev\). | [kanıt](https://github.com/mrmps/classifier-dev#readme) | yes |
 | [Nyarlathoteppppp/pi-heed](https://github.com/Nyarlathoteppppp/pi-heed) | A | 15 | yes | pi coding agent icin, kullanicinin soyledigi kisitlamalari yapisal politika olarak tutup her yan-etkili arac cagrisini calistirmadan once Jev ile kontrol eden runtime guard; rigorous benchmark ile olculmus. | [kanıt](https://github.com/Nyarlathoteppppp/pi-heed#readme) | yes |
 | [0xNatoshi/jev-codex-router](https://github.com/0xNatoshi/jev-codex-router) | A | 14 | yes | Codex için Jev ile turn-bazlı model/derinlik routing; düşük güvende orta katmana düşüyor, fail-open, kill switch, dry-tandem yedek | [kanıt](https://github.com/0xNatoshi/jev-codex-router) | yes |
+| [0xShin0221/openpoke-meets-jev](https://github.com/0xShin0221/openpoke-meets-jev) | A | 14 | yes | OpenPoke catalindan turetilen, e-posta tarama, arac cagirma korkuluk ve arama alakasi icin sohbet modelinin evet/hayir kararlarini Jev'e tasiyan, 43.776 denemelik bir istem enjeksiyonu dayaniklilik deneyiyle desteklenen catal. | [kanıt](https://github.com/0xShin0221/openpoke-meets-jev#readme) | no |
 | [agent-chaperone/agent-chaperone](https://github.com/agent-chaperone/agent-chaperone) | A | 14 | yes | MCP proxy + hook güvenlik duvarı; araç çağrısı öncesi ve sonucu okumadan önce tarar, tek-kullanımlık tam-argüman onay jetonları, araç listesi sapması tespiti; InjecAgent/BIPIA gibi kamu veri setlerinde AUC 0.976-1.0 ile ölçülmüş | [kanıt](https://github.com/agent-chaperone/agent-chaperone#readme) | yes |
 | [alsoleg89/jev-bouncer](https://github.com/alsoleg89/jev-bouncer) | A | 14 | yes | Kabuk komutlari, duzenlemeler, MCP cagrilari ve web istekleri calismadan once bagimsiz, tipli-olasilik tabanli bir kapi ekleyen, yerel denetlenebilir kayit tutan bir Claude Code eklentisi. | [kanıt](https://github.com/alsoleg89/jev-bouncer#readme) | yes |
 | [Ascurse/typed-judge-kit](https://github.com/Ascurse/typed-judge-kit) | A | 14 | yes | Jev ve Gemini motorlari uzerinde toplu tipli yargi sorulari calistiran, esikleri cagiran tarafin kendi etiketleriyle kalibre eden bir Python cercevesi. | [kanıt](https://github.com/Ascurse/typed-judge-kit#readme) | yes |
@@ -111,6 +113,7 @@
 | [WiktorB2004/llama-index-jev](https://github.com/WiktorB2004/llama-index-jev) | A | 13 | yes | LlamaIndex için Jev tabanlı reranker \(fail-open\) ve router selector \(fail-closed\); BEIR nfcorpus/scifact üzerinde ölçülmüş nDCG@5 iyileşmesi | [kanıt](https://github.com/WiktorB2004/llama-index-jev#readme) | yes |
 | [Zaious/jev-capability-atlas](https://github.com/Zaious/jev-capability-atlas) | A | 13 | yes | Jev'in güçlü/zayıf olduğu görev sınıflarını gerçek API makbuzları ve üçüncü taraf benchmark alıntılarıyla haritalayan bağımsız değerlendirme projesi | [kanıt](https://github.com/Zaious/jev-capability-atlas) | yes |
 | [zeeshan8281/slo-router](https://github.com/zeeshan8281/slo-router) | A | 13 | yes | SLO-farkında LLM router; Jev/jev_cache/lexical_fallback zincirli karar, canlı kuyruk metrikleri ve karşıolgusal \(counterfactual\) değerlendirme | [kanıt](https://github.com/zeeshan8281/slo-router#readme) | yes |
+| [7starsseeker/dsh-jev-guard](https://github.com/7starsseeker/dsh-jev-guard) | A | 12 | yes | DeepSeek Harness icin bash ve PowerShell cagrilarini calistirmadan once durduran guvenlik kapisi: once statik kurallar, sonra Jev'e tek bir evet/hayir sorusu; sonuc izin, duzelt, engelle veya insana devret olarak dorde ayrilir. | [kanıt](https://github.com/7starsseeker/dsh-jev-guard#readme) | no |
 | [aaravriyer193/OpenSmoke](https://github.com/aaravriyer193/OpenSmoke) | A | 12 | yes | Ajan izlerinde 'sessizce başarısız oldu' durumunu silent/disclosed/recovered/clean dört durumla yakalar; önce ucuz sorularla tarar, yalnız işaretlenenleri LLM'e kök-neden için yükseltir; kendi modelinin \(Jev\) yayınlanmış zayıf isabetini \(%68\) açıkça kabul ediyor | [kanıt](https://github.com/aaravriyer193/OpenSmoke#readme) | yes |
 | [Adilmp/does-jev-confidence-mean-anything](https://github.com/Adilmp/does-jev-confidence-mean-anything) | A | 12 | yes | Jev'in güven skorlarının anlamlı olup olmadığını 8.000 insan etiketli yargıyla, $0.05 maliyetle denetleyen kalibrasyon çalışması | [kanıt](https://github.com/Adilmp/does-jev-confidence-mean-anything#readme) | yes |
 | [alsoleg89/decide](https://github.com/alsoleg89/decide) | A | 12 | yes | Toplu kayitlari siniflandirma icin Jev'e gonderen bir MCP araci; kabul edilen etiketleri ve istisnalar icin bir inceleme kuyrugunu dondurur, GPT-4.1 mini'ye karsi olculmustur. | [kanıt](https://github.com/alsoleg89/decide#readme) | yes |
@@ -123,6 +126,7 @@
 | [clduab11/jev-test](https://github.com/clduab11/jev-test) | A | 12 | yes | Küçük yerel modelin web sorularını halüsinasyonsuz yanıtlayabilmesi için tüm kararları \(ara/kanıt/yeterlilik/doğrulama\) Jev'e bırakan ön-kayıtlı pilot deney. | [kanıt](https://github.com/clduab11/jev-test) | yes |
 | [Clueless-Creations/jev-ios-ultrafast](https://github.com/Clueless-Creations/jev-ios-ultrafast) | A | 12 | yes | Jev'in bir sonraki eylemi erisilebilirlik agacindan sectigi iOS Simulator UI test senaryolarini, birden fazla simulatorde maliyet butceleriyle zamanlayip dogrulayan bir arac. | [kanıt](https://github.com/Clueless-Creations/jev-ios-ultrafast#readme) | yes |
 | [coo-quack/jev-pii-checker](https://github.com/coo-quack/jev-pii-checker) | A | 12 | yes | 12 PII kategorisi noul + 3 seviyeli hassasiyet skorunu eşiklerle çıkış koduna bağlayan Jev tabanlı CLI PII tarayıcısı | [kanıt](https://github.com/coo-quack/jev-pii-checker#readme) | yes |
+| [Cyvid7-Darus10/docfriction](https://github.com/Cyvid7-Darus10/docfriction) | A | 12 | yes | Bir belge sayfasini adimlara bolup her adim icin Jev'e sabit bir tiplendirilmis soru kumesi sorarak surtunme gunlugu ureten, cekme isteklerini ciddiyete gore kapatan bir CI araci. | [kanıt](https://github.com/Cyvid7-Darus10/docfriction#readme) | no |
 | [DECRUX9812/typesafe-skill-router](https://github.com/DECRUX9812/typesafe-skill-router) | A | 12 | yes | Hermes Agent eklentisi: yüzlerce skill arasından model çağrısından ÖNCE TypeSafe ile iki aşamalı \(geniş-&gt;dar\) en uygun skill'i seçip user mesajına tek satır ipucu ekliyor | [kanıt](https://github.com/DECRUX9812/typesafe-skill-router) | yes |
 | [Dharundp6/jev-sortwell](https://github.com/Dharundp6/jev-sortwell) | A | 12 | yes | Yapıştırılan notu Jev ile türüne/projesine/aciliyetine göre dosyalayan MCP gelen kutusu; asla silmiyor, asla yeniden yazmıyor. | [kanıt](https://github.com/Dharundp6/jev-sortwell) | yes |
 | [dtduc-git/jev-packs](https://github.com/dtduc-git/jev-packs) | A | 12 | yes | Jev soru paketlerinin altın-veri kayıt defteri ve karşı-backend \(Jev/Sonnet/yerel Qwen\) karşılaştırmalı benchmark'ı; yalnız ölçülmüş paketler 'verified' sayılır. | [kanıt](https://github.com/dtduc-git/jev-packs) | yes |
@@ -145,6 +149,7 @@
 | [reachjalil/jev-tree](https://github.com/reachjalil/jev-tree) | A | 12 | yes | 255 seçenek sınırını aşmak için taksonomiyi seviye seviye/otomatik-kovalayarak Jev choice ile dolaşır; HuggingFace'te yayınlanmış kanıt \(kesme %0 kuyruk kurtarır, ağaç %100\) | [kanıt](https://github.com/reachjalil/jev-tree#readme) | yes |
 | [riz007/yolo-shell](https://github.com/riz007/yolo-shell) | A | 12 | yes | Kabuk komutlarını Jev ile risk skorlayan gatekeeper; System1/System2 ayrımı, sabit 200ms deadline, çevrimdışı 40 kurallı yedek motor. | [kanıt](https://github.com/riz007/yolo-shell) | yes |
 | [russfranky/jev-crawlers](https://github.com/russfranky/jev-crawlers) | A | 12 | yes | Unix tarzı seed/expand/judge/verify/report komutlarıyla kod tabanında rekürsif hata avı yapan, Jev ile risk skoru bandına göre yönlendiren tarayıcı | [kanıt](https://github.com/russfranky/jev-crawlers#readme) | yes |
+| [seahsky/kelpie](https://github.com/seahsky/kelpie) | A | 12 | yes | Alt ajana devretmenin gercekten kar getirip getirmedigini olcen bir Claude Code eklentisi; varsayilan olarak kapali, istege bagli bir kanca bir gorevin ne kadar mekanik oldugunu Jev'e sorup model katmanini secer. | [kanıt](https://github.com/seahsky/kelpie#readme) | no |
 | [shiftynick/jev-axi](https://github.com/shiftynick/jev-axi) | A | 12 | yes | Jev için ajan-ergonomik CLI: pick/rate/check/ask/rank/filter/find/diff/files/triage/guard/progress/commit komutları, PreToolUse güvenlik hook'u, band politikası \(act/confirm/escalate\) | [kanıt](https://github.com/shiftynick/jev-axi#readme) | yes |
 | [shitianfang/jev-use](https://github.com/shitianfang/jev-use) | A | 12 | yes | Claude Code/Codex/pi'yi tek kurulumla Jev'e bağlar; 'hiç Jev'e gitmeyecek adımlara önceden karar veren' dispatch katmanı + tipli escalate sözleşmesi; ölçülmüş canlı demo videoları | [kanıt](https://github.com/shitianfang/jev-use#readme) | yes |
 | [shitianfang/wakegate](https://github.com/shitianfang/wakegate) | A | 12 | yes | Uyuyan bir ajanı uyandırmadan önce Jev'e 'buna değer mi' sorar; 21 senaryoluk değerlendirmede tam isabet, dürüst sınırlamalar belirtilmiş. | [kanıt](https://github.com/shitianfang/wakegate) | yes |
@@ -188,6 +193,7 @@
 | [jimmyhealer/jevex](https://github.com/jimmyhealer/jevex) | A | 11 | yes | Kod ajanının hangi dosyayı okuması gerektiğini Jev ile puanlayıp kısa listeye indiren tek MCP aracı | [kanıt](https://github.com/jimmyhealer/jevex#readme) | yes |
 | [kavehmz/seems-lang](https://github.com/kavehmz/seems-lang) | A | 11 | yes | Python üstüne judgment eklenmiş dil; koşullar düz İngilizce olup Jev ile 3-değerli mantıkla \(evet/hayır/belirsiz\) yanıtlanıyor | [kanıt](https://github.com/kavehmz/seems-lang#readme) | yes |
 | [kikoncuo/jevfire](https://github.com/kikoncuo/jevfire) | A | 11 | no | JEV/RLCD'den ilham alan, eğitim gerektirmeyen vLLM tabanlı tek-token etiket skorlamasıyla çok alanlı tipli karar üretimi; kısıtlı JSON üretimine karşı ölçülmüş 3-15x hızlanma | [kanıt](https://github.com/kikoncuo/jevfire) | yes |
+| [kofanlabs/typesafe-computer-use-windows](https://github.com/kofanlabs/typesafe-computer-use-windows) | A | 11 | yes | Ekrani yerel OCR ve UI Automation ile okuyan, sonraki adim icin Jev'e uc secenekten birini soran ve guven esiginin altinda durabilen Jev destekli bilgisayar kullanim dongusunun Windows portu. | [kanıt](https://github.com/kofanlabs/typesafe-computer-use-windows#readme) | no |
 | [leepokai/jev-guard](https://github.com/leepokai/jev-guard) | A | 11 | yes | 8 farklı kodlama ajanı/host'unda çalışan güvenlik hook'u; risk/approval/user_requested/from_untrusted dört tipli soruyla deny/ask/allow kararı veriyor, talimat dosyalarını \(skill/CLAUDE.md\) sızıntı/gizli-yürütme için tarıyor | [kanıt](https://github.com/leepokai/jev-guard) | yes |
 | [leftspace89/jevsubrouter](https://github.com/leftspace89/jevsubrouter) | A | 11 | yes | Claude Code subagent dispatch'ini PreToolUse hook'unda Jev'e sorup en ucuz yeterli modele yonlendiren plugin; ana konusma modelini hic degistirmiyor. | [kanıt](https://github.com/leftspace89/jevsubrouter#readme) | yes |
 | [ljy8072/jev-agent-router](https://github.com/ljy8072/jev-agent-router) | A | 11 | yes | Bilgisayar kullanan ajanlar icin, tam eslesmeleri koda, sinirli anlamsal secimleri Jev'e, belirsiz durumlari ise ajana geri gonderen, olculmus zamanlamalara sahip yonlendirme katmani. | [kanıt](https://github.com/ljy8072/jev-agent-router#readme) | yes |
@@ -218,6 +224,7 @@
 | [xergioalex/jev-lab](https://github.com/xergioalex/jev-lab) | A | 11 | yes | TypeSafe'in dort resmi desenini calisir, cevrimdisi test edilmis kod olarak uygulayan, JSON ile yapilandirilmis bir karar-agaci motoruyla sonuclanan on alti modullu bir ogrenme laboratuvari. | [kanıt](https://github.com/xergioalex/jev-lab#readme) | yes |
 | [Ying-Kai-Liao/jev-browser](https://github.com/Ying-Kai-Liao/jev-browser) | A | 11 | yes | LLM'in yüksek seviye hedefi belirlediği, her adımda Jev'in hangi eleman/eylem/değer ve bitti-mi/tıkanmış-mı/geri-alınamaz-mı sorularını tek çağrıda yanıtladığı tarayıcı otomasyonu \(MCP\) | [kanıt](https://github.com/Ying-Kai-Liao/jev-browser#readme) | yes |
 | [yodablocks/jobbyjev](https://github.com/yodablocks/jobbyjev) | A | 11 | yes | Sirket basina alti Jev yargisi kullanan, bir on-liste ureteci oldugunu ve tersine aday elemek icin uygunsuz oldugunu acikca belirten bir ozgecmis-sirket siralama araci. | [kanıt](https://github.com/yodablocks/jobbyjev#readme) | yes |
+| [yzfly/edgejev](https://github.com/yzfly/edgejev) | A | 11 | yes | Jev'in tiplendirilmis karar arayuzunu nicelendirilmis ONNX modelleri olarak yerel ve cevrimdisi yeniden uygulayan, gercek siniflandirma gorevlerinde barindirilan Jev API'sine karsi dogruluk ve gecikme rakamlariyla kiyaslanan proje. | [kanıt](https://github.com/yzfly/edgejev#readme) | no |
 | [24601/rh-guard](https://github.com/24601/rh-guard) | A | 10 | yes | Kodlama ajanlarında ödül-hackleme \(grader kurcalama, gizli test bozma\) tespit eden hook; ekosistemdeki onlarca benzer projeyi 'fail-open/fail-closed', 'hard envelope vs soft sidecar' gibi net ayrımlarla kataloglayan bir harita da içeriyor | [kanıt](https://github.com/24601/rh-guard#readme) | yes |
 | [akanthed/jev-watch](https://github.com/akanthed/jev-watch) | A | 10 | yes | Jev modeli güncellenince cevapların sessizce değiştiğini yakalayan regresyon/drift test aracı; baseline+tolerans+CI exit kodu | [kanıt](https://github.com/akanthed/jev-watch#readme) | yes |
 | [AlexBabescu/ActionJev](https://github.com/AlexBabescu/ActionJev) | A | 10 | yes | GitHub/Gitea Actions için Rust ile yazılmış kod incelemesi; önce Jev ile tüm kategorileri tarar, eşik üstünde kanıt bölgesi seçer | [kanıt](https://github.com/AlexBabescu/ActionJev#readme) | yes |
@@ -426,6 +433,7 @@
 | [jiangkoumo/ego-jev](https://github.com/jiangkoumo/ego-jev) | B | 9 | yes | ego lite tarayıcısını Jev ile süren, tek indeksli eleman tablosundan tek işlem+hedef üreten tek-süreçli otomasyon, ~2x hızlı | [kanıt](https://github.com/jiangkoumo/ego-jev#readme) | no |
 | [JLegends/opencode-jev-compaction](https://github.com/JLegends/opencode-jev-compaction) | B | 9 | yes | Kayipli ozetlemeyi Jev'in alaka puanlamasiyla degistiren, yalnizca modelin artik gerekli olmadigini soyledigi arac cagrilarini dusuren veya kisaltan bir opencode eklenti cifti. | [kanıt](https://github.com/JLegends/opencode-jev-compaction#readme) | no |
 | [jyatesdotdev/jev-logtriage](https://github.com/jyatesdotdev/jev-logtriage) | B | 9 | yes | Kaynak basina alti tipli soruyla tek bir Jev cagrisi gonderen, bunlari sabit kod kurallariyla bastir/izle/incele/bildir/cagir kapilarina birlestiren bir nobetci log triyaj araci. | [kanıt](https://github.com/jyatesdotdev/jev-logtriage#readme) | no |
+| [kofanlabs/jev-browser-chrome](https://github.com/kofanlabs/jev-browser-chrome) | B | 9 | yes | Jev destekli bir tarayici ajaninin Windows catali; uzaktan hata ayiklama veya ayri tarayici profili olmadan zaten oturum acilmis sekmeleri kontrol eden bir Chrome eklenti koprusu ve MCP sunucusu ekler. | [kanıt](https://github.com/kofanlabs/jev-browser-chrome#readme) | no |
 | [komorra/Eugeniusz](https://github.com/komorra/Eugeniusz) | B | 9 | no | Sunucu/API key gerektirmeyen, C ABI ile gömülü \(C/C++/C#/Python/Unity/Unreal\) yerel Qwen tabanlı tipli karar kütüphanesi; 300 vakalık dürüst kalite raporu ve ECE/Brier/split-conformal kalibrasyon içeriyor | [kanıt](https://github.com/komorra/Eugeniusz) | yes |
 | [leonaaardob/fast-dev-compaction](https://github.com/leonaaardob/fast-dev-compaction) | B | 9 | yes | Codex oturum sıkıştırmasını Jev ile sarar; her araç çağrısı/sonucu için 2 noul sorusu \(kalsın mı\), tutulan geçmiş özetten sonra verbatim geri enjekte edilir | [kanıt](https://github.com/leonaaardob/fast-dev-compaction#readme) | yes |
 | [matura-lol/Jev-categorise](https://github.com/matura-lol/Jev-categorise) | B | 9 | yes | Sınav sorularını Jev ile 14 soruluk tek istekte konu/zorluk/yöntem etiketler; matura.lol üretiminde ~47k soruyu kategorize eder. | [kanıt](https://github.com/matura-lol/Jev-categorise) | no |
@@ -460,6 +468,7 @@
 | [zhuyansen/x-reply-filter](https://github.com/zhuyansen/x-reply-filter) | B | 9 | yes | X.com yanıtlarını yerel kurallar ve Jev'in 4 noul sorusuyla \(reklam/bait/konu dışı/AI klişe\) katlayan Chrome eklentisi, kullanıcı geri bildirimiyle öğreniyor | [kanıt](https://github.com/zhuyansen/x-reply-filter#readme) | no |
 | [zzsong1023/jev-market-reflex](https://github.com/zzsong1023/jev-market-reflex) | B | 9 | yes | Canlı kripto piyasa verisini Jev ile BUY/SELL/HOLD kararına çevirip kağıt üzerinde \(gerçek para olmadan\) simüle eden gösterim uygulaması. | [kanıt](https://github.com/zzsong1023/jev-market-reflex) | no |
 | [AIGNLAI/ReflexRoute](https://github.com/AIGNLAI/ReflexRoute) | B | 8 | yes | Jev'e tek bir yapilandirilmis secim sorusu soran, surumlu model onceliklerini cagiranin kendi yonlendirme gecmisi ve sabit maliyet butcesiyle birlestiren egitimsiz LLM yonlendiricisi. | [kanıt](https://github.com/AIGNLAI/ReflexRoute#readme) | no |
+| [alexj11324/open-jev-approvals](https://github.com/alexj11324/open-jev-approvals) | B | 8 | yes | Codex ve Claude Code kancalari icin onay kapisi; OpenAI'nin kendi Guardian politika metnini uc Jev secim sorusuna esleyerek, herhangi bir hatada acik kalan tek bir izin/reddet karari uretir. | [kanıt](https://github.com/alexj11324/open-jev-approvals#readme) | no |
 | [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) | B | 8 | no | Kanıt disiplinli, kullanım kılavuzlu Jev vaka listesi; her girdi 'kim ölçtü, self-reported mi' notuyla geliyor, tasarım rehberi sayfaları içeriyor | [kanıt](https://github.com/aliaihub/awesome-jev-usecases) | no |
 | [apoorvumang/knowledge-cutoff](https://github.com/apoorvumang/knowledge-cutoff) | B | 8 | no | LLM'lerin gerçek bilgi kesim tarihini tahmin eden benchmark; tahmin edilemez olaylar + üç yönlü doğru/yanlış/çekimser puanlama, Jev'le ilgisi yok | [kanıt](https://github.com/apoorvumang/knowledge-cutoff#readme) | no |
 | [atarikcaliskan/jevball](https://github.com/atarikcaliskan/jevball) | B | 8 | yes | 3D futbol simülasyonu; 22 oyuncunun her kararı tek toplu istekte Jev'e choice sorusu olarak sorulur, gecikmede yerel politikaya düşer | [kanıt](https://github.com/atarikcaliskan/jevball#readme) | no |
@@ -611,6 +620,7 @@
 | [sueszli/qwen27b-jev](https://github.com/sueszli/qwen27b-jev) | B | 7 | no | Jev'in olası iç mekanizmasını \(token logprob okuma vs grammar-constrained vs serbest+regex\) yerel Qwen3.8-27B üzerinde küçük ölçekte tekrar üretir. | [kanıt](https://github.com/sueszli/qwen27b-jev) | no |
 | [sugarforever/tryjev](https://github.com/sugarforever/tryjev) | B | 7 | yes | Jev playground; OpenRouter, Vercel AI Gateway ve TypeSafe API'sini tek normalize noul/choice/score arayüzünde deneme aracı | [kanıt](https://github.com/sugarforever/tryjev#readme) | no |
 | [swap-mitra/jev-techstack-classifier](https://github.com/swap-mitra/jev-techstack-classifier) | B | 7 | yes | Serbest metinle tarif edilen projeyi Jev ile katman katman \(frontend/backend/db/hosting/mobile\) olasılıklı teknoloji yığınına ayıran araç | [kanıt](https://github.com/swap-mitra/jev-techstack-classifier#readme) | no |
+| [tcsenpai/jevoracle](https://github.com/tcsenpai/jevoracle) | B | 7 | yes | Jev'e gonderilen ham JSON istegini gosteren, kullanicilarin durum kaynaklarini acip kapayarak bunun karari ne kadar degistirdigini gormesini saglayan, uc tekrarli tutarlilik kontrolu de olan bir web konsolu. | [kanıt](https://github.com/tcsenpai/jevoracle#readme) | no |
 | [ThinkyMiner/Winnow](https://github.com/ThinkyMiner/Winnow) | B | 7 | yes | Makale/video için noul/choice/score sorularıyla Jev'e danışıp read/skim/save/skip kararı veren Chrome uzantısı | [kanıt](https://github.com/ThinkyMiner/Winnow#readme) | no |
 | [TKY-27/JevSlop](https://github.com/TKY-27/JevSlop) | B | 7 | yes | note.com makalelerinin yazı kalitesini Jev'in 8 detay skoru + genel choice'uyla değerlendiren 'AI Slop' göstergesi | [kanıt](https://github.com/TKY-27/JevSlop#readme) | no |
 | [tumf/jev-cli](https://github.com/tumf/jev-cli) | B | 7 | yes | Jev için küçük CLI + stdio MCP sunucusu; resmi/Vercel/OpenRouter/proxy sağlayıcılarını izole kimlik bilgileriyle destekliyor | [kanıt](https://github.com/tumf/jev-cli) | no |
@@ -628,6 +638,7 @@
 | [AkashPriyadarshii/jev-git](https://github.com/AkashPriyadarshii/jev-git) | C | 6 | yes | Sub-second Rust git pre-commit/pre-push kapısı; statik binary, staged diff'i secret/prompt-injection/yıkıcı komut için noul ile değerlendirir | [kanıt](https://github.com/AkashPriyadarshii/jev-git#readme) | no |
 | [AlbionaHoti/refgarden](https://github.com/AlbionaHoti/refgarden) | C | 6 | yes | Müze/NASA görsel arşivlerinde arama ifadesi seçip metadata'dan \(görseli görmeden\) öne çıkan sonucu seçen 3D galeri aracı | [kanıt](https://github.com/AlbionaHoti/refgarden) | no |
 | [Alurith/jeff](https://github.com/Alurith/jeff) | C | 6 | yes | Go CLI; dosyaları 20 sabit kurala \(GEN001-020\) göre Jev ile semantik kontrol ediyor, CI çıkış kodları var | [kanıt](https://github.com/Alurith/jeff) | no |
+| [ankitkapooor/autocode](https://github.com/ankitkapooor/autocode) | C | 6 | yes | Surumlu bir kod kitabi uzerinde kodlama, degistirici ve NCCI kararlarini Jev'e birakan, esik altinda insan incelemesi zorunlu kilan YESIL/SARI/KIRMIZI kalibrasyonlu, kanit oncelikli ortopedik tibbi kodlama platformu. | [kanıt](https://github.com/ankitkapooor/autocode#readme) | no |
 | [anxkhn/JevPlaysPokemon](https://github.com/anxkhn/JevPlaysPokemon) | C | 6 | yes | Jev'i gerçek FireRed savaşlarında \(RAM okuma + legal hamle listesi\) Elite Four'a karşı oynatan demo | [kanıt](https://github.com/anxkhn/JevPlaysPokemon#readme) | no |
 | [BeatAPI/awesome-jev](https://github.com/BeatAPI/awesome-jev) | C | 6 | no | Jev projelerini kullanim alanina gore duzenleyen, her girdiyi orijinal bir sosyal medya gonderisi ve sabit-commit kaynak baglantisiyla esleyen kuratorlu bir liste. | [kanıt](https://github.com/BeatAPI/awesome-jev#readme) | no |
 | [benquemax/henxels](https://github.com/benquemax/henxels) | C | 6 | no | Repo düzeyinde ajanları AGENTS.md ve YAML kurallarla \(henxel\) bir sözleşmeye bağlayan deterministik yapı denetleyicisi; Jev'le ilgisi yok | [kanıt](https://github.com/benquemax/henxels#readme) | no |
@@ -744,6 +755,7 @@
 | [ashishpatill/grok-kit](https://github.com/ashishpatill/grok-kit) | C | 4 | no | Cursor/Grok Build için ucuz/pahalı model seçimini ve skill yüklemeyi otomatikleştiren kişisel harness; Jev kullanmıyor | [kanıt](https://github.com/ashishpatill/grok-kit#readme) | no |
 | [bastani-inc/atomic](https://github.com/bastani-inc/atomic) | C | 4 | no | Doğrulanabilir kodlama ajanı çalışma zamanı; iş akışlarını açık grafik olarak çalıştırıyor, Jev'le ilgisi yok | [kanıt](https://github.com/bastani-inc/atomic#readme) | no |
 | [Biztactix-Ryan/TypeSafe.Sdk.C-](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-) | C | 4 | yes | Resmi Python/JS SDK'lardan port edilmiş, henüz canlı API'ye karşı test edilmemiş topluluk C# SDK'sı | [kanıt](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-#readme) | no |
+| [brainstormity/Jev-For-Dummies](https://github.com/brainstormity/Jev-For-Dummies) | C | 4 | yes | Jev'in uc tiplendirilmis soru turunu duz HTTP GET uc noktalarina ceviren, etkilesimli belge oyun alani olan minimal FastAPI sarmalayicisi; istemci SDK'si veya Jev bilgisi gerektirmez. | [kanıt](https://github.com/brainstormity/Jev-For-Dummies#readme) | no |
 | [bramtechs/Focus](https://github.com/bramtechs/Focus) | C | 4 | yes | Ziyaret edilen alan adını Jev ile üretken/dikkat dağıtıcı diye sınıflandırıp eşik üstünde engelleyen tarayıcı eklentisi | [kanıt](https://github.com/bramtechs/Focus#readme) | no |
 | [catorch/jev-domain-auctions](https://github.com/catorch/jev-domain-auctions) | C | 4 | yes | GoDaddy süresi dolan alan adlarını deterministik piyasa sinyalleri + Jev yargısıyla değerlendirip ucuz fırsatları bulan araç | [kanıt](https://github.com/catorch/jev-domain-auctions#readme) | no |
 | [ctaxnagomi/instruct-jev](https://github.com/ctaxnagomi/instruct-jev) | C | 4 | no | TypeSafe dokümantasyonundan derlenmiş 119 satırlık Jev talimat korpusu \(choice/noul/score\), HuggingFace'te yayınlanmış veri seti. | [kanıt](https://github.com/ctaxnagomi/instruct-jev) | no |
@@ -794,6 +806,7 @@
 | [abeldzan/jev-rs](https://github.com/abeldzan/jev-rs) | C | 3 | yes | TypeSafe API için async Rust SDK; choice/score/noul tipli sorular, retry, blocking client | [kanıt](https://github.com/abeldzan/jev-rs#readme) | no |
 | [adamjralph/skill-broker](https://github.com/adamjralph/skill-broker) | C | 3 | unclear | Hermes ajanları için proje tanım aşamasında deterministik skill yönlendirme katmanı; Jev yalnız uygunluk/güven skoru üretecek, henüz kod yok. | [kanıt](https://github.com/adamjralph/skill-broker) | no |
 | [ajayk/jev-go-sdk](https://github.com/ajayk/jev-go-sdk) | C | 3 | yes | Resmi Jev SDK'larini yansitan, bagimliliksiz bir Go istemcisi; System One istek/yanit bicimini sarmalamanin otesinde ozgun mantik yok. | [kanıt](https://github.com/ajayk/jev-go-sdk#readme) | no |
+| [bobostudio/cabinet](https://github.com/bobostudio/cabinet) | C | 3 | yes | Bir klasordeki dosyalari Jev'e siniflandirtip adlandirilmis cekmecelere tasiyan yerel dosya ayiklama demosu; istege bagli bir DeepSeek adimi cekmeceleri Cince adlandirabiliyor. | [kanıt](https://github.com/bobostudio/cabinet#readme) | no |
 | [Ch1nZ/sts2-ai-coach](https://github.com/Ch1nZ/sts2-ai-coach) | C | 3 | yes | Slay the Spire 2'de canlı aksiyon önerisi sunan, OpenRouter üzerinden Jev kullanan oyun içi asistan modu | [kanıt](https://github.com/Ch1nZ/sts2-ai-coach#readme) | no |
 | [choxos/JevVsLLM](https://github.com/choxos/JevVsLLM) | C | 3 | yes | Jev'in OpenRouter LLM'lerine ve Stockfish'e karşı satranç oynadığı, hamle olasılıklarını gösteren tek sayfalık web uygulaması \(repo meta.jsonl'de 'choxos/jevchess' adıyla görünüyor, muhtemelen yeniden adlandırılmış\) | [kanıt](https://github.com/choxos/JevVsLLM#readme) | no |
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | C | 3 | yes | Kaynak destekli, SDK/agent-tooling/oyun/tekrar-üretim/değerlendirme kategorili genel bir Jev proje dizini | [kanıt](https://github.com/cobanov/awesome-jev#readme) | no |
@@ -941,6 +954,7 @@
 | [mryo0826/aidd-practice-guideIt](https://github.com/mryo0826/aidd-practice-guideIt) | C | 0 | no | erişilemedi | [kanıt](https://github.com/mryo0826/aidd-practice-guideIt#readme) | no |
 | [myc0576/SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) | C | 0 | no | A-hisse yatırımcıları için read-only, insan-onaylı trading günlüğü/gözden geçirme harness'i; Jev/TypeSafe kullanımına dair kanıt yok | [kanıt](https://github.com/myc0576/SmartMoney-Cub) | no |
 | [nateecho32-stack/mefi-studio](https://github.com/nateecho32-stack/mefi-studio) | C | 0 | no | Surekli calisan bir asistan dongusu, gorev panosu ve projeler arasi gecikme/maliyet takibi sunan bir Electron masaustu yapay zeka calisma alani \('Model Lab'\); Jev veya TypeSafe entegrasyonundan bahsedilmiyor. | [kanıt](https://github.com/nateecho32-stack/mefi-studio#readme) | no |
+| [NavisWORLD/The-beast-box-](https://github.com/NavisWORLD/The-beast-box-) | C | 0 | no | Ollama gibi degistirilebilir model arka uclari arasinda kalici bellek, yazilim durumu ve kokenlendirme icin yerel oncelikli calisma zamani; projede Jev veya TypeSafe'ten hicbir yerde bahsedilmiyor. | [kanıt](https://github.com/NavisWORLD/The-beast-box-#readme) | no |
 | [ornab74/naza-cancer-scanner](https://github.com/ornab74/naza-cancer-scanner) | C | 0 | no | Android/Termux için kurtarılmış kripto+GGUF model uygulaması \('kanser tarayıcı' adı yanıltıcı, gerçek içerik Keystore/kriptografi\); Jev ile ilgisi yok | [kanıt](https://github.com/ornab74/naza-cancer-scanner#readme) | no |
 | [pax-k/cloudflare-ide](https://github.com/pax-k/cloudflare-ide) | C | 0 | unclear | erişilemedi | [kanıt](https://github.com/pax-k/cloudflare-ide#readme) | no |
 | [peiman/mindvault](https://github.com/peiman/mindvault) | C | 0 | unclear | erişilemedi | [kanıt](https://github.com/peiman/mindvault#readme) | no |
@@ -962,6 +976,7 @@
 | [tatolab/streamlib](https://github.com/tatolab/streamlib) | C | 0 | no | Fiziksel AI \(robot/araç\) için LLM/AI kontrol politikalarını gerçek zamanlı kodla birleştiren bir çalışma zamanı; Jev'den bahsetmiyor | [kanıt](https://github.com/tatolab/streamlib#readme) | no |
 | [teamchong/pxpipe](https://github.com/teamchong/pxpipe) | C | 0 | no | Hacimli istek baglamini \(sistem istemi, arac belgeleri, gecmis\) metin yerine PNG goruntu olarak isleyerek Claude Code'un token faturasini dusuren yerel bir proxy; Jev veya TypeSafe ile ilgisi yok. | [kanıt](https://github.com/teamchong/pxpipe#readme) | no |
 | [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | C | 0 | no | AI ajanların kullanıcının gerçek, oturum açık tarayıcısını kesintisiz kullanmasını sağlayan CLI+eklenti; Jev'den bahsetmiyor | [kanıt](https://github.com/Tencent/BrowserSkill#readme) | no |
+| [tinystruct/tinystruct](https://github.com/tinystruct/tinystruct) | C | 0 | no | Netty/Tomcat entegrasyonu ve MCP sunucu destegi olan, uzun sureden beri var olan hafif bir Java web ve CLI cercevesi; README'de Jev, TypeSafe veya System One'dan hic bahsedilmiyor. | [kanıt](https://github.com/tinystruct/tinystruct#readme) | no |
 | [trkr-ai/trkr-agents](https://github.com/trkr-ai/trkr-agents) | C | 0 | no | İçeriği neredeyse boş \(13 bayt\), tanımlanamayan bir 'trkr.ai agents' deposu | [kanıt](https://github.com/trkr-ai/trkr-agents#readme) | no |
 | [trycua/cua](https://github.com/trycua/cua) | C | 0 | no | Açık kaynak computer-use 2.0 ölçekleme çerçevesi \(sürücüler, cross-OS filolar, benchmark'lar\); Jev'den bahsetmiyor | [kanıt](https://github.com/trycua/cua#readme) | no |
 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | C | 0 | no | Mimari/akış/sekans diyagramlarını self-contained HTML olarak üreten bir agent skill; Jev'den bahsetmiyor | [kanıt](https://github.com/tt-a1i/archify#readme) | no |

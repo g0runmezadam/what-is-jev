@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/classification-triage.md)
 
 # Classification and triage
 
-106 repositories in this category, sorted by class then score.
+107 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -93,6 +93,7 @@ English | [Türkçe](../tr/categories/classification-triage.md)
 | [TKY-27/JevSlop](https://github.com/TKY-27/JevSlop) | B | 7 | yes | An "AI Slop" indicator that evaluates note.com article writing quality using Jev's 8 detail scores plus an overall choice | [evidence](https://github.com/TKY-27/JevSlop#readme) | no |
 | [ufec/jev-block-android-ad](https://github.com/ufec/jev-block-android-ad) | B | 7 | yes | An Android notification/SMS noise gate; ambiguity always falls to ALLOW \(fail-open, enforced in a single central place\), OTP-shaped messages are never sent to the model at all | [evidence](https://github.com/ufec/jev-block-android-ad) | no |
 | [zsoXi/FeedGate](https://github.com/zsoXi/FeedGate) | B | 7 | yes | A mature Chrome extension \(v3.3\) that classifies feed posts as ad/spam/bait/risky with Jev and reversibly hides them | [evidence](https://github.com/zsoXi/FeedGate#readme) | no |
+| [ankitkapooor/autocode](https://github.com/ankitkapooor/autocode) | C | 6 | yes | Evidence-first orthopedic medical-coding platform letting Jev make coding, modifier and NCCI decisions over a versioned codebook, with GREEN/YELLOW/RED calibration and human review required below the accept threshold. | [evidence](https://github.com/ankitkapooor/autocode#readme) | no |
 | [bohutang/sift](https://github.com/bohutang/sift) | C | 6 | yes | A Chrome extension tagging X posts \(Substance/Humor/Chit-chat/Promo/Junk + AI-written/Off-topic\); same pattern as x-scanner/xtags | [evidence](https://github.com/bohutang/sift) | no |
 | [manifoldor/xtags](https://github.com/manifoldor/xtags) | C | 6 | yes | A Chrome extension/userscript that tags each post's intent \(choice\) and 3 warning flags \(noul\) on an X timeline with Jev; same pattern as x-scanner | [evidence](https://github.com/manifoldor/xtags) | no |
 | [piyush97/focus-tube](https://github.com/piyush97/focus-tube) | C | 6 | yes | A browser extension that filters YouTube recommendations with Jev via a single noul question \(is it useful for learning\); hides Shorts locally | [evidence](https://github.com/piyush97/focus-tube) | no |

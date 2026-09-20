@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 
 # Browser and computer use
 
-42 repositories in this category, sorted by class then score.
+44 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -18,6 +18,7 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 | [pumpkinredbean/bside](https://github.com/pumpkinredbean/bside) | A | 12 | yes | A pilot driving the Aside browser with Jev decisions instead of a chat LLM; a repeatable benchmark against frontier/lightweight LLMs | [evidence](https://github.com/pumpkinredbean/bside#readme) | yes |
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | A | 11 | yes | An ultra-fast browser agent \(7.1-second flight search\) where Jev chooses the action+target at each step, and a small LLM only writes text when TYPE_TEXT is needed | [evidence](https://github.com/browser-use/jev-ultrafast#readme) | yes |
 | [chy4pro/jev-for-chrome](https://github.com/chy4pro/jev-for-chrome) | A | 11 | yes | A Chrome extension navigating the open tab with Jev \(click/type/scroll\); repeated measurement over a 17-task e2e set, cross-checks the DONE/BLOCKED claim independently of the action taken | [evidence](https://github.com/chy4pro/jev-for-chrome#readme) | yes |
+| [kofanlabs/typesafe-computer-use-windows](https://github.com/kofanlabs/typesafe-computer-use-windows) | A | 11 | yes | Windows port of a Jev-driven computer-use loop reading the screen with local OCR and UI Automation, asking Jev which of three choices to take next, and stopping below a confidence threshold. | [evidence](https://github.com/kofanlabs/typesafe-computer-use-windows#readme) | no |
 | [ljy8072/jev-agent-router](https://github.com/ljy8072/jev-agent-router) | A | 11 | yes | Routing layer for computer-use agents sending exact matches to code, bounded choices to Jev, and uncertain cases back to the agent, with measured timings. | [evidence](https://github.com/ljy8072/jev-agent-router#readme) | yes |
 | [Ying-Kai-Liao/jev-browser](https://github.com/Ying-Kai-Liao/jev-browser) | A | 11 | yes | Browser automation \(MCP\) where the LLM sets the high-level goal and Jev answers, in a single call at each step, which element/action/value and whether it's done/stuck/irreversible | [evidence](https://github.com/Ying-Kai-Liao/jev-browser#readme) | yes |
 | [gokulnair2001/Convoy](https://github.com/gokulnair2001/Convoy) | A | 10 | yes | Semantic end-to-end test runner for iOS, Android and web where Jev matches a plain-language step to a normalized on-screen control and a pass/ambiguous/not-found gate. | [evidence](https://github.com/gokulnair2001/Convoy#readme) | yes |
@@ -33,6 +34,7 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 | [antiyro/jevdroid](https://github.com/antiyro/jevdroid) | B | 9 | yes | Manages Android via ADB using Jev; reads the accessibility tree, selects and executes actions; measured 78.6% accuracy over 56 synthetic decisions | [evidence](https://github.com/antiyro/jevdroid#readme) | no |
 | [himomohi/aside-jev](https://github.com/himomohi/aside-jev) | B | 9 | yes | An MCP for the Aside browser agent; Jev picks a single id from an app-owned candidate-action table, fails closed on an unknown id, confidence gate + independent verification | [evidence](https://github.com/himomohi/aside-jev#readme) | no |
 | [jiangkoumo/ego-jev](https://github.com/jiangkoumo/ego-jev) | B | 9 | yes | A single-process automation that drives the ego lite browser with Jev, producing a single operation+target from one indexed element table, ~2x faster | [evidence](https://github.com/jiangkoumo/ego-jev#readme) | no |
+| [kofanlabs/jev-browser-chrome](https://github.com/kofanlabs/jev-browser-chrome) | B | 9 | yes | Windows fork of a Jev-driven browser agent adding a Chrome extension bridge and MCP server that controls already signed-in tabs without remote debugging or a separate browser profile. | [evidence](https://github.com/kofanlabs/jev-browser-chrome#readme) | no |
 | [perixtar/jev-e2e](https://github.com/perixtar/jev-e2e) | B | 9 | yes | An E2E test tool that selects page controls for plain-language web flows with Jev and runs them via Playwright | [evidence](https://github.com/perixtar/jev-e2e#readme) | no |
 | [tontoko/jev-browser](https://github.com/tontoko/jev-browser) | B | 9 | yes | Semantic act/observe/extract/assert built on Playwright with Jev; confidence threshold, evidence/provenance tracking, native browsing without an AI key | [evidence](https://github.com/tontoko/jev-browser#readme) | no |
 | [yousudip/lizard-agent](https://github.com/yousudip/lizard-agent) | B | 9 | yes | A deterministic browser agent, without an LLM, that asks Jev about the page and produces click/type decisions via a 7-question fan-out | [evidence](https://github.com/yousudip/lizard-agent#readme) | no |

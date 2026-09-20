@@ -3,7 +3,7 @@
 
 # SDK'lar ve istemciler
 
-Bu kategoride 83 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 85 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -52,6 +52,7 @@ Bu kategoride 83 repo; önce sınıf, sonra puan sırasıyla.
 | [Ray-Hughes/jevalyn](https://github.com/Ray-Hughes/jevalyn) | B | 7 | yes | Jev'i guven esigi olan adlandirilmis bir Decision sinifi olarak saran, gerektiginde metin icin isteğe bagli korkuluk ve LLM yonlendirici de sunan bir Rails gem'i. | [kanıt](https://github.com/Ray-Hughes/jevalyn#readme) | no |
 | [shkumbinhasani/typedecide](https://github.com/shkumbinhasani/typedecide) | B | 7 | yes | Sağlayıcıdan bağımsız TypeScript karar SDK'sı; tek normalize IR \(choice/score\) ile birden fazla model/sağlayıcı adaptörü | [kanıt](https://github.com/shkumbinhasani/typedecide#readme) | yes |
 | [sugarforever/tryjev](https://github.com/sugarforever/tryjev) | B | 7 | yes | Jev playground; OpenRouter, Vercel AI Gateway ve TypeSafe API'sini tek normalize noul/choice/score arayüzünde deneme aracı | [kanıt](https://github.com/sugarforever/tryjev#readme) | no |
+| [tcsenpai/jevoracle](https://github.com/tcsenpai/jevoracle) | B | 7 | yes | Jev'e gonderilen ham JSON istegini gosteren, kullanicilarin durum kaynaklarini acip kapayarak bunun karari ne kadar degistirdigini gormesini saglayan, uc tekrarli tutarlilik kontrolu de olan bir web konsolu. | [kanıt](https://github.com/tcsenpai/jevoracle#readme) | no |
 | [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) | B | 7 | yes | TypeSafeClient ile aynı arayüzü koruyup arka planda OpenAI/Anthropic LLM'leri kullanan resmi 'drop-in' adaptör \(maliyet/hız karşılaştırması için\) | [kanıt](https://github.com/typesafe-ai/system-one-adapter-python#readme) | no |
 | [vagmi/jevlite](https://github.com/vagmi/jevlite) | B | 7 | no | Cevaplari dogrudan secenek-harfi logit'lerinden okuyan, verilen secenekler disinda cevap veremeyen, Gemma tabanli bir modelde System One arayuzunun acik yeniden uretimi. | [kanıt](https://github.com/vagmi/jevlite#readme) | yes |
 | [XUEHANGAI/jevhttp](https://github.com/XUEHANGAI/jevhttp) | B | 7 | no | Yerel modeller icin es zamanli HTTP alma, sayfa-meta veri cikarimi ve OpenAI uyumlu yapilandirilmis kararlari \(choice/boolean/score\) birlestiren bir Python araç kutusu; Jev deseninden adini alir ama TypeSafe'in gercek API'sini cagirmaz. | [kanıt](https://github.com/XUEHANGAI/jevhttp#readme) | no |
@@ -73,6 +74,7 @@ Bu kategoride 83 repo; önce sınıf, sonra puan sırasıyla.
 | [AboveColin/jevclient](https://github.com/AboveColin/jevclient) | C | 4 | yes | TypeSafe Jev için async Python istemcisi; Noul/Choice/Score tipli sorular gönderip tipli yanıt alır | [kanıt](https://github.com/AboveColin/jevclient#readme) | no |
 | [anilsenay/jev](https://github.com/anilsenay/jev) | C | 4 | yes | TypeSafe System One API için gayri resmi Go istemcisi; Go generic tipleriyle Choice/Noul soruları enum'a bağlar | [kanıt](https://github.com/anilsenay/jev#readme) | no |
 | [Biztactix-Ryan/TypeSafe.Sdk.C-](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-) | C | 4 | yes | Resmi Python/JS SDK'lardan port edilmiş, henüz canlı API'ye karşı test edilmemiş topluluk C# SDK'sı | [kanıt](https://github.com/Biztactix-Ryan/TypeSafe.Sdk.C-#readme) | no |
+| [brainstormity/Jev-For-Dummies](https://github.com/brainstormity/Jev-For-Dummies) | C | 4 | yes | Jev'in uc tiplendirilmis soru turunu duz HTTP GET uc noktalarina ceviren, etkilesimli belge oyun alani olan minimal FastAPI sarmalayicisi; istemci SDK'si veya Jev bilgisi gerektirmez. | [kanıt](https://github.com/brainstormity/Jev-For-Dummies#readme) | no |
 | [gudcks0305/jev-java](https://github.com/gudcks0305/jev-java) | C | 4 | yes | TypeSafe API/Vercel AI Gateway için Maven Central'da yayınlı gayri resmi Java SDK'sı | [kanıt](https://github.com/gudcks0305/jev-java#readme) | no |
 | [jonesmelton/verdict](https://github.com/jonesmelton/verdict) | C | 4 | yes | TypeSafe System One API'si için tip güvenli OCaml/Eio istemci kütüphanesi | [kanıt](https://github.com/jonesmelton/verdict#readme) | no |
 | [l3tchupkt/Claudex](https://github.com/l3tchupkt/Claudex) | C | 4 | no | Claude Code kaynagindan fork; coklu saglayici \(OpenAI/NIM/Ollama\) destegi ve akilli router ekleyen CLI. | [kanıt](https://github.com/l3tchupkt/Claudex#readme) | no |

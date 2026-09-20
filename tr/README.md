@@ -19,23 +19,24 @@ TypeSafe AI ile bir bağımız yoktur. Bu bağımsız bir araştırmadır.
 <!-- STATS:START -->
 | Sayı | Değer |
 |---|---|
-| Repo | 933 |
-| Jev çağırıyor | yes 627 · no 273 · unclear 33 |
-| Sınıflar | A 269 · B 297 · C 367 |
+| Repo | 947 |
+| Jev çağırıyor | yes 639 · no 275 · unclear 33 |
+| Sınıflar | A 275 · B 300 · C 372 |
 | Denetlenmiş | 347 |
+| Denetim bekleyen A sınıfı | 6 |
 | Kaynak | 90 |
 | Veri tarihi | 2026-09-20 |
 
 **En çok kategori**
 
-- [Diğer](categories/other.md) — 187
-- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 106
-- [SDK'lar ve istemciler](categories/sdk-client.md) — 83
+- [Diğer](categories/other.md) — 190
+- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 107
+- [SDK'lar ve istemciler](categories/sdk-client.md) — 85
 - [Değerlendirme ve benchmark](categories/eval-benchmark.md) — 80
-- [Ajan kapıları](categories/agent-gate.md) — 58
-- [Kod inceleme hook'ları](categories/code-review-hook.md) — 55
+- [Ajan kapıları](categories/agent-gate.md) — 61
+- [Kod inceleme hook'ları](categories/code-review-hook.md) — 56
 - [Oyunlar ve demolar](categories/game-demo.md) — 55
-- [Listeler ve dizinler](categories/list-directory.md) — 52
+- [Listeler ve dizinler](categories/list-directory.md) — 53
 <!-- STATS:END -->
 
 ## Bu depo nasıl okunur

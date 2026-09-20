@@ -2,10 +2,15 @@
 7starsseeker/dsh-jev-guard
 alexj11324/open-jev-approvals
 ankitkapooor/autocode
+bobostudio/cabinet
+brainstormity/Jev-For-Dummies
 Cyvid7-Darus10/docfriction
 ddesmond/explore-jev
+kofanlabs/jev-browser-chrome
+kofanlabs/typesafe-computer-use-windows
 NavisWORLD/The-beast-box-
 opaielsheikh/talkr
+seahsky/kelpie
 tcsenpai/jevoracle
 tinystruct/tinystruct
 yzfly/edgejev

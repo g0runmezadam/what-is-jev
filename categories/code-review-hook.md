@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 
 # Code review hooks
 
-55 repositories in this category, sorted by class then score.
+56 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -18,6 +18,7 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 | [Eliran-Turgeman/repear](https://github.com/Eliran-Turgeman/repear) | A | 13 | yes | A semantic linter auditing a git diff with TypeSafe jev-1.13; 11 rules, treats the weakest confidence as final on multi-signal rules | [evidence](https://github.com/Eliran-Turgeman/repear#readme) | yes |
 | [phuthuycoding/jev-audit](https://github.com/phuthuycoding/jev-audit) | A | 13 | yes | Fail-closed pre-commit auditor sending a git diff to Jev as one call answering four atomic questions \(secret leak, vulnerability, quality, scope\), validated on a 79-case corpus at 100% strict accuracy with published F1 scores. | [evidence](https://github.com/phuthuycoding/jev-audit#readme) | yes |
 | [brickfrog/moongate](https://github.com/brickfrog/moongate) | A | 12 | yes | CI action checking a pull request diff against semantic rules with Jev, applying repository-defined probability thresholds to produce PR annotations. | [evidence](https://github.com/brickfrog/moongate#readme) | yes |
+| [Cyvid7-Darus10/docfriction](https://github.com/Cyvid7-Darus10/docfriction) | A | 12 | yes | CI tool generating a documentation friction log by splitting a docs page into steps and asking Jev a fixed rubric of typed questions per step, gating pull requests on severity. | [evidence](https://github.com/Cyvid7-Darus10/docfriction#readme) | no |
 | [glud123/jev-assist](https://github.com/glud123/jev-assist) | A | 12 | yes | Codebase judgment CLI \(rerank, drift, gate\) using Jev, with a validate command that measures rerank accuracy against a repository's own commit history for free. | [evidence](https://github.com/glud123/jev-assist#readme) | yes |
 | [noplan-inc/limpet](https://github.com/noplan-inc/limpet) | A | 12 | yes | A Stop hook for Claude Code/Codex; scores plain-language rules with Jev in 0.7 seconds and sends the agent back to work on violation | [evidence](https://github.com/noplan-inc/limpet#readme) | yes |
 | [russfranky/jev-crawlers](https://github.com/russfranky/jev-crawlers) | A | 12 | yes | A crawler doing recursive bug-hunting in a codebase with Unix-style seed/expand/judge/verify/report commands, routed by Jev risk-score bands | [evidence](https://github.com/russfranky/jev-crawlers#readme) | yes |

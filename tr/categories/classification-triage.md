@@ -3,7 +3,7 @@
 
 # Sınıflandırma ve triyaj
 
-Bu kategoride 106 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 107 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -93,6 +93,7 @@ Bu kategoride 106 repo; önce sınıf, sonra puan sırasıyla.
 | [TKY-27/JevSlop](https://github.com/TKY-27/JevSlop) | B | 7 | yes | note.com makalelerinin yazı kalitesini Jev'in 8 detay skoru + genel choice'uyla değerlendiren 'AI Slop' göstergesi | [kanıt](https://github.com/TKY-27/JevSlop#readme) | no |
 | [ufec/jev-block-android-ad](https://github.com/ufec/jev-block-android-ad) | B | 7 | yes | Android bildirim/SMS gürültü kapısı; belirsizlik her zaman ALLOW'a düşüyor \(fail-open, tek merkezi yerde uygulanıyor\), OTP-şekilli mesajlar modele hiç gönderilmiyor | [kanıt](https://github.com/ufec/jev-block-android-ad) | no |
 | [zsoXi/FeedGate](https://github.com/zsoXi/FeedGate) | B | 7 | yes | Jev ile akış gönderilerini reklam/spam/bait/riskli diye sınıflandırıp geri alınabilir şekilde gizleyen olgun Chrome eklentisi \(v3.3\) | [kanıt](https://github.com/zsoXi/FeedGate#readme) | no |
+| [ankitkapooor/autocode](https://github.com/ankitkapooor/autocode) | C | 6 | yes | Surumlu bir kod kitabi uzerinde kodlama, degistirici ve NCCI kararlarini Jev'e birakan, esik altinda insan incelemesi zorunlu kilan YESIL/SARI/KIRMIZI kalibrasyonlu, kanit oncelikli ortopedik tibbi kodlama platformu. | [kanıt](https://github.com/ankitkapooor/autocode#readme) | no |
 | [bohutang/sift](https://github.com/bohutang/sift) | C | 6 | yes | X gönderilerini etiketleyen Chrome uzantısı \(Substance/Humor/Chit-chat/Promo/Junk + AI-written/Off-topic\); x-scanner/xtags ile aynı desen | [kanıt](https://github.com/bohutang/sift) | no |
 | [manifoldor/xtags](https://github.com/manifoldor/xtags) | C | 6 | yes | X zaman çizelgesinde her postun niyetini \(choice\) ve 3 uyarı bayrağını \(noul\) Jev ile etiketleyen Chrome uzantısı/userscript; x-scanner ile aynı desen | [kanıt](https://github.com/manifoldor/xtags) | no |
 | [piyush97/focus-tube](https://github.com/piyush97/focus-tube) | C | 6 | yes | YouTube önerilerini Jev ile tek noul soruyla \(öğrenmeye faydalı mı\) filtreleyen tarayıcı eklentisi; Shorts'u yerelde gizler. | [kanıt](https://github.com/piyush97/focus-tube) | no |

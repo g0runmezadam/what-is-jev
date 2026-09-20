@@ -3,7 +3,7 @@
 
 # Diğer
 
-Bu kategoride 187 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 190 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -13,6 +13,7 @@ Bu kategoride 187 repo; önce sınıf, sonra puan sırasıyla.
 | [Adityakhalkar/JevNQL](https://github.com/Adityakhalkar/JevNQL) | A | 11 | yes | Doğal dil sorguları aritmetiği DataFusion'a, anlamsal yargıyı yalnızca daraltılmış satırlarda Jev'e yönlendiren sorgu optimizeri | [kanıt](https://github.com/Adityakhalkar/JevNQL#readme) | yes |
 | [bespokelabsai/nimble](https://github.com/bespokelabsai/nimble) | A | 11 | yes | Jev'in System One yaklaşımından ilham alan, tek adımda tipli karar veren açık kaynak küçük model \(Qwen3.5-9B LoRA\) eğitim tarifi | [kanıt](https://github.com/bespokelabsai/nimble#readme) | yes |
 | [rupeshpoojary9/poorjev](https://github.com/rupeshpoojary9/poorjev) | A | 11 | no | Jev'in tiplendirilmis karar arayuzunu kucuk bir NLI modeli uzerinde yerel ve acik olarak yeniden uygulayan, capraz dogrulamayla olculen kalibrasyon hatasini 0.170'ten 0.071'e dusuren proje. | [kanıt](https://github.com/rupeshpoojary9/poorjev#readme) | yes |
+| [yzfly/edgejev](https://github.com/yzfly/edgejev) | A | 11 | yes | Jev'in tiplendirilmis karar arayuzunu nicelendirilmis ONNX modelleri olarak yerel ve cevrimdisi yeniden uygulayan, gercek siniflandirma gorevlerinde barindirilan Jev API'sine karsi dogruluk ve gecikme rakamlariyla kiyaslanan proje. | [kanıt](https://github.com/yzfly/edgejev#readme) | no |
 | [daseinlabs/open-jev](https://github.com/daseinlabs/open-jev) | A | 10 | no | Yerel Gemma 3 4B \(MLX\) ile tek-geçişli seçenek skorlama; TypeSafe System One kontratını \(/v1/systemone\) kendi implementasyonunda sunuyor, gerçek Jev'e karşı kalibrasyon ölçüyor | [kanıt](https://github.com/daseinlabs/open-jev) | yes |
 | [TypeSafeAI/typesafe-playground](https://github.com/TypeSafeAI/typesafe-playground) | A | 10 | yes | Siniflandirma, PR incelemesi, AST yonetisimi, SMT-cozucu capraz kontrolu, vektor yeniden siralama, arac yonlendirme ve oyunlar boyunca Jev'i gosteren, 18'den fazla etkilesimli calisma alanina sahip topluluk oyun alani. | [kanıt](https://github.com/TypeSafeAI/typesafe-playground#readme) | yes |
 | [pydantic/pydantic-ai-harness](https://github.com/pydantic/pydantic-ai-harness) | A | 8 | no | Pydantic AI için resmi kapsamlı ajan harness kütüphanesi \(50+ 'capability': filesystem, shell, planning, compaction, code mode\); Jev ile ilgisi yok | [kanıt](https://github.com/pydantic/pydantic-ai-harness#readme) | yes |
@@ -148,6 +149,7 @@ Bu kategoride 187 repo; önce sınıf, sonra puan sırasıyla.
 | [mryo0826/aidd-practice-guideIt](https://github.com/mryo0826/aidd-practice-guideIt) | C | 0 | no | erişilemedi | [kanıt](https://github.com/mryo0826/aidd-practice-guideIt#readme) | no |
 | [myc0576/SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) | C | 0 | no | A-hisse yatırımcıları için read-only, insan-onaylı trading günlüğü/gözden geçirme harness'i; Jev/TypeSafe kullanımına dair kanıt yok | [kanıt](https://github.com/myc0576/SmartMoney-Cub) | no |
 | [nateecho32-stack/mefi-studio](https://github.com/nateecho32-stack/mefi-studio) | C | 0 | no | Surekli calisan bir asistan dongusu, gorev panosu ve projeler arasi gecikme/maliyet takibi sunan bir Electron masaustu yapay zeka calisma alani \('Model Lab'\); Jev veya TypeSafe entegrasyonundan bahsedilmiyor. | [kanıt](https://github.com/nateecho32-stack/mefi-studio#readme) | no |
+| [NavisWORLD/The-beast-box-](https://github.com/NavisWORLD/The-beast-box-) | C | 0 | no | Ollama gibi degistirilebilir model arka uclari arasinda kalici bellek, yazilim durumu ve kokenlendirme icin yerel oncelikli calisma zamani; projede Jev veya TypeSafe'ten hicbir yerde bahsedilmiyor. | [kanıt](https://github.com/NavisWORLD/The-beast-box-#readme) | no |
 | [ornab74/naza-cancer-scanner](https://github.com/ornab74/naza-cancer-scanner) | C | 0 | no | Android/Termux için kurtarılmış kripto+GGUF model uygulaması \('kanser tarayıcı' adı yanıltıcı, gerçek içerik Keystore/kriptografi\); Jev ile ilgisi yok | [kanıt](https://github.com/ornab74/naza-cancer-scanner#readme) | no |
 | [pax-k/cloudflare-ide](https://github.com/pax-k/cloudflare-ide) | C | 0 | unclear | erişilemedi | [kanıt](https://github.com/pax-k/cloudflare-ide#readme) | no |
 | [peiman/mindvault](https://github.com/peiman/mindvault) | C | 0 | unclear | erişilemedi | [kanıt](https://github.com/peiman/mindvault#readme) | no |
@@ -168,6 +170,7 @@ Bu kategoride 187 repo; önce sınıf, sonra puan sırasıyla.
 | [tatolab/streamlib](https://github.com/tatolab/streamlib) | C | 0 | no | Fiziksel AI \(robot/araç\) için LLM/AI kontrol politikalarını gerçek zamanlı kodla birleştiren bir çalışma zamanı; Jev'den bahsetmiyor | [kanıt](https://github.com/tatolab/streamlib#readme) | no |
 | [teamchong/pxpipe](https://github.com/teamchong/pxpipe) | C | 0 | no | Hacimli istek baglamini \(sistem istemi, arac belgeleri, gecmis\) metin yerine PNG goruntu olarak isleyerek Claude Code'un token faturasini dusuren yerel bir proxy; Jev veya TypeSafe ile ilgisi yok. | [kanıt](https://github.com/teamchong/pxpipe#readme) | no |
 | [Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill) | C | 0 | no | AI ajanların kullanıcının gerçek, oturum açık tarayıcısını kesintisiz kullanmasını sağlayan CLI+eklenti; Jev'den bahsetmiyor | [kanıt](https://github.com/Tencent/BrowserSkill#readme) | no |
+| [tinystruct/tinystruct](https://github.com/tinystruct/tinystruct) | C | 0 | no | Netty/Tomcat entegrasyonu ve MCP sunucu destegi olan, uzun sureden beri var olan hafif bir Java web ve CLI cercevesi; README'de Jev, TypeSafe veya System One'dan hic bahsedilmiyor. | [kanıt](https://github.com/tinystruct/tinystruct#readme) | no |
 | [trkr-ai/trkr-agents](https://github.com/trkr-ai/trkr-agents) | C | 0 | no | İçeriği neredeyse boş \(13 bayt\), tanımlanamayan bir 'trkr.ai agents' deposu | [kanıt](https://github.com/trkr-ai/trkr-agents#readme) | no |
 | [trycua/cua](https://github.com/trycua/cua) | C | 0 | no | Açık kaynak computer-use 2.0 ölçekleme çerçevesi \(sürücüler, cross-OS filolar, benchmark'lar\); Jev'den bahsetmiyor | [kanıt](https://github.com/trycua/cua#readme) | no |
 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | C | 0 | no | Mimari/akış/sekans diyagramlarını self-contained HTML olarak üreten bir agent skill; Jev'den bahsetmiyor | [kanıt](https://github.com/tt-a1i/archify#readme) | no |

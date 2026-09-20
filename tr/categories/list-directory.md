@@ -3,7 +3,7 @@
 
 # Listeler ve dizinler
 
-Bu kategoride 52 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -50,6 +50,7 @@ Bu kategoride 52 repo; önce sınıf, sonra puan sırasıyla.
 | [valentynkit/awesome-jev-typesafe](https://github.com/valentynkit/awesome-jev-typesafe) | C | 4 | yes | CC0 lisanslı, 'ne kurardınız' sırasına göre düzenlenmiş, sınırlamaları da anlatan Jev proje dizini \(323 kayıt\) | [kanıt](https://github.com/valentynkit/awesome-jev-typesafe#readme) | no |
 | [walidboulanouar/awesome-jev-use-cases](https://github.com/walidboulanouar/awesome-jev-use-cases) | C | 4 | yes | Jev ile yapılmış gerçek kullanım örneklerini alıntı ve etkileşim sayılarıyla kart biçiminde sunan awesome-list | [kanıt](https://github.com/walidboulanouar/awesome-jev-use-cases#readme) | no |
 | [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | C | 4 | yes | Açık dahil etme kuralları olan, 'aynı gün toplu yayın=şüpheli' uyarısı taşıyan yüksek sinyal Jev proje rehberi | [kanıt](https://github.com/yibie/awesome-jev#readme) | no |
+| [bobostudio/cabinet](https://github.com/bobostudio/cabinet) | C | 3 | yes | Bir klasordeki dosyalari Jev'e siniflandirtip adlandirilmis cekmecelere tasiyan yerel dosya ayiklama demosu; istege bagli bir DeepSeek adimi cekmeceleri Cince adlandirabiliyor. | [kanıt](https://github.com/bobostudio/cabinet#readme) | no |
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | C | 3 | yes | Kaynak destekli, SDK/agent-tooling/oyun/tekrar-üretim/değerlendirme kategorili genel bir Jev proje dizini | [kanıt](https://github.com/cobanov/awesome-jev#readme) | no |
 | [fabricioctelles/modelsystem](https://github.com/fabricioctelles/modelsystem) | C | 3 | yes | System One/Karar Modelleri için küratörlü katalog sitesinin veri deposu | [kanıt](https://github.com/fabricioctelles/modelsystem#readme) | no |
 | [kong75/jev-directory](https://github.com/kong75/jev-directory) | C | 3 | yes | Kopyalanabilir Jev soru/kriter/kod örneklerini kategori bazlı sunan statik web dizini | [kanıt](https://github.com/kong75/jev-directory#readme) | no |

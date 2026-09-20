@@ -3,7 +3,7 @@
 
 # Tarayıcı ve bilgisayar kullanımı
 
-Bu kategoride 42 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 44 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -18,6 +18,7 @@ Bu kategoride 42 repo; önce sınıf, sonra puan sırasıyla.
 | [pumpkinredbean/bside](https://github.com/pumpkinredbean/bside) | A | 12 | yes | Aside tarayıcısını sohbet LLM yerine Jev kararlarıyla süren pilot; frontier/hafif LLM'e karşı tekrarlanabilir benchmark | [kanıt](https://github.com/pumpkinredbean/bside#readme) | yes |
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | A | 11 | yes | Jev'in her adımda işlem+hedef seçtiği, sadece TYPE_TEXT gerektiğinde küçük LLM'in metin yazdığı ultra hızlı tarayıcı ajanı \(7.1 saniyede uçuş arama\) | [kanıt](https://github.com/browser-use/jev-ultrafast#readme) | yes |
 | [chy4pro/jev-for-chrome](https://github.com/chy4pro/jev-for-chrome) | A | 11 | yes | Chrome uzantısı; açık sekmeyi Jev ile yönlendirir \(tıkla/yaz/kaydır\), 17 görevlik e2e sette tekrarlı ölçüm, DONE/BLOCKED iddiasını eylemden bağımsız çift kontrolle doğruluyor | [kanıt](https://github.com/chy4pro/jev-for-chrome#readme) | yes |
+| [kofanlabs/typesafe-computer-use-windows](https://github.com/kofanlabs/typesafe-computer-use-windows) | A | 11 | yes | Ekrani yerel OCR ve UI Automation ile okuyan, sonraki adim icin Jev'e uc secenekten birini soran ve guven esiginin altinda durabilen Jev destekli bilgisayar kullanim dongusunun Windows portu. | [kanıt](https://github.com/kofanlabs/typesafe-computer-use-windows#readme) | no |
 | [ljy8072/jev-agent-router](https://github.com/ljy8072/jev-agent-router) | A | 11 | yes | Bilgisayar kullanan ajanlar icin, tam eslesmeleri koda, sinirli anlamsal secimleri Jev'e, belirsiz durumlari ise ajana geri gonderen, olculmus zamanlamalara sahip yonlendirme katmani. | [kanıt](https://github.com/ljy8072/jev-agent-router#readme) | yes |
 | [Ying-Kai-Liao/jev-browser](https://github.com/Ying-Kai-Liao/jev-browser) | A | 11 | yes | LLM'in yüksek seviye hedefi belirlediği, her adımda Jev'in hangi eleman/eylem/değer ve bitti-mi/tıkanmış-mı/geri-alınamaz-mı sorularını tek çağrıda yanıtladığı tarayıcı otomasyonu \(MCP\) | [kanıt](https://github.com/Ying-Kai-Liao/jev-browser#readme) | yes |
 | [gokulnair2001/Convoy](https://github.com/gokulnair2001/Convoy) | A | 10 | yes | Jev'in duz dilde yazilmis bir adimi normallestirilmis bir ekran kontrolune eslestirdigi, gecti/belirsiz/bulunamadi kapisina sahip iOS, Android ve web icin anlamsal uctan uca test kosucusu. | [kanıt](https://github.com/gokulnair2001/Convoy#readme) | yes |
@@ -33,6 +34,7 @@ Bu kategoride 42 repo; önce sınıf, sonra puan sırasıyla.
 | [antiyro/jevdroid](https://github.com/antiyro/jevdroid) | B | 9 | yes | Android'i ADB üzerinden Jev ile yönetir; accessibility tree okur, aksiyon seçer, çalıştırır; 56 sentetik kararda %78.6 isabet ölçülmüş | [kanıt](https://github.com/antiyro/jevdroid#readme) | no |
 | [himomohi/aside-jev](https://github.com/himomohi/aside-jev) | B | 9 | yes | Aside tarayıcı ajanı için MCP; Jev uygulama-sahipli aday eylem tablosundan tek id seçer, bilinmeyen id'de fail-closed, confidence gate + bağımsız doğrulama | [kanıt](https://github.com/himomohi/aside-jev#readme) | no |
 | [jiangkoumo/ego-jev](https://github.com/jiangkoumo/ego-jev) | B | 9 | yes | ego lite tarayıcısını Jev ile süren, tek indeksli eleman tablosundan tek işlem+hedef üreten tek-süreçli otomasyon, ~2x hızlı | [kanıt](https://github.com/jiangkoumo/ego-jev#readme) | no |
+| [kofanlabs/jev-browser-chrome](https://github.com/kofanlabs/jev-browser-chrome) | B | 9 | yes | Jev destekli bir tarayici ajaninin Windows catali; uzaktan hata ayiklama veya ayri tarayici profili olmadan zaten oturum acilmis sekmeleri kontrol eden bir Chrome eklenti koprusu ve MCP sunucusu ekler. | [kanıt](https://github.com/kofanlabs/jev-browser-chrome#readme) | no |
 | [perixtar/jev-e2e](https://github.com/perixtar/jev-e2e) | B | 9 | yes | Düz dille yazılan web akışlarını Jev ile sayfa kontrolü seçip Playwright'la çalıştıran E2E test aracı | [kanıt](https://github.com/perixtar/jev-e2e#readme) | no |
 | [tontoko/jev-browser](https://github.com/tontoko/jev-browser) | B | 9 | yes | Playwright üstüne Jev ile semantik act/observe/extract/assert; confidence eşiği, kanıt/köken izleme, native tarama AI-key'siz | [kanıt](https://github.com/tontoko/jev-browser#readme) | no |
 | [yousudip/lizard-agent](https://github.com/yousudip/lizard-agent) | B | 9 | yes | LLM olmadan, sayfayı Jev'e sorup 7 sorulu fan-out ile tıklama/yazma kararı üreten deterministik tarayıcı ajanı | [kanıt](https://github.com/yousudip/lizard-agent#readme) | no |
