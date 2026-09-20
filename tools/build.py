@@ -158,6 +158,35 @@ PRIVACY_PATTERNS = [
 #: Deliberately empty. An address only gets in here by an operator decision.
 EMAIL_ALLOWED = ()
 
+#: The same list, widened for the cleaner: here a match is *replaced*, so a
+#: path is swallowed whole. Redacting only the "C:\" of "C:\Users\ali\gizli"
+#: would satisfy the scan and still publish the name. Every label in
+#: PRIVACY_PATTERNS has an entry here; a test holds the two lists together.
+_PATH_TAIL = r"[^\s,;)\]'\"]*"
+REDACT_PATTERNS = [
+    ("Windows sürücü yolu", re.compile(r"(?<![A-Za-z])[A-Za-z]:[\\/]" + _PATH_TAIL)),
+    ("/mnt/ yolu", re.compile(r"/mnt/" + _PATH_TAIL)),
+    ("/home/ yolu", re.compile(r"/home/" + _PATH_TAIL)),
+    ("ham/ yolu", re.compile(
+        r"""(?:^|(?<=[\s("']))\.{0,2}[\\/]?ham[\\/]""" + _PATH_TAIL)),
+    ("özel IP", re.compile(
+        r"\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+        r"|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3}"
+        r"|192\.168\.\d{1,3}\.\d{1,3})\b")),
+    ("e-posta adresi", re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")),
+]
+
+REDACTED = "[redacted]"
+
+#: How much third-party text we are willing to store. A GitHub description is
+#: one line; anything longer is somebody's README pasted into the field.
+THIRD_PARTY_LIMIT = 400
+TRUNCATION_MARK = " …"
+
+#: ``[label](target)`` and ``![alt](target)``. Innermost first, so nesting
+#: unwraps one layer per pass.
+MARKDOWN_LINK = re.compile(r"!?\[([^\[\]]*)\]\([^()]*\)")
+
 #: Handwritten documents the privacy scan reads from disk.
 HANDWRITTEN_GLOBS = ("*.md", "llms.txt", "tr/*.md", "tr/**/*.md", "data/*.md")
 
@@ -735,6 +764,73 @@ def _text_problems(where, field, value):
             out.append("%s: %s içinde %s var (%r)"
                        % (where, field, label, match.group(0)))
     return out
+
+
+def _strip_forbidden(text):
+    """Delete every construct ``TEXT_FORBIDDEN`` names, until none is left.
+
+    The same list the validator reads, so the cleaner cannot drift away from
+    it. Each substitution only ever shortens the text, so the loop ends.
+    """
+    for _round in range(8):
+        before = text
+        for _label, pattern in TEXT_FORBIDDEN:
+            text = pattern.sub(" ", text)
+        if text == before:
+            break
+    return text
+
+
+def _redact(match):
+    """Keep the boundary character the pattern had to consume, drop the rest."""
+    head = match.group(0)[:1]
+    return (head if head in " \t(\"'" else "") + REDACTED
+
+
+def clean_third_party(value, limit=THIRD_PARTY_LIMIT):
+    """Reduce somebody else's plain text to text this repository can publish.
+
+    Returns ``(text, notes)``. A GitHub description, a topic, a licence name
+    and a language name are written by a third party, and the validator
+    refuses markup and private data in the data file - so the data must never
+    receive any. A markdown link keeps its label and loses its target, markup
+    and the ``javascript:``/``data:`` schemes go, line breaks and control
+    characters collapse to one space, private data becomes ``[redacted]``,
+    and an over-long text is cut with a visible mark.
+
+    The guarantee is the point: what comes back always passes ``validate``.
+    The last check enforces it - if anything survived, nothing does.
+    """
+    if not isinstance(value, str):
+        return None, []
+
+    text = value
+    for _round in range(8):
+        reduced = MARKDOWN_LINK.sub(r"\1", text)
+        if reduced == text:
+            break
+        text = reduced
+    text = _strip_forbidden(text)
+    text = "".join(" " if (ord(ch) < 0x20 or ord(ch) == 0x7F) else ch for ch in text)
+
+    notes = []
+    for label, pattern in REDACT_PATTERNS:
+        text, hits = pattern.subn(_redact, text)
+        if hits:
+            notes.append(label)
+    # a redaction can leave a "](" behind: [redacted](…) was never a link
+    text = _strip_forbidden(text)
+    text = re.sub(r"\s+", " ", text).strip()
+
+    if len(text) > limit:
+        text = text[:limit].rstrip() + TRUNCATION_MARK
+        notes.append("kısaltıldı")
+
+    if privacy_hits(text) or _text_problems("", "", text):
+        # Unreachable by design. If it is ever reached, publishing nothing
+        # beats publishing the thing we failed to clean.
+        return "", notes + ["temizlenemedi"]
+    return text, notes
 
 
 #: A date, not a timestamp: the pages must not move when the clock does.

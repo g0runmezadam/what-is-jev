@@ -102,6 +102,27 @@ same text on GitHub.
 | `duplicate_of` | `owner/name` or null | duplicates are listed but never counted |
 | `status` | `active` \| `gone` | a 404 marks the row, it is never deleted |
 
+### Third-party text is cleaned before it is stored
+
+`meta.description`, each `meta.topics` entry, `meta.license` and
+`meta.language` are written by somebody else. `tools/update.py` never stores
+them as they arrive: every one goes through `build.clean_third_party` first,
+and so does the `ham/meta/*.json` copy the scoring agent reads. A markdown
+link or image keeps its label and loses its target, HTML tags and the
+`javascript:`/`data:` schemes are dropped, line breaks and control characters
+collapse to one space, text longer than 400 characters is cut and ends in ` …`,
+and a private detail (e-mail address, private IP, local path) becomes
+`[redacted]` — the run names the repository it came from and carries on
+rather than stopping the daily refresh over somebody else's e-mail address.
+What the cleaner returns always passes `validate`; the build refuses markup
+in these fields, so the refresh must be unable to produce any.
+
+Before `tools/update.py` replaces `data/repos.jsonl` it runs the same
+`validate` the build runs. If anything fails the file is left untouched and
+the run exits 1 naming the row and the field: a half-refreshed data file is
+worse than none. The replacement itself is a temporary file and an
+`os.replace`, so no reader ever sees it half written.
+
 Category slugs: `agent-gate`, `code-review-hook`, `model-router`,
 `compaction-memory`, `classification-triage`, `search-rerank`,
 `security-injection`, `browser-computer-use`, `game-demo`, `sdk-client`,

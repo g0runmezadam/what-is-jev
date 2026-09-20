@@ -142,23 +142,88 @@ def fetch_readme(runner, repo):
     return out
 
 
-def meta_from_payload(payload):
+#: A topic is a word, not a paragraph.
+TOPIC_LIMIT = 100
+
+
+def _clean(value, notes, field, limit=build.THIRD_PARTY_LIMIT):
+    """Clean one third-party field and note what had to be taken out."""
+    text, labels = build.clean_third_party(value, limit=limit)
+    for label in labels:
+        notes.append("%s: %s" % (field, label))
+    return text
+
+
+def _clean_topics(topics, notes):
+    if not isinstance(topics, list):
+        return []
+    out = []
+    for topic in topics:
+        text = _clean(topic, notes, "topics", limit=TOPIC_LIMIT)
+        if text:
+            out.append(text)
+    return out
+
+
+def meta_from_payload(payload, notes=None):
+    """The ten stored fields, with every third-party text already cleaned.
+
+    This is where the guarantee is bought: the build refuses markup in
+    ``meta.description``, so no markup is ever written into it.
+    """
+    notes = [] if notes is None else notes
     license_field = payload.get("license")
     if isinstance(license_field, dict):
         license_field = license_field.get("spdx_id") or license_field.get("key")
-    topics = payload.get("topics")
     return {
-        "description": payload.get("description"),
+        "description": _clean(payload.get("description"), notes, "description"),
         "stars": payload.get("stargazers_count"),
         "forks": payload.get("forks_count"),
-        "language": payload.get("language"),
-        "license": license_field,
+        "language": _clean(payload.get("language"), notes, "language", TOPIC_LIMIT),
+        "license": _clean(license_field, notes, "license", TOPIC_LIMIT),
         "created_at": payload.get("created_at"),
         "pushed_at": payload.get("pushed_at"),
         "archived": payload.get("archived"),
         "fork": payload.get("fork"),
-        "topics": list(topics) if isinstance(topics, list) else [],
+        "topics": _clean_topics(payload.get("topics"), notes),
     }
+
+
+def clean_payload(payload, notes=None):
+    """The ``ham/meta/`` copy: cleaned, because the scoring agent copies it.
+
+    ``ham/`` is git-ignored and never published, so the untouched
+    description is kept beside the clean one as ``description_raw`` - useful
+    while scoring, and it cannot reach a page from there.
+    """
+    notes = [] if notes is None else notes
+    out = dict(payload)
+    raw = payload.get("description")
+    out["description"] = _clean(raw, notes, "description")
+    if isinstance(raw, str) and raw != out["description"]:
+        out["description_raw"] = raw
+    out["language"] = _clean(payload.get("language"), notes, "language", TOPIC_LIMIT)
+    out["topics"] = _clean_topics(payload.get("topics"), notes)
+    license_field = payload.get("license")
+    if isinstance(license_field, dict):
+        out["license"] = dict(license_field)
+        for key in ("spdx_id", "key", "name"):
+            if key in out["license"]:
+                out["license"][key] = _clean(out["license"][key], notes,
+                                             "license", TOPIC_LIMIT)
+    elif license_field is not None:
+        out["license"] = _clean(license_field, notes, "license", TOPIC_LIMIT)
+    return out
+
+
+def _note(report, repo, notes):
+    """Record what the cleaner had to take out, and from which repository.
+
+    A third party's e-mail address in their own description must not stop
+    the daily run - it is redacted, named here, and the run carries on.
+    """
+    for note in notes:
+        report["redacted"].append("%s %s" % (repo, note))
 
 
 def read_manual(path):
@@ -174,7 +239,8 @@ def run(root, runner=None, topic="jev", limit=1000, want_readme=True, sleep=None
     known = {r.get("repo", "").lower(): r for r in records}
 
     report = {"new": [], "refreshed": [], "gone": [], "unreachable": [],
-              "rejected": [], "search_failed": False}
+              "rejected": [], "redacted": [], "invalid": [],
+              "search_failed": False}
 
     found, ok = search_topic(runner, topic=topic, limit=limit, sleep=sleep)
     if not ok:
@@ -210,10 +276,13 @@ def run(root, runner=None, topic="jev", limit=1000, want_readme=True, sleep=None
         if payload is None:
             report["unreachable"].append(name)
             continue
+        notes = []
+        cleaned = clean_payload(payload, notes)
+        _note(report, name, notes)
         flat = name.replace("/", "@")
         build.write_text(
             ham_path(root, "meta", flat + ".json"),
-            json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n")
+            json.dumps(cleaned, ensure_ascii=False, sort_keys=True, indent=1) + "\n")
         if want_readme:
             body = fetch_readme(runner, name)
             if body:
@@ -236,12 +305,22 @@ def run(root, runner=None, topic="jev", limit=1000, want_readme=True, sleep=None
         if payload is None:
             report["unreachable"].append(rec["repo"])
             continue
-        rec["meta"] = meta_from_payload(payload)
+        notes = []
+        rec["meta"] = meta_from_payload(payload, notes)
+        _note(report, rec["repo"], notes)
         rec["status"] = "active"
         report["refreshed"].append(rec["repo"])
 
     records.sort(key=lambda r: r.get("repo", "").lower())
-    build.write_text(repos_path, build.dump_jsonl(records))
+
+    # The last gate: this run must not leave behind a data file the build
+    # would refuse. A half refreshed repos.jsonl is worse than none, so the
+    # file is checked before it is written, and written in one step.
+    errors, _warnings = build.validate(records)
+    if errors:
+        report["invalid"] = errors
+        return report
+    build.write_text_atomic(repos_path, build.dump_jsonl(records))
     return report
 
 
@@ -259,10 +338,19 @@ def main(argv=None, root=None, runner=None, sleep=None):
         print("HATA: arama başarısız (gh hata verdi ya da kota doldu). "
               "data/pending.txt'e dokunulmadı, hiçbir şey yazılmadı.")
         return 1
-    print("yeni: %d, tazelenen: %d, kayıp: %d, ulaşılamayan: %d, reddedilen: %d"
+    if report["invalid"]:
+        print("HATA: tazelenen veri build doğrulamasından geçmedi, "
+              "data/repos.jsonl'e dokunulmadı:")
+        for problem in report["invalid"]:
+            print("  " + problem)
+        return 1
+    print("yeni: %d, tazelenen: %d, kayıp: %d, ulaşılamayan: %d, reddedilen: %d, "
+          "temizlenen: %d"
           % (len(report["new"]), len(report["refreshed"]),
              len(report["gone"]), len(report["unreachable"]),
-             len(report["rejected"])))
+             len(report["rejected"]), len(report["redacted"])))
+    for line in report["redacted"]:
+        print("  temizlendi: " + line)
     for name in report["new"]:
         print("  yeni: " + name)
     for name in report["rejected"]:
