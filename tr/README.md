@@ -14,6 +14,8 @@ Jev metin yazmaz. Ona bir durum (state) ve tipli sorular verirsiniz (**choice** 
 
 TypeSafe AI ile bir bağımız yoktur. Bu bağımsız bir araştırmadır.
 
+**Bu depo sürekli güncellenir.** Her gün yeni Jev depoları çıkıyor; bunları topluyor, aynı ölçekle puanlıyor, en üst sınıfı yeniden denetliyor ve doğrulandıkça yeni kaynakları ve bulguları ekliyoruz. Aşağıdaki "Veri tarihi" sayıların ne kadar taze olduğunu gösterir; her güncellemede neyin değiştiği [`CHANGELOG.md`](CHANGELOG.md) dosyasında listelenir.
+
 <!-- STATS:START -->
 | Sayı | Değer |
 |---|---|

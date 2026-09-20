@@ -14,6 +14,8 @@ Jev does not write text. You give it a state and typed questions (**choice**, **
 
 We are not affiliated with TypeSafe AI. This is independent research.
 
+**This repository is updated continuously.** New Jev repositories appear every day; we pick them up, score them with the same rubric, re-check the top class, and add new sources and findings as they are verified. The "Data as of" date below tells you how fresh the numbers are, and [`CHANGELOG.md`](CHANGELOG.md) lists what changed in each update.
+
 <!-- STATS:START -->
 | Number | Value |
 |---|---|

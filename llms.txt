@@ -12,6 +12,7 @@ Everything here comes from publicly available sources (official docs, public rep
 - [PATTERNS.md](PATTERNS.md): recurring design patterns across repositories, each backed by at least two linked examples.
 - [AGENTS.md](AGENTS.md): rules for an AI assistant reading or citing this repository — verdict labels, data field meanings, what not to assert.
 - [CONTRIBUTING.md](CONTRIBUTING.md): how to add a repository, dispute a score, add a source, or dispute a finding.
+- [CHANGELOG.md](CHANGELOG.md): dated log of every data and findings update — the repository is updated continuously, so check the latest entry and the "Data as of" date before citing a number.
 
 ## Data
 
