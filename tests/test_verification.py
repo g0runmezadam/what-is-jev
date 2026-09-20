@@ -392,6 +392,16 @@ class RunnerTest(BaseCase):
         self.assertEqual(summary["answered"], 0)
         self.assertEqual(summary["failed"], 4)
 
+    def test_a_resumed_job_counts_what_the_run_before_it_spent(self):
+        """The budget is the total, not what the last run happened to pay."""
+        root = self.tmproot()
+        runner.run_job(tiny_job(max_calls=2), tiny_items(), self.QUESTIONS, root,
+                       caller=self.responder([]))
+        summary = runner.run_job(tiny_job(), tiny_items(), self.QUESTIONS, root,
+                                 caller=self.responder([]))
+        self.assertEqual(summary["calls"], 4)
+        self.assertEqual(summary["calls_this_run"], 2)
+
     def test_the_summary_carries_the_verdict_and_the_model_version(self):
         root = self.tmproot()
         summary = runner.run_job(tiny_job(), tiny_items(), self.QUESTIONS, root,

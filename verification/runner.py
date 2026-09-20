@@ -153,7 +153,11 @@ def run_job(job, items, questions, root, caller, scorer=None, progress=None,
         "seed": job.get("seed"),
         "run_at": (today or datetime.date.today().isoformat()),
         "items_offered": len(items),
-        "calls": spent,
+        # Every raw line is one request that left this machine, across every
+        # run of this job. The budget is counted from here, so a resumed job
+        # must not forget what the run before it spent.
+        "calls": len(records),
+        "calls_this_run": spent,
         "answered": len(good),
         "failed": len(records) - len(good),
         "max_calls": ceiling,

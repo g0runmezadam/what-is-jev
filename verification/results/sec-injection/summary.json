@@ -1,0 +1,117 @@
+{
+  "answered": 662,
+  "calls": 662,
+  "calls_this_run": 0,
+  "criteria": [
+    {
+      "ci95": [
+        0.9501960293854539,
+        0.9779528442136332
+      ],
+      "k": 640,
+      "kind": "proportion",
+      "metric": "accuracy",
+      "n": 662,
+      "observed": 0.9667673716012085,
+      "reported": 0.965,
+      "reported_at": "README, section \"Prompt injection\", accuracy row",
+      "tolerance": 0.02,
+      "verdict": "reproduced",
+      "why": "Reproduced when the reported share falls inside our 95% Wilson interval, which for 662 items at this accuracy is about 1.7 points wide either side. Outside it but within 2 points is partial: that is the size of a model-version shift, not a different result."
+    },
+    {
+      "ci95": [
+        0.9352898897738959,
+        0.9816126456225691
+      ],
+      "k": 250,
+      "kind": "proportion",
+      "metric": "precision",
+      "n": 259,
+      "observed": 0.9652509652509652,
+      "reported": 0.962,
+      "reported_at": "README, section \"Prompt injection\", precision row",
+      "tolerance": 0.03,
+      "verdict": "reproduced"
+    },
+    {
+      "ci95": [
+        0.9172792322167652,
+        0.9708885999013078
+      ],
+      "k": 250,
+      "kind": "proportion",
+      "metric": "recall",
+      "n": 263,
+      "observed": 0.9505703422053232,
+      "reported": 0.951,
+      "reported_at": "README, section \"Prompt injection\", recall row",
+      "tolerance": 0.03,
+      "verdict": "reproduced"
+    },
+    {
+      "distance": 0.00015209030180018956,
+      "kind": "absolute",
+      "metric": "roc_auc",
+      "observed": 0.9925479096981998,
+      "partial_tolerance": 0.05,
+      "reported": 0.9927,
+      "reported_at": "README, section \"Prompt injection\", ROC-AUC row",
+      "tolerance": 0.01,
+      "verdict": "reproduced",
+      "why": "Ranking is the claim that should survive a model change; a drop past 0.05 would mean the ordering itself moved."
+    },
+    {
+      "distance": 0.0014265861027190144,
+      "kind": "absolute",
+      "metric": "ece",
+      "observed": 0.06022658610271901,
+      "partial_tolerance": 0.06,
+      "reported": 0.0588,
+      "reported_at": "README, section \"Prompt injection\", ECE row",
+      "tolerance": 0.02,
+      "verdict": "reproduced",
+      "why": "Calibration is the most version-sensitive number here, so it gets the widest partial band and the smallest claim."
+    }
+  ],
+  "failed": 0,
+  "id": "sec-injection",
+  "items_offered": 662,
+  "lang": "mixed",
+  "max_calls": 662,
+  "measured": {
+    "accuracy": {
+      "k": 640,
+      "n": 662
+    },
+    "ece": 0.06022658610271901,
+    "false_negatives": 13,
+    "false_positives": 9,
+    "positives": 263,
+    "precision": {
+      "k": 250,
+      "n": 259
+    },
+    "recall": {
+      "k": 250,
+      "n": 263
+    },
+    "roc_auc": 0.9925479096981998
+  },
+  "model_versions": [
+    "jev-1.13.0"
+  ],
+  "run_at": "2026-09-20",
+  "seed": 20260920,
+  "source": {
+    "commit": "fdb16b94d37535db9bad77f8ef0faa971bd7d69a",
+    "commit_date": "2026-09-16",
+    "license": "MIT",
+    "repo": "Gaurav-Gosain/jev-sec-bench",
+    "reported_run": "2026-09-16 against jev-1.13.0",
+    "url": "https://github.com/Gaurav-Gosain/jev-sec-bench"
+  },
+  "stopped": null,
+  "title": "Prompt injection detection on deepset/prompt-injections",
+  "verdict": "reproduced"
+}

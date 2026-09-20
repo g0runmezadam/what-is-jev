@@ -1,0 +1,100 @@
+{
+  "note": "Test content is never translated. `lang` is the language the test was written and run in.",
+  "records": [
+    {
+      "calls": 662,
+      "dataset": "deepset/prompt-injections",
+      "deviations": [
+        "The source ran on 2026-09-16 against jev-1.13.0. We send model \"jev-latest\" because the endpoint takes no version pin; the version the endpoint reports back is recorded in summary.json and in the report.",
+        "The source runs its requests concurrently; we run them one at a time with a pause. That changes wall time, not answers.",
+        "Both corpora are public and may sit in some model's training data. That caveat is the source's own and it applies to us identically."
+      ],
+      "failed_calls": 0,
+      "id": "sec-injection",
+      "kind": "reproducibility-check",
+      "kind_note": "The labels are the public corpus's own, not the source author's, so this is closer to an independent check than a self-labelled one. The pipeline around them is still the author's.",
+      "lang": "mixed",
+      "lang_note": "The questions are English; the corpus was collected for a German news assistant and skews German. Nothing is translated: a translated input is a different input.",
+      "metrics": [
+        {
+          "ci95": [
+            0.9501960293854539,
+            0.9779528442136332
+          ],
+          "kind": "proportion",
+          "measured": 0.9667673716012085,
+          "metric": "accuracy",
+          "reported": 0.965,
+          "reported_at": "README, section \"Prompt injection\", accuracy row",
+          "status": "reproduced"
+        },
+        {
+          "ci95": [
+            0.9352898897738959,
+            0.9816126456225691
+          ],
+          "kind": "proportion",
+          "measured": 0.9652509652509652,
+          "metric": "precision",
+          "reported": 0.962,
+          "reported_at": "README, section \"Prompt injection\", precision row",
+          "status": "reproduced"
+        },
+        {
+          "ci95": [
+            0.9172792322167652,
+            0.9708885999013078
+          ],
+          "kind": "proportion",
+          "measured": 0.9505703422053232,
+          "metric": "recall",
+          "reported": 0.951,
+          "reported_at": "README, section \"Prompt injection\", recall row",
+          "status": "reproduced"
+        },
+        {
+          "ci95": null,
+          "kind": "absolute",
+          "measured": 0.9925479096981998,
+          "metric": "roc_auc",
+          "reported": 0.9927,
+          "reported_at": "README, section \"Prompt injection\", ROC-AUC row",
+          "status": "reproduced"
+        },
+        {
+          "ci95": null,
+          "kind": "absolute",
+          "measured": 0.06022658610271901,
+          "metric": "ece",
+          "reported": 0.0588,
+          "reported_at": "README, section \"Prompt injection\", ECE row",
+          "status": "reproduced"
+        }
+      ],
+      "model_versions": [
+        "jev-1.13.0"
+      ],
+      "raw_url": "https://github.com/tunahansahin897/what-is-jev/blob/main/verification/results/sec-injection/raw.jsonl",
+      "report_url": "https://github.com/tunahansahin897/what-is-jev/blob/main/verification/results/sec-injection/REPORT.md",
+      "run_at": "2026-09-20",
+      "sample": {
+        "n": 662,
+        "offered": 662,
+        "rule": "the whole corpus, no sampling",
+        "seed": 20260920
+      },
+      "source": {
+        "commit": "fdb16b94d37535db9bad77f8ef0faa971bd7d69a",
+        "license": "MIT",
+        "repo": "Gaurav-Gosain/jev-sec-bench",
+        "reported_run": "2026-09-16 against jev-1.13.0",
+        "url": "https://github.com/Gaurav-Gosain/jev-sec-bench"
+      },
+      "status": "reproduced",
+      "title": "Prompt injection detection on deepset/prompt-injections",
+      "type": "re-run"
+    }
+  ],
+  "schema": "what-is-jev/verification/tests.json",
+  "version": 1
+}
