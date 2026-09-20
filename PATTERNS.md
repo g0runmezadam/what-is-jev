@@ -2,7 +2,7 @@
 
 # Recurring patterns
 
-Last reviewed: 2026-09-20 · Every pattern here appears in at least two of the 785 scored repositories, each read at README depth (not the code) against the rubric in [`data/rubric.md`](data/rubric.md). Scores are an LLM's judgment, not a benchmark of the projects themselves — method and limits in [`METHODOLOGY.md`](METHODOLOGY.md). A single-repo idea is not a pattern; those are collected at the end instead. Where a repo says it measured something, that means **the repo's own authors measured it on their own data**, not an independent check — treat it the same way [`FINDINGS.md`](FINDINGS.md) treats vendor claims.
+Last reviewed: 2026-09-20 · Every pattern here appears in at least two of the 785 repositories scored in the first pass (2026-09-19), each read at README depth (not the code) against the rubric in [`data/rubric.md`](data/rubric.md). Scores are an LLM's judgment, not a benchmark of the projects themselves — method and limits in [`METHODOLOGY.md`](METHODOLOGY.md). A single-repo idea is not a pattern; those are collected at the end instead. Where a repo says it measured something, that means **the repo's own authors measured it on their own data**, not an independent check — treat it the same way [`FINDINGS.md`](FINDINGS.md) treats vendor claims.
 
 ## 1. The baseline decision machine
 

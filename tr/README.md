@@ -7,7 +7,7 @@ TypeSafe AI'nin "System One" karar modeli **Jev** hakkında kaynaklı ve eleşti
 Jev metin yazmaz. Ona bir durum (state) ve tipli sorular verirsiniz (**choice** = seçim, **score** = skor, **noul** = evet/hayır); karşılığında olasılık döner. Bu onu ucuz, hızlı ve yazılıma bağlaması kolay bir araç yapar — abartılması da bir o kadar kolaydır. Bu depo üç soruyu heyecanla değil kanıtla cevaplamaya çalışır:
 
 1. **Jev gerçekte nedir?** Hangi iddia doğrulanmış, hangisi üreticinin pazarlama rakamının tekrarı, hangileri birbiriyle çelişiyor → [`FINDINGS.md`](FINDINGS.md)
-2. **İnsanlar onunla ne kuruyor?** 785 herkese açık GitHub deposu, hepsi aynı sabit ölçekle puanlandı → [`REPOS.md`](REPOS.md), en iyiler [`TOP.md`](TOP.md), [kategoriye göre](categories/) gezilebilir
+2. **İnsanlar onunla ne kuruyor?** Bulabildiğimiz her herkese açık GitHub deposu (güncel sayı aşağıdaki tabloda), hepsi aynı sabit ölçekle puanlandı → [`REPOS.md`](REPOS.md), en iyiler [`TOP.md`](TOP.md), [kategoriye göre](categories/) gezilebilir
 3. **Hangi tasarım desenleri tekrar ediyor, hangileri ölçümle destekli?** → [`PATTERNS.md`](PATTERNS.md)
 
 > **Buradaki her şey herkese açık kaynaklardan derlendi** — resmi doküman, herkese açık GitHub depoları, herkese açık videolar, yazılar ve gönderiler — ve tekrarlayabilmeniz için nasıl yaptığımızı anlattığımız kendi API çağrılarımız. **Her iddia ve her kayıt kaynağına bağlantı verir.** Özel ya da ücretli hiçbir malzeme kullanılmadı; üçüncü tarafların içeriğini yeniden yayımlamıyoruz: kopyasını değil, bağlantısını ve bizim değerlendirmemizi bulursunuz. Tüm kaynakların URL'leri ve güven düzeyleriyle tam listesi: [`SOURCES.md`](SOURCES.md).

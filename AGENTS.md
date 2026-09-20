@@ -6,7 +6,7 @@ Instructions for an AI assistant reading, citing, or answering questions from th
 
 ## What this repository is
 
-A sourced, critical research file on **Jev** (TypeSafe AI's "System One" decision model) plus a rubric-scored map of 785 public GitHub repositories that use it. It exists to answer three questions with evidence: what Jev actually is, what people build with it, and which design patterns recur. It is not vendor documentation, not a tutorial, and not a benchmark suite — read [`METHODOLOGY.md`](METHODOLOGY.md) before treating any number here as a measurement rather than a scored opinion.
+A sourced, critical research file on **Jev** (TypeSafe AI's "System One" decision model) plus a rubric-scored map of the public GitHub repositories that use it. It exists to answer three questions with evidence: what Jev actually is, what people build with it, and which design patterns recur. It is not vendor documentation, not a tutorial, and not a benchmark suite — read [`METHODOLOGY.md`](METHODOLOGY.md) before treating any number here as a measurement rather than a scored opinion.
 
 ## Read in this order
 

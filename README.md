@@ -7,7 +7,7 @@ A sourced, critical research file on **Jev** — TypeSafe AI's "System One" deci
 Jev does not write text. You give it a state and typed questions (**choice**, **score**, **noul** = yes/no); it returns probabilities. That makes it cheap, fast and easy to wire into software — and also easy to over-sell. This repository tries to answer three questions with evidence instead of enthusiasm:
 
 1. **What is Jev, really?** Which claims are verified, which are vendor marketing repeated by others, and which contradict each other → [`FINDINGS.md`](FINDINGS.md)
-2. **What are people building with it?** 785 public GitHub repositories, each scored on the same fixed rubric → [`REPOS.md`](REPOS.md), best-in-class in [`TOP.md`](TOP.md), browsable by [category](categories/)
+2. **What are people building with it?** Every public GitHub repository we could find (the current count is in the table below), each scored on the same fixed rubric → [`REPOS.md`](REPOS.md), best-in-class in [`TOP.md`](TOP.md), browsable by [category](categories/)
 3. **Which design patterns keep recurring — and which are backed by measurements?** → [`PATTERNS.md`](PATTERNS.md)
 
 > **Everything here comes from publicly available sources** — official documentation, public GitHub repositories, public videos, articles and posts — plus our own API calls, which we describe so you can repeat them. **Every claim and every entry links to its source.** Nothing is taken from private or paywalled material, and we do not republish third-party content: you get the link and our assessment, not a copy. The full source list, with URLs and a trust level for each, is in [`SOURCES.md`](SOURCES.md).

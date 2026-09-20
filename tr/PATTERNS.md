@@ -2,7 +2,7 @@
 
 # Tekrar eden desenler
 
-Son gözden geçirme: 2026-09-20 · Buradaki her desen, 785 puanlanmış repodan en az ikisinde görülür; her repo README derinliğinde (kod okunmadan) [`data/rubric.md`](../data/rubric.md) içindeki ölçeğe göre değerlendirildi. Puanlar bir LLM'in yargısıdır, projelerin kendisinin benchmark'ı değildir — yöntem ve sınırlar: [`METHODOLOGY.md`](METHODOLOGY.md). Tek repoda görülen fikir "desen" sayılmaz; onlar en sona ayrı bir bölümde toplandı. Bir repo "ölçtük" diyorsa, bu **reponun kendi yazarlarının kendi verisinde ölçtüğü** anlamına gelir, bağımsız bir doğrulama değildir — bunu [`FINDINGS.md`](FINDINGS.md)'in üretici iddialarına yaklaştığı gibi okuyun.
+Son gözden geçirme: 2026-09-20 · Buradaki her desen, ilk geçişte (2026-09-19) puanlanan 785 repodan en az ikisinde görülür; her repo README derinliğinde (kod okunmadan) [`data/rubric.md`](../data/rubric.md) içindeki ölçeğe göre değerlendirildi. Puanlar bir LLM'in yargısıdır, projelerin kendisinin benchmark'ı değildir — yöntem ve sınırlar: [`METHODOLOGY.md`](METHODOLOGY.md). Tek repoda görülen fikir "desen" sayılmaz; onlar en sona ayrı bir bölümde toplandı. Bir repo "ölçtük" diyorsa, bu **reponun kendi yazarlarının kendi verisinde ölçtüğü** anlamına gelir, bağımsız bir doğrulama değildir — bunu [`FINDINGS.md`](FINDINGS.md)'in üretici iddialarına yaklaştığı gibi okuyun.
 
 ## 1. Temel karar makinesi
 

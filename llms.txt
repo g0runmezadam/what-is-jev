@@ -1,6 +1,6 @@
 # What is Jev?
 
-> A sourced, critical research repository on Jev (TypeSafe AI's "System One" decision model): what is verified vs. vendor-claimed vs. contested, plus 785 public GitHub repositories scored on a fixed rubric for what people actually build with it.
+> A sourced, critical research repository on Jev (TypeSafe AI's "System One" decision model): what is verified vs. vendor-claimed vs. contested, plus every public GitHub repository we could find, scored on a fixed rubric for what people actually build with it.
 
 Everything here comes from publicly available sources (official docs, public repositories, public videos/articles, and our own API calls, described so they can be repeated). Every claim and every repository entry links to its source; nothing rests on private or paywalled material. Scores are a language-model agent's judgment against a written rubric, not a benchmark of the code — read [`AGENTS.md`](AGENTS.md) before quoting a score or a verdict label as fact. A Turkish translation of the whole repository lives under [`tr/`](tr/README.md), generated from the same data.
 
@@ -23,7 +23,7 @@ Everything here comes from publicly available sources (official docs, public rep
 
 ## Lists
 
-- [REPOS.md](REPOS.md): all 785 scored repositories, one row each, sorted by class then score.
+- [REPOS.md](REPOS.md): every scored repository (the current count is in README.md), one row each, sorted by class then score.
 - [TOP.md](TOP.md): class-A repositories that passed the single-reviewer audit; unaudited rows are never listed here no matter how high they scored.
 - [categories/](categories/): one page per category (agent gates, code review hooks, model routers, compaction/memory, classification/triage, search/rerank, security/injection, browser/computer-use, game/demo, SDK/client, CLI, MCP/skill/plugin, eval/benchmark, list/directory, text-generation experiments, other).
 - [SOURCES.md](SOURCES.md): every source used anywhere in this repository, grouped by type, each with a trust level 1–5.
