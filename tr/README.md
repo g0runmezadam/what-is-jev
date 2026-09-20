@@ -23,7 +23,7 @@ TypeSafe AI ile bir bağımız yoktur. Bu bağımsız bir araştırmadır.
 | Jev çağırıyor | yes 606 · no 270 · unclear 33 |
 | Sınıflar | A 260 · B 288 · C 361 |
 | Denetlenmiş | 337 |
-| Kaynak | 88 |
+| Kaynak | 90 |
 | Veri tarihi | 2026-09-20 |
 
 **En çok kategori**

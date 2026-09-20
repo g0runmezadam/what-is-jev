@@ -37,3 +37,7 @@ danielscoffee/AssertLens
 FLOCK4H/Dexter
 byenzyme/enzyme
 SK-ENT/rakitsu
+manjunathshiva/jev-frontier-bench
+loomspan/loomspan-framework
+amazingjoe/pi-saver
+Mawfyy/jev-router.nvim
