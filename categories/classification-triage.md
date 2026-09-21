@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/classification-triage.md)
 
 # Classification and triage
 
-107 repositories in this category, sorted by class then score.
+108 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -116,3 +116,4 @@ English | [Türkçe](../tr/categories/classification-triage.md)
 | [jaibhasin/jev-yt-time-saver](https://github.com/jaibhasin/jev-yt-time-saver) | C | 2 | yes | A Chrome extension that detects and covers distracting YouTube videos using Jev | [evidence](https://github.com/jaibhasin/jev-yt-time-saver#readme) | no |
 | [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | C | 2 | unclear | A self-hosted open-source crypto/stock/forex trading OS; the scanned \(12K character\) part of the README only shows a 'JEV Pre-trade Decisions' badge, the actual JEV section was outside the scanned range and could not be verified | [evidence](https://github.com/OpenByteInc/QuantDinger#readme) | no |
 | [derinworks/penr-oz-jev-syslog-analyzer](https://github.com/derinworks/penr-oz-jev-syslog-analyzer) | C | 1 | unclear | An asyncio daemon routing journald/syslog events by asking Jev for subsystem/severity/noise decisions \(README is a single sentence, unverified\) | [evidence](https://github.com/derinworks/penr-oz-jev-syslog-analyzer#readme) | no |
+| [silky-x0/Postmark](https://github.com/silky-x0/Postmark) | C | 0 | yes | Postmark demo classifies social posts via TypeSafe Jev, returning typed tone \(choice\), virality \(score\) and cringe \(noul\) answers in one call. | [evidence](https://github.com/silky-x0/Postmark#readme) | no |

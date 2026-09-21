@@ -3,23 +3,23 @@ English | [Türkçe](tr/REPOS.md)
 
 # All repositories
 
-947 scored repositories, 5 marked as duplicates. Data as of 2026-09-20. Every row links to the repository and to the page the score rests on.
+948 scored repositories, 5 marked as duplicates. Data as of 2026-09-21. Every row links to the repository and to the page the score rests on.
 
 ## Summary
 
 | Number | Value |
 |---|---|
-| Repositories | 947 |
-| Calls Jev | yes 639 · no 275 · unclear 33 |
-| Classes | A 273 · B 302 · C 372 |
+| Repositories | 948 |
+| Calls Jev | yes 640 · no 275 · unclear 33 |
+| Classes | A 273 · B 302 · C 373 |
 | Audited | 353 |
 | Sources | 90 |
-| Data as of | 2026-09-20 |
+| Data as of | 2026-09-21 |
 
 **Top categories**
 
 - [Other](categories/other.md) — 190
-- [Classification and triage](categories/classification-triage.md) — 107
+- [Classification and triage](categories/classification-triage.md) — 108
 - [SDKs and clients](categories/sdk-client.md) — 85
 - [Evaluation and benchmarks](categories/eval-benchmark.md) — 80
 - [Agent gates](categories/agent-gate.md) — 61
@@ -32,7 +32,7 @@ English | [Türkçe](tr/REPOS.md)
 | Category | Repositories | Class A |
 |---|---|---|
 | [Other](categories/other.md) | 190 | 9 |
-| [Classification and triage](categories/classification-triage.md) | 107 | 22 |
+| [Classification and triage](categories/classification-triage.md) | 108 | 22 |
 | [SDKs and clients](categories/sdk-client.md) | 85 | 15 |
 | [Evaluation and benchmarks](categories/eval-benchmark.md) | 80 | 46 |
 | [Agent gates](categories/agent-gate.md) | 61 | 32 |
@@ -964,6 +964,7 @@ English | [Türkçe](tr/REPOS.md)
 | [rokopt/geb](https://github.com/rokopt/geb) | C | 0 | no | A categorical programming language \(Lean/Idris formalization\); unrelated to Jev, the author hopes to use it for proof synthesis in the future | [evidence](https://github.com/rokopt/geb#readme) | no |
 | [rokopt/geb-mathlib](https://github.com/rokopt/geb-mathlib) | C | 0 | no | A Lean4+mathlib formalization of the Geb language; unrelated to Jev | [evidence](https://github.com/rokopt/geb-mathlib#readme) | no |
 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | C | 0 | no | Large curated collection of 100+ open-source LLM agent apps, agent skills and RAG apps across many providers \(Claude, Gemini, GPT, DeepSeek\); a general awesome-list with no Jev connection. | [evidence](https://github.com/Shubhamsaboo/awesome-llm-apps#readme) | no |
+| [silky-x0/Postmark](https://github.com/silky-x0/Postmark) | C | 0 | yes | Postmark demo classifies social posts via TypeSafe Jev, returning typed tone \(choice\), virality \(score\) and cringe \(noul\) answers in one call. | [evidence](https://github.com/silky-x0/Postmark#readme) | no |
 | [SK-ENT/rakitsu](https://github.com/SK-ENT/rakitsu) | C | 0 | no | Go-based visual multi-agent builder and runtime debugger \('The Agent IDE'\) with breakpoints, time-travel and multi-provider inference; an agent-orchestration product unrelated to Jev. | [evidence](https://github.com/SK-ENT/rakitsu#readme) | no |
 | [skyf0xx/hedgehog](https://github.com/skyf0xx/hedgehog) | C | 0 | no | A CLI state machine that generates a task dependency graph based on a spec/BMAD plan and locks Claude Code/Cursor/Gemini CLI to the plan | [evidence](https://github.com/skyf0xx/hedgehog#readme) | no |
 | [socai-io/socai](https://github.com/socai-io/socai) | C | 0 | no | A read-only agent that researches social media \(Xiaohongshu/TikTok/Instagram/LinkedIn\) by driving the user's logged-in Chrome; does not mention Jev | [evidence](https://github.com/socai-io/socai#readme) | no |

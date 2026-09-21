@@ -3,23 +3,23 @@
 
 # Bütün repolar
 
-947 puanlanmış repo, 5 mükerrer. Veri tarihi 2026-09-20. Her satır repoya ve puanın dayandığı sayfaya bağlanır.
+948 puanlanmış repo, 5 mükerrer. Veri tarihi 2026-09-21. Her satır repoya ve puanın dayandığı sayfaya bağlanır.
 
 ## Özet
 
 | Sayı | Değer |
 |---|---|
-| Repo | 947 |
-| Jev çağırıyor | yes 639 · no 275 · unclear 33 |
-| Sınıflar | A 273 · B 302 · C 372 |
+| Repo | 948 |
+| Jev çağırıyor | yes 640 · no 275 · unclear 33 |
+| Sınıflar | A 273 · B 302 · C 373 |
 | Denetlenmiş | 353 |
 | Kaynak | 90 |
-| Veri tarihi | 2026-09-20 |
+| Veri tarihi | 2026-09-21 |
 
 **En çok kategori**
 
 - [Diğer](categories/other.md) — 190
-- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 107
+- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 108
 - [SDK'lar ve istemciler](categories/sdk-client.md) — 85
 - [Değerlendirme ve benchmark](categories/eval-benchmark.md) — 80
 - [Ajan kapıları](categories/agent-gate.md) — 61
@@ -32,7 +32,7 @@
 | Kategori | Repo | A sınıfı |
 |---|---|---|
 | [Diğer](categories/other.md) | 190 | 9 |
-| [Sınıflandırma ve triyaj](categories/classification-triage.md) | 107 | 22 |
+| [Sınıflandırma ve triyaj](categories/classification-triage.md) | 108 | 22 |
 | [SDK'lar ve istemciler](categories/sdk-client.md) | 85 | 15 |
 | [Değerlendirme ve benchmark](categories/eval-benchmark.md) | 80 | 46 |
 | [Ajan kapıları](categories/agent-gate.md) | 61 | 32 |
@@ -964,6 +964,7 @@
 | [rokopt/geb](https://github.com/rokopt/geb) | C | 0 | no | Kategorik programlama dili \(Lean/Idris formalizasyonu\); Jev ile ilgisi yok, yazar gelecekte proof synthesis için kullanmayı umuyor | [kanıt](https://github.com/rokopt/geb#readme) | no |
 | [rokopt/geb-mathlib](https://github.com/rokopt/geb-mathlib) | C | 0 | no | Geb dilinin Lean4+mathlib formalizasyonu; Jev ile ilgisi yok | [kanıt](https://github.com/rokopt/geb-mathlib#readme) | no |
 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | C | 0 | no | Cok sayida saglayici \(Claude, Gemini, GPT, DeepSeek\) icin 100'den fazla acik kaynak LLM ajan uygulamasi, ajan becerisi ve RAG uygulamasini toplayan buyuk bir liste; Jev ile baglantisi olmayan genel bir 'awesome list'. | [kanıt](https://github.com/Shubhamsaboo/awesome-llm-apps#readme) | no |
+| [silky-x0/Postmark](https://github.com/silky-x0/Postmark) | C | 0 | yes | Postmark demosu, sosyal medya gönderilerini TypeSafe Jev ile sınıflandırır; ton \(choice\), viralite \(score\) ve cringe \(noul\) yanıtlarını tek çağrıda döndürür. | [kanıt](https://github.com/silky-x0/Postmark#readme) | no |
 | [SK-ENT/rakitsu](https://github.com/SK-ENT/rakitsu) | C | 0 | no | Kesme noktalari, zaman icinde geri gitme ve cok saglayicili cikarim sunan, Go tabanli gorsel cok-ajanli olusturucu ve calisma zamani hata ayiklayicisi \('The Agent IDE'\); Jev ile ilgisi olmayan bir ajan orkestrasyon urunu. | [kanıt](https://github.com/SK-ENT/rakitsu#readme) | no |
 | [skyf0xx/hedgehog](https://github.com/skyf0xx/hedgehog) | C | 0 | no | Spec/BMAD planına dayalı görev bağımlılık grafiği üreten, Claude Code/Cursor/Gemini CLI'yi plana kilitleyen CLI durum makinesi | [kanıt](https://github.com/skyf0xx/hedgehog#readme) | no |
 | [socai-io/socai](https://github.com/socai-io/socai) | C | 0 | no | Kullanıcının oturum açık Chrome'unu sürerek sosyal medyayı \(Xiaohongshu/TikTok/Instagram/LinkedIn\) araştıran salt-okunur ajan; Jev'den bahsetmiyor | [kanıt](https://github.com/socai-io/socai#readme) | no |

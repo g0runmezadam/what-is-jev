@@ -19,17 +19,17 @@ We are not affiliated with TypeSafe AI. This is independent research.
 <!-- STATS:START -->
 | Number | Value |
 |---|---|
-| Repositories | 947 |
-| Calls Jev | yes 639 · no 275 · unclear 33 |
-| Classes | A 273 · B 302 · C 372 |
+| Repositories | 948 |
+| Calls Jev | yes 640 · no 275 · unclear 33 |
+| Classes | A 273 · B 302 · C 373 |
 | Audited | 353 |
 | Sources | 90 |
-| Data as of | 2026-09-20 |
+| Data as of | 2026-09-21 |
 
 **Top categories**
 
 - [Other](categories/other.md) — 190
-- [Classification and triage](categories/classification-triage.md) — 107
+- [Classification and triage](categories/classification-triage.md) — 108
 - [SDKs and clients](categories/sdk-client.md) — 85
 - [Evaluation and benchmarks](categories/eval-benchmark.md) — 80
 - [Agent gates](categories/agent-gate.md) — 61
