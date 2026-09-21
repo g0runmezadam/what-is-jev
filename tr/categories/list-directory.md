@@ -3,7 +3,7 @@
 
 # Listeler ve dizinler
 
-Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 55 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -52,6 +52,7 @@ Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
 | [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | C | 4 | yes | Açık dahil etme kuralları olan, 'aynı gün toplu yayın=şüpheli' uyarısı taşıyan yüksek sinyal Jev proje rehberi | [kanıt](https://github.com/yibie/awesome-jev#readme) | no |
 | [bobostudio/cabinet](https://github.com/bobostudio/cabinet) | C | 3 | yes | Bir klasordeki dosyalari Jev'e siniflandirtip adlandirilmis cekmecelere tasiyan yerel dosya ayiklama demosu; istege bagli bir DeepSeek adimi cekmeceleri Cince adlandirabiliyor. | [kanıt](https://github.com/bobostudio/cabinet#readme) | no |
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | C | 3 | yes | Kaynak destekli, SDK/agent-tooling/oyun/tekrar-üretim/değerlendirme kategorili genel bir Jev proje dizini | [kanıt](https://github.com/cobanov/awesome-jev#readme) | no |
+| [dog-last/awesome-jev](https://github.com/dog-last/awesome-jev) | C | 3 | unclear | Jev \(TypeSafe AI System One\) için karar ağacı, test edilmiş cookbook'lar ve kategorize topluluk projeleri içeren iki dilli derleme liste. | [kanıt](https://github.com/dog-last/awesome-jev#readme) | no |
 | [fabricioctelles/modelsystem](https://github.com/fabricioctelles/modelsystem) | C | 3 | yes | System One/Karar Modelleri için küratörlü katalog sitesinin veri deposu | [kanıt](https://github.com/fabricioctelles/modelsystem#readme) | no |
 | [kong75/jev-directory](https://github.com/kong75/jev-directory) | C | 3 | yes | Kopyalanabilir Jev soru/kriter/kod örneklerini kategori bazlı sunan statik web dizini | [kanıt](https://github.com/kong75/jev-directory#readme) | no |
 | [SawanaLabs/jev-showcase](https://github.com/SawanaLabs/jev-showcase) | C | 3 | yes | Gerçek Jev projelerini 'hangi kararı Jev sahipleniyor' sorusuna göre kaynak-linkli sergileyen statik vitrin sitesi | [kanıt](https://github.com/SawanaLabs/jev-showcase#readme) | no |
@@ -61,4 +62,5 @@ Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | C | 2 | no | X/Twitter'da Jev hakkındaki uzun gönderi ve demo videolarının Çince kürasyonlu derlemesi \(714 kayıt\) | [kanıt](https://github.com/mizzlelover/jev-hub) | no |
 | [codaaiteam/jev-ai](https://github.com/codaaiteam/jev-ai) | C | 1 | no | Jev için kısa tanıtım/FAQ sayfası; kod veya gerçek entegrasyon içermiyor, yalnız kavramları özetliyor. | [kanıt](https://github.com/codaaiteam/jev-ai) | no |
 | [codaaiteam/jev-typesafe-ai](https://github.com/codaaiteam/jev-typesafe-ai) | C | 1 | yes | Jev için gayriresmi geliştirici notları ve ücretsiz denenebilir playground'a yönlendiren tanıtım sayfası | [kanıt](https://github.com/codaaiteam/jev-typesafe-ai#readme) | no |
+| [mabodx/awesome-jev](https://github.com/mabodx/awesome-jev) | C | 0 | unclear | 31 awesome listesinden 1.299 Jev projesini indeksleyen topluluk dizini; jevusers.com'da günlük güncellenir, anlık görüntü 2026-09-20. | [kanıt](https://github.com/mabodx/awesome-jev#readme) | no |
 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | C | 0 | no | Cok sayida saglayici \(Claude, Gemini, GPT, DeepSeek\) icin 100'den fazla acik kaynak LLM ajan uygulamasi, ajan becerisi ve RAG uygulamasini toplayan buyuk bir liste; Jev ile baglantisi olmayan genel bir 'awesome list'. | [kanıt](https://github.com/Shubhamsaboo/awesome-llm-apps#readme) | no |

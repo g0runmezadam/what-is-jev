@@ -3,7 +3,7 @@
 
 # Arama ve yeniden sıralama
 
-Bu kategoride 20 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 25 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -29,3 +29,8 @@ Bu kategoride 20 repo; önce sınıf, sonra puan sırasıyla.
 | [AlbionaHoti/refgarden](https://github.com/AlbionaHoti/refgarden) | C | 6 | yes | Müze/NASA görsel arşivlerinde arama ifadesi seçip metadata'dan \(görseli görmeden\) öne çıkan sonucu seçen 3D galeri aracı | [kanıt](https://github.com/AlbionaHoti/refgarden) | no |
 | [pax-k/p-ax](https://github.com/pax-k/p-ax) | C | 6 | no | Ajanlar için salt-okunur kod tabanı zeka katmanı; deterministik arama/aggregate, AI yalnız kesin kanıt sonrası sentez için opsiyonel | [kanıt](https://github.com/pax-k/p-ax#readme) | yes |
 | [DeepBlueDynamics/typesafe-arena](https://github.com/DeepBlueDynamics/typesafe-arena) | C | 5 | no | docs.typesafe.ai'nin yerel markdown aynası + BM25+bilgi-grafiği tabanlı 'Lume' arama aracı; Jev'e doğrudan çağrı yapmıyor, dokümantasyon arşivi/arama katmanı | [kanıt](https://github.com/DeepBlueDynamics/typesafe-arena) | no |
+| [wd041216-bit/zero-api-key-web-search](https://github.com/wd041216-bit/zero-api-key-web-search) | C | 3 | unclear | Laya karar modeliyle sonuçları filtreleyen, yeniden sıralayan ve kanıt doğrulayan, API anahtarı gerektirmeyen Python MCP arama aracı. | [kanıt](https://github.com/wd041216-bit/zero-api-key-web-search#readme) | no |
+| [shinpr/jev-reranker](https://github.com/shinpr/jev-reranker) | C | 2 | unclear | npm'de yayınlanan Rust CLI, JSON arama adaylarını TypeSafe Jev ile yeniden sıralar, filtreler veya sıkıştırır; kimlik ve meta veriler değişmeden geçer. | [kanıt](https://github.com/shinpr/jev-reranker#readme) | no |
+| [cheeaun/jevmoji](https://github.com/cheeaun/jevmoji) | C | 0 | unclear | 40 karaktere kadar metni, TypeSafe'in Jev modeliyle 0–3 puanlanan ilgili emojilere çeviren, Cloudflare Worker olarak yayınlanan web uygulaması. | [kanıt](https://github.com/cheeaun/jevmoji#readme) | no |
+| [leepokai/jev-adrank](https://github.com/leepokai/jev-adrank) | C | 0 | unclear | İki aşamalı reklam sıralama: Jev tek çağrıda kreatifleri inceler ve teklifleri puanlar, ardından kod kalibre edilmiş eCPM GSP müzayedesi çalıştırır. | [kanıt](https://github.com/leepokai/jev-adrank#readme) | no |
+| [seanockert/movie-finder](https://github.com/seanockert/movie-finder) | C | 0 | unclear | Film bulucu sorgu başına iki Jev çağrısı kullanır: derlemede film başına 13 Score ekseni, sonra tipli filtreler ve dereceli yeniden sıralama. | [kanıt](https://github.com/seanockert/movie-finder#readme) | no |

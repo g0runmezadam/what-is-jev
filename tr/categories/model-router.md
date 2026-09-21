@@ -3,7 +3,7 @@
 
 # Model yönlendiriciler
 
-Bu kategoride 44 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -53,3 +53,10 @@ Bu kategoride 44 repo; önce sınıf, sonra puan sırasıyla.
 | [ussyverse/hermes-jev-router](https://github.com/ussyverse/hermes-jev-router) | C | 5 | unclear | Hermes için Jev ile görev karmaşıklığını sınıflandırıp bütçe/kapasite kısıtlarına göre model seçen deneysel eklenti; henüz canlı Jev çağrısı yapılmamış, tasarım/fixture aşamasında | [kanıt](https://github.com/ussyverse/hermes-jev-router#readme) | yes |
 | [ashishpatill/grok-kit](https://github.com/ashishpatill/grok-kit) | C | 4 | no | Cursor/Grok Build için ucuz/pahalı model seçimini ve skill yüklemeyi otomatikleştiren kişisel harness; Jev kullanmıyor | [kanıt](https://github.com/ashishpatill/grok-kit#readme) | no |
 | [adamjralph/skill-broker](https://github.com/adamjralph/skill-broker) | C | 3 | unclear | Hermes ajanları için proje tanım aşamasında deterministik skill yönlendirme katmanı; Jev yalnız uygunluk/güven skoru üretecek, henüz kod yok. | [kanıt](https://github.com/adamjralph/skill-broker) | no |
+| [Bodila51/Jev-chooses-a-LLM](https://github.com/Bodila51/Jev-chooses-a-LLM) | C | 3 | unclear | Cursor için TypeScript Jev yönlendirici: Jev COST/BALANCED/INTELLIGENCE katmanını seçer, Cursor yürütür; sohbet yumuşak, SDK sert yönlendirme. | [kanıt](https://github.com/Bodila51/Jev-chooses-a-LLM#readme) | no |
+| [JxWayne890/jev-control-plane](https://github.com/JxWayne890/jev-control-plane) | C | 3 | unclear | Açık kaynak JEV eklentisi, Codex delegeli işleri kodlama ajanı başlamadan önce bir çalışma zamanı modeline ve akıl yürütme düzeyine yönlendirir. | [kanıt](https://github.com/JxWayne890/jev-control-plane#readme) | no |
+| [philippdubach/pi-jev-router](https://github.com/philippdubach/pi-jev-router) | C | 3 | unclear | pi için minimal Pareto-optimal OpenRouter model yönlendiricisi; katalog modellerini sıralar, knee noktası hesaplar ve görevleri yönlendirir; benchmark daha düşük başarı maliyeti gösterir. | [kanıt](https://github.com/philippdubach/pi-jev-router#readme) | no |
+| [aesgalexis/model-switch](https://github.com/aesgalexis/model-switch) | C | 2 | unclear | Yerel Codex yönlendirici, model ve akıl yürütme seviyesini TypeSafe Jev ile seçer; varsayılan observe, fail-open, prompt kaydı yok. | [kanıt](https://github.com/aesgalexis/model-switch#readme) | no |
+| [Pasblinn/jev-lab](https://github.com/Pasblinn/jev-lab) | C | 2 | unclear | Jev-lab, Claude Code turlarını Jev ile model katmanlarına yönlendirir; sağlık kapısı, yedek uyarılar ve iki sessiz hata için ölçülmüş yama içerir. | [kanıt](https://github.com/Pasblinn/jev-lab#readme) | no |
+| [copyleftdev/braess-router](https://github.com/copyleftdev/braess-router) | C | 0 | unclear | Rust alfa yönlendirici: Jev işleyici, Poise uç nokta seçer; belirsiz kararlar yerel yedeğe düşer. Yalnızca loopback, tek sunucu, üst akış yeniden denemesi yok. | [kanıt](https://github.com/copyleftdev/braess-router#readme) | no |
+| [gopalanj/jevons](https://github.com/gopalanj/jevons) | C | 0 | unclear | Yerel TypeSafe uyumlu /v1/systemone sunucusu LFM2.5 logitlerinden choice/score/noul puanlar; laya ve bulut yedek atlamaları var. | [kanıt](https://github.com/gopalanj/jevons#readme) | no |

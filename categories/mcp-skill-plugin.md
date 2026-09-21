@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 
 # MCP servers, skills, plugins
 
-51 repositories in this category, sorted by class then score.
+56 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -52,11 +52,16 @@ English | [Türkçe](../tr/categories/mcp-skill-plugin.md)
 | [jon-devlapaz/burrito-frontier](https://github.com/jon-devlapaz/burrito-frontier) | C | 5 | yes | Location-agnostic agent skill that finds Pareto-optimal restaurant menu picks on cost and macros computed in code, while Jev scores only subjective deliciousness. | [evidence](https://github.com/jon-devlapaz/burrito-frontier#readme) | no |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | C | 5 | no | A design-language skill for AI agents: 24 commands, 61 deterministic detector rules; unrelated to Jev | [evidence](https://github.com/pbakaus/impeccable#readme) | no |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | C | 5 | yes | TypeSafe's official Claude Code / skills.sh agent skill: for designing jev workflows and accessing documentation | [evidence](https://github.com/typesafe-ai/skills#readme) | no |
+| [albri/nxk](https://github.com/albri/nxk) | C | 3 | unclear | nxk is a JavaScript agent skill that queries synthetic PersonaGen personas via the Jev model to support product decisions. | [evidence](https://github.com/albri/nxk#readme) | no |
+| [ChosenXu/newsletter-link-harvester](https://github.com/ChosenXu/newsletter-link-harvester) | C | 3 | unclear | Agent Skill harvesting newsletter links into Raindrop.io with per-link editorial context, three-layer dedup, read-only Gmail, and optional Jev pre-classification. | [evidence](https://github.com/ChosenXu/newsletter-link-harvester#readme) | no |
+| [CodeIA-Academy/jev-mcp](https://github.com/CodeIA-Academy/jev-mcp) | C | 3 | unclear | Zero-dependency Python MCP server exposing TypeSafe Jev via ask_jev and list_jev_models, returning typed choice/score/noul answers for agent decisions. | [evidence](https://github.com/CodeIA-Academy/jev-mcp#readme) | no |
 | [elvisun/newsjack](https://github.com/elvisun/newsjack) | C | 3 | no | An agent skill package for PR/marketing tasks \(Claude Code, Codex, Hermes, OpenClaw\); unrelated to Jev | [evidence](https://github.com/elvisun/newsjack#readme) | no |
 | [hoangngochuong24947-gif/jev-patent-disclosure](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure) | C | 3 | unclear | Chinese-language patent drafting and reading skill suite \(disclosure, application, docket, reader, map, search, OA-response\) described as a 'Jev fast-thinking' version, but no concrete Jev call is shown in the README. | [evidence](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure#readme) | no |
 | [jon-devlapaz/jev-me](https://github.com/jon-devlapaz/jev-me) | C | 3 | yes | A very small skill that interrogates a plan as a design-tree interview; Jev for ad hoc typed judgment | [evidence](https://github.com/jon-devlapaz/jev-me#readme) | no |
+| [laguagu/jev-skills](https://github.com/laguagu/jev-skills) | C | 3 | unclear | Agent skills \(jev-builder, jev-evidence-eval\) for building Jev apps: API setup, decision patterns, routing, ranking, and evidence checks. | [evidence](https://github.com/laguagu/jev-skills#readme) | no |
 | [MadaBurns/bv-mcp](https://github.com/MadaBurns/bv-mcp) | C | 3 | no | An 80-tool MCP server that does DNS/email security scanning \(SPF/DMARC/DKIM etc.\) | [evidence](https://github.com/MadaBurns/bv-mcp#readme) | no |
 | [rashedInt32/jev-lens.nvim](https://github.com/rashedInt32/jev-lens.nvim) | C | 3 | unclear | A Neovim popup UI showing jev-lens's final decision; has no Jev call of its own | [evidence](https://github.com/rashedInt32/jev-lens.nvim#readme) | no |
 | [y0usaf/typesafe-mcp](https://github.com/y0usaf/typesafe-mcp) | C | 3 | yes | A minimal, single-tool \(evaluate\) MCP server for Jev | [evidence](https://github.com/y0usaf/typesafe-mcp#readme) | no |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | C | 2 | no | A collection of agent skills that improve an AI's ui/frontend design 'taste' \(design, image generation\) | [evidence](https://github.com/Leonxlnx/taste-skill#readme) | no |
 | [nawneet77/launch-film](https://github.com/nawneet77/launch-film) | C | 2 | no | A Claude Code skill \(Remotion-based\) for producing a SaaS launch video | [evidence](https://github.com/nawneet77/launch-film#readme) | no |
+| [anasbekheit/typesafe-jev-mcp](https://github.com/anasbekheit/typesafe-jev-mcp) | C | 0 | unclear | Rust MCP server wrapping TypeSafe Jev as one typed evaluate tool that returns noul, choice, or score with probabilities. | [evidence](https://github.com/anasbekheit/typesafe-jev-mcp#readme) | no |

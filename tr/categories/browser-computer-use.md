@@ -3,7 +3,7 @@
 
 # Tarayıcı ve bilgisayar kullanımı
 
-Bu kategoride 44 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 50 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -52,4 +52,10 @@ Bu kategoride 44 repo; önce sınıf, sonra puan sırasıyla.
 | [svmanth/jmarket](https://github.com/svmanth/jmarket) | C | 5 | yes | Polymarket sayfalarına Jev'in tahmini olasılığını gösteren bir Chrome uzantısı \('ikinci görüş'\) | [kanıt](https://github.com/svmanth/jmarket#readme) | no |
 | [alibaba/page-agent](https://github.com/alibaba/page-agent) | C | 4 | no | Web sayfası içine gömülü, herhangi bir LLM ile çalışan GUI ajanı kütüphanesi; Jev'le ilgisi yok | [kanıt](https://github.com/alibaba/page-agent#readme) | no |
 | [luantak/mosaik](https://github.com/luantak/mosaik) | C | 4 | no | Ajan siteyi kesfedip eylemleri TypeScript kod olarak kaydeden, sonra deterministik calisan tarayici otomasyon araci. | [kanıt](https://github.com/luantak/mosaik#readme) | no |
+| [dtduc-git/jevnav](https://github.com/dtduc-git/jevnav) | C | 3 | unclear | jevnav: Jev tarayıcı öğelerini seçer; kararlar JSONL izi olarak kaydedilir ve CI'da çevrimdışı yeniden oynatılır; replay DOM değişikliklerini yakalar. | [kanıt](https://github.com/dtduc-git/jevnav#readme) | no |
+| [zurfyx/jev-browser-skill](https://github.com/zurfyx/jev-browser-skill) | C | 3 | unclear | Referans beceri, TypeSafe'ın ~100ms seçim modeli Jev'in altı işlemle Chrome'u yönetmesini sağlar; bağımlılık yok, iz kayıtları var. | [kanıt](https://github.com/zurfyx/jev-browser-skill#readme) | no |
 | [brudarko/jev-mac-voice](https://github.com/brudarko/jev-mac-voice) | C | 2 | unclear | OpenAI Realtime ile macOS sesli kontrol; 'opsiyonel Jev browser automation' anılıyor ama README'de somut çağrı gösterilmiyor | [kanıt](https://github.com/brudarko/jev-mac-voice) | no |
+| [dingw530/playwright-jev](https://github.com/dingw530/playwright-jev) | C | 0 | unclear | Node CLI, Jev ile sınırlı Playwright aksiyon uzayından adım seçer; selector, girdi ve doğrulamalar kodda. Doğrulanmış 10 aksiyonluk demo koşusu var. | [kanıt](https://github.com/dingw530/playwright-jev#readme) | no |
+| [filedcom/playjev](https://github.com/filedcom/playjev) | C | 0 | unclear | Playwright'ı Jev ile saran, check, choose, rate ve act ilkelleriyle düz İngilizce tarayıcı kontrolü sağlayan TypeScript kütüphanesi. | [kanıt](https://github.com/filedcom/playjev#readme) | no |
+| [goodnight000/exact-paste](https://github.com/goodnight000/exact-paste) | C | 0 | unclear | Chrome uzantısı, kopyalanan metinden form alanına tam uyan değeri yapıştırır; belirsiz dilimlerde TypeSafe Jev kullanır, olmazsa tüm metni yapıştırır. | [kanıt](https://github.com/goodnight000/exact-paste#readme) | no |
+| [Todmy/jevqa](https://github.com/Todmy/jevqa) | C | 0 | unclear | jevqa, dağıtılmış web uygulamalarını bir spesifikasyona göre keşfedip eksik özellikleri ve doğrulama boşluklarını raporlayan bir Python CLI aracıdır. | [kanıt](https://github.com/Todmy/jevqa#readme) | no |

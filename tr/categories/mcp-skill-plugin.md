@@ -3,7 +3,7 @@
 
 # MCP, skill ve eklentiler
 
-Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 56 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -52,11 +52,16 @@ Bu kategoride 51 repo; önce sınıf, sonra puan sırasıyla.
 | [jon-devlapaz/burrito-frontier](https://github.com/jon-devlapaz/burrito-frontier) | C | 5 | yes | Maliyet ve makro degerlerini kodda hesaplayan, konumdan bagimsiz bir restoran menu-secim ajan becerisi; Jev yalnizca oznel lezzet puanini verir. | [kanıt](https://github.com/jon-devlapaz/burrito-frontier#readme) | no |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | C | 5 | no | AI ajanları için tasarım dili/skill: 24 komut, 61 deterministik dedektör kuralı; Jev ile ilgisi yok | [kanıt](https://github.com/pbakaus/impeccable#readme) | no |
 | [typesafe-ai/skills](https://github.com/typesafe-ai/skills) | C | 5 | yes | TypeSafe'in resmi Claude Code / skills.sh agent skill'i: jev iş akışlarını tasarlamak ve dokümantasyona erişmek için | [kanıt](https://github.com/typesafe-ai/skills#readme) | no |
+| [albri/nxk](https://github.com/albri/nxk) | C | 3 | unclear | nxk, ürün kararlarını desteklemek için Jev modeli üzerinden sentetik PersonaGen personalarına soru soran bir JavaScript ajan becerisidir. | [kanıt](https://github.com/albri/nxk#readme) | no |
+| [ChosenXu/newsletter-link-harvester](https://github.com/ChosenXu/newsletter-link-harvester) | C | 3 | unclear | Newsletter bağlantılarını yazar bağlamıyla Raindrop.io'ya aktaran Agent Skill; üç katmanlı tekilleştirme, salt-okunur Gmail, isteğe bağlı Jev ön sınıflandırma. | [kanıt](https://github.com/ChosenXu/newsletter-link-harvester#readme) | no |
+| [CodeIA-Academy/jev-mcp](https://github.com/CodeIA-Academy/jev-mcp) | C | 3 | unclear | TypeSafe Jev'i ask_jev ve list_jev_models ile sunan, ajan kararları için tipli choice/score/noul yanıtları döndüren bağımlılıksız Python MCP sunucusu. | [kanıt](https://github.com/CodeIA-Academy/jev-mcp#readme) | no |
 | [elvisun/newsjack](https://github.com/elvisun/newsjack) | C | 3 | no | PR/pazarlama görevleri için ajan skill paketi \(Claude Code, Codex, Hermes, OpenClaw\); Jev ile ilgisi yok | [kanıt](https://github.com/elvisun/newsjack#readme) | no |
 | [hoangngochuong24947-gif/jev-patent-disclosure](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure) | C | 3 | unclear | Patent taslak hazirlama ve okuma beceri paketi \(ifsa, basvuru, dosya, okuyucu, harita, arama, itiraz yaniti\); 'Jev hizli dusunme' surumu olarak tanimlaniyor ama README'de somut bir Jev cagrisi gosterilmiyor. | [kanıt](https://github.com/hoangngochuong24947-gif/jev-patent-disclosure#readme) | no |
 | [jon-devlapaz/jev-me](https://github.com/jon-devlapaz/jev-me) | C | 3 | yes | Planı tasarım-ağacı röportajı olarak sorgulayan çok küçük skill; Jev ad hoc tipli yargı için | [kanıt](https://github.com/jon-devlapaz/jev-me#readme) | no |
+| [laguagu/jev-skills](https://github.com/laguagu/jev-skills) | C | 3 | unclear | Jev uygulamaları için ajan becerileri \(jev-builder, jev-evidence-eval\): API kurulumu, karar kalıpları, yönlendirme, sıralama ve kanıt kontrolleri. | [kanıt](https://github.com/laguagu/jev-skills#readme) | no |
 | [MadaBurns/bv-mcp](https://github.com/MadaBurns/bv-mcp) | C | 3 | no | DNS/e-posta guvenlik taramasi yapan 80 araclik MCP sunucusu \(SPF/DMARC/DKIM vb.\). | [kanıt](https://github.com/MadaBurns/bv-mcp#readme) | no |
 | [rashedInt32/jev-lens.nvim](https://github.com/rashedInt32/jev-lens.nvim) | C | 3 | unclear | jev-lens'in ürettiği son karara bakan Neovim popup arayüzü; kendi Jev çağrısı yok | [kanıt](https://github.com/rashedInt32/jev-lens.nvim#readme) | no |
 | [y0usaf/typesafe-mcp](https://github.com/y0usaf/typesafe-mcp) | C | 3 | yes | Jev için tek araçlı \(evaluate\) minimal bir MCP sunucusu | [kanıt](https://github.com/y0usaf/typesafe-mcp#readme) | no |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | C | 2 | no | AI'nin ui/frontend tasarim 'zevkini' iyilestiren agent skill koleksiyonu \(tasarim, gorsel uretim\). | [kanıt](https://github.com/Leonxlnx/taste-skill#readme) | no |
 | [nawneet77/launch-film](https://github.com/nawneet77/launch-film) | C | 2 | no | SaaS lansman videosu uretmek icin Claude Code skill'i \(Remotion tabanli\). | [kanıt](https://github.com/nawneet77/launch-film#readme) | no |
+| [anasbekheit/typesafe-jev-mcp](https://github.com/anasbekheit/typesafe-jev-mcp) | C | 0 | unclear | TypeSafe Jev'i tek tipli evaluate aracı olarak sunan Rust MCP sunucusu; noul, choice veya score ve olasılık döndürür. | [kanıt](https://github.com/anasbekheit/typesafe-jev-mcp#readme) | no |

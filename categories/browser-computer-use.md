@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 
 # Browser and computer use
 
-44 repositories in this category, sorted by class then score.
+50 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -52,4 +52,10 @@ English | [Türkçe](../tr/categories/browser-computer-use.md)
 | [svmanth/jmarket](https://github.com/svmanth/jmarket) | C | 5 | yes | A Chrome extension \("second opinion"\) that shows Jev's predicted probability on Polymarket pages | [evidence](https://github.com/svmanth/jmarket#readme) | no |
 | [alibaba/page-agent](https://github.com/alibaba/page-agent) | C | 4 | no | A GUI agent library embedded in a web page that works with any LLM; unrelated to Jev | [evidence](https://github.com/alibaba/page-agent#readme) | no |
 | [luantak/mosaik](https://github.com/luantak/mosaik) | C | 4 | no | An agent tool that explores a site and records actions as TypeScript code, then runs the automation deterministically | [evidence](https://github.com/luantak/mosaik#readme) | no |
+| [dtduc-git/jevnav](https://github.com/dtduc-git/jevnav) | C | 3 | unclear | jevnav: Jev picks browser elements; decisions recorded as JSONL traces and replayed offline in CI, where deterministic replay catches DOM changes. | [evidence](https://github.com/dtduc-git/jevnav#readme) | no |
+| [zurfyx/jev-browser-skill](https://github.com/zurfyx/jev-browser-skill) | C | 3 | unclear | Reference skill lets Jev, TypeSafe's ~100ms choice model, drive Chrome through six operations with no dependencies and saved traces. | [evidence](https://github.com/zurfyx/jev-browser-skill#readme) | no |
 | [brudarko/jev-mac-voice](https://github.com/brudarko/jev-mac-voice) | C | 2 | unclear | macOS voice control via OpenAI Realtime; 'optional Jev browser automation' is mentioned but no concrete call is shown in the README | [evidence](https://github.com/brudarko/jev-mac-voice) | no |
+| [dingw530/playwright-jev](https://github.com/dingw530/playwright-jev) | C | 0 | unclear | Node CLI uses Jev to pick actions from a bounded Playwright-derived action space; code owns selectors, inputs, and assertions. Verified 10-action demo run. | [evidence](https://github.com/dingw530/playwright-jev#readme) | no |
+| [filedcom/playjev](https://github.com/filedcom/playjev) | C | 0 | unclear | TypeScript library wrapping Playwright with Jev for plain-English browser control via check, choose, rate and act primitives. | [evidence](https://github.com/filedcom/playjev#readme) | no |
+| [goodnight000/exact-paste](https://github.com/goodnight000/exact-paste) | C | 0 | unclear | Chrome extension pastes the exact value a form field wants from copied text, using TypeSafe Jev for ambiguous slices and falling back to the whole chunk. | [evidence](https://github.com/goodnight000/exact-paste#readme) | no |
+| [Todmy/jevqa](https://github.com/Todmy/jevqa) | C | 0 | unclear | jevqa is a Python CLI that sends a Jev model to explore deployed web apps against a spec, reporting missing features and validation gaps. | [evidence](https://github.com/Todmy/jevqa#readme) | no |

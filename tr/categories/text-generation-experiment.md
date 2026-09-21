@@ -3,7 +3,7 @@
 
 # Metin üretimi denemeleri
 
-Bu kategoride 16 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 18 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -25,3 +25,5 @@ Bu kategoride 16 repo; önce sınıf, sonra puan sırasıyla.
 | [carlaiau/readwithjev](https://github.com/carlaiau/readwithjev) | C | 5 | yes | Roman okurken Jev ile cümle bazlı sekiz duygu skorlaması ve karakter minimap'i gösteren araştırma prototipi | [kanıt](https://github.com/carlaiau/readwithjev#readme) | no |
 | [pekth/draftpulse](https://github.com/pekth/draftpulse) | C | 4 | yes | X gönderisi yazarken canlı viral skor tahmini; Jev birkaç dar soruyu yanıtlar, kodda ağırlıklı birleştirilir; anahtar yoksa sahte sezgisel devreye girer. | [kanıt](https://github.com/pekth/draftpulse) | no |
 | [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | C | 2 | yes | Devin tarafından yapılmış TypeSafe/Jev gecikme odaklı demo koleksiyonu; üst README yetersiz, ayrıntı alt dizin README'lerinde | [kanıt](https://github.com/dabit3/jev-experiments) | no |
+| [andrest04/jev-lab](https://github.com/andrest04/jev-lab) | C | 0 | unclear | Yerel Node laboratuvarı TypeSafe Jev'e tipli sorular \(noul/choice/score\) gönderir; API anahtarı sunucuda kalır, örnek ve demo modları vardır. | [kanıt](https://github.com/andrest04/jev-lab#readme) | no |
+| [suidouble/let-jev-speak](https://github.com/suidouble/let-jev-speak) | C | 0 | unclear | TypeSafe sınıflandırma API'sinden kelime kelime çözerek düzyazı üretiyor; 28 alan paketi soruları yönlendiriyor; testler, MIT. | [kanıt](https://github.com/suidouble/let-jev-speak#readme) | no |

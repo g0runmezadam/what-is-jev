@@ -3,7 +3,7 @@
 
 # Compaction ve hafıza
 
-Bu kategoride 50 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 53 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -56,6 +56,9 @@ Bu kategoride 50 repo; önce sınıf, sonra puan sırasıyla.
 | [blakestone-x/engram](https://github.com/blakestone-x/engram) | C | 6 | no | Ajanlar için markdown tabanlı, yerel-öncelikli, önem/retention/pekiştirmeye göre sıralanan kalıcı hafıza sistemi; deterministik konsolidasyon epizotları semantik notlara gruplar | [kanıt](https://github.com/blakestone-x/engram#readme) | yes |
 | [byenzyme/enzyme](https://github.com/byenzyme/enzyme) | C | 6 | unclear | Markdown bilgi tabanlari icin bir derleme adimi; README'nin Jev ile uretildigini soyledigi belirlenimci bir tarama ile alana ozgu 'katalizor soru' programi olusturur; tam cagri bicimi gosterilmiyor. | [kanıt](https://github.com/byenzyme/enzyme#readme) | no |
 | [Fimeg/Souveraine](https://github.com/Fimeg/Souveraine) | C | 4 | no | Git tabanlı hafızalı, 'subconscious' yansıtma geçişli egemen ajan Rust çalışma zamanı \(erken alfa\); Jev ile ilgisi yok | [kanıt](https://github.com/Fimeg/Souveraine#readme) | no |
+| [dev-willbird1936/pi-compact-jev](https://github.com/dev-willbird1936/pi-compact-jev) | C | 3 | unclear | Jev puanlamasıyla konuşmaları sıkıştıran, araç çağrılarını silen, kırpan veya birebir koruyan MIT lisanslı TypeScript Pi eklentisi; Pi özetleyicisine geri döner. | [kanıt](https://github.com/dev-willbird1936/pi-compact-jev#readme) | no |
+| [kolawong/fast-compaction-dsh](https://github.com/kolawong/fast-compaction-dsh) | C | 3 | unclear | TypeScript DSH portu: kayıplı LLM özetleri yerine jev-latest'ten birebir tut/kes/at kararları; araç çağrısı başına iki noul sorusu. | [kanıt](https://github.com/kolawong/fast-compaction-dsh#readme) | no |
 | [milokuo/tagtrim](https://github.com/milokuo/tagtrim) | C | 3 | yes | Komut çıktısının her satırını etiketleyip role göre kırpma tasarımı \(henüz tasarım aşamasında, kod yok\) | [kanıt](https://github.com/milokuo/tagtrim#readme) | no |
 | [Coding-Dev-Tools/engraphis](https://github.com/Coding-Dev-Tools/engraphis) | C | 0 | no | Ajanlar için yerel bilgi grafiği hafıza sistemi \(dashboard+MCP\), token/context tasarrufunu ölçen benchmarklarla; Jev/TypeSafe'e değinmiyor | [kanıt](https://github.com/Coding-Dev-Tools/engraphis) | no |
 | [deepbluedynamics/ferricula](https://github.com/deepbluedynamics/ferricula) | C | 0 | no | Ajanlar için 'termodinamik' bozulan/güçlenen hafıza motoru \(Rust+MCP\); Anthropic kullanıyor ama Jev/TypeSafe'e değinmiyor | [kanıt](https://github.com/deepbluedynamics/ferricula) | no |
+| [kabishou-lab/keepdrop](https://github.com/kabishou-lab/keepdrop) | C | 0 | unclear | OpenAI uyumlu LLM'lerde birebir keep/drop sıkıştırma yapan, choice/score/noul soruları yanıtlayan TypeScript CLI ve kütüphane; demo fixture'lar, MIT, sıfır yıldız. | [kanıt](https://github.com/kabishou-lab/keepdrop#readme) | no |

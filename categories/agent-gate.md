@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/agent-gate.md)
 
 # Agent gates
 
-61 repositories in this category, sorted by class then score.
+74 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -71,3 +71,16 @@ English | [Türkçe](../tr/categories/agent-gate.md)
 | [milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot) | C | 5 | no | A messaging-style agent app running Claude/Codex CLIs, where each bot keeps its own personality/computer/apps | [evidence](https://github.com/milind-soni/OpenMausBot#readme) | no |
 | [endomorphosis/JevOps](https://github.com/endomorphosis/JevOps) | C | 4 | yes | A Jev 'kernel' package split off from Lean Refactor Arena; Choice/Score/Noul projectors, hook-based consumer integration | [evidence](https://github.com/endomorphosis/JevOps#readme) | no |
 | [mddinizbh/ai-coding-celestion](https://github.com/mddinizbh/ai-coding-celestion) | C | 4 | no | A lean agent+skill template for OpenCode; a knowledge-graph indexing pipeline \(explorer L0/L1/L2\) and a role-based model tier package | [evidence](https://github.com/mddinizbh/ai-coding-celestion#readme) | no |
+| [Alex314618-create/JevRev](https://github.com/Alex314618-create/JevRev) | C | 3 | unclear | JevRev is a TypeScript CLI gate that scores 3–7 agent-drafted approaches against a brief and returns a shortlist; Jev review needed. | [evidence](https://github.com/Alex314618-create/JevRev#readme) | no |
+| [eugeniughelbur/jev-engineering](https://github.com/eugeniughelbur/jev-engineering) | C | 3 | unclear | Tool-call safety gate for coding agents: allow/ask/deny verdicts in ~371ms for $0.0000189, plus a 300-call injection test kit. | [evidence](https://github.com/eugeniughelbur/jev-engineering#readme) | no |
+| [eugeniughelbur/jev-gate](https://github.com/eugeniughelbur/jev-gate) | C | 3 | unclear | Python safety gate for AI coding agents: TypeSafe Jev allows, asks or denies tool calls in ~400ms, plus a 300-call injection test. | [evidence](https://github.com/eugeniughelbur/jev-gate#readme) | no |
+| [PanAchy/jevvy](https://github.com/PanAchy/jevvy) | C | 3 | unclear | Jevvy Permissions plugin auto-approves harmless shell requests in coding agents using TypeSafe System One Noul judgments. | [evidence](https://github.com/PanAchy/jevvy#readme) | no |
+| [RavenRepo/jevengineeringgate](https://github.com/RavenRepo/jevengineeringgate) | C | 3 | unclear | Calibrated decision layer routing agent yes/no, routing and scoring calls to Jev, enforced deterministically via Claude Code PreToolUse hooks with fitted thresholds. | [evidence](https://github.com/RavenRepo/jevengineeringgate#readme) | no |
+| [wmsing/agent-firewall](https://github.com/wmsing/agent-firewall) | C | 3 | unclear | Go L7 proxy and MCP sandbox that run hard rules then semantic risk scoring, fail-closed before agent HTTP or shell actions. | [evidence](https://github.com/wmsing/agent-firewall#readme) | no |
+| [Xubqpanda/JevLoop](https://github.com/Xubqpanda/JevLoop) | C | 3 | unclear | TypeScript agent loop routing six decisions to Jev/Laya decision models; README reports decision-to-model ratios and notes base checkpoints fail novel zero-shot decisions. | [evidence](https://github.com/Xubqpanda/JevLoop#readme) | no |
+| [Xubqpanda/nanojev](https://github.com/Xubqpanda/nanojev) | C | 3 | unclear | Zero-dependency TypeScript agent loop routes six decisions to a Jev/Laya decision model, keeping LLM calls only for generation. Offline demo uses a rule judge. | [evidence](https://github.com/Xubqpanda/nanojev#readme) | no |
+| [ghubnab99/jev-enterprise-decision-fabric](https://github.com/ghubnab99/jev-enterprise-decision-fabric) | C | 0 | unclear | C# experimental decision fabric runs TypeSafe Jev through validated contracts; committed 111-case benchmark versus Claude shows comparable quality, faster and cheaper. | [evidence](https://github.com/ghubnab99/jev-enterprise-decision-fabric#readme) | no |
+| [kurihada/pi-jev-permit](https://github.com/kurihada/pi-jev-permit) | C | 0 | unclear | Pi coding-agent extension whose Jev permission gate judges every bash, write and edit call before it runs, blocking anything not clearly allowed. | [evidence](https://github.com/kurihada/pi-jev-permit#readme) | no |
+| [lgy1027/jevshield](https://github.com/lgy1027/jevshield) | C | 0 | unclear | Python guard middleware for AI agent tool calls, claiming sub-100ms Jev Choice/Noul/Score gating, dual-factor blocking and fail-closed parsing. | [evidence](https://github.com/lgy1027/jevshield#readme) | no |
+| [Nabsku/pi-follow-through](https://github.com/Nabsku/pi-follow-through) | C | 0 | unclear | Pi extension asks TypeSafe's Jev model after runs settle, nudging only when evidence gates and a 0.8 threshold pass. | [evidence](https://github.com/Nabsku/pi-follow-through#readme) | no |
+| [PerryLink/jevcore](https://github.com/PerryLink/jevcore) | C | 0 | unclear | TypeScript packages expose Jev's typed yes/no, choice and score judgments to MCP and DeepSeek Harness, offline by default with disclosed, opt-in egress | [evidence](https://github.com/PerryLink/jevcore#readme) | no |

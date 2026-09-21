@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 
 # Code review hooks
 
-56 repositories in this category, sorted by class then score.
+59 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -67,3 +67,6 @@ English | [Türkçe](../tr/categories/code-review-hook.md)
 | [khaledsAlshibani/jev-ci-classifier](https://github.com/khaledsAlshibani/jev-ci-classifier) | C | 5 | yes | CI example article project that calls Jev through OpenRouter to classify a failed PR check into a failure category with a change-relatedness probability. | [evidence](https://github.com/khaledsAlshibani/jev-ci-classifier#readme) | no |
 | [shadcn-ui/lint](https://github.com/shadcn-ui/lint) | C | 4 | no | An agent-first linter for Tailwind design systems; unrelated to Jev \(the Discord match was a false positive on the word 'linter', belongs to a different repo, snifftest\) | [evidence](https://github.com/shadcn-ui/lint#readme) | no |
 | [ShuhanSun/jev-oas-sentinel-demo](https://github.com/ShuhanSun/jev-oas-sentinel-demo) | C | 4 | no | Dry-run consumer smoke test verifying the public JEV OAS Sentinel GitHub Action installs and routes a changed API promise to semantic review, with no live model call. | [evidence](https://github.com/ShuhanSun/jev-oas-sentinel-demo#readme) | no |
+| [bornakapusta/slop-guard](https://github.com/bornakapusta/slop-guard) | C | 0 | unclear | Ruby review bot: code finds what to inspect, Jev judges it, explicit rules decide what to report against engineering guidelines. | [evidence](https://github.com/bornakapusta/slop-guard#readme) | no |
+| [nozomi-koborinai/jev-spec](https://github.com/nozomi-koborinai/jev-spec) | C | 0 | unclear | TypeScript CLI verifying AI-generated code against markdown specs using TypeSafe AI Jev decision primitives noul, choice, and score. | [evidence](https://github.com/nozomi-koborinai/jev-spec#readme) | no |
+| [thejoeejoee/git-judge-commits](https://github.com/thejoeejoee/git-judge-commits) | C | 0 | unclear | CLI judges every commit in a range with Jev's typed questions, flagging breaking changes and messages that misdescribe the diff. | [evidence](https://github.com/thejoeejoee/git-judge-commits#readme) | no |

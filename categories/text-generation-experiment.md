@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/text-generation-experiment.md)
 
 # Text generation experiments
 
-16 repositories in this category, sorted by class then score.
+18 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -25,3 +25,5 @@ English | [Türkçe](../tr/categories/text-generation-experiment.md)
 | [carlaiau/readwithjev](https://github.com/carlaiau/readwithjev) | C | 5 | yes | A research prototype showing sentence-level eight-emotion scoring and a character minimap while reading a novel with Jev | [evidence](https://github.com/carlaiau/readwithjev#readme) | no |
 | [pekth/draftpulse](https://github.com/pekth/draftpulse) | C | 4 | yes | A live viral-score prediction while writing an X post; Jev answers a few narrow questions, weighted-combined in code; a fake heuristic kicks in if there's no key | [evidence](https://github.com/pekth/draftpulse) | no |
 | [dabit3/jev-experiments](https://github.com/dabit3/jev-experiments) | C | 2 | yes | A collection of latency-focused TypeSafe/Jev demos made by Devin; the top-level README is thin, details are in subdirectory READMEs | [evidence](https://github.com/dabit3/jev-experiments) | no |
+| [andrest04/jev-lab](https://github.com/andrest04/jev-lab) | C | 0 | unclear | Local Node lab sending typed questions \(noul/choice/score\) to TypeSafe's Jev; API key stays server-side, with sample and demo fallbacks. | [evidence](https://github.com/andrest04/jev-lab#readme) | no |
+| [suidouble/let-jev-speak](https://github.com/suidouble/let-jev-speak) | C | 0 | unclear | Coaxes prose from TypeSafe's classification API by decoding one word at a time; 28 domain packs route questions; tests, MIT. | [evidence](https://github.com/suidouble/let-jev-speak#readme) | no |

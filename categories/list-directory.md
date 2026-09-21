@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/list-directory.md)
 
 # Lists and directories
 
-53 repositories in this category, sorted by class then score.
+55 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -52,6 +52,7 @@ English | [Türkçe](../tr/categories/list-directory.md)
 | [yibie/awesome-jev](https://github.com/yibie/awesome-jev) | C | 4 | yes | A high-signal Jev project guide with explicit inclusion rules, carrying a "bulk same-day publishing = suspicious" warning | [evidence](https://github.com/yibie/awesome-jev#readme) | no |
 | [bobostudio/cabinet](https://github.com/bobostudio/cabinet) | C | 3 | yes | Local file sorter demo moving a folder's files into named drawers by asking Jev to classify each one, with an optional DeepSeek step to name the drawers in Chinese. | [evidence](https://github.com/bobostudio/cabinet#readme) | no |
 | [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) | C | 3 | yes | A general, evidence-backed Jev project directory categorized by SDK/agent-tooling/game/reproduction/evaluation | [evidence](https://github.com/cobanov/awesome-jev#readme) | no |
+| [dog-last/awesome-jev](https://github.com/dog-last/awesome-jev) | C | 3 | unclear | Curated bilingual awesome-list for Jev, TypeSafe AI's System One model, with a decision tree, tested cookbooks, and categorized community projects. | [evidence](https://github.com/dog-last/awesome-jev#readme) | no |
 | [fabricioctelles/modelsystem](https://github.com/fabricioctelles/modelsystem) | C | 3 | yes | The data repository for a curated catalog site for System One/decision models | [evidence](https://github.com/fabricioctelles/modelsystem#readme) | no |
 | [kong75/jev-directory](https://github.com/kong75/jev-directory) | C | 3 | yes | A static web directory presenting copyable Jev question/criteria/code examples by category | [evidence](https://github.com/kong75/jev-directory#readme) | no |
 | [SawanaLabs/jev-showcase](https://github.com/SawanaLabs/jev-showcase) | C | 3 | yes | A static showcase site presenting real Jev projects with source links, organized by 'which decision does Jev own' | [evidence](https://github.com/SawanaLabs/jev-showcase#readme) | no |
@@ -61,4 +62,5 @@ English | [Türkçe](../tr/categories/list-directory.md)
 | [mizzlelover/jev-hub](https://github.com/mizzlelover/jev-hub) | C | 2 | no | A Chinese-curated compilation \(714 entries\) of long posts and demo videos about Jev on X/Twitter | [evidence](https://github.com/mizzlelover/jev-hub) | no |
 | [codaaiteam/jev-ai](https://github.com/codaaiteam/jev-ai) | C | 1 | no | A short introduction/FAQ page for Jev; contains no code or real integration, only summarizes concepts | [evidence](https://github.com/codaaiteam/jev-ai) | no |
 | [codaaiteam/jev-typesafe-ai](https://github.com/codaaiteam/jev-typesafe-ai) | C | 1 | yes | An intro page for Jev pointing to unofficial developer notes and a free-to-try playground | [evidence](https://github.com/codaaiteam/jev-typesafe-ai#readme) | no |
+| [mabodx/awesome-jev](https://github.com/mabodx/awesome-jev) | C | 0 | unclear | Community directory indexing 1,299 Jev-built projects from 31 awesome lists, refreshed daily at jevusers.com; snapshot 2026-09-20. | [evidence](https://github.com/mabodx/awesome-jev#readme) | no |
 | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | C | 0 | no | Large curated collection of 100+ open-source LLM agent apps, agent skills and RAG apps across many providers \(Claude, Gemini, GPT, DeepSeek\); a general awesome-list with no Jev connection. | [evidence](https://github.com/Shubhamsaboo/awesome-llm-apps#readme) | no |

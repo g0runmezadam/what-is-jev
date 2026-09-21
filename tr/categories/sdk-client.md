@@ -3,7 +3,7 @@
 
 # SDK'lar ve istemciler
 
-Bu kategoride 85 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 92 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -94,3 +94,10 @@ Bu kategoride 85 repo; önce sınıf, sonra puan sırasıyla.
 | [octanevz/jev-playground-openrouter](https://github.com/octanevz/jev-playground-openrouter) | C | 3 | yes | OpenRouter üzerinden Jev'i denemek için Python stdlib ile yazılmış minik yerel sunucu/playground | [kanıt](https://github.com/octanevz/jev-playground-openrouter#readme) | no |
 | [unimtx/typesafe-sdk-go](https://github.com/unimtx/typesafe-sdk-go) | C | 3 | yes | TypeSafe API için Go SDK'sı; Noul/Choice/Score sorularını gönderip tipli sonuç alma | [kanıt](https://github.com/unimtx/typesafe-sdk-go#readme) | no |
 | [ItisNoMatter/kojev](https://github.com/ItisNoMatter/kojev) | C | 2 | no | Cagiran tarafin tanimladigi enum tiplerini string anahtarlar yerine dondurmesi hedeflenen bir Jev Kotlin Multiplatform istemcisi; henuz calismadigi acikca belirtiliyor. | [kanıt](https://github.com/ItisNoMatter/kojev#readme) | no |
+| [afurm/typesafe-sdk-ruby](https://github.com/afurm/typesafe-sdk-ruby) | C | 0 | unclear | TypeSafe AI \(Jev modeli\) için resmi olmayan MIT Ruby SDK'sı; noul, choice ve score soruları, yeniden deneme, tipli hatalar ve yapılandırılmış günlükleme sunuyor. | [kanıt](https://github.com/afurm/typesafe-sdk-ruby#readme) | no |
+| [brightshore/jev-net](https://github.com/brightshore/jev-net) | C | 0 | unclear | TypeSafe AI'nın Python SDK'sının C# portu; tek bağımlılık, net8.0/net10.0, AOT uyumlu; Noul, Choice ve Score soruları sunuyor. | [kanıt](https://github.com/brightshore/jev-net#readme) | no |
+| [bvicsay/adaptmypage](https://github.com/bvicsay/adaptmypage) | C | 0 | unclear | Tarayıcıdaki anlamsal olayları Jev kararlı niyet olasılıklarına çeviren, React'te tipli feature flag olarak sunan TypeScript SDK; dört demo sayfası ve testler içeriyor. | [kanıt](https://github.com/bvicsay/adaptmypage#readme) | no |
+| [jamilxt/typesafe-ai-java](https://github.com/jamilxt/typesafe-ai-java) | C | 0 | unclear | Jev tipli-soru API'sini saran topluluk Java SDK'sı \(Maven 0.1.1, dört modül\), Spring Boot ve Kotlin desteğiyle; sıfır yıldız. | [kanıt](https://github.com/jamilxt/typesafe-ai-java#readme) | no |
+| [kisshan13/typesafe-ai-go](https://github.com/kisshan13/typesafe-ai-go) | C | 0 | unclear | TypeSafe System One API için topluluk Go SDK'sı; tipli choice, score ve noul soruları, akıcı builder'lar ve otomatik yeniden denemeler sunar. | [kanıt](https://github.com/kisshan13/typesafe-ai-go#readme) | no |
+| [NSStudent/JevSwiftSDK](https://github.com/NSStudent/JevSwiftSDK) | C | 0 | unclear | TypeSafe Jev için resmi olmayan, bağımlılıksız Swift 6 SDK'sı: async/await, toplu istek, yeniden deneme, SPM; Choice, Score, Noul soru türleri. | [kanıt](https://github.com/NSStudent/JevSwiftSDK#readme) | no |
+| [virolea/jev](https://github.com/virolea/jev) | C | 0 | unclear | Typesafe Jev API'si için Ruby istemci gem'i; ask, choose ve score soru tiplerini, tipli yanıtları ve hata sınıflarını belgeliyor. | [kanıt](https://github.com/virolea/jev#readme) | no |

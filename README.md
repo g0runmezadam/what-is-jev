@@ -19,23 +19,23 @@ We are not affiliated with TypeSafe AI. This is independent research.
 <!-- STATS:START -->
 | Number | Value |
 |---|---|
-| Repositories | 947 |
-| Calls Jev | yes 639 · no 275 · unclear 33 |
-| Classes | A 273 · B 302 · C 372 |
+| Repositories | 1171 |
+| Calls Jev | yes 640 · no 278 · unclear 253 |
+| Classes | A 273 · B 302 · C 596 |
 | Audited | 353 |
 | Sources | 90 |
-| Data as of | 2026-09-20 |
+| Data as of | 2026-09-21 |
 
 **Top categories**
 
-- [Other](categories/other.md) — 190
-- [Classification and triage](categories/classification-triage.md) — 107
-- [SDKs and clients](categories/sdk-client.md) — 85
-- [Evaluation and benchmarks](categories/eval-benchmark.md) — 80
-- [Agent gates](categories/agent-gate.md) — 61
-- [Code review hooks](categories/code-review-hook.md) — 56
-- [Games and demos](categories/game-demo.md) — 55
-- [Lists and directories](categories/list-directory.md) — 53
+- [Other](categories/other.md) — 295
+- [Classification and triage](categories/classification-triage.md) — 145
+- [SDKs and clients](categories/sdk-client.md) — 92
+- [Evaluation and benchmarks](categories/eval-benchmark.md) — 91
+- [Agent gates](categories/agent-gate.md) — 74
+- [Games and demos](categories/game-demo.md) — 63
+- [Code review hooks](categories/code-review-hook.md) — 59
+- [MCP servers, skills, plugins](categories/mcp-skill-plugin.md) — 56
 <!-- STATS:END -->
 
 ## How to read this repository

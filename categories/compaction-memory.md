@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/compaction-memory.md)
 
 # Compaction and memory
 
-50 repositories in this category, sorted by class then score.
+53 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -56,6 +56,9 @@ English | [Türkçe](../tr/categories/compaction-memory.md)
 | [blakestone-x/engram](https://github.com/blakestone-x/engram) | C | 6 | no | A markdown-based, local-first persistent memory system for agents ranked by importance/retention/reinforcement; deterministic consolidation groups episodes into semantic notes | [evidence](https://github.com/blakestone-x/engram#readme) | yes |
 | [byenzyme/enzyme](https://github.com/byenzyme/enzyme) | C | 6 | unclear | Compile step for Markdown knowledge bases that generates a domain-specific 'catalyst question' program via what the README calls a Jev-produced deterministic scan; the exact call shape is not shown. | [evidence](https://github.com/byenzyme/enzyme#readme) | no |
 | [Fimeg/Souveraine](https://github.com/Fimeg/Souveraine) | C | 4 | no | A git-backed-memory, 'subconscious' reflection-pass sovereign agent Rust runtime \(early alpha\); unrelated to Jev | [evidence](https://github.com/Fimeg/Souveraine#readme) | no |
+| [dev-willbird1936/pi-compact-jev](https://github.com/dev-willbird1936/pi-compact-jev) | C | 3 | unclear | MIT TypeScript Pi extension that compacts conversations with Jev scoring, deleting, trimming, or verbatim-keeping tool calls; falls back to Pi's summarizer. | [evidence](https://github.com/dev-willbird1936/pi-compact-jev#readme) | no |
+| [kolawong/fast-compaction-dsh](https://github.com/kolawong/fast-compaction-dsh) | C | 3 | unclear | TypeScript DSH port: replaces lossy LLM summaries with verbatim keep/truncate/drop verdicts from jev-latest; two noul questions per tool call. | [evidence](https://github.com/kolawong/fast-compaction-dsh#readme) | no |
 | [milokuo/tagtrim](https://github.com/milokuo/tagtrim) | C | 3 | yes | A design \(no code yet\) for labeling each line of command output and trimming by role | [evidence](https://github.com/milokuo/tagtrim#readme) | no |
 | [Coding-Dev-Tools/engraphis](https://github.com/Coding-Dev-Tools/engraphis) | C | 0 | no | A local knowledge-graph memory system for agents \(dashboard+MCP\), with benchmarks measuring token/context savings; does not mention Jev/TypeSafe | [evidence](https://github.com/Coding-Dev-Tools/engraphis) | no |
 | [deepbluedynamics/ferricula](https://github.com/deepbluedynamics/ferricula) | C | 0 | no | A 'thermodynamic' decaying/strengthening memory engine for agents \(Rust+MCP\); uses Anthropic but does not mention Jev/TypeSafe | [evidence](https://github.com/deepbluedynamics/ferricula) | no |
+| [kabishou-lab/keepdrop](https://github.com/kabishou-lab/keepdrop) | C | 0 | unclear | TypeScript CLI and library for verbatim keep/drop compaction on OpenAI-compatible LLMs, answering choice/score/noul questions; demo fixtures, MIT, zero stars. | [evidence](https://github.com/kabishou-lab/keepdrop#readme) | no |

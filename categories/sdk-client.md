@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 
 # SDKs and clients
 
-85 repositories in this category, sorted by class then score.
+92 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -94,3 +94,10 @@ English | [Türkçe](../tr/categories/sdk-client.md)
 | [octanevz/jev-playground-openrouter](https://github.com/octanevz/jev-playground-openrouter) | C | 3 | yes | A tiny local server/playground written in Python stdlib for trying Jev via OpenRouter | [evidence](https://github.com/octanevz/jev-playground-openrouter#readme) | no |
 | [unimtx/typesafe-sdk-go](https://github.com/unimtx/typesafe-sdk-go) | C | 3 | yes | A Go SDK for the TypeSafe API; sends Noul/Choice/Score questions and gets typed results | [evidence](https://github.com/unimtx/typesafe-sdk-go#readme) | no |
 | [ItisNoMatter/kojev](https://github.com/ItisNoMatter/kojev) | C | 2 | no | Kotlin Multiplatform client for Jev intended to return caller-defined enum types instead of string keys; explicitly does not work yet. | [evidence](https://github.com/ItisNoMatter/kojev#readme) | no |
+| [afurm/typesafe-sdk-ruby](https://github.com/afurm/typesafe-sdk-ruby) | C | 0 | unclear | Unofficial MIT Ruby SDK for TypeSafe AI \(Jev model\) with noul, choice, and score questions, retries, typed errors, and structured logging. | [evidence](https://github.com/afurm/typesafe-sdk-ruby#readme) | no |
+| [brightshore/jev-net](https://github.com/brightshore/jev-net) | C | 0 | unclear | C# port of TypeSafe AI's Python SDK for Jev; one dependency, net8.0/net10.0, AOT-compatible, exposes Noul, Choice and Score questions. | [evidence](https://github.com/brightshore/jev-net#readme) | no |
+| [bvicsay/adaptmypage](https://github.com/bvicsay/adaptmypage) | C | 0 | unclear | TypeScript SDK that turns semantic browser events into Jev-judged intent probabilities, exposed to React as typed feature flags, with four demo pages and tests. | [evidence](https://github.com/bvicsay/adaptmypage#readme) | no |
+| [jamilxt/typesafe-ai-java](https://github.com/jamilxt/typesafe-ai-java) | C | 0 | unclear | Community Java SDK \(Maven 0.1.1, four modules\) wrapping the Jev typed-question API with Spring Boot and Kotlin support; zero stars. | [evidence](https://github.com/jamilxt/typesafe-ai-java#readme) | no |
+| [kisshan13/typesafe-ai-go](https://github.com/kisshan13/typesafe-ai-go) | C | 0 | unclear | Community Go SDK for TypeSafe System One API with typed choice, score, and noul questions, fluent builders, and automatic retries. | [evidence](https://github.com/kisshan13/typesafe-ai-go#readme) | no |
+| [NSStudent/JevSwiftSDK](https://github.com/NSStudent/JevSwiftSDK) | C | 0 | unclear | Unofficial, dependency-free Swift 6 SDK for TypeSafe Jev with async/await, batching, retries, SPM; supports Choice, Score, Noul question types. | [evidence](https://github.com/NSStudent/JevSwiftSDK#readme) | no |
+| [virolea/jev](https://github.com/virolea/jev) | C | 0 | unclear | Ruby client gem for the Typesafe Jev API, documenting ask, choose and score question types, typed answers and error classes. | [evidence](https://github.com/virolea/jev#readme) | no |

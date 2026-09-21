@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/model-router.md)
 
 # Model routers
 
-44 repositories in this category, sorted by class then score.
+51 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -53,3 +53,10 @@ English | [Türkçe](../tr/categories/model-router.md)
 | [ussyverse/hermes-jev-router](https://github.com/ussyverse/hermes-jev-router) | C | 5 | unclear | An experimental plugin for Hermes that classifies task complexity with Jev and picks a model based on budget/capacity constraints; no live Jev call yet, still at the design/fixture stage | [evidence](https://github.com/ussyverse/hermes-jev-router#readme) | yes |
 | [ashishpatill/grok-kit](https://github.com/ashishpatill/grok-kit) | C | 4 | no | A personal harness automating cheap/expensive model selection and skill loading for Cursor/Grok Build; does not use Jev | [evidence](https://github.com/ashishpatill/grok-kit#readme) | no |
 | [adamjralph/skill-broker](https://github.com/adamjralph/skill-broker) | C | 3 | unclear | A deterministic skill-routing layer at the project-definition stage for Hermes agents; Jev will only produce a fit/confidence score, no code yet | [evidence](https://github.com/adamjralph/skill-broker) | no |
+| [Bodila51/Jev-chooses-a-LLM](https://github.com/Bodila51/Jev-chooses-a-LLM) | C | 3 | unclear | TypeScript Jev router for Cursor: Jev picks COST/BALANCED/INTELLIGENCE tiers; Cursor executes, with soft chat and hard SDK routing. | [evidence](https://github.com/Bodila51/Jev-chooses-a-LLM#readme) | no |
+| [JxWayne890/jev-control-plane](https://github.com/JxWayne890/jev-control-plane) | C | 3 | unclear | Open-source JEV plugin routes Codex delegated work to a runtime model and reasoning level before the coding agent starts. | [evidence](https://github.com/JxWayne890/jev-control-plane#readme) | no |
+| [philippdubach/pi-jev-router](https://github.com/philippdubach/pi-jev-router) | C | 3 | unclear | Minimal Pareto-optimal OpenRouter model router for pi that ranks catalog models, computes a knee point, and routes tasks; benchmark shows cheaper cost per success. | [evidence](https://github.com/philippdubach/pi-jev-router#readme) | no |
+| [aesgalexis/model-switch](https://github.com/aesgalexis/model-switch) | C | 2 | unclear | Local Codex router uses TypeSafe Jev to pick model and reasoning effort; observe by default, fail-open, no prompt logging. | [evidence](https://github.com/aesgalexis/model-switch#readme) | no |
+| [Pasblinn/jev-lab](https://github.com/Pasblinn/jev-lab) | C | 2 | unclear | Jev-lab routes Claude Code turns to model tiers via Jev, with a health gate, fallback alerts, and a measured patch for two silent bugs. | [evidence](https://github.com/Pasblinn/jev-lab#readme) | no |
+| [copyleftdev/braess-router](https://github.com/copyleftdev/braess-router) | C | 0 | unclear | Rust alpha router: Jev picks a handler, Poise an endpoint; uncertain decisions fall back locally. Loopback-only, single server, no upstream retries. | [evidence](https://github.com/copyleftdev/braess-router#readme) | no |
+| [gopalanj/jevons](https://github.com/gopalanj/jevons) | C | 0 | unclear | Local TypeSafe-compatible /v1/systemone server scores choice/score/noul from LFM2.5 logits, with laya and cloud failover hops. | [evidence](https://github.com/gopalanj/jevons#readme) | no |

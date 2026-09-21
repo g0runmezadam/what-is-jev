@@ -3,7 +3,7 @@ English | [Türkçe](../tr/categories/search-rerank.md)
 
 # Search and rerank
 
-20 repositories in this category, sorted by class then score.
+25 repositories in this category, sorted by class then score.
 
 [All repositories](../REPOS.md)
 
@@ -29,3 +29,8 @@ English | [Türkçe](../tr/categories/search-rerank.md)
 | [AlbionaHoti/refgarden](https://github.com/AlbionaHoti/refgarden) | C | 6 | yes | A 3D gallery tool that picks a search phrase in museum/NASA image archives and selects the top result from metadata without seeing the image | [evidence](https://github.com/AlbionaHoti/refgarden) | no |
 | [pax-k/p-ax](https://github.com/pax-k/p-ax) | C | 6 | no | A read-only codebase intelligence layer for agents; deterministic search/aggregate, AI is only optional for synthesis after firm evidence | [evidence](https://github.com/pax-k/p-ax#readme) | yes |
 | [DeepBlueDynamics/typesafe-arena](https://github.com/DeepBlueDynamics/typesafe-arena) | C | 5 | no | A local markdown mirror of docs.typesafe.ai + a BM25+knowledge-graph-based 'Lume' search tool; does not call Jev directly, a documentation archive/search layer | [evidence](https://github.com/DeepBlueDynamics/typesafe-arena) | no |
+| [wd041216-bit/zero-api-key-web-search](https://github.com/wd041216-bit/zero-api-key-web-search) | C | 3 | unclear | Python MIT CLI/MCP search tool sieving results through the Laya decision model for reranking and evidence verification, no API keys. | [evidence](https://github.com/wd041216-bit/zero-api-key-web-search#readme) | no |
+| [shinpr/jev-reranker](https://github.com/shinpr/jev-reranker) | C | 2 | unclear | Rust CLI published on npm reranks, filters, or compresses JSON search candidates via TypeSafe's Jev, passing IDs and metadata through unchanged. | [evidence](https://github.com/shinpr/jev-reranker#readme) | no |
+| [cheeaun/jevmoji](https://github.com/cheeaun/jevmoji) | C | 0 | unclear | Web app that turns up to 40 characters into related emojis, scored 0–3 by TypeSafe's Jev, deployed as a Cloudflare Worker. | [evidence](https://github.com/cheeaun/jevmoji#readme) | no |
+| [leepokai/jev-adrank](https://github.com/leepokai/jev-adrank) | C | 0 | unclear | Two-stage ad ranking: Jev reviews creatives and scores bids in one call, then code runs a calibrated eCPM GSP auction. | [evidence](https://github.com/leepokai/jev-adrank#readme) | no |
+| [seanockert/movie-finder](https://github.com/seanockert/movie-finder) | C | 0 | unclear | Movie finder uses two Jev calls per query: build-time 13 Score axes per film, then typed filters and a graded rerank. | [evidence](https://github.com/seanockert/movie-finder#readme) | no |

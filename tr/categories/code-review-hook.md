@@ -3,7 +3,7 @@
 
 # Kod inceleme hook'ları
 
-Bu kategoride 56 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 59 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -67,3 +67,6 @@ Bu kategoride 56 repo; önce sınıf, sonra puan sırasıyla.
 | [khaledsAlshibani/jev-ci-classifier](https://github.com/khaledsAlshibani/jev-ci-classifier) | C | 5 | yes | Basarisiz olan bir PR kontrolunu OpenRouter uzerinden Jev'e siniflandiran, bir degisiklik-iliskiligi olasiligi doner CI ornek makale projesi. | [kanıt](https://github.com/khaledsAlshibani/jev-ci-classifier#readme) | no |
 | [shadcn-ui/lint](https://github.com/shadcn-ui/lint) | C | 4 | no | Tailwind tasarım sistemleri için ajan-öncelikli linter; Jev ile ilgisi yok \(Discord eşleşmesi 'linter' kelimesinden kaynaklanan yanlış pozitif, farklı bir repoya \(snifftest\) ait\) | [kanıt](https://github.com/shadcn-ui/lint#readme) | no |
 | [ShuhanSun/jev-oas-sentinel-demo](https://github.com/ShuhanSun/jev-oas-sentinel-demo) | C | 4 | no | Genel JEV OAS Sentinel GitHub Action'inin kurulup degisen bir API vaadini anlamsal incelemeye yonlendirdigini canli model cagrisi olmadan dogrulayan bir kuru-calisma tuketici duman testi. | [kanıt](https://github.com/ShuhanSun/jev-oas-sentinel-demo#readme) | no |
+| [bornakapusta/slop-guard](https://github.com/bornakapusta/slop-guard) | C | 0 | unclear | Ruby inceleme botu: kodu neyi inceleyeceğini bulur, Jev yargılar, açık kurallar mühendislik kılavuzlarına göre neyin bildirileceğine karar verir. | [kanıt](https://github.com/bornakapusta/slop-guard#readme) | no |
+| [nozomi-koborinai/jev-spec](https://github.com/nozomi-koborinai/jev-spec) | C | 0 | unclear | AI üretimi kodu markdown spesifikasyonlarına karşı TypeSafe AI Jev karar primitifleri \(noul, choice, score\) ile doğrulayan TypeScript CLI. | [kanıt](https://github.com/nozomi-koborinai/jev-spec#readme) | no |
+| [thejoeejoee/git-judge-commits](https://github.com/thejoeejoee/git-judge-commits) | C | 0 | unclear | CLI, bir aralıktaki her commit'i Jev'in tipli sorularıyla yargılar; kırıcı değişiklikleri ve diff'i yanlış anlatan mesajları işaretler. | [kanıt](https://github.com/thejoeejoee/git-judge-commits#readme) | no |
