@@ -3,7 +3,7 @@
 
 # Sınıflandırma ve triyaj
 
-Bu kategoride 107 repo; önce sınıf, sonra puan sırasıyla.
+Bu kategoride 108 repo; önce sınıf, sonra puan sırasıyla.
 
 [Bütün repolar](../REPOS.md)
 
@@ -116,3 +116,4 @@ Bu kategoride 107 repo; önce sınıf, sonra puan sırasıyla.
 | [jaibhasin/jev-yt-time-saver](https://github.com/jaibhasin/jev-yt-time-saver) | C | 2 | yes | Dikkat dağıtıcı YouTube videolarını Jev ile tespit edip üstünü kapatan Chrome uzantısı | [kanıt](https://github.com/jaibhasin/jev-yt-time-saver#readme) | no |
 | [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) | C | 2 | unclear | Kendi barındırılan açık kaynak kripto/hisse/forex al-sat OS'u; README'nin taranan \(12K karakter\) kısmında yalnızca 'JEV Pre-trade Decisions' rozeti var, asıl JEV bölümü kesim dışında kaldığından doğrulanamadı | [kanıt](https://github.com/OpenByteInc/QuantDinger#readme) | no |
 | [derinworks/penr-oz-jev-syslog-analyzer](https://github.com/derinworks/penr-oz-jev-syslog-analyzer) | C | 1 | unclear | journald/syslog olaylarını Jev'e sorup alt sistem/şiddet/gürültü kararına göre yönlendiren asyncio daemon \(README tek cümlelik, doğrulanamadı\) | [kanıt](https://github.com/derinworks/penr-oz-jev-syslog-analyzer#readme) | no |
+| [silky-x0/Postmark](https://github.com/silky-x0/Postmark) | C | 0 | yes | Postmark demosu, sosyal medya gönderilerini TypeSafe Jev ile sınıflandırır; ton \(choice\), viralite \(score\) ve cringe \(noul\) yanıtlarını tek çağrıda döndürür. | [kanıt](https://github.com/silky-x0/Postmark#readme) | no |

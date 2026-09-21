@@ -19,17 +19,17 @@ TypeSafe AI ile bir bağımız yoktur. Bu bağımsız bir araştırmadır.
 <!-- STATS:START -->
 | Sayı | Değer |
 |---|---|
-| Repo | 947 |
-| Jev çağırıyor | yes 639 · no 275 · unclear 33 |
-| Sınıflar | A 273 · B 302 · C 372 |
+| Repo | 948 |
+| Jev çağırıyor | yes 640 · no 275 · unclear 33 |
+| Sınıflar | A 273 · B 302 · C 373 |
 | Denetlenmiş | 353 |
 | Kaynak | 90 |
-| Veri tarihi | 2026-09-20 |
+| Veri tarihi | 2026-09-21 |
 
 **En çok kategori**
 
 - [Diğer](categories/other.md) — 190
-- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 107
+- [Sınıflandırma ve triyaj](categories/classification-triage.md) — 108
 - [SDK'lar ve istemciler](categories/sdk-client.md) — 85
 - [Değerlendirme ve benchmark](categories/eval-benchmark.md) — 80
 - [Ajan kapıları](categories/agent-gate.md) — 61
