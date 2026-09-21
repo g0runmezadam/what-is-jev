@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this dataset or its findings, cite this repository and the dated release you consulted."
+title: "What is Jev? An independent, sourced research dataset"
+type: dataset
+authors:
+  - name: "jev.com.tr Independent Research Project"
+    website: "https://jev.com.tr/en/about/"
+repository-code: "https://github.com/tunahansahin897/what-is-jev"
+url: "https://jev.com.tr/en/dataset/"
+license: CC-BY-4.0
+version: "2026.09.21"
+date-released: 2026-09-21
+abstract: >-
+  A bilingual, source-linked dataset and critical guide covering TypeSafe AI's
+  Jev decision model, public claims, independent measurements, and open-source
+  ecosystem repositories.
+keywords:
+  - Jev
+  - TypeSafe AI
+  - System One models
+  - decision models
+  - evaluation
+  - AI safety
