@@ -58,6 +58,11 @@ def valid_repo_name(name):
 
 def ham_path(root, kind, filename):
     """A path under ``ham/<kind>/``. Raises when the result escapes ham/."""
+    # Reject both separator styles before the host OS interprets the path.
+    # Otherwise a Windows traversal becomes a harmless-looking filename on
+    # Linux and the same safety test has different answers across workers.
+    if "/" in filename or "\\" in filename:
+        raise ValueError("ham/ dışına yazma denemesi: %r" % filename)
     base = os.path.realpath(os.path.join(root, "ham"))
     target = os.path.realpath(os.path.join(base, kind, filename))
     if target != base and not target.startswith(base + os.sep):
