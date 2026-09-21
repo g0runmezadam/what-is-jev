@@ -22,6 +22,7 @@ jobs:
           existing="$(gh pr list --repo "$REPOSITORY" --base main --head "$HEAD_BRANCH" --state open --json number --jq '.[0].number // empty')"
           if [ -z "$existing" ]; then
             gh pr create --repo "$REPOSITORY" --base main --head "$HEAD_BRANCH" \
+              --draft \
               --title "data: hourly Jev repository analysis" \
               --body "Automated Jev-first repository analysis. DeepSeek generated prose only after Jev fixed the typed decisions. This PR does not update or deploy jev.com.tr."
           fi
